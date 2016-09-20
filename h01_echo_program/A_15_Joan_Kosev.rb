@@ -1,2 +1,2 @@
-hello = ARGV[0].to_i
+hello = gets.to_i
 puts hello*2
