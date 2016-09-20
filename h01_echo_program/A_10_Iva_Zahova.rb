@@ -1,3 +1,3 @@
 #!/usr/bin/ruby -w
-a=gets.to_i
-puts a*2
+n=ARGV[0].to_i*2
+print n
