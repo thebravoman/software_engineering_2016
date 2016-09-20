@@ -1,3 +1,2 @@
-print "Your number: "
 user_num = Integer(gets.chomp)
-puts "Your number doubled:#{user_num*2}"
+puts user_num*2
