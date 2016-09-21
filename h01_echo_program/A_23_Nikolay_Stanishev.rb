@@ -1,4 +1,1 @@
-#!/usr/bin/ruby
-
-i=gets.to_i;
-puts i*2;
+print ARGV[0].to_i*2;
