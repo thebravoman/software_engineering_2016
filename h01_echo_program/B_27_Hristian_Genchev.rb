@@ -1,3 +1,1 @@
-number = gets.to_i
-
-puts (number * 2)
+puts ARGV[0].to_i * 2
