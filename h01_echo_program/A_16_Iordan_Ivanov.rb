@@ -1,2 +1,2 @@
 number = ARGV[0].to_i
-puts number*2
+print number*2
