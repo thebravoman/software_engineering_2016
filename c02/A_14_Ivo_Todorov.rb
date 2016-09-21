@@ -1,14 +1,17 @@
 require "csv.rb"
-if !ARGV[0].end_with? "/*"
-	directory = Dir.glob(ARGV[0] + "/*")
-else
-	directory = Dir.glob(ARGV[0])
-end
-file=CSV.open("result.csv", "wb")
-print directory
-for i in 0..directory.length-1   
-	temp = directory[i].slice!()
-	#file << directory[i].split("_")
+
+directory = ARGV[0]
+csv = CSV.open("result.csv", "w")
+$count = 0 
+Dir.foreach(directory) do |file|
+	#puts item
+	next if file =="." or file == ".."
+	#puts file
+	if(file.match(/[AB]_[1-9][0-9]_\w+_\w+.txt/))
+		puts file
+		csv << file[/[AB]_[1-9][0-9]_\w+_\w+/].split("_")
+		$count = $count + 1
+	end
 end
 
-file.close
+puts $count
