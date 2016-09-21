@@ -1,2 +1,2 @@
-hello = gets.to_i
-puts hello*2
+hello=ARGV[0].to_i
+print hello*2
