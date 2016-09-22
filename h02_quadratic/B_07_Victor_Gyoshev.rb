@@ -6,4 +6,4 @@ if d>0 then
 	result[1] = (-argument[1] - Math::sqrt(d))/(2*argument[0])
 	result.map! { |x| if x.to_i == x then x.to_i else x.round(2) end}
 end
-puts result.sort.join(",")
+print result.sort.join(",")
