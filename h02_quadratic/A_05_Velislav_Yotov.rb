@@ -2,28 +2,64 @@ a = ARGV[0].to_f
 b = ARGV[1].to_f
 c = ARGV[2].to_f
 if (a==0)
-	print ""
+	puts "This is not quadratic equation"
+	root_a=c/b.to_f
+		if (root_a % 1 ==0)
+			root_a=root_a.to_i
+		end
+	puts format('%.2f', root_a)
+	
 else 
 	discriminant= b**2 - 4*a*c.to_f
 	if (discriminant>0)
+
 		first_root=(-b + Math.sqrt(discriminant))/2*a.to_f
-			if (first_root % 1 ==0)
-				first_root=first_root.to_i
-			end	                
 		second_root=(-b - Math.sqrt(discriminant))/2*a.to_f
-			if (second_root % 1 ==0)
-				second_root=second_root.to_i
-			end					
+		
 		if (first_root < second_root)
-			print first_root.to_s+","+second_root.to_s
+
+			if (first_root % 1 == 0)
+
+				first_root=first_root.to_i
+				print first_root.to_s.chomp	
+			else 
+				print format('%.2f',first_root)
+
+			end			
+			print ","
+			if (second_root % 1 ==0)
+
+				second_root=second_root.to_i
+				print second_root.to_s.chomp
+			else	
+				print format('%.2f',second_root).chomp
+			end
 		else 
-			print second_root.to_s+","+first_root.to_s
+
+			if (second_root % 1 == 0)
+
+				second_root=second_root.to_i
+				print second_root.to_s.chomp	
+			else 
+				print format('%.2f',second_root).chomp
+
+			end			
+			print ","
+			if (first_root % 1 ==0)
+
+				first_root=first_root.to_i
+				print first_root.to_s.chomp
+			else	
+				print format('%.2f',first_root).chomp
+			end
 		end
 	elsif(discriminant==0)
 		root=-b/2*a.to_f
 			if (root % 1 ==0)
 				root=root.to_i
-			end
-		print root.to_s
+				puts root.to_s			
+			else
+				puts format('%.2f',root)
+			end	
 	end
 end
