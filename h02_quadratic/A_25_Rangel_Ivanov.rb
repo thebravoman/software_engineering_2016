@@ -8,7 +8,7 @@ if a == 0
     if b == 0
         exit
     else
-    x = -c/a
+    x = -c/b
     print x.round(2)
     exit
 end
