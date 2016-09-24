@@ -5,9 +5,6 @@ b = ARGV[1].to_f
 c = ARGV[2].to_f
 if a == 0 
 	x = -c/b
-	if b < 0
-		x = -x
-	end
 	if x % 1 == 0
 		x = x.to_i
 		print "#{x}"
