@@ -5,8 +5,12 @@ b = ARGV[1].to_f;
 c = ARGV[2].to_f;
 
 if a == 0
-	x = -c / b;
-	print "#{x}"
+	x = (-c) / b;
+	if x%1 == 0
+		print "#{x.to_i}";
+	else
+		print "#{x.round(2)}";
+	end
 else
 	d = b**2 - 4*a*c;
 	if d > 0
@@ -29,7 +33,7 @@ else
 		if d == 0
 			x = (-b) / (2 * a);
 			if x%1 == 0
-			print "#{x.to_i}";
+				print "#{x.to_i}";
 			else
 				print "#{x.round(2)}";
 			end
