@@ -2,7 +2,6 @@ a = ARGV[0].to_f
 b = ARGV[1].to_f
 c = ARGV[2].to_f
 if (a==0)
-	puts "This is not quadratic equation"
 	root_a=c/b.to_f
 		if (root_a % 1 ==0)
 			root_a=root_a.to_i
