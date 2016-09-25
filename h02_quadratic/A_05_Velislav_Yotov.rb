@@ -33,7 +33,7 @@ else
 				second_root=second_root.to_i
 				puts second_root.to_s
 			else	
-				puts format('%.2f',second_root).
+				puts format('%.2f',second_root)
 			end
 		else 
 
