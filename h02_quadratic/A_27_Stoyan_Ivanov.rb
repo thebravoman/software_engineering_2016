@@ -1,15 +1,21 @@
 a = ARGV[0].to_f
 b = ARGV[1].to_f
 c = ARGV[2].to_f
+hash = "#"
 
 if a == 0
-	x = -c / b
-	
-	if x % 1 == 0
-		print "#{x.round(0)}"
+	if b == 0 && c == 0
+		puts hash
 	
 	else
-		print "#{x.round(2)}"
+		x = -c / b
+	
+		if x % 1 == 0
+			puts "#{x.round(0)}"
+	
+			else
+			puts "#{x.round(2)}"
+		end
 	end
 
 else
@@ -19,10 +25,10 @@ else
 		x = -b / (2 * a)
 		
 		if x % 1 == 0
-			print "#{x.round(0)}"
+			puts "#{x.round(0)}"
 	
 		else
-			print "#{x.round(2)}"
+			puts "#{x.round(2)}"
 		end
 	
 	elsif d > 0
@@ -44,7 +50,7 @@ else
 		end
 		
 		sorting = [x_1, x_2].sort
-		print sorting[0].to_s + "," + sorting[1].to_s
+		puts sorting[0].to_s + "," + sorting[1].to_s
 		
 	end
 end
