@@ -14,8 +14,13 @@ arg2 = ARGV[1].to_f
 arg3 = ARGV[2].to_f
 num = 0
 if arg1 == 0
-	result = (-arg3/arg2).to_f
-	puts format_result result
+
+	if arg2 == 0 and arg3 == 0
+		puts "#"
+	else
+		result = (-arg3/arg2).to_f
+		puts format_result result0
+	end
 else 
 	d = arg2**2 - 4*arg1*arg3
 	if d > 0
@@ -30,4 +35,3 @@ else
 		puts format_result x_1
 	end
 end
-
