@@ -10,10 +10,15 @@ if a == 0
 		if x1 % 1 == 0
 			x1 = x1.to_i
 			print x1
+			print "\n"
 			exit
 		end
 		print format('%.2f', x1)
-	end 
+	else 
+		if c == 0
+			print "#\n"
+		end
+	end
 else
 	if b != 0
 		dis = (b**2 - 4*a*c).to_f
@@ -34,6 +39,7 @@ else
 				else 
 					print format('%.2f', x2)
 				end
+				print "\n"
 			else 
 				if x2 % 1 == 0
 					x2 = x2.to_i
@@ -48,6 +54,7 @@ else
 				else 
 					print format('%.2f', x1)
 				end
+				print "\n"
 			end
 		elsif dis == 0
 			x1 = -b / (a * 2)
@@ -56,15 +63,19 @@ else
 			else 
 				print format('%.2f', x1)
 			end
+			print "\n"
 		elsif dis < 0
+			print "\n"
 			exit
 		end
 	else
 		if (-c / a).to_f < 0
+			print "\n"
 			exit
 		end
 		if (-c / a).to_f == 0
-			print 0
+			print "#"
+			print "\n"
 			exit
 		end
 		x1 = +Math.sqrt((-c / a).to_f)
@@ -83,6 +94,7 @@ else
 			else 
 				print format('%.2f', x2)
 			end
+			print "\n"
 		else 
 			if x2 % 1 == 0
 				x2 = x2.to_i
@@ -97,10 +109,12 @@ else
 			else 
 				print format('%.2f', x1)
 			end
+			print "\n"
 		end
 	end
 end
-		
+
+
 		
 	
 	
