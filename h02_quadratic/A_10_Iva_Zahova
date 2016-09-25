@@ -5,14 +5,19 @@ B = ARGV[1].to_f
 C = ARGV[2].to_f
 
 if A == 0
+	if B == 0 && C == 0
+		puts "#"
+	else
 	x = -C/B
 	if x % 1 == 0
 		x = x.to_i
 		print x
 	else
 		print format('%.2f',x).chomp
-	end
 
+	end
+	print "\n"
+	end
 
 else
 	D = B*B - 4*A*C
@@ -34,7 +39,7 @@ else
 			swap = x1
 			x1 = x2
 			x2 = swap
-	end
+		end
 
 	if x1 % 1 == 0
 		x1 = x1.to_i
@@ -49,6 +54,7 @@ else
 	else
 		print format('%.2f',x2).chomp
 	end
-   end
+	print "\n"
+   	end
 end
 end
