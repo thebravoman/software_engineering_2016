@@ -6,7 +6,7 @@ def round(x)
 	if x % 1 == 0
 		x = x.to_i
 	else 
-		x.round(2)
+		x = x.round(2)
 	end
 		
 	x
@@ -28,11 +28,15 @@ if a != 0
 			x_1 = x_2
 			x_2 = swap
 		end
-			
-		puts round(x_1).to_s + "," + round(x_2).to_s
+
+		puts "#{round(x_1)},#{round(x_2)}"
 	end
 else
 	if b != 0
-		puts (-c / b)).rationalize
+		puts round(-c / b)
+	end
+	
+	if b == 0 && c == 0
+		puts "#"
 	end
 end
