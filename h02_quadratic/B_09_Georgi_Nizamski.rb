@@ -26,8 +26,8 @@ else
 		puts is_integer(x)
 
 	elsif discriminant > 0 
-		x1 = (-b + Math.sqrt(discriminant)) / 2 * a
-		x2 = (-b - Math.sqrt(discriminant)) / 2 * a
+		x1 = (-b + Math.sqrt(discriminant)) / (2 * a)
+		x2 = (-b - Math.sqrt(discriminant)) / (2 * a)
 
 		if x1 > x2 then puts "#{is_integer(x2)},#{is_integer(x1)}"
 		else puts "#{is_integer(x1)},#{is_integer(x2)}"		
