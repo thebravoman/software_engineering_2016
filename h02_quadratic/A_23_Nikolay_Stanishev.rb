@@ -25,9 +25,9 @@ else
 			print "#{x1.round(2)},";
 		end
 		if x2%1 == 0
-			print "#{x2.to_i}";
+			puts "#{x2.to_i}";
 		else
-			print "#{x2.round(2)}";
+			puts "#{x2.round(2)}";
 		end
 	else
 		if d == 0
