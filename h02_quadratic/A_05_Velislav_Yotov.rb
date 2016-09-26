@@ -14,8 +14,8 @@ else
 	discriminant= b**2 - 4*a*c.to_f
 	if (discriminant>0)
 
-		first_root=(-b + Math.sqrt(discriminant))/2*a.to_f
-		second_root=(-b - Math.sqrt(discriminant))/2*a.to_f
+		first_root=(-b + Math.sqrt(discriminant))/a/2.to_f
+		second_root=(-b - Math.sqrt(discriminant))/a/2.to_f
 		
 		if (first_root < second_root)
 
