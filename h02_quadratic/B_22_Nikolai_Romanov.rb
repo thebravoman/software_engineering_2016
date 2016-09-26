@@ -10,11 +10,11 @@ else
 		X1=((-B-Math.sqrt(D))/2/A).round(0)
 		X2=((-B+Math.sqrt(D))/2/A).round(0)
 		if X1>X2
-                        temp = X1
-                        X1 = X2
-                        X2 = temp
+                        puts X2.to_s + "," + X1.to_s
                 end
-                puts X1.to_s + "," + X2.to_s
+                if X1<X2
+                        puts X1.to_s + "," + X2.to_s
+                end
 	else puts 
    end
 end
