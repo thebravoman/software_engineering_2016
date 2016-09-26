@@ -1,6 +1,6 @@
 require "csv" 
 files = 0
-CSV.open("/home/Hristo/result.csv", "wb") do |csv|
+CSV.open("result.csv", "wb") do |csv|
 Dir.foreach(ARGV[0]) do |item|
 	puts item
 	files += 1
