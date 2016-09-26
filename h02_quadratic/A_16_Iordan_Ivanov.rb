@@ -13,7 +13,7 @@ if a == 0
 	elsif x % 1 == 0
 		puts "#{x.to_i}"
 	else
-		puts "#{(x * 100).floor / 100.0}"
+		puts format('%.2f',x)
 	end
 else
 	if D < 0
@@ -23,22 +23,32 @@ else
 		if x % 1 == 0
 			puts "#{x.to_i}"
 		else
-			puts "#{(x * 100).floor / 100.0}"
+			puts format('%.2f',x)
 		end
 	elsif D > 0
 		x1 = (-b + Math.sqrt(D)) / (2 * a)
 		x2 = (-b - Math.sqrt(D)) / (2 * a)
-		if x1 % 1 == 0 && x2 % 1 == 0 
-			if x1 < x2
-				puts "#{x1.to_i},#{x2.to_i}"
+		if x1 < x2
+			if x1 % 1 == 0
+				print "#{x1.to_i},"
 			else
-				puts "#{x2.to_i},#{x1.to_i}"
+				print format('%.2f,',x1)
+			end
+			if x2 % 1 == 0
+				puts "#{x2.to_i}"
+			else
+				puts format('%.2f',x2)
 			end
 		else
-			if x1 < x2
-				puts "#{(x1 * 100).floor / 100.0},#{(x2 * 100).floor / 100.0}"
+			if x2 % 1 == 0
+				print "#{x2.to_i},"
 			else
-				puts "#{(x2 * 100).floor / 100.0},#{(x1 * 100).floor / 100.0}"
+				print format('%.2f,',x2)
+			end
+			if x1 % 1 == 0
+				puts "#{x1.to_i}"
+			else
+				puts format('%.2f',x1)
 			end
 		end
 	end

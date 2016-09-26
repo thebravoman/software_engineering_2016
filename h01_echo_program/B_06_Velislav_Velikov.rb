@@ -1,2 +1,1 @@
-user_num = Integer(gets.chomp)
-puts user_num*2
+puts ARGV[0].to_i*2

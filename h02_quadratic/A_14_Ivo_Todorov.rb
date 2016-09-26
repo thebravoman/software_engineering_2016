@@ -5,17 +5,15 @@ b = ARGV[1].to_f
 c = ARGV[2].to_f
 
 if a == 0 
-	if b == 0
-		if c == 0
-			print "#\n"
+	if b == 0 && c ==0
+		print "#\n"
+	elsif b != 0
+		x = -c/b
+		if x % 1 == 0
+			x = x.to_i
+			print "#{x}\n"
 		else
-			x = -c/b
-			if x % 1 == 0
-				x = x.to_i
-				print "#{x}\n"
-			else
-				print "#{x.round(2)}\n"
-			end
+			print "#{x.round(2)}\n"
 		end
 	end
 else

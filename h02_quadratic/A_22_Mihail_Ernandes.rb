@@ -65,12 +65,10 @@ else
 			end
 			print "\n"
 		elsif dis < 0
-			print "\n"
 			exit
 		end
 	else
 		if (-c / a).to_f < 0
-			print "\n"
 			exit
 		end
 		if (-c / a).to_f == 0

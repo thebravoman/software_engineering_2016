@@ -1,11 +1,10 @@
 a = ARGV[0].to_f
 b = ARGV[1].to_f
 c = ARGV[2].to_f
-hash = "#"
 
 if a == 0
 	if b == 0 && c == 0
-		puts hash
+		print "#\n"
 	
 	else
 		x = -c / b

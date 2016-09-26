@@ -1,6 +1,6 @@
-a = Float(gets)
-b = Float(gets)
-c = Float(gets)
+a = Float(ARGV[0])
+b = Float(ARGV[1])
+c = Float(ARGV[2])
 check_if_int = 0
 
 if a == 0 then
@@ -8,7 +8,7 @@ if a == 0 then
     if c == 0 then
       result = "#"
     else
-      result =  "No solutions."
+      result =  ""
     end
   else
     result = Float(-c/b).round(2)
@@ -30,7 +30,7 @@ else
     result = ( ( -b ) / (2 * a) ).round(2)
     check_if_int = 1
   else
-    result = "No solutions."
+    result = ""
   end
 end
 
