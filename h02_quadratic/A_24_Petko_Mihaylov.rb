@@ -2,7 +2,11 @@ a=ARGV[0].to_f
 b=ARGV[1].to_f
 c=ARGV[2].to_f
 
-if a==0
+if a==0 && b==0
+	print "#"
+end
+
+if a==0 and b!=0
 	x1=(-c)/b
 	print sprintf("%g", x1.round(2))
 end
