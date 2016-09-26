@@ -6,8 +6,9 @@ c = ARGV[2].to_f
 results = []
 
 if a == 0
-  if b == 0 and c == 0
+  if b == 0 && c == 0
     puts "#"
+  elsif b == 0 && c != 0
   else
     x = -c / b
     if x % 1 == 0
