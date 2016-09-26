@@ -39,7 +39,7 @@ x1.to_i
 printf("%d,",x1)
 end
 if x2%1!=0
-printf("%.2f",x2)
+printf("%.2f\n",x2)
 else
 x2.to_i
 printf("%d\n",x2)
