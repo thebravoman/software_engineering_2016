@@ -1,9 +1,14 @@
 require "csv" 
-CSV.open("/home/elsyser/Desktop/result.csv", "wb") do |csv|
+files = 0
+CSV.open("/home/Hristo/result.csv", "wb") do |csv|
 Dir.foreach(ARGV[0]) do |item|
-	next if item == '.' or item =='..'
-	class_student = item[0]
-	number = item[2] + item[3]
-	csv << [class_student, number]
+	puts item
+	files += 1
+	next if item[0] != 'A' && item[0] !='B'
+	info = item.split("_")
+	info[3] = info[3].split(".")
+	csv << [info[0], info[1], info[2], info[3][0]]
 end
 end
+
+puts files
