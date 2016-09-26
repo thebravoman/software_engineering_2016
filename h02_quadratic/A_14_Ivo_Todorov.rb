@@ -5,7 +5,7 @@ b = ARGV[1].to_f
 c = ARGV[2].to_f
 
 if a == 0 
-	if b == 0
+	if b != 0
 		if c == 0
 			print "#\n"
 		else
