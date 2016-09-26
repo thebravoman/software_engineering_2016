@@ -13,7 +13,7 @@ if a == 0
 	elsif x % 1 == 0
 		puts "#{x.to_i}"
 	else
-		puts "#{(x * 100).floor / 100.0}"
+		puts "#{x.round(2)}"
 	end
 else
 	if D < 0
@@ -23,7 +23,7 @@ else
 		if x % 1 == 0
 			puts "#{x.to_i}"
 		else
-			puts "#{(x * 100).floor / 100.0}"
+			puts "#{x.round(2)}"
 		end
 	elsif D > 0
 		x1 = (-b + Math.sqrt(D)) / (2 * a)
@@ -36,9 +36,9 @@ else
 			end
 		else
 			if x1 < x2
-				puts "#{(x1 * 100).floor / 100.0},#{(x2 * 100).floor / 100.0}"
+				puts "#{x1.round(2)},#{x2.round(2)}"
 			else
-				puts "#{(x2 * 100).floor / 100.0},#{(x1 * 100).floor / 100.0}"
+				puts "#{x2.round(2)},#{x1.round(2)}"
 			end
 		end
 	end
