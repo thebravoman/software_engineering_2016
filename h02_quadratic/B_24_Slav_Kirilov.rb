@@ -1,7 +1,7 @@
 a = ARGV[0].to_f
 b = ARGV[1].to_f
 c = ARGV[2].to_f
-if a == 0 && b != 0 && c != 0 then
+if a == 0 && b != 0 then
    x1 = c/b.round(2)
 	printf("%g\n", x1)
  elsif a != 0
