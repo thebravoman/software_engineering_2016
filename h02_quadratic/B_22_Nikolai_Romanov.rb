@@ -15,7 +15,6 @@ else
                 if X1<X2
                         puts X1.to_s + "," + X2.to_s
                 end
-	else puts 
    end
 end
 
