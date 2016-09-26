@@ -35,7 +35,7 @@ else
 				print "#{x1.round(2)},"
 			end
 			if x2 % 1 == 0
-				print "#{x2.to_i}"
+				puts "#{x2.to_i}"
 			else
 				puts "#{x2.round(2)}"
 			end
@@ -46,7 +46,7 @@ else
 				print "#{x2.round(2)},"
 			end
 			if x1 % 1 == 0
-				print "#{x1.to_i}"
+				puts "#{x1.to_i}"
 			else
 				puts "#{x1.round(2)}"
 			end
