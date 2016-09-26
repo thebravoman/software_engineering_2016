@@ -28,17 +28,27 @@ else
 	elsif D > 0
 		x1 = (-b + Math.sqrt(D)) / (2 * a)
 		x2 = (-b - Math.sqrt(D)) / (2 * a)
-		if x1 % 1 == 0 && x2 % 1 == 0 
-			if x1 < x2
-				puts "#{x1.to_i},#{x2.to_i}"
+		if x1 < x2
+			if x1 % 1 == 0
+				print "#{x1.to_i},"
 			else
-				puts "#{x2.to_i},#{x1.to_i}"
+				print "#{x1.round(2)},"
+			end
+			if x2 % 1 == 0
+				print "#{x2.to_i}"
+			else
+				puts "#{x2.round(2)}"
 			end
 		else
-			if x1 < x2
-				puts "#{x1.round(2)},#{x2.round(2)}"
+			if x2 % 1 == 0
+				print "#{x2.to_i},"
 			else
-				puts "#{x2.round(2)},#{x1.round(2)}"
+				print "#{x2.round(2)},"
+			end
+			if x1 % 1 == 0
+				print "#{x1.to_i}"
+			else
+				puts "#{x1.round(2)}"
 			end
 		end
 	end
