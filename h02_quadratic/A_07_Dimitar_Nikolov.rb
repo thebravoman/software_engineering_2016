@@ -19,11 +19,11 @@ if a == 0
 else
   d = b ** 2 - 4 * a * c
   if d > 0
-    x1 = -b + Math.sqrt(d) / 2.0 * a
-    x2 = -b - Math.sqrt(d) / 2.0 * a
+    x1 = (-b + Math.sqrt(d)) / (2.0 * a)
+    x2 = (-b - Math.sqrt(d)) / (2.0 * a)
     results.push(x1).push(x2)
   elsif d == 0
-    x = -b / 2.0 * a
+    x = -b / (2.0 * a)
     results.push(x)
   end
   results.map! do |result|
