@@ -27,12 +27,12 @@ else
     x = -b / (2.0 * a)
     results.push(x)
   end
-  results.map! do |result|
+  results.sort!.map! do |result|
     if result % 1 == 0
-      result.to_i
+      result.to_i.to_s
     else
-      result.round(2)
+      sprintf('%.2f', result.round(2))
     end
   end
-  puts results.sort!.join(",") if results.length > 0
+  puts results.join(",") if results.length > 0
 end
