@@ -1,31 +1,59 @@
-a = ARGV[0].to_f	#3
-b = ARGV[1].to_f	#1
-c = ARGV[2].to_f	#-4
-D = b*b - 4*a*c #3*3-4*(-4)*1
-if(D<0)
-	puts "#"
-end
-if(D==0)
-	puts -b/2*a
-end
-if(D>0)
-	x1 = ((b*-1) + Math.sqrt(D)) / (2*a)
-    x2 = ((b*-1) - Math.sqrt(D)) / (2*a)
-end
-if x1 > x2
-		rev = x1
-		x1 = x2
-		x2 = rev
-end
-if x1 % 1 != 0
-	print sprintf( "%.2f,", x1 )
-else
-	print "#{x1.to_i},"
-end
-if x2 % 1 != 0
-	print sprintf( "%.2f", x2 )
-else
-	print x2.to_i;
-end
-print "\n";
+a = ARGV[0].to_f
+b = ARGV[1].to_f
+c = ARGV[2].to_f
 
+
+def find_roots(a, b, c) 
+	if a == 0
+		if b != 0
+			get_printable_root(-c / b)
+		end
+
+		if b == 0 && c == 0
+			puts "#"
+		end
+		
+		if b == 0 && c != 0
+			puts ""
+		end
+	end
+
+	if a != 0 
+		d = b ** 2 - 4 * a * c
+
+		if d > 0
+			root1 = (-b + Math.sqrt(d)) / (2 * a)
+			root2 = (-b - Math.sqrt(d)) / (2 * a)
+
+			if root1 > root2
+				temp = root1
+				root1 = root2
+				root2 = temp
+			end
+
+			puts "#{get_printable_root(root1)},#{get_printable_root(root2)}"
+		end
+
+		if d == 0
+			root = -b / (2 * a) 
+
+			puts get_printable_root(root)
+		end
+
+		if d < 0
+			puts ""
+		end
+	end
+end	
+
+def get_printable_root(x)
+	if x % 1 == 0
+		root = x.to_i
+	end	
+	if x % 1 != 0
+		root = x.round(2)
+	end
+	root
+end
+
+find_roots(a, b, c)

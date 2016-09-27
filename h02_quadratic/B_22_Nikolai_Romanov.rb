@@ -1,6 +1,6 @@
-A = gets.to_f
-B = gets.to_f
-C = gets.to_f
+A = ARGV[0].to_f
+B = ARGV[1].to_f
+C = ARGV[2].to_f
 D = B*B - 4*A*C
 if D==0
 	X=-B/2*A
