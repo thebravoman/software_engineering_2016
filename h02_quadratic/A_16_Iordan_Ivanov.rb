@@ -13,7 +13,7 @@ if a == 0
 	elsif x % 1 == 0
 		puts "#{x.to_i}"
 	else
-		puts "#{x.round(2)}"
+		puts format('%.2f',x)
 	end
 else
 	if D < 0
@@ -23,7 +23,7 @@ else
 		if x % 1 == 0
 			puts "#{x.to_i}"
 		else
-			puts "#{x.round(2)}"
+			puts format('%.2f',x)
 		end
 	elsif D > 0
 		x1 = (-b + Math.sqrt(D)) / (2 * a)
@@ -32,23 +32,23 @@ else
 			if x1 % 1 == 0
 				print "#{x1.to_i},"
 			else
-				print "#{x1.round(2)},"
+				print format('%.2f,',x1)
 			end
 			if x2 % 1 == 0
 				puts "#{x2.to_i}"
 			else
-				puts "#{x2.round(2)}"
+				puts format('%.2f',x2)
 			end
 		else
 			if x2 % 1 == 0
 				print "#{x2.to_i},"
 			else
-				print "#{x2.round(2)},"
+				print format('%.2f,',x2)
 			end
 			if x1 % 1 == 0
 				puts "#{x1.to_i}"
 			else
-				puts "#{x1.round(2)}"
+				puts format('%.2f',x1)
 			end
 		end
 	end
