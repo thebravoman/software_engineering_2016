@@ -9,10 +9,11 @@ if a == 0 && b!=0 && c!=0
 x=-c/b
 
 if x%1!=0
-x.to_i
-printf("%d\n",x)
+printf("%.2f\n",x)
 else
-  printf("%.2f\n",x)
+  x.to_i
+printf("%d\n",x)
+  
 
 end
 end
