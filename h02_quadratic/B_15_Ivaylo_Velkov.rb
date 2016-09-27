@@ -5,7 +5,7 @@ c = ARGV[2].to_f
 def check_int(number)
 		
 	if number % 1 != 0
-		return number.round(2)
+		return '%.2f' % number 
 	else 
 		return number.to_i	
 	end
