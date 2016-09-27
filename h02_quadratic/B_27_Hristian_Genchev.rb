@@ -25,6 +25,9 @@ else
 		if x % 1 == 0
 			x.to_i
 		end
+		if (x == -0)
+			x = x.abs
+		end
 		printf("%g\n",x.round(2))
 		
 	end
