@@ -32,7 +32,7 @@ else
 			if x1 % 1 == 0
 				print "#{x1.to_i},"
 			else
-				print format('%.2f',x1)
+				print format('%.2f,',x1)
 			end
 			if x2 % 1 == 0
 				puts "#{x2.to_i}"
@@ -43,7 +43,7 @@ else
 			if x2 % 1 == 0
 				print "#{x2.to_i},"
 			else
-				print format('%.2f',x2)
+				print format('%.2f,',x2)
 			end
 			if x1 % 1 == 0
 				puts "#{x1.to_i}"
