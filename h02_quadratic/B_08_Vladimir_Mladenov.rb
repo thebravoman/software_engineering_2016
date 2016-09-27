@@ -9,7 +9,11 @@ def find_roots(a, b, c)
 			get_printable_root(-c / b)
 		end
 
-		if b == 0
+		if b == 0 && c == 0
+			puts "#"
+		end
+		
+		if b == 0 && c != 0
 			puts ""
 		end
 	end
