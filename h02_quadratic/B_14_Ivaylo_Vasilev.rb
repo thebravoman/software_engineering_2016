@@ -10,8 +10,15 @@ if (a == 0 && b == 0 && c == 0)
 
 if (a == 0 && b != 0) 
   
-	 x1 = c/b.round(2)
+	 x1 = c/b
 	 
+	 if x1%1 == 0 
+	 x1 = x1.to_i
+	 
+	 else x1 = x1.round(2)
+
+	 end
+	
          printf("%g\n", x1)
  
  elsif (a != 0)
@@ -26,9 +33,19 @@ if (a == 0 && b != 0)
  
 	 	elsif (D > 0)
       
-			x1 = ((-b+Math.sqrt(D))/2/a).round(2)
-     		 	x2 = ((-b-Math.sqrt(D))/2/a).round(2)
-	
+			x1 = ((-b+Math.sqrt(D))/2/a)
+     		 	x2 = ((-b-Math.sqrt(D))/2/a)
+
+		if x1%1 == 0 
+			x1 = x1.to_i
+		else x1 = x1.round(2)
+		end
+		
+		if x2%1 == 0 
+			x2 = x2.to_i
+		else x2 = x2.round(2)
+		end
+			
 	 	if(x2 < x1) 
 
 				printf("%g,%g\n",x2 ,x1)
@@ -38,4 +55,4 @@ if (a == 0 && b != 0)
 
 				 end
   		end  
- end
+end
