@@ -20,7 +20,7 @@ if D>0 and a!=0
 	discr=Math.sqrt(D)
 	x1=(-b+discr)/(2*a)
 	x2=(-b+(-discr))/(2*a)
-	if x2>x1
+	if x2<x1
 		print sprintf("%g", x2.round(2))
 		print ","
 		print sprintf("%g", x1.round(2))

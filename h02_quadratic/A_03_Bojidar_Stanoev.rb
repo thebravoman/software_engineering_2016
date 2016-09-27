@@ -9,10 +9,11 @@ if a == 0 && b!=0 && c!=0
 x=-c/b
 
 if x%1!=0
-puts x.round(2)
-else
 x.to_i
 puts x
+else
+  puts x.round(2)
+
 end
 end
 if a!=0
