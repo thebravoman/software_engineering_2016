@@ -10,9 +10,9 @@ x=-c/b
 
 if x%1!=0
 x.to_i
-puts x
+printf("%d\n",x)
 else
-  puts x.round(2)
+  printf("%.2f\n",x)
 
 end
 end
@@ -21,7 +21,7 @@ d=(b*b)-(4*a*c)
 if d==0
 x=-b/(2*a)
 if x%1!=0
-puts x.round(2)
+printf("%.2f\n",x)
 else
 x.to_i
 printf("%d\n",x)
