@@ -4,7 +4,7 @@ if a == 0
 	if b != 0
 		if -c/b == (-c/b).to_i
 			puts (-c/b).to_i 
-		else puts -c/b.round(2)
+		else puts '%.2f' % (-c/b)
 		end
 	else if c == 0 then puts "#" end
 	end 
