@@ -3,6 +3,19 @@ a = ARGV[0].to_f
 b = ARGV[1].to_f
 c = ARGV[2].to_f
 
+d = b*b - 4*a*c
+
+if a == 0 && b == 0 && c == 0
+  puts"#"
+  abort
+end
+
+if d < 0
+  puts "#{}"
+  abort
+end
+
+
 if a == 0
   x1 = -(c) / (b)
   if x1 % 1 == 0
@@ -15,8 +28,6 @@ if a == 0
   end
 end # if( a == 0)
 
-d = b*b - 4*a*c
-
 if d == 0
   if x1 % 1 == 0
     x1 = x1.to_i
@@ -26,11 +37,6 @@ if d == 0
     puts "#{'%.2f' % x1}"
     abort
   end
-end
-
-if d < 0
-  puts "#"
-  abort
 end
 
 if d > 0
