@@ -2,6 +2,9 @@ a = ARGV[0].to_f
 b = ARGV[1].to_f
 c = ARGV[2].to_f
 
+if ARGV.empty?
+  abort
+end
 d = (b * b) - (4 * a * c)
 if a == 0 && (b != 0 || c != 0)
   x1 = (-c / b).to_f
@@ -28,7 +31,7 @@ else
 
 
   elsif d == 0
-    x1 = -b / 2 * a
+    x1 = (-b) / (2 * a)
     if(x1 == x1.to_i)
       x1 = x1.to_i
     end
