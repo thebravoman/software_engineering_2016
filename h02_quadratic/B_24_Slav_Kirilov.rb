@@ -12,6 +12,7 @@ if a == 0 && b != 0 then
 				x = x.abs
     		 		printf("%g\n", x)
 				else printf("%g\n",x)
+			end
  	 	elsif (D > 0)
       		 	x1 = ((-b-Math.sqrt(D))/2/a).round(2)
      		 	x2 = ((-b+Math.sqrt(D))/2/a).round(2)
