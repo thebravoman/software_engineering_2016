@@ -16,7 +16,4 @@ if d >= 0 then
 	result[1] = (-b - Math::sqrt(d))/(2*a)
 	result.map! { |x| if x == x.to_i then x.to_i else x.round(2) end}
 end
-if d == 0 then
-	puts result[0] 
-	else puts result.sort.join(",")
-end
+if d == 0 then puts result[0] else puts result.sort.join(",") end
