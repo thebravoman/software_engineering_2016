@@ -8,7 +8,10 @@ if a == 0 && b != 0 then
  	D = b*b - 4*a*c
 	 	if (D == 0)
     		 	x = (-b/2/a).round(2)
-    		 	printf("%g\n", x)	
+			if x == -0; then
+				x = x.abs
+    		 		printf("%g\n", x)
+				else printf("%g\n",x)
  	 	elsif (D > 0)
       		 	x1 = ((-b-Math.sqrt(D))/2/a).round(2)
      		 	x2 = ((-b+Math.sqrt(D))/2/a).round(2)
