@@ -12,7 +12,7 @@ if a == 0
   else
     x = -c / b
     if x % 1 == 0
-      puts x.to_i!
+      puts x.to_i
     else
       puts x.round(2)
     end
