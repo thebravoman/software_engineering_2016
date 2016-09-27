@@ -8,7 +8,7 @@ def find_roots(a, b, c)
 		if b != 0
 			get_printable_root(-c / b)
 		end
-
+ 
 		if b == 0 && c == 0
 			puts "#"
 		end
@@ -51,7 +51,7 @@ def get_printable_root(x)
 		root = x.to_i
 	end	
 	if x % 1 != 0
-		root = x.round(2)
+		root = "%.2f" % x.round(2)
 	end
 	root
 end

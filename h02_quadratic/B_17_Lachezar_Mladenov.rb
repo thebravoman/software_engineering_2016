@@ -11,14 +11,14 @@ if a == 0
 		end
 	else
 		x = -(c) / b
-		puts "#{(x % 1 == 0) ? x.round(2) : x.to_i}"
+		puts "#{(x % 1 == 0) ? "%.2f" % x.round(2) : x.to_i}"
 	end
 else 
 	d = b ** 2 - 4 * a * c
 	
 	if d == 0
 		x = -b / (2 * a)
-		puts "#{(x % 1 == 0) ? x.round(2) : x.to_i}"
+		puts "#{(x % 1 == 0) ? "%.2f" % x.round(2) : x.to_i}"
 	elsif d > 0
 		x1 = (-b + Math.sqrt(d)) / (2 * a)
 		x2 = (-b - Math.sqrt(d)) / (2 * a)
@@ -29,8 +29,8 @@ else
 			x2 = temp
 		end
 
-		puts "#{(x1 % 1 == 0) ? x1.to_i : x1.round(2) },#{(x2 % 1 == 0) ? x2.to_i : x2.round(2)}"
-
+		puts "#{(x1 % 1 == 0) ? x1.to_i : "%.2f" % x1.round(2)},#{(x2 % 1 == 0) ? x2.to_i : "%.2f" % x2.round(2)}"
+		
 	else 
 		puts ""
 		
