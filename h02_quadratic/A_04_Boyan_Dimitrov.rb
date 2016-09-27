@@ -29,7 +29,7 @@ if d == 0
 end
 
 if d < 0
-  puts ""
+  puts "#"
   abort
 end
 
