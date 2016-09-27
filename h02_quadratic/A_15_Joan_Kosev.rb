@@ -31,8 +31,8 @@ else
 	end
 
 	if d > 0
-		x_1 = (-b + sqrt(d)) / 2*a
-		x_2 = (-b - sqrt(d)) / 2*a
+		x_1 = (-b + sqrt(d)) / (2*a)
+		x_2 = (-b - sqrt(d)) / (2*a)
 		
 		if (x_2 > x_1)
 
