@@ -19,7 +19,7 @@ if arg1 == 0
 		puts "#"
 	else
 		result = (-arg3/arg2).to_f
-		puts format_result result0
+		puts format_result result
 	end
 else 
 	d = arg2**2 - 4*arg1*arg3
