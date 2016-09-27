@@ -12,7 +12,7 @@ d = Float ARGV[2]
 				end 
 		
 		elsif @D < 0
-				puts ("no solutions....")
+				puts ("")
 				
 		else 
 				x_1 = (-value2 + Math.sqrt(@D))/(2*value1)	
@@ -36,7 +36,7 @@ d = Float ARGV[2]
 		elsif a == 0 
 
  		if s == 0  
-			puts ("no solutions....")
+			puts ("")
  		else
 			helper = -s/d 
 			puts helper.round(2) if helper % 1 == 1
