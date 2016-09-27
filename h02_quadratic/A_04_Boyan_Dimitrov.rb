@@ -3,6 +3,11 @@ a = ARGV[0].to_f
 b = ARGV[1].to_f
 c = ARGV[2].to_f
 
+if a.nill? == 1 && b.nill? == 1 && c.nill? ==1
+  puts ""
+  abort
+end
+
 d = b*b - 4*a*c
 
 if a == 0 && b == 0 && c == 0
