@@ -14,7 +14,22 @@ CSV.foreach("/home/elsyser/Desktop/info.csv") do |row|
  
 puts a.inspect
 
-i
-	
- 
+case command
+	when 1
+		a.each do |row|
+			row.each do |float|
+				if row == 2
+					times = {row: float}
+				end 
+			end
+		end
+
+	when 2
+
+
+	when 3
+
+
+
+	when 4
 
