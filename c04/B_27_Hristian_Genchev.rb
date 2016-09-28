@@ -19,7 +19,8 @@ case command
 		a.each do |row|
 			row.each do |float|
 				if row == 2
-					times = {row: float}
+					times = {row: times[:float] + float}
+					times.default = 0
 				end 
 			end
 		end
@@ -32,4 +33,4 @@ case command
 
 
 	when 4
-
+end
