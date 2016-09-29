@@ -4,5 +4,3 @@ CSV.foreach(data) do |row|
 	full_data[row[ output < 3 ? 1 : 0 ]]+= output % 2 == 1 ? row[2].to_f : 1
 end
 printf "%i,%g\n", *full_data.max_by{|k,v| v}
-
-
