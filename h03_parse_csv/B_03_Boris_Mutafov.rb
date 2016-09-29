@@ -1,6 +1,6 @@
 require 'csv'
-data, output, universal = ARGV[0], ARGV[1].to_i, Array.new(5) {Hash.new(0.0)}
-CSV.foreach(data) do |row|
-	  universal[output][row[ output == 1 || output == 2 ? 1 : 0 ].to_i]+= output == 1 || output == 3 ? row[2].to_f : output == 4 ? 1 : output == 2 ? 1 : 0
+data_path, output_cmd, full_data_info = ARGV[0], ARGV[1].to_i, Array.new(5) {Hash.new(0.0)}
+CSV.foreach(data_path) do |row|
+	  full_data_info[output_cmd][row[ output_cmd == 1 || output_cmd == 2 ? 1 : 0 ].to_i]+= output_cmd == 1 || output_cmd == 3 ? row[2].to_f : output_cmd == 4 ? 1 : output_cmd == 2 ? 1 : 0
 end
-puts String(universal[output].max_by{|k,v| v}[0].to_i) << ',' << String(output == 1 ? universal[output].max_by{|k,v| v}[1].round(2) : output == 2 || output == 4 ? universal[output].max_by{|k,v| v}[1].to_i : universal[output].max_by{|k,v| v}[1])
+puts String(full_data_info[output_cmd].max_by{|k,v| v}[0].to_i) << ',' << String(output_cmd == 1 ? full_data_info[output_cmd].max_by{|k,v| v}[1].round(2) : output_cmd == 2 || output_cmd == 4 ? full_data_info[output_cmd].max_by{|k,v| v}[1].to_i : full_data_info[output_cmd].max_by{|k,v| v}[1])
