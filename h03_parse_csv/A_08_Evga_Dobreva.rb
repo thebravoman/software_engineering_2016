@@ -1,53 +1,39 @@
 require "csv"
 
-file=ARGV[0]
+dir=ARGV[0]
 number=ARGV[1].to_i
-result=[{},{}]
+stats=Hash.new(0)
 
-if(number>=1 && number<=4)
-csv=CSV.read(file)
-	if (number==1 || number==2)
-		found=1
-	else
-		found=0
+CSV.foreach(dir) do |row|
+	user=row[0]
+	video=row[1]
+	percent=row[2]
+	  if !stats.has_key?(user)
+	  	stats[user]= Array.new(2) { Array.new(0) }
+	  	end
+	 stats[user].at(0).insert(0, video)
+	 stats[user].at(1).insert(0, percent.to_f)
+end
+puts stats
+
+case number
+when 1
+	video_percent=Hash.new
+	CSV.foreach(dir) do |row|
+		video=row[1]
+		percent=row[2]
+		if !video_percent.has_key?(video)
+	  		video_percent[video]=0
+	  	end	  	
+	  	video_percent[video]+=percent.to_f
 	end
-	if (number%2==0)
-		csv.each {|row|
-			if (result[found][row[found]]==nil)
-				result[found][row[found]]=1
-			else
-				result[found][row[found]]=result[found][row[found]]+1
-			end
-		}
-		max=result[found].max_by(result[found].length){|id,value| value}
-		temp=max[0][1]
-		for i in 0..max.length
-			if (max[i][1]==temp)
-				puts "#{max[i][0]},#{max[i][1]}"
-			else
-				break
-			end
+	max=0
+	video_percent.each{ |k, v|
+		if video_percent[k]>max
+			max=video_percent[k]
 		end
-	else
-		csv.each {|row| 
-			if (result[found][row[found]]==nil)
-				result[found][row[found]]=row[2].to_f
-			else
-				result[found][row[found]]=result[found][row[found]]+row[2].to_f
-			end
-		}
-		max=result[found].max_by(result[found].length){|id,value| value}
-		temp=max[0][1]
-		for i in 0..max.length
-			if (max[i][1]==temp)
-				if(max[i][1]%1!=0)
-					puts "#{max[i][0]},#{max[i][1].round(2)}"
-				else
-					puts "#{max[i][0]},#{max[i][1].to_i}"
-				end
-			else
-				break
-			end
-		end
-	end
+	}
+	puts "#{max.round(2)}"
+when 2
+	print "hello"
 end
