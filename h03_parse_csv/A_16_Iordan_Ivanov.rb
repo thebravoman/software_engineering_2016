@@ -28,9 +28,23 @@ if task == 1
 		line_counter+=1
 	end
 	line_counter = 0
-	print max_key
-	print ","
-	puts max_value
+	arr2 = video_hash.max(2)
+	if arr2[0][1]==arr2[1][1]
+		print arr2[0][0]
+		print ","
+		puts arr2[0][1]
+		print arr2[1][0]
+		print ","
+		puts arr2[1][1]
+	else
+		print max_key
+		print ","
+		if max_value % 1 == 0
+			puts max_value.to_i
+		else
+			puts max_value
+		end
+	end
 elsif task == 2
 	until line_counter > max_line_counter do
 		if(video_hash.has_key?(arr[line_counter][1]) == TRUE)
@@ -45,9 +59,23 @@ elsif task == 2
 		line_counter+=1
 	end
 	line_counter = 0
-	print max_key
-	print ","
-	puts max_value
+	arr2 = video_hash.max(2)
+	if arr2[0][1]==arr2[1][1]
+		print arr2[0][0]
+		print ","
+		puts arr2[0][1]
+		print arr2[1][0]
+		print ","
+		puts arr2[1][1]
+	else
+		print max_key
+		print ","
+		if max_value % 1 == 0
+			puts max_value.to_i
+		else
+			puts max_value
+		end
+	end
 elsif task == 3
 	until line_counter > max_line_counter do
 		if(video_hash.has_key?(arr[line_counter][0]) == TRUE)
@@ -64,9 +92,23 @@ elsif task == 3
 		line_counter+=1
 	end
 	line_counter = 0
-	print max_key
-	print ","
-	puts max_value
+	arr2 = video_hash.max(2)
+	if arr2[0][1]==arr2[1][1]
+		print arr2[0][0]
+		print ","
+		puts arr2[0][1]
+		print arr2[1][0]
+		print ","
+		puts arr2[1][1]
+	else
+		print max_key
+		print ","
+		if max_value % 1 == 0
+			puts max_value.to_i
+		else
+			puts max_value
+		end
+	end
 elsif task == 4
 	until line_counter > max_line_counter do
 		if(video_hash.has_key?(arr[line_counter][0]) == TRUE)
@@ -81,9 +123,23 @@ elsif task == 4
 		line_counter+=1
 	end
 	line_counter = 0
-	print max_key
-	print ","
-	puts max_value
+	arr2 = video_hash.max(2)
+	if arr2[0][1]==arr2[1][1]
+		print arr2[0][0]
+		print ","
+		puts arr2[0][1]
+		print arr2[1][0]
+		print ","
+		puts arr2[1][1]
+	else
+		print max_key
+		print ","
+		if max_value % 1 == 0
+			puts max_value.to_i
+		else
+			puts max_value
+		end
+	end
 else
 
 end
