@@ -6,7 +6,7 @@ $task = ARGV[1].to_i
 data = {}
 
 $task < 3 ?
-KEY = 1 : KEY = 0
+    KEY = 1 : KEY = 0
 
 VALUE = 2
 
@@ -19,7 +19,7 @@ def print_statsmax(key, value)
         if value % 1 == 0
             puts "#{value.to_i}"
         else 
-            puts "#{sprintf("%.2f", value)}"
+            puts "#{value.round(2)}"
         end
     end
 end
@@ -34,10 +34,10 @@ end
 CSV.foreach(file) do |view|
     unless data.key?(view[KEY])
         $task % 2 == 1 ?
-        data.merge!(view[KEY] => view[VALUE].to_f) : data.merge!(view[KEY] => 1)
+            data.merge!(view[KEY] => view[VALUE].to_f) : data.merge!(view[KEY] => 1)
     else
         $task % 2 == 1 ?
-        data[view[KEY]] += view[VALUE].to_f : data[view[KEY]] += 1
+            data[view[KEY]] += view[VALUE].to_f : data[view[KEY]] += 1
     end
 end
 
