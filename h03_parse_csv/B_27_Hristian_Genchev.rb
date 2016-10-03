@@ -2,7 +2,7 @@ require 'csv'
 
 directory, command, data = ARGV[0], ARGV[1].to_i, Hash.new(0)
 
-CSV.foreach(dirextory) do |row|
+CSV.foreach(directory) do |row|
 	if command == 1
 		data[row[1].to_i] = data[row[1].to_i] + row[2].to_f
 	end 
