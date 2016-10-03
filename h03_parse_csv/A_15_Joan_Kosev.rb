@@ -1,6 +1,5 @@
 require "csv"
 
-
 file = ARGV[0].to_s
 t = ARGV[1].to_i
 $a = CSV.read(file)
