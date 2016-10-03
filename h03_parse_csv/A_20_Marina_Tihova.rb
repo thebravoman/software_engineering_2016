@@ -33,8 +33,16 @@ case command
 		stats.each { |user,value| data[user] += value.at(VIDEO).length}
 end
 
-if command == 1 || command == 3
-	puts "#{data.key(data.values.max)},#{sprintf("%.2f", data.values.max)}"
-elsif command == 2 || command == 4
-	puts "#{data.key(data.values.max)},#{data.values.max}"
-end
+Hash[data.select{ |k, v| v == data.values.max}].each{ |k,v| 
+	if command == 1 || command == 3
+		max = data.values.max
+
+		if max % 1 == 0
+			puts "#{data.key(data.values.max)},#{max.to_i}"
+		elsif 
+			puts "#{data.key(data.values.max)},#{max.round(2)}"
+		end
+	elsif command == 2 || command == 4
+		puts "#{data.key(data.values.max)},#{data.values.max}"
+	end
+}
