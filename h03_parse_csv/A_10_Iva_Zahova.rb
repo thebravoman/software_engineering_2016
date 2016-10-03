@@ -39,11 +39,11 @@ end
 if task == 1
 	print "#{data.key(data.values.max)},"
 	if data.values.max % 1 == 0
-		data.values.max = data.values.max.to_i
-		print "#{data.values.max}\n"
+		print "#{data[data.key(data.values.max)].to_i}\n"
 	else
 		print "#{"%.2f" %data.values.max.round(2)}\n"
 	end
+
 end
 
 if task == 2
@@ -53,8 +53,7 @@ end
 if task == 3
 	print "#{data.key(data.values.max)},"
 	if data.values.max % 1 == 0
-		data.values.max = data.values.max.to_i
-		print "#{data.values.max}\n"
+		print "#{data[data.key(data.values.max)].to_i}\n"
 	else
 		print "#{"%.2f" %data.values.max.round(2)}\n"
 	end
