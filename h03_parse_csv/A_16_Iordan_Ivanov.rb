@@ -124,7 +124,7 @@ elsif task == 4
 	end
 	line_counter = 0
 	arr2 = video_hash.max(2)
-	if arr2[0][1]==arr2[1][1]
+	if arr2[0][1]==arr2[1][1] && arr2[0][1] != 1
 		print arr2[0][0]
 		print ","
 		puts arr2[0][1]
