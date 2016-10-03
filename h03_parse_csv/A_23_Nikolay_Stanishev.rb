@@ -37,10 +37,14 @@ end
 if n == 4
 	most_view(0)
 end
+max = $h.values.max
+keys = $h.select{|k,v| v == max}.keys
 if n == 1 || n == 3
-	max = $h.max_by{|k,v| v}
-	puts "#{max[0]},#{max[1].round(2)}"
+	keys.each do |row|
+		puts "#{row},#{$h[row].round(2)}"
+	end
 else
-	max = $h.max_by{|k,v| v}
-	puts "#{max[0]},#{max[1]}"
+	keys.each do |row|
+		puts "#{row},#{$h[row]}"
+	end
 end

@@ -1,43 +1,46 @@
 require 'csv'
 
 file = ARGV[0]
-task = ARGV[1].to_i
+$task = ARGV[1].to_i
 
-watched, viewed, watching_user, viewing_user = {}, {}, {}, {}
-USER = 0; VIDEO = 1; WATCHED = 2
+data = {}
 
-CSV.foreach(file) do |view|
-    if task == 1 or task == 2
-        unless watched.key?(view[VIDEO])
-            watched.merge!(view[VIDEO] => view[WATCHED].to_f)
-            viewed.merge!(view[VIDEO] => 1)
-        else
-            watched[view[VIDEO]] += view[WATCHED].to_f
-            viewed[view[VIDEO]] += 1
-        end
-    elsif task == 3 or task == 4
-        unless watching_user.key?(view[USER])
-            watching_user.merge!(view[USER] => view[WATCHED].to_f)
-            viewing_user.merge!(view[USER] => 1) 
-        else
-            watching_user[view[USER]] += view[WATCHED].to_f
-            viewing_user[view[USER]] += 1
+$task < 3 ?
+    KEY = 1 : KEY = 0
+
+VALUE = 2
+
+def print_statsmax(key, value)
+    case $task % 2
+    when 0
+        puts "#{key},#{value}"
+    when 1
+        print "#{key},"
+        if value % 1 == 0
+            puts "#{value.to_i}"
+        else 
+            puts "#{value.round(2)}"
         end
     end
 end
 
-case task
-when 1
-    result = watched.select {|video, percentage| percentage == watched.values.max }
-    puts "#{result.keys.pop},#{sprintf("%.2f", result.values.pop)}"
-when 2
-    result = viewed.select {|video, views| views == viewed.values.max }
-    puts "#{result.keys.pop},#{result.values.pop}"
-when 3
-    result = watching_user.select {|user, percentage| percentage == watching_user.values.max }
-    puts "#{result.keys.pop},#{sprintf("%.2f", result.values.pop)}"
-when 4
-    result = viewing_user.select {|user, views| views == viewing_user.values.max }
-    puts "#{result.keys.pop},#{result.values.pop}"
+def list_statsmax(all_data)
+    result = all_data.select {|key, value| value == all_data.values.max }
+    result.each do |key, value|
+        print_statsmax(key, value)
+    end
 end
 
+CSV.foreach(file) do |view|
+    unless data.key?(view[KEY])
+        $task % 2 == 1 ?
+            data.merge!(view[KEY] => view[VALUE].to_f) : data.merge!(view[KEY] => 1)
+    else
+        $task % 2 == 1 ?
+            data[view[KEY]] += view[VALUE].to_f : data[view[KEY]] += 1
+    end
+end
+
+list_statsmax(data)
+
+       
