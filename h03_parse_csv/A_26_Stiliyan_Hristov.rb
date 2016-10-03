@@ -131,7 +131,7 @@ if method == 4
 	if hash[0][1] % 1 == 0 
 		puts hash[0][1].to_i
 	else
-		puts hash[0][1]
+		puts hash[0][1].round(2)
 	end
 
 
@@ -141,7 +141,7 @@ if method == 4
 	if hash[1][1] % 1 == 0 
 		puts hash[1][1].to_i
 	else
-		puts hash[1][1]
+		puts hash[1][1].round(2)
 	end
 
 	end	
