@@ -1,39 +1,49 @@
 require "csv"
 
-dir=ARGV[0]
-number=ARGV[1].to_i
+file=ARGV[0]
+task=ARGV[1]
+data=Hash.new(0)
 stats=Hash.new(0)
-
-CSV.foreach(dir) do |row|
-	user=row[0]
-	video=row[1]
-	percent=row[2]
-	  if !stats.has_key?(user)
-	  	stats[user]= Array.new(2) { Array.new(0) }
-	  	end
-	 stats[user].at(0).insert(0, video)
-	 stats[user].at(1).insert(0, percent.to_f)
-end
-puts stats
-
-case number
-when 1
-	video_percent=Hash.new
-	CSV.foreach(dir) do |row|
-		video=row[1]
+Clip=0
+Percent=1
+	CSV.foreach(file) do |row|
+		id=row[0]
+		clip=row[1]
 		percent=row[2]
-		if !video_percent.has_key?(video)
-	  		video_percent[video]=0
-	  	end	  	
-	  	video_percent[video]+=percent.to_f
+		
+		if (!data.has_key?(id))
+	  		data[id]=Array.new(2) {Array.new(0)}
+	  	end
+	  	data[id].at(Clip).insert(0,clip)
+	  	data[id].at(Percent).insert(0, percent.to_f)
 	end
-	max=0
-	video_percent.each{ |k, v|
-		if video_percent[k]>max
-			max=video_percent[k]
-		end
+	
+case task.to_i
+when 1
+	data.values.each { |row|
+		clip=row.at(Clip)
+		percent=row.at(Percent)
+		clip.each_with_index { |i,j| 
+		stats[clip.at(j)]=stats[clip.at(j)]+percent.at(j)
+		}
 	}
-	puts "#{max.round(2)}"
+	data.each{ |id,value| 
+		stats[id]=stats[id]+value.at(Percent).inject(:+)
+	}
+	puts "#{stats.key(stats.values.max)},#{sprintf("%.2f",stats.values.max)}"
 when 2
-	print "hello"
+	data.each_value{ |i| 
+		i.at(Clip).each {|value| stats[value]=stats[value]+1}
+	}
+	puts "#{stats.key(stats.values.max)},#{stats.values.max}"
+when 3
+	data.each{ |id,value| 
+		stats[id]=stats[id]+value.at(Percent).inject(:+)
+	}
+	puts "#{stats.key(stats.values.max)},#{sprintf("%.2f",stats.values.max)}"
+when 4
+	data.each{ |id,value| 
+	stats[id]=stats[id]+value.at(Clip).length
+	}
+	puts "#{stats.key(stats.values.max)},#{stats.values.max}"
 end
