@@ -12,9 +12,10 @@ CSV.foreach(file) do |row|
 		when 4 then hash[row[0]]+=row[2] == 0 ? 0 : 1
 	end		
 end
-
+<<<<<<< HEAD
 puts task % 2 == 0 ? "#{hash.key(hash.values.max)},#{hash.values.max.to_i}" : "#{hash.key(hash.values.max)}," + "%.2f"%hash.values.max
-
-
+=======
+puts task % 2 == 0 ? "#{hash.key(hash.values.max)},#{hash.values.max}" : "#{hash.key(hash.values.max)}," + "%.2f"%hash.values.max
+>>>>>>> 6d39a0f5f1c95dae38353211eb667ef15204d01a
 
 	
