@@ -12,7 +12,7 @@ CSV.foreach(directory) do |row|
 	end
 	
 	if command == 3
-		data[row[0].to_i] = data[row[1].to_i] + row[2].to_f
+		data[row[0].to_i] = data[row[0].to_i] + row[2].to_f
 	end
 	
 	if command == 4
