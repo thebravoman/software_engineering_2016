@@ -53,6 +53,7 @@ end
 
 result = mod_definer(mode)
 h = Hash[*result]
+h[h.keys.first] = h[h.keys.first].round(2)
 puts h.to_json
 # puts "#{result[0]},#{result[1].round(2)}" if result[1].kind_of?(Float) && result[1] % 1 != 0
 # puts "#{result[0]},#{result[1].to_i}" if result[1].kind_of?(Integer) || result[1] % 1 == 0
