@@ -31,13 +31,13 @@ PERC = 2
 	end
 
 
-	if task == 1 
+	if task == 2 
 		printf("%s,%d\n", input.key(input.values.max), input.values.max)
-	elsif task == 2 
+	elsif task == 1 
 		printf("%s,%.2f\n", input.key(input.values.max), input.values.max)
-	elsif task == 3 
-		printf("%s,%d\n", input.key(input.values.max), input.values.max)
 	elsif task == 4 
+		printf("%s,%d\n", input.key(input.values.max), input.values.max)
+	elsif task == 3 
 		printf("%s,%.2f\n", input.key(input.values.max), input.values.max)
 	end
 
