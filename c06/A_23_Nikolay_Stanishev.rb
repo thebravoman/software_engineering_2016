@@ -40,8 +40,4 @@ if n == 4
 end
 max = $h.values.max
 keys = $h.select{|k,v| v == max}.to_json
-if n == 1 || n == 3
-	puts keys
-else
-	puts keys
-end
+puts keys
