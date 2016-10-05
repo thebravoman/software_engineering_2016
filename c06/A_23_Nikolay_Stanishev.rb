@@ -1,6 +1,5 @@
 require 'csv'
 require 'json'
-require 'pp'
 
 data = ARGV[0].to_s
 n = ARGV[1].to_i
