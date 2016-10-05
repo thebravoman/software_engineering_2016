@@ -41,13 +41,7 @@ end
 max = $h.values.max
 keys = $h.select{|k,v| v == max}.to_json
 if n == 1 || n == 3
-	#keys.each do |row|
-	#	puts "#{row},#{$h[row].round(2)}"
-	#end
 	puts keys
 else
-	#keys.each do |row|
-	#	puts "#{row},#{$h[row]}"
-	#end
 	puts keys
 end
