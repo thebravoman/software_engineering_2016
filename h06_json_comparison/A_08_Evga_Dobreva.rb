@@ -1,6 +1,6 @@
 require "json"
 
-json1,json2=File.read(ARGV[0])
+json1=File.read(ARGV[0])
 json2=File.read(ARGV[1])
 
 json_file1=JSON.parse(json1)
