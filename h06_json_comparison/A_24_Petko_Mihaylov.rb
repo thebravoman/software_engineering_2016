@@ -9,6 +9,7 @@ json_file2=JSON.parse(json2)
 if json_file1==json_file2
 	print 1
 end
+
 if json_file1!=json_file2
 	print 0
 end
