@@ -57,7 +57,7 @@ tmp_hash.each do |key, value|
         
     	elsif task_number == 1 || task_number == 3 
    
-    		if value % 1 != 0 then puts "#{key},#{value.round(2)}"
+    		if value % 1 != 0 then puts "#{key}," + "%.2f" % value
     		else puts "#{key},#{value.to_i}"
    
     		end
