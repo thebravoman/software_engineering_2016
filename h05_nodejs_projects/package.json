@@ -1,11 +1,11 @@
 {
-  "name": "check-hm",
+  "name": "app_a_08",
   "version": "1.0.0",
-  "description": "",
+  "description": "a",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Valentin Bojinov",
+  "author": "Evga Dobreva",
   "license": "ISC"
 }
