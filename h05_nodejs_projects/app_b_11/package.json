@@ -1,11 +1,11 @@
 {
-  "name": "app_a_14",
+  "name": "app_b_11",
   "version": "1.0.0",
-  "description": "a",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Ivo Todorov",
-  "license": "ISC"
+  "author": "Daniel Tuechki",
+  "license": ""
 }
