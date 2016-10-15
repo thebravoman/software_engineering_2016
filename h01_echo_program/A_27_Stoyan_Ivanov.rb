@@ -1,2 +1,2 @@
-number = gets.to_i
+number = ARGV[0].to_i
 print number * 2
