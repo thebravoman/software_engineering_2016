@@ -48,15 +48,15 @@ function is_integer(number) {
 }
 
 function if_no_roots(object) {
-	object.x1 = undefined;
-	object.x2 = undefined;
-	object.D = undefined;
+	object.x1 = "undefined";
+	object.x2 = "undefined";
+	object.D = "undefined";
 }
 
 function if_has_one_root(object, root) {
 		object.x1 = is_integer(root);
 		object.x2 = is_integer(root);
-		object.D = undefined;
+		object.D = "undefined";
 }
 
 function dicriminant_pos(object, root1, root2, Disc) {
@@ -66,8 +66,8 @@ function dicriminant_pos(object, root1, root2, Disc) {
 }
 
 function no_discriminant(object, Disc) {
-	object.x1 = undefined;
-	object.x2 = undefined;
+	object.x1 = "undefined";
+	object.x2 = "undefined";
 	object.D = Disc;
 }
 
