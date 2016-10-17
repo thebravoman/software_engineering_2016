@@ -10,7 +10,7 @@ fs.readFile("./input.json", "utf-8", function(err, data){
 	
 	if(args.a == 0){
 		if(args.b==0 && args.c == 0){
-			let output = {"x1":undefined, "x2":undefined, "D":undefined}
+			let output = {"x1":"any", "x2":"any", "D":undefined}
 			console.log(JSON.stringify(output, null, 2));
 		}
 		else if(b!=0){

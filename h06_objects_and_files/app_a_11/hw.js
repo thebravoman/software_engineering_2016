@@ -1,8 +1,8 @@
 const fs = require('fs');
 
 function parseJSON(){
-  if(fs.existsSync('parameters.json')){
-    var contentString = fs.readFileSync("parameters.json");
+  if(fs.existsSync('input.json')){
+    var contentString = fs.readFileSync("input.json");
     var content = JSON.parse(contentString);
     // console.log(contentString);
     quadratic(content);
