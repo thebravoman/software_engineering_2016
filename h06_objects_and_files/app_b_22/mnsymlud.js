@@ -9,7 +9,7 @@ var x1 = 0;
 var x2 = 0
 D = B * B  - (4 * A * C );
 if(D < 0) console.log("");
-else if (D < 0)
+else if (D > 0)
 {
 	x1 = (-B + (Math.sqrt(D))) / (2 * A);
 	x2 = (-B - (Math.sqrt(D))) / (2 * A);
