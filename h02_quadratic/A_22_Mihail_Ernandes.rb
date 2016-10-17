@@ -78,7 +78,7 @@ else
 		end
 		x1 = +Math.sqrt((-c / a).to_f)
 		x2 = -Math.sqrt((-c / a).to_f)
-		if x1 < x2 
+		if x1 < x2
 			if x1 % 1 == 0
 				x1 = x1.to_i
 				print x1

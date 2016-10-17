@@ -31,7 +31,9 @@ if command == 4
 CSV.foreach(dir) do |row|
 	case command 
 		when 1 
-			shkendzi[row[1]] = (shkendzi[row[1]]).to_f + row[2].to_f
+			ucc = (shkendzi[row[1]]).to_f
+			kcc = row[2].to_f
+			shkendzi[row[1]] = ucc + kcc
 		when 3
 			shkendzi[row[0]] = (shkendzi[row[0]]).to_f + row[2].to_f
 	end

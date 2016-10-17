@@ -35,7 +35,9 @@ ysgboyz = CSV.open(ARGV[0].to_s)
 CSV.foreach(filename) do |row|
 	case function 
 		when 1 
-			ysg[row[1]] = (ysg[row[1]]).to_f + row[2].to_f
+			ysg1 = ysg[row[1]]).to_f
+			ysg2 = row[2].to_f
+			ysg[row[1]] = yes1 + ysg2 
 		when 2
 			ysg[row[1]] = 1 + ysg[row[1]].to_i
 		when 3

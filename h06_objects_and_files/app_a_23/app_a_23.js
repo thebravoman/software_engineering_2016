@@ -5,7 +5,9 @@ var x = 0, x1 = 0, x2 = 0, d = 0;
 var n;
 if (j["a"] == 0) {
 	if (j["b"] == 0) {
-		console.log("#");
+		n = {
+			"x":"Every x"
+		}
 	} else {
 		x = (-j["c"]) / j["b"];
 		if (x%1 != 0) {
@@ -14,7 +16,6 @@ if (j["a"] == 0) {
 		n = {
 			"x":x
 		}
-		console.log(JSON.stringify(n, undefined, 1));
 	}
 } else {
 	d = Math.pow(j["b"], 2) - 4*j["a"]*j["c"];
@@ -38,7 +39,6 @@ if (j["a"] == 0) {
 			"x2":x2,
 			"D":d
 		}
-		console.log(JSON.stringify(n, undefined, 1));
 	}
 	else {
 		if (d == 0) {
@@ -46,16 +46,14 @@ if (j["a"] == 0) {
 			if (x%1 != 0) {
 				x = Number(x.toFixed(2));
 			}
-			if (d%1 != 0) {
-				d = Number(d.toFixed(2));
-			}
 			n = {
 				"x":x,
-				"D":d
 			}
-			console.log(JSON.stringify(n, undefined, 1));
 		} else {
-			console.log("#");
+			n = {
+				"x":"No x found"
+			}
 		}
 	}
 }
+console.log(JSON.stringify(n, undefined, 1));

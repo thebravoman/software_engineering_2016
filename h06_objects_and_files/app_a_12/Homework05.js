@@ -51,5 +51,7 @@ if(object.a == 0) {
 		}
 		console.log("}");
 		return 0;
+	} else if (d < 0){
+		console.log("Error");
 	}
 }
