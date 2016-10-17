@@ -1,2 +1,4 @@
 require 'json'
-puts JSON.parse(File.read(ARGV[0].to_s)) == JSON.parse(File.read(ARGV[1].to_s)) ? 1 : 0
+file1 = File.read(ARGV[0].to_s)
+file2 = File.read(ARGV[1].to_s)
+puts JSON.parse(file1) == JSON.parse(file) ? 1 : 0
