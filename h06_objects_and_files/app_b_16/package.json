@@ -1,8 +1,8 @@
 {
   "name": "app_b_16",
   "version": "1.0.0",
-  "description": "",
-  "main": "No 16",
+  "description": "11B",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
