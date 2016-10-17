@@ -1,16 +1,14 @@
 require "csv"
 
-dir = ARGV[0]
 task = ARGV[1].to_i
 
 if task>=1 && task<=4
 
 stats, data = Hash.new, Hash.new(0), data2 = Hash.new
 
-CSV.foreach(dir) do |row|
+CSV.foreach(ARGV[0]) do |row|
 	user = row[0]
-	video = row[1]
-	percent = row[2]
+	video, percent = row[1], row[2]
 
 	if !stats.has_key?(user)
 		stats[user] =  Array.new(2) { Array.new(0) }
