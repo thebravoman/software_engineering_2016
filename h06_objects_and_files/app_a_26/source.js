@@ -14,20 +14,23 @@ function parseSync(path)
 		b = jsonObject.b;
 		c = jsonObject.c;
 
+		D = Math.pow(b,2) - 4*a*c;
+
+
 		if(a == 0)
 		{
 			x1 = x2 = -c/b;
-			if(b == 0 || c == 0);
+			if(b == 0 && c == 0)
 				x1 = x2 = "Nan";
+			D = undefined;
 		}
 
 
-		D = Math.pow(b,2) - 4*a*c;
-
+		
 		if(D > 0)
 		{
 
-		x1 = (-b + Math.sqrt(D)) / (2*a);
+		x1 = (-b + Math.sqrt(D)) / (2 * a);
 		x2 = (-b - Math.sqrt(D)) / (2 * a);
 		
 		}
