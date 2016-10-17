@@ -1,11 +1,11 @@
 {
-  "name": "nodeclipse-p",
+  "name": "app_a_15",
   "version": "1.0.0",
-  "description": "11B",
-  "main": "index.js",
+  "description": "a",
+  "main": "kek.txt",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Ivaylo Vasilev",
+  "author": "Joan Kosev",
   "license": "ISC"
 }
