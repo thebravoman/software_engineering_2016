@@ -24,29 +24,34 @@ function solve() {
             if(input.b === 0 && input.c === 0){
                 result.x = 'Everything';
             }
-
-            console.log(result);
+            else{
+                result.x1 = -input.c / input.b;
+                result.x2 = -input.c / input.b;
+                result.D = Math.pow(input.b, 2);
+            
+                result.x1 = checkIfFloorIsNeeded(result.x1);
+                result.x2 = checkIfFloorIsNeeded(result.x2);
+                result.D = checkIfFloorIsNeeded(result.D);
+            }
         }
         else{
             var discriminant = Math.pow(input.b, 2) -4 * input.a * input.c;
 
             if(discriminant < 0){
                 result.D = 'there are no roots';
-                
-                console.log(result);
             }
             else{
                 result.x1 = (-input.b + Math.sqrt(discriminant)) / (2 * input.a);
                 result.x2 = (-input.b - Math.sqrt(discriminant)) / (2 * input.a);
                 result.D = discriminant;    
-                
+
                 result.x1 = checkIfFloorIsNeeded(result.x1);
                 result.x2 = checkIfFloorIsNeeded(result.x2);
                 result.D = checkIfFloorIsNeeded(result.D);
-
-                console.log(result);
             }
         }
+        
+        console.log(result);
     });
 }
 
