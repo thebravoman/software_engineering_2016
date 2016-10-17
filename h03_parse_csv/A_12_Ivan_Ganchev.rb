@@ -28,7 +28,7 @@ def most_watched_by_open(row)
 		
 	end
 end
-def most_watched_by_user_percent(row)
+def most_watched_by_userPercent(row)
 	
 	user = row[0]
 	percent = row[2].to_f
@@ -62,18 +62,15 @@ CSV.foreach('data.csv') do |row|
 	elsif num == 2
 		most_watched_by_open row
 	elsif num == 3
-		most_watched_by_user_percent row
+		most_watched_by_userPercent row
 	elsif num == 4
 		user_who_watched_most_videos row
 	end
 end
 
-if num == 1
+if num == 1 || num == 3
 	puts  "#{$videos.max_by{|k,v| v}[0]},#{$videos.max_by{|k,v| v}[1].round(2)}"
-elsif num == 2
+elsif num == 2 || num == 4
 	puts  "#{$videos.max_by{|k,v| v}[0]},#{$videos.max_by{|k,v| v}[1]}"
-elsif num == 3
-	puts  "#{$videos.max_by{|k,v| v}[0]},#{$videos.max_by{|k,v| v}[1].round(2)}"
-elsif num == 4
-	puts  "#{$videos.max_by{|k,v| v}[0]},#{$videos.max_by{|k,v| v}[1]}"
+
 end
