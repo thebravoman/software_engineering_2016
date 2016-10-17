@@ -42,12 +42,12 @@ function parseSync(path)
 			x2 = "Viable for all instances of X";
 
 		}
-		if(x1 % 1 != 0)
+		if(x1 % 1 != 0 && D >= 0)
 		{
 			x1 = Number(x1.toFixed(2));
 		}
 
-		if(x2 % 1 != 0)
+		if(x2 % 1 != 0 && D >= 0)
 		{
 			x2 = Number(x2.toFixed(2));
 		}
