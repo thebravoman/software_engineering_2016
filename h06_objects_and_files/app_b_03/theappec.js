@@ -6,8 +6,7 @@ fs.stat(path, function(err, stat) {
 		var read = fs.readFileSync(path);
 		var jsonparsed = JSON.parse(read);
 		var asString = JSON.stringify(jsonparsed,null,2);
-		var toput = new asString;
-		var result;
+		var toput = new Object;
 		var discriminant;
 		
 		if(jsonparsed.a == 0 ) {
@@ -19,10 +18,10 @@ fs.stat(path, function(err, stat) {
 				else console.log("Everyfin is root.");
 			}
 		} else {
-			discriminant = jsonparsed.b*jsonparsed.b - 4*jsonparsed.a*jsonparsed.b;
+			discriminant = jsonparsed.b*jsonparsed.b - 4*jsonparsed.a*jsonparsed.c;
 			if( discriminant > 0 ) {
-				toput.x1 = ( ( -jsonparsed.b + Math.sqrt(jsonparsed.d) ) / ( 2*jsonparsed.a ) ).toFixed(2);
-				toput.x2 = ( ( -jsonparsed.b - Math.sqrt(jsonparsed.d) ) / ( 2*jsonparsed.a ) ).toFixed(2);
+				toput.x1 = ( ( -jsonparsed.b + Math.sqrt(discriminant) ) / ( 2*jsonparsed.a ) ).toFixed(2);
+				toput.x2 = ( ( -jsonparsed.b - Math.sqrt(discriminant) ) / ( 2*jsonparsed.a ) ).toFixed(2);
 				toput.D = discriminant;
 				console.log(JSON.stringify(toput ,null,2));
 			} else if( discriminant == 0 ) {
