@@ -55,13 +55,12 @@ else
 	end
 
 	if d == 0
-		rezultat = (-num2) / (2*num1)
 
-		if rezultat % 1 == 0
-			rezultat = rezultat.to_i
-			puts "#{rezultat}"
+		if ((-num2 / (2*num1))) % 1 == 0
+			result = (-num2 / (2*num1)).to_i
+			puts "#{result}"
 		else
-			puts "#{rezultat.round(2)}"
+			puts "#{result.round(2)}"
 		end
 	end
 
