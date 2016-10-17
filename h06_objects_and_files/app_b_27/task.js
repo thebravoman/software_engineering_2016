@@ -35,7 +35,7 @@ if (fs.existsSync(directory))
         }
         else if (output.D > 0){
             output.x1 = ((- packageJSON.b + Math.sqrt(output.D)) / ( 2 * packageJSON.a )).toFixed(2);
-            output.x1 = ((- packageJSON.b - Math.sqrt(output.D)) / ( 2 * packageJSON.a )).toFixed(2);
+            output.x2 = ((- packageJSON.b - Math.sqrt(output.D)) / ( 2 * packageJSON.a )).toFixed(2);
             console.log(JSON.stringify(output,null,2));
         }
     }
