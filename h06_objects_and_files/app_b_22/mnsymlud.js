@@ -1,6 +1,10 @@
 var fs = require("fs");
 var file = "input.json";
+<<<<<<< HEAD
 var packageJSON = JSON.parse(fs.readFileSync(file));
+=======
+var packageJSON = packageJSON = JSON.parse(fs.readFileSync(file));
+>>>>>>> c68384ec23b96a307dd62eb191c06bd9d6c2c2ea
 var A = packageJSON.a;
 var B = packageJSON.b;
 var C = packageJSON.c;
