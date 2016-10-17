@@ -9,7 +9,7 @@ var result = {};
 //Get parametres from JSON object
 var a = path.a;
 var b = path.b;
-var	c = path.c;
+var c = path.c;
 
 
 if (a != 0) {

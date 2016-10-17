@@ -1,11 +1,11 @@
 {
-  "name": "nodeclipse-p",
+  "name": "app_a_26",
   "version": "1.0.0",
-  "description": "11B",
+  "description": "homework 06",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Ivaylo Vasilev",
+  "author": "Stiliyan Hristov",
   "license": "ISC"
 }

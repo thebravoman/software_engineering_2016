@@ -1,11 +1,11 @@
 {
-  "name": "nodeclipse-p",
+  "name": "quadratic_equation",
   "version": "1.0.0",
-  "description": "11B",
+  "description": "11A",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Ivaylo Vasilev",
+  "author": "Stoyan Ivanov",
   "license": "ISC"
 }
