@@ -26,15 +26,15 @@ else if ( b != 0 ) {
 
 if(output.x1!= '-')
 	if( (output.x1) % 1 != 0)
-		output.x1=(output.x1).toFixed(2);
+		output.x1=(output.x1).toFixed(2)/1;
 
 if(output.x2!= '-')
 	if( (output.x2) % 1 != 0)
-		output.x2=(output.x2).toFixed(2);
+		output.x2=(output.x2).toFixed(2)/1;
 
 if(output.D!= '-')
 	if( (output.D) % 1 != 0)
-		output.D=(output.D).toFixed(2);
+		output.D=(output.D).toFixed(2)/1;
 
  console.log(JSON.stringify(output, null, 2));
 
