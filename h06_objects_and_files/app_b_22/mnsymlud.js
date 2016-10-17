@@ -1,5 +1,5 @@
 var fs = require("fs");
-var file = "imput.json";
+var file = "input.json";
 var packageJSON = packageJSON = JSON.parse(fs.readFileSync(file));
 var A = packageJSON.a;
 var B = packageJSON.b;
