@@ -8,27 +8,27 @@ var D;
 if(input.a != 0) {
 	if(input.b != 0) { 
 		if(input.c != 0) { 
-			D = Number.((input.b * input.b) - (4 * input.a * input.c).toFixed(2));
+			D = Number.((input.b * input.b) - (4 * input.a * input.c).toFixed(2))/1;
 			if(D > 0) {
-				x1 = Number(((-input.b + Math.sqrt(D))/(input.a*2)).toFixed(2));
-				x2 = Number(((-input.b - Math.sqrt(D))/(input.a*2)).toFixed(2));
+				x1 = Number(((-input.b + Math.sqrt(D))/(input.a*2)).toFixed(2))/1;
+				x2 = Number(((-input.b - Math.sqrt(D))/(input.a*2)).toFixed(2))/1;
 			}
 			if(D == 0) {
-				x1 = x2 = Number(-(input.c / input.b).toFixed(2));
+				x1 = x2 = Number(-(input.c / input.b).toFixed(2))/1;
 			}
 		}
 		else {
 			x1 = 0;
-			x2 = Number(-(input.b / input.a).toFixed(2));
+			x2 = Number(-(input.b / input.a).toFixed(2))/1;
 		}
 	}
 	else { 
-		x1 = Number(+Math.sqrt(-(input.c / input.a)).toFixed(2));
-		x2 = Number(-Math.sqrt(-(input.c / input.a)).toFixed(2));
+		x1 = Number(+Math.sqrt(-(input.c / input.a)).toFixed(2))/1;
+		x2 = Number(-Math.sqrt(-(input.c / input.a)).toFixed(2))/1;
 	}
 }
 else { 
-	x1 = x2 = Number(-(input.b / input.a).toFixed(2));
+	x1 = x2 = Number(-(input.b / input.a).toFixed(2))/1;
 }
 
 var result;
