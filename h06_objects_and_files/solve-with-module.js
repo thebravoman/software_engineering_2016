@@ -1,5 +1,3 @@
-var http = require('http');
-var url = require('url');
 var solver = require('./modules/solver');
 
 var input = require('./input.json');
