@@ -3,7 +3,7 @@ A, 01, Alexander Stoyanov, 1|ok
 A, 02, Blagovest Mihailov, 1|ok
 A, 03, Bojidar Stanoev, 1|ok
 A, 04, Boyan Dimitrov, 1|ok
-A, 05, :app_a_05/package.json, 0|package.json does not contain Author 
+A, 05, Valislav Yotov:app_a_05/package.json, 1|package.json does not contain Author 
 A, 06, Georgi Karaboichev, 1|ok
 A, 07, Dimitar Nikolov, 1|ok
 A, 08, Evga Dobreva, 1|ok
