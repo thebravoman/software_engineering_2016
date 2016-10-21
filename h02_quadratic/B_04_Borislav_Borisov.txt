@@ -1,0 +1,25 @@
+a=ARGV[0].to_f
+b=ARGV[1].to_f
+c=ARGV[2].to_f
+if a==0 then 
+	if b==0 then 
+		if c==0 then
+			puts "#"
+		else
+			puts "nqma reshenie "
+		end
+	else 
+		puts x = -c/b
+	end
+else 
+	d=(b*b-4*a*c).to_f
+	if d>=0 then
+		x1 = (-b + Math.sqrt(d)) / (2 * a)
+		x2 = (-b - Math.sqrt(d)) / (2 * a)
+
+		puts x1.round(2)
+		puts x2.round(2)
+	else 
+		puts"nqma reshenie"
+	end
+end
