@@ -1,0 +1,9 @@
+require 'crack' # XML and JSON parsingrequire 'crack/json' # Only JSON parsing
+require 'crack/xml' # Only XML parsing
+response = Crack::XML.parse(File.read('gosho.xml'))
+response2 = Crack::JSON.parse(File.read('jonson.json'))
+puts response == response2 ? 1 : 0  
+
+
+
+https://drive.google.com/drive/folders/0B2u3mIflzKI4ZEJQbUYwWFNKTHM
