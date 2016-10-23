@@ -7,4 +7,3 @@ xml_parse=Crack::XML.parse(xml_file)
 json_parse=JSON.parse(json_file)
 if xml_parse == json_parse then puts 1
 else puts 0 end
-
