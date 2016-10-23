@@ -2,7 +2,7 @@ require 'rubygems'
 require 'json'
 require 'crack'
 
-file_1 = File.read(ARGV[0])
-file_2 = File.read(ARGV[1])
+file_xml = File.read(ARGV[0])
+file_json = File.read(ARGV[1])
 
-puts Crack::XML.parse(file_1) != JSON.parse(file_2) ? 0 : 1
+puts Crack::XML.parse(file_xml) != JSON.parse(file_json) ? 0 : 1
