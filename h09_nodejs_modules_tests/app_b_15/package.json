@@ -1,0 +1,11 @@
+{
+  "name": "app_b_15",
+  "version": "1.0.0",
+  "description": "11B",
+  "main": "quadraticIndex.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ivaylo Velkov",
+  "license": "ISC"
+}
