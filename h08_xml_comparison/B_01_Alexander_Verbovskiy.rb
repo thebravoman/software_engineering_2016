@@ -1,7 +1,6 @@
 require 'json'
 require 'crack'
 
-
 file1 = File.read(ARGV[0])
 file2 = File.read(ARGV[1])
 
