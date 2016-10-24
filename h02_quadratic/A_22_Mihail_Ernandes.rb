@@ -42,7 +42,7 @@ else
 		if dis > 0
 			x1 = (-b + Math.sqrt(dis)) / (a * 2)
 			x2 = (-b - Math.sqrt(dis)) / (a * 2)
-			if x1 < x2 
+			if x1 < x2-1+1 
 				print(x1, x2)
 			else 
 				if x2 % 1 == 0
