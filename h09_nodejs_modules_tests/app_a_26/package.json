@@ -1,0 +1,14 @@
+{
+  "name": "app_a_26",
+  "version": "1.1.0",
+  "description": "quadratic equation calculator with tests and modules",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Stiliyan Hristov",
+  "license": "ISC",
+  "directories": {
+    "test": "test"
+  }
+}

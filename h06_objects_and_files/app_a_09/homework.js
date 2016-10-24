@@ -1,4 +1,10 @@
-exports.print = function(output) {
+var fs = require("fs");
+
+var contents = fs.readFileSync("input.json");
+
+var json = JSON.parse(contents);
+
+function printJSON(output) {
 	console.log(JSON.stringify(output, undefined, 1));
 }
 
@@ -9,22 +15,14 @@ function isInteger(value) {
 	return value % 1 == 0;
 }
 
-function findDiscriminant(a, b, c)
-{
-	var D = (Math.pow(b, 2) - 4 * a * c);
-	
-	return D;
-}
-
-exports.solve = function(a, b, c)
-{
-	var output = {};
+function quadratic(a, b, c) {
 	if (a == 0) {
 		if (b == 0 && c == 0) {
+			var output;
 			output = {
-				"x" : "Any"
+				"x" : "Every value is viable"
 			};
-			return output;
+			printJSON(output);
 		} else {
 			var D = (Math.pow(b, 2) - 4 * a * c);
 			var x = (-c / b);
@@ -32,12 +30,13 @@ exports.solve = function(a, b, c)
 				x = x.toFixed(2) / 1;
 			}
 			output = {
-				"x" : x
+				"x" : x,
+				"D" : D
 			};
-			return output;
+			printJSON(output);
 		}
 	} else {
-		var D = findDiscriminant(a, b, c);
+		var D = (Math.pow(b, 2) - 4 * a * c);
 
 		if (D > 0) {
 			var x1 = ((-b + Math.sqrt(D)) / (2 * a));
@@ -52,9 +51,10 @@ exports.solve = function(a, b, c)
 
 			output = {
 				"x1" : x1,
-				"x2" : x2
+				"x2" : x2,
+				"D" : D
 			};
-			return output;
+			printJSON(output);
 		}
 
 		if (D == 0) {
@@ -64,18 +64,21 @@ exports.solve = function(a, b, c)
 			}
 
 			output = {
-				"x" : only_x
+				"x" : only_x,
+				"D" : D
 			};
-			return output;
+			printJSON(output);
 		}
 
 		if (D < 0) {
 			output = {
-				"x1" : "NaN",
-				"x2" : "NaN"
+				"x" : "No possible value",
+				"D" : D
 			};
-			return output;
+			printJSON(output);
 		}
 
 	}
 }
+
+quadratic(json.a, json.b, json.c);

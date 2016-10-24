@@ -22,6 +22,7 @@ exports.test_any = function(test)
 			"D":0
 	};
 	test.equals(returnExpected, equation.matematika(data.a, data.b, data.c));
+	test.done();
 };
 exports.test_D0 = function(test)
 {
@@ -32,6 +33,7 @@ exports.test_D0 = function(test)
 			"D": 0
 	};
 	test.equals(returnExpected, equation.matematika(data.a, data.b, data.c));
+	test.done();
 };
 exports.test_DGreaterThan0 = function(test)
 {
@@ -43,4 +45,5 @@ exports.test_DGreaterThan0 = function(test)
 			"D":25
 	};
 	test.equals(returnExpected, equation.matematika(data.a, data.b, data.c));
+	test.done();
 };
