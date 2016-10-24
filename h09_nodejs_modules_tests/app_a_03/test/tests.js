@@ -1,4 +1,4 @@
-var dis= require('./modules/Dis.js');
+var dis= require('../modules/Dis.js');
 var fs = require('fs');
 
 
