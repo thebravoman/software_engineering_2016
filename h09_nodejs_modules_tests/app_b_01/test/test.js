@@ -9,7 +9,7 @@ exports.test_none = function(test)
 			"x1":"NaN",
 			"x2":"NaN",
 	};
-	test.equals(JSON.stringify(expect), JSON.stringify(modules.calculation(read.a, read.b, read.c)));
+	test.equals(JSON.stringify(expect), JSON.stringify(equation.calculation(read.a, read.b, read.c)));
 	test.done();
 };
 exports.test_any = function(test)
@@ -19,7 +19,7 @@ exports.test_any = function(test)
 	{
 			"x":"Any",
 	};
-	test.equals(JSON.stringify(expect), JSON.stringify(modules.calculation(read.a, read.b, read.c)));
+	test.equals(JSON.stringify(expect), JSON.stringify(equation.calculation(read.a, read.b, read.c)));
 	test.done();
 };
 exports.test_D0 = function(test)
@@ -29,7 +29,7 @@ exports.test_D0 = function(test)
 	{
 			"x":-2,
 	};
-	test.equals(JSON.stringify(expect), JSON.stringify(modules.calculation(read.a, read.b, read.c)));
+	test.equals(JSON.stringify(expect), JSON.stringify(equation.calculation(read.a, read.b, read.c)));
 	test.done();
 };
 exports.test_DGreaterThan0 = function(test)
@@ -40,6 +40,6 @@ exports.test_DGreaterThan0 = function(test)
 			"x1":3,
 			"x2":1,
 	};
-	test.equals(JSON.stringify(expect), JSON.stringify(modules.calculation(read.a, read.b, read.c)));
+	test.equals(JSON.stringify(expect), JSON.stringify(equation.calculation(read.a, read.b, read.c)));
 	test.done();
 };
