@@ -12,7 +12,8 @@ exports.math = function (a,b,c)
 		}
 	root=-c/b;
 	root=root.toFixed(2)/1;
-	output={x:root};	
+	output={x:root};
+	return output;
 	}
 	else if(D==0)
 	{
