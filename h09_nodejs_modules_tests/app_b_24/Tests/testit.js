@@ -12,7 +12,7 @@ exports.test_any = function(test){
 	var c = parce.c;
 	final.x = "Any";
 	var fine = final.to_json;
-	test.equal(fine,mod.equation(a,b,c));
+	test.equal(mod.equation(a,b,c),fine);
 	test.done();
 }
 exports.test_1 = function(test){
@@ -22,7 +22,7 @@ exports.test_1 = function(test){
 	var c = parce.c;
 	final.x = -3;
 	var fine = final.to_json;
-	test.equal(fine,mod.equation(a,b,c));
+	test.equal(mod.equation(a,b,c),fine);
 	test.done();
 }
 exports.test_2 = function(test){
@@ -33,7 +33,7 @@ exports.test_2 = function(test){
 	final.x1 = 2;
 	final.x2 = -4;
 	var fine = final.to_json;
-	test.equal(fine,mod.equation(a,b,c))
+	test.equal(mod.equation(a,b,c),fine);
 	test.done();
 }
 exports.test_nan = function(test){
@@ -44,6 +44,6 @@ exports.test_nan = function(test){
 	final.x1 = "NaN";
 	final.x2 = "NaN";
 	var fine = final.to_json;
-	test.equal(fine,mod.equation(a,b,c));
+	test.equal(mod.equation(a,b,c),fine);
 	test.done();
 }
