@@ -2,7 +2,7 @@
  * http://usejsdoc.org/
  */
 var fs = require('fs');
-var path = "imput.json";
+var path = "input.json";
 var quad = require('./modules/func.js');
 if (fs.existsSync(path))
 {
