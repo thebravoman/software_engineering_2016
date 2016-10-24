@@ -47,3 +47,5 @@ exports.test_nan = function(test){
 	test.equal(mod.equation(a,b,c),fine);
 	test.done();
 }
+//Please use : nodeunit test/test.js 
+//cuz we don't have it specified
