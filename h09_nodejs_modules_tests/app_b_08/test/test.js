@@ -3,14 +3,14 @@ var fs = require('fs');
 
 
 exports.test_none = function(test) {
-	var data = require('./none.json');
+	var data = require('./input-none.json');
 	
 	test.equals(JSON.stringify({"x1":"NaN","x2":"NaN"}), JSON.stringify(equation.solve(data.a, data.b, data.c)));
 	test.done();
 };
 
 exports.test_any = function(test) {
-	var data = require('./any.json');
+	var data = require('./input-any.json');
 	
 	test.equals(JSON.stringify({"x":"Any"}), JSON.stringify(equation.solve(data.a, data.b, data.c)));
 	test.done();
