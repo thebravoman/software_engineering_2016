@@ -1,4 +1,4 @@
-var module = require('../modules/solution.js');
+var module = require('../module/solution.js');
 
 
 	exports.test_none = function(test)
