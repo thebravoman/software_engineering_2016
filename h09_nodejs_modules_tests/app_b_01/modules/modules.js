@@ -1,8 +1,5 @@
 exports.calculate = function(a,b,c)
 {
-var a = input.a;
-var b = input.b;
-var c = input.c;
 
 var output = {};
 
