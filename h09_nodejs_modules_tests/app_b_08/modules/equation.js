@@ -19,18 +19,15 @@ exports.solve = function(a, b, c) {
 		{
 			x = -c / b;
 			returnData.x = checkIfDouble(x);
-			returnData.D = checkIfDouble(D);
 		}
 
 		else if(b === 0 && c === 0){
 			returnData.x = "Any";
-			returnData.D = checkIfDouble(D);
 		}
 
 		else if(b === 0 && c !== 0){
 			returnData.x1 = "NaN";
 			returnData.x2 = "NaN";
-			returnData.D = checkIfDouble(D);
 		}
 	} 
 
@@ -43,20 +40,17 @@ exports.solve = function(a, b, c) {
 			x2 = (-b - Math.sqrt(D)) / (2 * a);
 			returnData.x1 = checkIfDouble(x1);
 			returnData.x2 = checkIfDouble(x2);
-			returnData.D = checkIfDouble(D);
 		}
 		
 		else if(D === 0) 
 		{
 			x = -b / (2 * a);
 			returnData.x = checkIfDouble(x);
-			returnData.D = checkIfDouble(D);
 		}
 		
 		else{
 			returnData.x1 = "NaN";
 			returnData.x2 = "NaN";
-			returnData.D = checkIfDouble(D);
 		} 
 			
 	}
