@@ -24,8 +24,8 @@ if (a != 0 && b != 0 && c != 0) {
 	}
 		 	 
 	if (d == 0) {
-    
         output.x = (b*-1) / (2*a);
+	}
     
     if (d < 0) {
         output.x1 = "NaN";
