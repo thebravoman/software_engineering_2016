@@ -23,8 +23,7 @@ exports.solve = function(a, b, c) {
 		}
 
 		else if(b === 0 && c === 0){
-			returnData.x1 = "Any";
-			returnData.x2 = "Any";
+			returnData.x = "Any";
 			returnData.D = checkIfDouble(D);
 		}
 
