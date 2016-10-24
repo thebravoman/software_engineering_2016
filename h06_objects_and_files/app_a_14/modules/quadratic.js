@@ -21,8 +21,8 @@ exports.solve = function(a, b, c){
 		if(d>0){
 			let x1, x2;
 			
-			x1 = (b + Math.sqrt(d))/(2*a);
-			x2 = (b - Math.sqrt(d))/(2*a);
+			x1 = (-b + Math.sqrt(d))/(2*a);
+			x2 = (-b - Math.sqrt(d))/(2*a);
 			
 			output = {"x1":Number((x1 % 1 != 0 ? x1.toFixed(2) : x1)), "x2":Number((x2 % 1 != 0 ? x2.toFixed(2) : x2))};
 		}

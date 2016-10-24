@@ -35,7 +35,7 @@ exports.test_D0 = function(test){
 exports.test_DGreaterThan0 = function(test){
 	
 	let data = parseJSON("./input-2.json");
-	let expected = JSON.stringify({"x1": 1, "x2": -4});
+	let expected = JSON.stringify({"x1": 4, "x2": -1});
 	let result = JSON.stringify(quadratic.solve(data.a, data.b, data.c));
 	test.equals(expected, result);
 	
