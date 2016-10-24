@@ -3,7 +3,7 @@ var fs = require('fs');
 
 exports.test_none = function(test)
 {
-	var read =  require("inputNan.json");
+	var read =  require("input-none.json");
 	var expect =
 	{
 			"x1":"NaN",
@@ -14,7 +14,7 @@ exports.test_none = function(test)
 };
 exports.test_any = function(test)
 {
-	var read =  require("inputAny.json");
+	var read =  require("input-any.json");
 	var expect =
 	{
 			"x":"Any",
@@ -24,7 +24,7 @@ exports.test_any = function(test)
 };
 exports.test_D0 = function(test)
 {
-	var read =  require("input01.json");
+	var read =  require("input-01.json");
 	var expect =
 	{
 			"x":-2,
@@ -34,7 +34,7 @@ exports.test_D0 = function(test)
 };
 exports.test_DGreaterThan0 = function(test)
 {
-	var read =  require("input02.json");
+	var read =  require("input-02.json");
 	var expect =
 	{
 			"x1":3,
