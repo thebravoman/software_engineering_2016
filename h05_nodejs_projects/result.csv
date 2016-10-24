@@ -3,7 +3,7 @@ A, 01, Alexander Stoyanov, 1|ok
 A, 02, Blagovest Mihailov, 1|ok
 A, 03, Bojidar Stanoev, 1|ok
 A, 04, Boyan Dimitrov, 1|ok
-A, 05, Valislav Yotov:app_a_05/package.json, 1|package.json does not contain Author 
+A, 05, Valislav Yotov: 1|ok
 A, 06, Georgi Karaboichev, 1|ok
 A, 07, Dimitar Nikolov, 1|ok
 A, 08, Evga Dobreva, 1|ok
@@ -17,22 +17,22 @@ A, 15, Joan Kosev, 1|ok
 A, 16, Iordan Ivanov, 1|ok
 A, 17, Kristian Radkov, 1|ok
 A, 18, Lilian Vachkov, 1|ok
-A, 19, Lachezar Zahariev,0|package.json does not contain Author 
+A, 19, Lachezar Zahariev, 0|no author name
 A, 20, Marina Tihova, 1|ok
 A, 21, Martin Bozhinov, 1|ok
 A, 22, Mihail Ernandes, 1|ok
 A, 23, Nikolay Stanishev, 1|ok
 A, 24, Petko Mihaylov, 1|ok
-A, 25, Rangel Ivanov, 0|No homework committed
+A, 25, Rangel Ivanov, 1| ok
 A, 26, Stiliyan Hristov, 1|ok
 A, 27, Stoyan Ivanov, 1|ok
-A, 28, Teodor Spasov, 0|committed ater deadline
+A, 28, Teodor Spasov, 1|2016-10-11 17:01:40
 A, 29, Hristo Spasov, 1|ok
 B, 01, Alexander Verbovskiy, 1| ok
-B, 02, ??, 0|No homework committed
+B, 02, Andrey Strinski, 1|ok
 B, 03, Boris Mutafov, 1|ok
 B, 04, ??, 0|No homework committed
-B, 05, ??, 0|No homework committed
+B, 05, Valentin Vurbanov, 1|ok
 B, 06, ??, 0|No homework committed
 B, 07, Victor Gyoshev, 1|ok
 B, 08, Vladimir Mladenov, 1|ok
@@ -41,7 +41,7 @@ B, 10, ??, 0|No homework committed
 B, 11, Daniel Tuechki, 1|ok
 B, 12, Daniel Raykov, 1|ok
 B, 13, ??, 0|No homework committed
-B, 14, ??, 0|No homework committed
+B, 14, Ivaylo Vasilev, 1|
 B, 15, Ivaylo Velkov, 1|ok
 B, 16, Ivan Trifonov, 1|ok
 B, 17, Lachezar Mladenov, 1|ok
@@ -53,5 +53,5 @@ B, 22, Nikolai Romanov, 1|ok
 B, 23, Nikoleta Dalaktchieva, 1|ok
 B, 24, Slav Kirilov, 1|ok
 B, 25, ??, 0|No homework committed
-B, 26, ??, 0|No homework committed
+B, 26, Filip Danailov, 1
 B, 27, Hristian Genchev, 1|ok
