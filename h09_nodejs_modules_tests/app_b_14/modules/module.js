@@ -1,5 +1,3 @@
- exports.calculate = function(a,b,c){
-
 function checkForDouble (value) {
 	if (value % 1 == 0) {
 		return value;
@@ -7,6 +5,8 @@ function checkForDouble (value) {
 	
 	return value.toFixed(2);
 }
+
+exports.calculate = function(a,b,c){
 
 var output = {};
 
