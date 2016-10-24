@@ -1,4 +1,4 @@
-require('./modules/solve.js');
+require('./module/solve.js');
 
 var a = 1, b = 3, c = 2;
 
