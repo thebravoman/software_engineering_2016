@@ -4,6 +4,23 @@ a = ARGV[0].to_f
 b = ARGV[1].to_f
 c = ARGV[2].to_f
 
+def print_small(x1, x2)
+	if x1 % 1 == 0
+		x1 = x1.to_i
+		print x1
+	else 
+		print format('%.2f', x1)
+	end
+	print ','
+	if x2 % 1 == 0
+		x2 = x2.to_i
+		print x2
+	else 
+		print format('%.2f', x2)
+	end
+	print "\n"
+end
+
 if a == 0
 	if b != 0 
 		x1 = -c/b
@@ -26,20 +43,7 @@ else
 			x1 = (-b + Math.sqrt(dis)) / (a * 2)
 			x2 = (-b - Math.sqrt(dis)) / (a * 2)
 			if x1 < x2 
-				if x1 % 1 == 0
-					x1 = x1.to_i
-					print x1
-				else 
-					print format('%.2f', x1)
-				end
-				print ','
-				if x2 % 1 == 0
-					x2 = x2.to_i
-					print x2
-				else 
-					print format('%.2f', x2)
-				end
-				print "\n"
+				print(x1, x2)
 			else 
 				if x2 % 1 == 0
 					x2 = x2.to_i
@@ -79,20 +83,7 @@ else
 		x1 = +Math.sqrt((-c / a).to_f)
 		x2 = -Math.sqrt((-c / a).to_f)
 		if x1 < x2
-			if x1 % 1 == 0
-				x1 = x1.to_i
-				print x1
-			else 
-				print format('%.2f', x1)
-			end
-			print ','
-			if x2 % 1 == 0
-				x2 = x2.to_i
-				print x2
-			else 
-				print format('%.2f', x2)
-			end
-			print "\n"
+			print_small(x1, x2)
 		else 
 			if x2 % 1 == 0
 				x2 = x2.to_i
