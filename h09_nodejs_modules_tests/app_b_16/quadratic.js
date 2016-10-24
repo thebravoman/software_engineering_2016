@@ -1,4 +1,4 @@
-var module = require('./modules/solution.js');
+var module = require('./module/solution.js');
 
 var input_file = require('./input.json');
 
