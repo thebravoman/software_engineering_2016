@@ -1,6 +1,6 @@
 require 'rubygems'
 require 'json'
-require 'crack'
+require 'crack/xml'
 
 file_xml = File.read(ARGV[0])
 file_json = File.read(ARGV[1])
