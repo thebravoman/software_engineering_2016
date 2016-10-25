@@ -1,10 +1,15 @@
 var fs = require("fs");
 
+var contents = fs.readFileSync('input.json');
+
+var json = JSON.parse(contents);
+
 var solve = require('./Modules/program.js');
 
-var input = require("./input.json");
 
-var a, b, c = input["a"], input["b"], input[c];
+var a = json.a;
+var b = json.b;
+var c = json.c;
 
 output = solve.solve(a, b, c);
 
