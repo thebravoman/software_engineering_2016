@@ -7,7 +7,7 @@ function parseJSON(file){
 
 exports.test_none = function(test){
 	
-	let data = parseJSON("./input-nan.json");
+	let data = parseJSON(__dirname + "/input-nan.json");
 	let expected = JSON.stringify({"x1": "NaN", "x2": "NaN"});
 	let result = JSON.stringify(quadratic.solve(data.a, data.b, data.c));
 	test.equals(expected, result);
@@ -16,7 +16,7 @@ exports.test_none = function(test){
 };
 exports.test_any = function(test){
 	
-	let data = parseJSON("./input-any.json");
+	let data = parseJSON(__dirname + "/input-any.json");
 	let expected = JSON.stringify({"x":"Any"});
 	let result = JSON.stringify(quadratic.solve(data.a, data.b, data.c));
 	test.equals(expected, result);
@@ -25,7 +25,7 @@ exports.test_any = function(test){
 };
 exports.test_D0 = function(test){
 	
-	let data = parseJSON("./input-1.json");
+	let data = parseJSON(__dirname + "/input-1.json");
 	let expected = JSON.stringify({"x":2});
 	let result = JSON.stringify(quadratic.solve(data.a, data.b, data.c));
 	test.equals(expected, result);
@@ -34,7 +34,7 @@ exports.test_D0 = function(test){
 };
 exports.test_DGreaterThan0 = function(test){
 	
-	let data = parseJSON("./input-2.json");
+	let data = parseJSON(__dirname + "/input-2.json");
 	let expected = JSON.stringify({"x1": 4, "x2": -1});
 	let result = JSON.stringify(quadratic.solve(data.a, data.b, data.c));
 	test.equals(expected, result);
