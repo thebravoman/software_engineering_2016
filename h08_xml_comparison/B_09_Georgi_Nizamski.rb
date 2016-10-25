@@ -1,7 +1,7 @@
-require 'active_support/all'
+require 'crack/xml'
 require 'json'
 
-xml_doc = Hash.from_xml(File.read(ARGV[0].to_s))
+xml_doc = Crack::XML.parse(File.read(ARGV[0].to_s))
 
 json_doc = JSON.parse(File.read(ARGV[1]).to_s)
 
