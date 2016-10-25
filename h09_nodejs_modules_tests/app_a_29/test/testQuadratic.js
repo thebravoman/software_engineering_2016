@@ -1,5 +1,4 @@
 var fs = require('fs');
-var expected = require('./expected.js');
 var quadratic = require('../modules/solve_quadratic.js');
 
 var expected_none = JSON.stringify({
