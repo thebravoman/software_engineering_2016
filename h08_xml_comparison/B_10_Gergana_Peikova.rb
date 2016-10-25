@@ -2,7 +2,7 @@ require "rubygems"
 require "crack"
 require "json"
 
-xml_file = Crack::HML.parse(File.read(ARGV[0]));
+xml_file = Crack::XML.parse(File.read(ARGV[0]));
 json_file = Crack::JSON.parse(File.read(ARGV[1]));
 
 	if hml_file != json_file
