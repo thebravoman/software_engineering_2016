@@ -24,7 +24,7 @@ exports.test_one = function (test) {
 }
 
 exports.test_nan = function (test) {
-    var test_file = JSON.parse(fs.readFileSync("input-2.json"));
+    var test_file = JSON.parse(fs.readFileSync("input-nan.json"));
     var test_values = {
         x1 : "NaN",
         x2 : "NaN"
@@ -35,7 +35,7 @@ exports.test_nan = function (test) {
 }
 
 exports.test_any = function (test) {
-    var test_file = JSON.parse(fs.readFileSync("input-2.json"));
+    var test_file = JSON.parse(fs.readFileSync("input-any.json"));
     var test_values = {
         x : "Any"
     };
