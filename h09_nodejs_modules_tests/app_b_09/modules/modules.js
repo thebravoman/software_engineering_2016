@@ -2,10 +2,6 @@ function discriminant(a, b, c) {
 	return Math.pow(b, 2) - 4 * a * c;
 }
 
-function format_result(result) {
-	console.log(JSON.stringify(result, null, 2));
-}
-
 function is_integer(number) {
 	if (number % 1 == 0) return number;
 	else return number.toFixed(2);
@@ -20,8 +16,6 @@ exports.solve = function(a, b, c) {
 		
 		if (b == 0 && c == 0) {
 			result.x = "Any";
-			console.log(JSON.stringify(result));
-			return;
 		}
 
 		else if (b != 0) {
@@ -53,5 +47,5 @@ exports.solve = function(a, b, c) {
 		}
 	}
 
-	format_result(result);
+	return result;
 };
