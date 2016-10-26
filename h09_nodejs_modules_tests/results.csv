@@ -1,0 +1,59 @@
+Class, Number, Name, Score Test |Score Module |comment
+A, 01, Alexander Stoyanov, 0|0, Модулът има ситактична грешка: 01\modules\quadratic_AGAIN.js:27               }else{                 ^^^^SyntaxError: Unexpected token else | Тест липсва 
+A, 02, Blagovest Mihailov, 1|,  Tестът има синтактичи грешни не е бил пускан
+A, 03, Bojidar Stanoev, 1|1,  Тестът и модулът работят както трябва
+A, 04, Boyan Dimitrov, 0|0,  Mодулът има синтактичи грешки var a = fs["a"], fs["b"], fs["c"]; SyntaxError: Unexpected token [ | Тест лиспа
+A, 05, Valislav Yotov, 1|1, Tестът и модулът работят както трябва
+A, 06, Georgi Karaboichev,1|1, Тестът и модулът работят както трябва 
+A, 07, Dimitar Nikolov, 1|1, тестът и модулът работят както трябва 
+A, 08, Evga Dobreva, 0|0, Програмата е написа с ruby конструкции /to_json, импортва модул от не съществуваща директория| тестът импортва модул от несъществуваща директория
+A, 09, Zachary Georgiev,1|1, Тестът и модулът работят както трябва  
+A, 10, Iva Zahova, 1|1, Тестът и модулът работят както трябва  
+A, 11, Ivan Milev, 1|1, Тестът и модулът работят както трябва  
+A, 12, Ivan Ganchev, 1|0, Модулът излежда ок, но тестът не минава
+A, 13, Ivo Stefanov, 1|1, Тестът и модулът работят както трябва  
+A, 14, Ivo Todorov, 1|1, Тестът и модулът работят както трябва  
+A, 15, Joan Kosev, 0|0, Модулът не връща нищо, няма тест
+A, 16, Iordan Ivanov, 1|1, Тестът и модулът работят както трябва
+A, 17, Kristian Radkov 0|0, Тесът импортва несъществуващ модул, има синтактична грешка в модула, 
+A, 18, Lilian Vachkov, 0|0, Липсва тест, модулът не връща правилен json обект
+A, 19, Lachezar Zahariev, 0|0, Тест лиспва, извикването на модула в main.js води до: ReferenceError: solve is not defined
+A, 20, Marina Tihova, 1|1, Тестът и модулът работят както трябва
+A, 21, Martin Bozhinov, 1|0, Има модул няма юнит тест, модула се извиква от нормален .js файл 
+A, 22, Mihail Ernandes, 0|0, Теста не минава, ще разгледам по-внимателно модула
+A, 23, Nikolay Stanishev, 1|1, Тестът и модулът работят както трябва
+A, 24, Petko Mihaylov, 0|0,  Без домашно
+A, 25, Rangel Ivanov, 1|1, Тестът и модулът работят както трябва
+A, 26, Stiliyan Hristov, 1|1, Тестът и модулът работят както трябва
+A, 27, Stoyan Ivanov, 1|1, Тестът и модулът работят както трябва
+A, 28, Teodor Spasov, 0|0, Няма домашно
+A, 29, Hristo Spasov, 1|1, Тестът и модулът работят както трябва
+
+B, 01, Alexander Verbovskiy, 1|1, Тестът и модулът работят както трябва  
+B, 02, Andrey Strinski, 0|0, Без домашно
+B, 03, Boris Mutafov, 0|0, Тest any винаги връща вярно
+B, 04, ??, 0|0, No homework committed
+B, 05, Valentin Vurbanov, 0|0, No homework committed,  
+B, 06, ??, 0|0, No homework committed
+B, 07, Victor Gyoshev,1|1, Тестът и модулът работят както трябва
+B, 08, Vladimir Mladenov,1|1, Тестът и модулът работят както трябва   
+B, 09, Georgi Nizamski, 0|0, Програмата е написа с ruby конструкции /to_json
+B, 10, ??, 0|0, Програмата е написа с ruby конструкции /to_json
+B, 11, Daniel Tuechki, 1|0, Модула е ок, тестът не минава, за защото очаква: '{"x":-2}' == '{"x1":-2}' че при един корен пропъртито наобекта ще се казва x, а а той се казва x1, поправи го лесно е
+B, 12, Daniel Raykov, 1|1, Тестът и модулът работят както трябва   
+B, 13, ??, 0|О,No homework committed
+B, 14, Ivaylo Vasilev, 1|0, Тестът не може да импортне модула, var equation = require("../modules/modules.js");, докато модула е във файла module.js, но и когато се оправи пътя гърми с AssertionError: '{"x":"2"}' == '{"x":2}' 
+B, 15, Ivaylo Velkov, 1|1, Тестът и модулът работят както трябва
+B, 16, Ivan Trifonov, 0|0, Тестът не работи зарежда файловете от текущата директория: var input_nan = fs.readFileSync('./input-nan.json'), а те са едно ниво на долу: var input_nan = fs.readFileSync('../input-nan.json')
+отделно няма файл: input-nan.json има input-nan.jso module не връща никаква стойност за това ако пътищата се оправят се получава undefined == undefined и теста уж минава
+B, 17, Lachezar Mladenov, 1|1 Тестът и модулът работят както трябва
+B, 18, ??, 0|0, No homework committed
+B, 19, ??, 0|0, No homework committed 
+B, 20, ??, 0|0, No homework committed 
+B, 21, Nikola Tzotchev, 1|1 ,Тестът и модулът работят както трябва
+B, 22, Nikolai Romanov, 1|0,  Модулът е ок. Тестът зарежда входните данни по следния начин: 	var data = JSON.parse(fs.readFile('./inputs/none-x.json')); - fs#readFile е асинхронна функция не връща стойност!, Ако оправя теста: пак гърми с  { x1: 4, x2: -1, D: 25 } == { D: 25, x1: 4, x2: -1 } json-a се сравнява като стринг, но полетата са разместени
+B, 23, Nikoleta Dalaktchieva, 1|1, Тестът и модулът работят както трябва 
+B, 24, Slav Kirilov, 0|0, Модулът не връща стойност, => теста нищо не сравнява и винаги минава
+B, 25, ??, 0|No homework committed
+B, 26, Filip Danailov, 
+B, 27, Hristian Genchev, 0|0,Тестът се чупи с AssertionError: { x1: '1.00', x2: '-0.50' } deepEqual { x: 'Any' }
