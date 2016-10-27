@@ -37,7 +37,7 @@ exports.test_any = function(test) {
 exports.test_D0 = function(test) {
 	jsonfile = parsing("input-1.json");
 	result = solve.solve(jsonfile.a, jsonfile.b, jsonfile.c);
-	expectation  = {"x": -0.5};
+	expectation  = {"x": -2};
 
 	result = JSON.stringify(result, undefined, 1);
 	expectation = JSON.stringify(expectation, undefined, 1);
@@ -49,7 +49,7 @@ exports.test_D0 = function(test) {
 exports.test_DGreaterThan0 = function(test) {
 	jsonfile = parsing("input-2.json");
 	result = solve.solve(jsonfile.a, jsonfile.b, jsonfile.c);
-	expectation = {"x1": -0.25,"x2": -1};
+	expectation = {"x1": -1,"x2": -4};
 	
 	
 	result = JSON.stringify(result, undefined, 1);
