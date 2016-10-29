@@ -23,10 +23,10 @@ if (input["a"] == 0) {
 		if (x1 % 1 != 0) {
 			x1 = Number(x1.toFixed(2));
 		}
-		if (x2%1 != 0) {
+		if (x2 % 1 != 0) {
 			x2 = Number(x2.toFixed(2));
 		}
-		if (d%1 != 0) {
+		if (d % 1 != 0) {
 			d = Number(d.toFixed(2));
 		}
 		n = {
