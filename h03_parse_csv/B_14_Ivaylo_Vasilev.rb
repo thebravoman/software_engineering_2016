@@ -1,36 +1,35 @@
 require 'csv'
 
-file = ARGV[0]
-num  = ARGV[1].to_i
+state  = ARGV[1].to_i
 data = Hash.new(0)
 
-CSV.foreach(file) do |row|
-	if  num == 1 then 
-            data[row[1].to_i] += row[2].to_f  
+CSV.foreach(ARGV[0]) do |row|
+	if  state == 1 
+            data[row[1].to_i] = data[row[1].to_i] + row[2].to_f  
     end
     
-   	if num == 2 then
-            data[row[1].to_i] += 1
+   	if state == 2 
+            data[row[1].to_i] = data[row[1].to_i] + 1
     end
     
-    if num == 3 then 
-            data[row[0].to_i] += row[2].to_f
+    if state == 3 
+            data[row[0].to_i] = data[row[0].to_i] + row[2].to_f
     end
  
-    if num == 4 then
-            data[row[0].to_i] += 1
+    if state == 4 
+            data[row[0].to_i] = data[row[0].to_i] + 1
 	end
            
 end
 
-max_result_index = data.key(data.values.max)
+max = data.key(data.values.max)
 max_result = data.values.max
 
-if num == 1 || num == 3 then
-	printf("%s,%.2f\n", max_result_index,max_result )
+if state == 1 || state == 3 then
+	printf("%s,%.2f\n", max,max_result )
 
 end
 
-if num == 2 || num == 4 then 
-	printf("%s,%d\n", max_result_index,max_result  )
+if state == 2 || state == 4 then 
+	printf("%s,%d\n", max,max_result  )
 end
