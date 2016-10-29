@@ -43,7 +43,7 @@ end
 d = Math.sqrt(b**2-4*a*c)
 if d.real < 0
     exit
-else if d.real == 0
+elseif d.real == 0
     x = -b/2*a
     a4 = check(x)
     puts a4.to_s
