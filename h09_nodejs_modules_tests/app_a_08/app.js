@@ -1,9 +1,8 @@
-var quadratic=require('./modules/quadratic.js');
 var fs=require("fs");
-var read=fs.readFileSync('');
-var par=JSON.parse(read);
-var string=JSON.stringify(result,null,2);
-var a=par.a;
-var b=par.b;
-var c=par.c;
-quadratic.equation(a,b,c);
+var quadratic=require('./module/quadratic.js');
+var input=require("./input.json");
+var a,b,c;
+a=input["a"];
+b=input["b"];
+c=input["c"];
+console.log(JSON.stringify(module.equation(a,b,c),undefined,2));
