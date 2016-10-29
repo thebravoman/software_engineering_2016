@@ -1,2 +1,1 @@
-number = gets
-puts number.to_i*2
+puts (ARGV[0].to_i * 2)
