@@ -1,10 +1,7 @@
-require 'json'
+require 'crack'
+
 file_1 = File.read(ARGV[0])
 file_2 = File.read(ARGV[1])
-JSON.parse(file_1)
-JSON.parse(file_2) 
 
-if JSON.parse(file_1) == JSON.parse(file_2) then
-  puts "1"
-else puts "0"
-end
+puts Crack::JSON.parse(file_1) != Crack::JSON.parse(file_2) ? 0 : 1
+
