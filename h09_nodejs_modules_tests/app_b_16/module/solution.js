@@ -1,4 +1,4 @@
-exports.solve = function(a, b, c){
+exports.calculate = function(a, b, c){
     var result ={};
     if(a==0 && b==0 && c==0){
         result.x = "Any";
@@ -20,5 +20,5 @@ exports.solve = function(a, b, c){
             result.x2="NaN";   
         }
     }
-     console.log(JSON.stringify(result, null, 2));
-}
+     return result;
+};
