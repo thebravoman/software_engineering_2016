@@ -26,8 +26,8 @@ function quadratic(a, b, c){
 	if (D == 0)
 	{
 		var x = (-b)/(2*a);
-		x1 = (x1).toFixed(2)/1;
-		to_json(D, x1);
+		x = (x).toFixed(2)/1;
+		to_json(D, x);
 	}
 	
 	if (D < 0){
