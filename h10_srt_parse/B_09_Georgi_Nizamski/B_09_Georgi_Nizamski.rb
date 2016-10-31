@@ -37,7 +37,8 @@ class SRTParser
    end
 
    def average_symbols_per_sentence (parsed_hash)
-   		parsed_hash["average_symbols_per_sentence"] = parsed_hash["number_of_symbols"].to_i/parsed_hash["number_of_sentences"].to_f
+   		average = parsed_hash["number_of_symbols"].to_i/parsed_hash["number_of_sentences"].to_f
+   		parsed_hash["average_symbols_per_sentence"] = average
    		return parsed_hash
    end
 
