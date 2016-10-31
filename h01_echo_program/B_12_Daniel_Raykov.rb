@@ -1,3 +1,3 @@
-argument = gets.to_i
+input_number = ARGV[0].to_i
 
-puts (argument * 2)
+puts (input_number * 2)
