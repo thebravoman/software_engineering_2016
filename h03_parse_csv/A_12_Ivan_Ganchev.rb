@@ -2,7 +2,7 @@ require 'csv'
 
 $videos = Hash.new
 
-def most_watched_by_percent(row)
+def percent(row)
 	video = row[1]
 	percent = row[2].to_f
 	
@@ -54,11 +54,12 @@ def user_who_watched_most_videos(row)
 	end
 end
 
+file = ARGV[0]
 num = ARGV[1].to_i
 
-CSV.foreach('data.csv') do |row|
+CSV.foreach(file) do |row|
 	if num == 1
-		most_watched_by_percent row 
+		percent row 
 	elsif num == 2
 		most_watched_by_open row
 	elsif num == 3
