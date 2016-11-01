@@ -1,7 +1,6 @@
 class SRTParser 
 	$one_number_pattern = "^(\\d+)$"
 	$time_pattern = "(\\d+):(\\d+):(\\d+),(\\d+)\\s\-\-\>\\s(\\d+):(\\d+):(\\d+),(\\d+)"
-	$subtitle_text_pattern = "^([a-zA-Z][a-zA-Z,'\s+\.]*)$"
 	$empty_line_pattern = "(^$)"
 	
 	$subtitle_sentences_pattern = "([A-Z][\\w+~!@#$%^&()*{}\\[\\]|:><?\"\\/\\s+-]+\\.)"
@@ -74,7 +73,9 @@ class SRTParser
 		find_average_duration()
 	end
 	
-	def file_parsing(file)
+	
+	
+	def parse_file(file)
 		subtitle_text = "";
 		prev_line = "";
 		File.open(file).each do |line|
@@ -93,7 +94,6 @@ class SRTParser
 					$total_subtitles += 1
 				elsif /#{$time_pattern}/.match(line) != nil
 					prev_line = line
-					$time_for_subtitle_text = true
 					$curr_duration_string = line
 				end
 			end
@@ -101,10 +101,11 @@ class SRTParser
 		call_increasing_methods(subtitle_text)
 		set_duration()
 		call_average_methods()
+		
 	end
 	
 	def get_hash()
 		$return_hash
 	end
 	
-end
+endsssss
