@@ -108,4 +108,4 @@ class SRTParser
 		$return_hash
 	end
 	
-endsssss
+end
