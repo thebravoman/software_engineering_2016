@@ -101,7 +101,6 @@ class SRTParser
 		call_increasing_methods(subtitle_text)
 		set_duration()
 		call_average_methods()
-		
 	end
 	
 	def get_hash()
@@ -109,3 +108,7 @@ class SRTParser
 	end
 	
 end
+
+print = SRTParser.new()
+
+print.parse_file(ARGV[0])
