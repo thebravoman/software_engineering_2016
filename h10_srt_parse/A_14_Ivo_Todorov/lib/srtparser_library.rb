@@ -45,10 +45,10 @@ module SRTParser
 		output["number_of_words"] = number_of_words
 		output["number_of_symbols"] = number_of_symbols
 		output["number_of_lines"] = number_of_lines
-		output["average_symbols_per_line"] = (number_of_symbols / number_of_lines).round(2)
+		output["average_symbols_per_line"] = (number_of_symbols.to_f / number_of_lines.to_f).round(2)
 		output["max_symbols_per_line"] = max_symbols_in_line
 		output["number_of_sentences"] = number_of_sentences
-		output["average_symbols_per_sentence"] = (number_of_symbols / number_of_sentences).round(2)
+		output["average_symbols_per_sentence"] = (number_of_symbols.to_f / number_of_sentences.to_f).round(2)
 		output["duration"] = parse_time(data.last[2])
 		output["average_duration"] = (output["duration"] / data.size).round(2)
 		output
