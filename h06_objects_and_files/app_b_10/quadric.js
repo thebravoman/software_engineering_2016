@@ -2,7 +2,6 @@ var fs = require('fs');
 
 var path = fs.readFile("input.json")
 if(path.is_open()) {
-console.log(" asd");
 var a = path.a;
 var b = path.b;
 var c = path.c;

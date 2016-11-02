@@ -1,12 +1,11 @@
 require 'json'
 
-a = File.read(ARGV[0])
-b = File.read(ARGV[1])
+first_json_file = File.read(ARGV[0])
+second_json_file = File.read(ARGV[1])
 
-c = JSON.parse(a)
-d = JSON.parse(b)
+first_json_file_hash = JSON.parse(first_json_file)
+second_json_file_hash = JSON.parse(second_json_file)
 
-if c == d then puts "1"
-elsif puts "0"
-
+if first_json_file_hash == second_json_file_hash then puts 1
+else puts 0
 end

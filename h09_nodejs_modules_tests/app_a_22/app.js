@@ -1,6 +1,6 @@
 var result = { };
 var file = require('fs');
-var values = file.readFileSync('./input.json','utf8');
+var values = file.readFileSync('./index.json','utf8');
 var file_json = JSON.parse(values);
 var solve = require('./modules/solve.js');
 

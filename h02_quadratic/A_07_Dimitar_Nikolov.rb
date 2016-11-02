@@ -10,7 +10,7 @@ if a == 0
     puts "#"
   elsif b == 0 && c != 0
   else
-    x = -c / b
+    x = -(c / b)
     if x % 1 == 0
       puts x.to_i
     else

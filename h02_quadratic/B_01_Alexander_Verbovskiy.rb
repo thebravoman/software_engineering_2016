@@ -2,6 +2,15 @@ a = ARGV[0].to_f
 b = ARGV[1].to_f
 c = ARGV[2].to_f
 
+def Check(x1)
+
+   if x1%1==0 then
+	puts"#{x1.to_i}"
+   else 
+	puts "#{x1.round(2)}"
+   end
+end
+
 if a == 0 then 
 	if b == 0
 		if c == 0
@@ -12,11 +21,7 @@ if a == 0 then
 	else
 		    x1 = ((c - 2*c) / b)
 			
-			if x1%1==0 then
-				puts"#{x1.to_i}"
-			else 
-				puts "#{x1.round(2)}"
-			end
+			Check x1;
 
 	end
     
@@ -40,11 +45,7 @@ else
 			
 			print ","
 			
-			if x1%1==0 then
-			    puts "#{x1.to_i}"
-			else 
-				puts "#{x1.round(2)}"
-			end
+			Check x1;
         
         else 
         
@@ -70,11 +71,7 @@ else
     
              x1 = (b*-1) / (2*a)
     
-            if x1%1==0 then
-				puts"#{x1.to_i}"
-			else 
-				puts "#{x1.round(2)}"
-			end
+            Check x1;
     
     end
     
