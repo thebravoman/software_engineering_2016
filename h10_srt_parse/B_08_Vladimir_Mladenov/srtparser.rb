@@ -73,8 +73,6 @@ class SRTParser
 		find_average_duration()
 	end
 	
-	
-	
 	def parse_file(file)
 		subtitle_text = "";
 		prev_line = "";
@@ -108,7 +106,3 @@ class SRTParser
 	end
 	
 end
-
-print = SRTParser.new()
-
-print.parse_file(ARGV[0])
