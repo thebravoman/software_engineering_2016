@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Marina Tihova"]
   spec.email         = ["mrtihova@gmail.com"]
 
-  spec.summary       = %q{Gem for parsing SRT files}
-  spec.description   = %q{Gem for parsing SRT files and extracting data from them.}
-  spec.homepage      = ""
+  spec.summary       = %q{Gem that parses SRT files.}
+  spec.description   = %q{Gem that parses SRT files and extracts data from them.}
+  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
