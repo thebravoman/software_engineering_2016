@@ -1,4 +1,7 @@
-class SRTParser
+require "srtparser_library/version"
+
+module SrtparserLibrary
+ 	class SRTParser
 	$result = Hash.new(0)
 
 	     def parse_file (path_to_file)
@@ -73,4 +76,5 @@ class SRTParser
 		 	$result["average_duration"] = average_duration.round(2)
 		 end   
 
+end
 end
