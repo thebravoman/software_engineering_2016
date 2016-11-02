@@ -1,6 +1,8 @@
+require 'srtparser_library/version.rb'
+
 SYMBOLS_CONST = %r/~|!|@|#|\$|%|\^|&|\*|\(|\)|-|{|}|\[|\]|\||"|:|>|<|\?|\//
 SPACE_CONST = /\s/
-SENTENCE_CONST = /(?<=[A-Z]).*?(?=\.|!|\?)/
+SENTENCE_CONST = /[a-zA-Z][\?|!|\.]/
 NEW_LINE_CONST = /\n/
 
 def get_data(file)
@@ -24,55 +26,30 @@ def get_time(file)
 end
 
 def get_text_group(index, data)
-  text_group = {}
+  text_group = ''
   index -= 1 if index.zero?
-  key = data[index + 1].chomp.to_i
-  text_group[key] = data[index + 3]
+  text_group += data[index + 3]
   temp_index = index + 4
   while data[temp_index] != "\n" && temp_index != data.length
-    text_group[key] += data[temp_index]
+    text_group += data[temp_index]
     temp_index += 1
   end
-  text_group[key] = text_group[key].chomp if text_group[key][-1].eql?("\n")
   text_group
 end
 
 def get_text(file)
   data = get_data(file)
-  text = {}
+  text = ''
   (0..data.length).each do |index|
     if (data[index].eql?("\n") || index.zero?) && index != data.length - 1
-      text.update(get_text_group(index, data))
+      text += get_text_group(index, data)
     end
   end
   text
 end
 
-def scan_(text, key)
-  number = text[key].scan(SENTENCE_CONST).length
-  number
-end
-
-def split_(text, key)
-  number = text[key].split(SPACE_CONST).length
-  number
-end
-
-def number_of(text, regex)
-  number_of = 0
-  (1..text.keys.max).each do |key|
-    if regex == SENTENCE_CONST
-      number = scan_(text, key)
-    elsif regex == SPACE_CONST
-      number = split_(text, key)
-    end
-    number_of += number
-  end
-  number_of
-end
-
 def number_of_words(text)
-  number_of_words = number_of(text, SPACE_CONST)
+  number_of_words = text.split(SPACE_CONST).length
   number_of_words
 end
 
@@ -83,23 +60,13 @@ end
 
 def number_of_symbols(text)
   number_of_symbols = 0
-  (1..text.keys.max).each do |key|
-    if text[key].scan(SYMBOLS_CONST)
-      number_of_symbols += number_of_symbols_group(text[key])
-    end
-  end
+  number_of_symbols = number_of_symbols_group(text) if text.scan(SYMBOLS_CONST)
   number_of_symbols
 end
 
 def number_of_lines(text)
   number_of_lines = 0
-  (1..text.keys.max).each do |key|
-    if text[key].scan(NEW_LINE_CONST)
-      number_of_lines += text[key].scan(NEW_LINE_CONST).length + 1
-    else
-      number_of_lines += 1
-    end
-  end
+  number_of_lines = text.scan(NEW_LINE_CONST).length if text.scan(NEW_LINE_CONST)
   number_of_lines
 end
 
@@ -116,17 +83,15 @@ end
 
 def max_symbols_per_line(text)
   symbols_max = 0
-  (1..text.keys.max).each do |key|
-    text[key].split(/\n/).each do |line|
-      symbols = number_of_symbols_group(line)
-      symbols_max = symbols if symbols > symbols_max
-    end
+  text.split(/\n/).each do |line|
+    symbols = number_of_symbols_group(line)
+    symbols_max = symbols if symbols > symbols_max
   end
   symbols_max
 end
 
 def number_of_sentences(text)
-  number_of_sentences = number_of(text, SENTENCE_CONST)
+  number_of_sentences = text.scan(SENTENCE_CONST).length
   number_of_sentences
 end
 
@@ -157,8 +122,8 @@ def average_duration(time)
   duration.round(2)
 end
 
-class SRTParser
-  def parse_file(path_to_file)
+module SRTParser
+  def self.parse_file(path_to_file)
     result = {}
     text = get_text(File.open(path_to_file))
     time = get_time(File.open(path_to_file))
@@ -174,6 +139,3 @@ class SRTParser
     result
   end
 end
-
-# file = SRTParser.new
-# puts file.parse_file('test.srt')
