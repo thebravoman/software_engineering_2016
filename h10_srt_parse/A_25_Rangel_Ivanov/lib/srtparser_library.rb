@@ -1,4 +1,3 @@
-require 'mathn'
 class SRTParser	
 	def parse_file(path_to_file)
 		data = Hash.new(0)
