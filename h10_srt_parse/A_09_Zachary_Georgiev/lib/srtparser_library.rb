@@ -105,9 +105,4 @@ module SrtparserLibrary
 			return stats
 	  	end
 	end
-
-	path = ARGV[0]
-
-	srt_parser = SRTParser.new
-	srt_parser.parse_file(path)
 end
