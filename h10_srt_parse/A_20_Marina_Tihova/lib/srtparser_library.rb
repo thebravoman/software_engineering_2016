@@ -80,7 +80,7 @@ module SRTParser
 	def self.duration(content)
 		timing = /(\d{2}:\d{2}:\d{2},\d{3})/
 		last = content.scan(timing)[content.scan(timing).size - 1].join
-		(calc_seconds(last)).round
+		(calc_seconds(last)).round(2)
 	end
 
 	def self.average_duration(content)
