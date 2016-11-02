@@ -1,4 +1,4 @@
-"srt_parsing/version"
+require "srt_parsing/version"
 
 	class SRTParser	
   		def parse_file(path_to_file)
