@@ -3,7 +3,6 @@ class SRTParse
  def parse_file(path_to_file)
 	output = Hash.new(0)
 	empty = -1
-	last_line = nil
 
  	file=File.open(path_to_file).read
 	    file.each_line do |line|
@@ -35,7 +34,7 @@ class SRTParse
 			output["number_of_sentences"] += line.scan(/[^\.!?]+[\.!?]/).count
 			
 			if  line.scan(/[\~\!\@\#\$\%\^\&\*\(\)\-\{\}\[\]\|\"\:\>\<\?\/]/).count > output["max_symbols_per_line"] then
-				output["max_symbols_per_line"] = line.scan(/[[:punct:]]/).count
+				output["max_symbols_per_line"] = line.scan(/[\~\!\@\#\$\%\^\&\*\(\)\-\{\}\[\]\|\"\:\>\<\?\/]/).count
 			end
 
 		     end #case
