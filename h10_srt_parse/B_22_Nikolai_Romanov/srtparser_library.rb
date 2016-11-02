@@ -24,7 +24,7 @@ class SRTParser
 					halloween["max_symbols_per_line"] < line.scan(/[~!@#$%^&*()\-{}\[\]|”:><?\/]/).size
 					halloween["max_symbols_per_line"] = line.scan(/[~!@#$%^&*()\-{}\[\]|”:><?\/]/).size
 				end
-				halloween["number_of_sentences"] += line.split(/[^\.?!][\.?!]/).size
+				halloween["number_of_sentences"] += line.split(/[^\.?!][\.?!]/).size - 1
 			end
 		end
 	halloween["average_symbols_per_line"] = halloween["number_of_symbols"]/halloween["number_of_lines"].to_f.round(2)
