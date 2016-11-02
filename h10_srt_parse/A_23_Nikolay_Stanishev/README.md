@@ -23,15 +23,15 @@ Or install it yourself as:
 ## Usage
 
 With this gem you can find:  
--number_of_words  
--number_of_symbols  
--number_of_lines  
--average_symbols_per_line  
--max_symbols_per_line  
--number_of_sentences  
--average_symbols_per_sentence  
--duration  
--average_duration  
+    -number_of_words  
+    -number_of_symbols  
+    -number_of_lines  
+    -average_symbols_per_line  
+    -max_symbols_per_line  
+    -number_of_sentences  
+    -average_symbols_per_sentence  
+    -duration  
+    -average_duration  
 of your srt file
 
 ## Development
