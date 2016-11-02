@@ -109,6 +109,5 @@ module SrtparserLibrary
 	path = ARGV[0]
 
 	srt_parser = SRTParser.new
-
-	puts srt_parser.parse_file(path)
+	srt_parser.parse_file(path)
 end
