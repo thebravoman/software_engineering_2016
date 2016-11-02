@@ -1,16 +1,6 @@
+require "./srtparser_library/version.rb"
+
 module SRTParser
-	private_class_method def self.parse_time(time)
-		times = time.scan(/(?:[1-9]+[0-9]*,[0-9]+)|(?:[1-9]+[0-9]*)/)
-		modifier = times.size
-		out = 0
-		times.each do |time|
-			current_time = time.sub(",", ".").to_f
-			out += current_time * (60 ** (modifier-1))
-			modifier -= 1
-		end
-		out.round(2)
-	end
-	
 	def self.parse_file(path_to_file)
 		file = File.open(path_to_file)
 		data = File.read(file).scan(/(\d+)\n(\d\d:\d\d:\d\d,\d\d\d) --> (\d\d:\d\d:\d\d,\d\d\d)\n((?:.+\n?)+)/) 
@@ -22,6 +12,7 @@ module SRTParser
 			current_lines = subtitle[3].split("\n")
 			number_of_lines += current_lines.size
 			current_lines.each do |line|
+				
 				symbol_count = line.scan(/([~!@#$%^&*()\-{}\[\]\|\"\:><?\/])/).size
 				word_count = line.split(" ").size
 				
@@ -33,7 +24,6 @@ module SRTParser
 				
 				current_sentence += " " + line.strip
 				current_sentence = current_sentence.strip
-				
 				while sentence = current_sentence.match(/([A-Z][^\.!?]*[\.!?])/)
 					number_of_sentences += sentence.captures.size
 					current_sentence = current_sentence.sub(/[A-Z][^\.!?]*[\.!?]/, "")
@@ -52,5 +42,18 @@ module SRTParser
 		output["duration"] = parse_time(data.last[2])
 		output["average_duration"] = (output["duration"] / data.size).round(2)
 		output
+		
+	end
+	private_class_method
+	def self.parse_time(time)
+		times = time.scan(/(?:[1-9]+[0-9]*,[0-9]+)|(?:[1-9]+[0-9]*)/)
+		modifier = times.size
+		out = 0
+		times.each do |time|
+			current_time = time.sub(",", ".").to_f
+			out += current_time * (60 ** (modifier-1))
+			modifier -= 1
+		end
+		out.round(2)
 	end
 end
