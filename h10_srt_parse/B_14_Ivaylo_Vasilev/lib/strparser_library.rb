@@ -56,7 +56,9 @@ end
 		hash["average_duration"] = (hash["duration"].to_f/hash["number_of_subtitles"].to_f).round(2)
 
 		puts hash["number_of_lines"]
+  #enter the command that you want ^
  end #def
 	
 end #class
 SRTParse.new.parse_file("sb.srt")
+	 #name of the file ^ 
