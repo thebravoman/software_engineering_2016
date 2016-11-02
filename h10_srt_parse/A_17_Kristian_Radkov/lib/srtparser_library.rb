@@ -80,8 +80,4 @@ end
 		def number_of_subtitles(data)
 			return data.scan(/\d+:\d+:\d+,\d+\s-->\s\d+:\d+:\d+,\d+/).length
 		end
-
-		def avr_duration(data)
-				amount = duration(data).to_f / number_of_subtitles(data).to_f
-		end
 end
