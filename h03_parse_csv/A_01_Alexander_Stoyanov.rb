@@ -15,80 +15,84 @@ content = Hash.new
 
 def most_viewed(content)
 result = Hash.new
-	
+
 			content.each do |key, value|
  			  value.each do |k,v|
-				
+
+
 
 				if result[k.to_i] == nil
 				 result[k.to_i] = v.to_f
 				else
-				 result[k.to_i] =  result[k.to_i] + v.to_f	
-			
-				end 
+				 result[k.to_i] =  result[k.to_i] + v.to_f
+					 if result[k.to_i]%1 != 0
+						  result[k.to_i] = result[k.to_i].round(2)
+						end
+				end
  			  end
-			end 
+			end
 	puts "#{result.max_by{|k,v| v}}"
-	
+
+
 	end
 
 
 
 def most_watched(content)
 result = Hash.new
-		
+
 		content.each do |key, value|
 				  value.each do |k,v|
 						if result[k.to_i] == nil
 						 result[k.to_i] = 1
 						else
 						 result[k.to_i] =  result[k.to_i] + 1
-			
-						end 
+
+						end
  			  		end
 			end
-		
+
 	puts "#{result.max_by{|k,v| v}}"
-		
+
 
 	end
 
 
 def most_zombified(content)
 result = Hash.new
-	
+
 			content.each do |key, value|
  			  value.each do |k,v|
-				
+
 
 				if result[key.to_i] == nil
-				 result[key.to_i] = v.to_f.round(2)
+				 result[key.to_i] = v.to_f
 				else
-				 result[key.to_i] =  result[key.to_i] + v.to_f.round(2)	
-			
-				end 
+				 result[key.to_i] =  result[key.to_i] + v.to_f
+				 result[key.to_i] =  result[key.to_i].round(2)
+				end
  			  end
 			end
 	puts "#{result.max_by{|k,v| v}}"
-	
+
 end
 
 def most_videos_watched(content)
 result = Hash.new
-		
+
 		content.each do |key, value|
 				  value.each do |k,v|
 						if result[key.to_i] == nil
 						 result[key.to_i] = 1
 						else
 						 result[key.to_i] =  result[key.to_i] + 1
-			
-						end 
+
+						end
  			  		end
 			end
-		
+
 	puts "#{result.max_by{|k,v| v}}"
-		
+
 
 	end
 
@@ -117,5 +121,4 @@ end
 
 if task == 4
 most_videos_watched(content)
-end 
-
+end

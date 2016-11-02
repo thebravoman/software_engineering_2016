@@ -1,0 +1,24 @@
+PATH
+  remote: .
+  specs:
+    srtparser_library (1.0.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    chronic_duration (0.10.6)
+      numerizer (~> 0.1.1)
+    numerizer (0.1.1)
+    rake (10.5.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bundler (~> 1.13)
+  chronic_duration (= 0.10.6)
+  rake (~> 10.0)
+  srtparser_library!
+
+BUNDLED WITH
+   1.13.6
