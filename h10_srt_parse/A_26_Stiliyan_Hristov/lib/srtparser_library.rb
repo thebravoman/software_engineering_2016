@@ -28,7 +28,7 @@ module SRTParser
   					hashedSRT["number_of_symbols"] += arraySRT.split(/[-~!@#$%^&*()\[\]{}|”:><?\/]/).size
 
   	        if  arraySRT.split(/[-~!@#$%^&*()\[\]{}|”:><?\/]/).size > hashedSRT["max_symbols_per_line"]
-  	            hashedSRT["max_symbols_per_line"] =  arraySRT.split(/[[:punct:]]/).size
+  	            hashedSRT["max_symbols_per_line"] =  arraySRT.split(/[-~!@#$%^&*()\[\]{}|”:><?\/]/).size
   	        end
 
   	        if arraySRT =~ /[A-Za-z]+/
