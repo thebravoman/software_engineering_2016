@@ -1,22 +1,22 @@
-class SRTParser
+module SRTParser
   @@num_of_subtitles = 0
 
-  def counter(line, result_hash)
+  def self.counter(line, result_hash)
     if !duration(line, result_hash)
       symbols_counter(line, result_hash)
     end
     if line.scan(/[a-zA-Z']+/).size > 0
-      result_hash["number_of_words"] += line.scan(/[a-zA-Z']+/).size
+      result_hash["number_of_words"] += line.scan(/[a-zA-Z'\d]+/).size
       result_hash["number_of_lines"] += 1
     end
     return line
   end
 
-  def sentences_counter(srt_line, result_hash)
+  def self.sentences_counter(srt_line, result_hash)
     result_hash["number_of_sentences"] = srt_line.scan(/[a-zA-Z][?!.]/).size
   end
 
-  def symbols_counter(line, result_hash)
+  def self.symbols_counter(line, result_hash)
     symb_size = line.scan(/[~!@#$%^&*()\-\[\]{}:"<>?\/]/).size
     result_hash["number_of_symbols"] += symb_size
     if symb_size > result_hash["max_symbols_per_line"]
@@ -24,7 +24,7 @@ class SRTParser
     end
   end
 
-  def duration(line, result_hash)
+  def self.duration(line, result_hash)
     time_str = line.scan(/\d+[:]\d+[:]\d+[,]\d+/)[1]
     if time_str.is_a? String
       @@num_of_subtitles += 1
@@ -37,11 +37,12 @@ class SRTParser
     end
   end
 
-  def parse_file(path)
+  def self.parse_file(path)
     result_hash = {
       "number_of_words" => 0,
       "number_of_symbols" => 0,
       "number_of_lines" => 0,
+      "average_symbols_per_line" => 0,
       "max_symbols_per_line" => 0,
       "number_of_sentences" => 0,
       "average_symbols_per_sentence" => 0,
@@ -55,10 +56,12 @@ class SRTParser
       end
     end
     sentences_counter(srt_line, result_hash)
+    result_hash["average_symbols_per_line"] = (result_hash["number_of_symbols"].to_f / result_hash["number_of_lines"].to_f).round(2)
     result_hash["average_symbols_per_sentence"] = (result_hash["number_of_symbols"].to_f /
     result_hash["number_of_sentences"].to_f).round(2)
     result_hash["average_duration"] = (result_hash["duration"] / @@num_of_subtitles).round(2)
-    printer(result_hash)
+    # printer(result_hash)
     return result_hash
   end
 end
+
