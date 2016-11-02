@@ -106,3 +106,7 @@ class SRTParser
 	end
 	
 end
+
+try = SRTParser.new()
+try.parse_file('./input.srt')
+puts try.get_hash()
