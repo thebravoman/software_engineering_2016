@@ -1,0 +1,7 @@
+require "srtparse_library"
+
+
+path=ARGV[0]
+
+h=SrtparseLibrary.parse_file(path)
+puts h
