@@ -10,7 +10,7 @@ module SRTParser
 		countsubtitles=0
 		time=""
 
-		srt=File.open("srt.txt", "r") do |file|
+		srt=File.open(dir, "r") do |file|
 			file.each_line do |line|
 
 				if line.match(/\d\d:\d\d:\d\d,\d\d\d.+/)
