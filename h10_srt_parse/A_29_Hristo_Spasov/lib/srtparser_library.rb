@@ -20,25 +20,22 @@ module SRTParser
 
     private_class_method def self.number_of_sentences(line, unfinished_sentence)
         count_sentences = {}
-        if(number_of_words(line) > 0)
-            if(line.scan(/[.!?](?!\p{L})*/).size > 0)
-                count_sentences['unfinished?'] = false
-                count_sentences['count'] = line.scan(/\p{Lu}[^.!?]*[.!?]/).size
-                if(unfinished_sentence && line.scan(/(?<![.])[.](?![.])/).size == line.scan(/\p{Lu}[^.!?]*[.!?]/).size + 1)
+        count_sentences['count'] = 0
+        if (number_of_words(line) > 0)
+            line.each_char { |c|
+                if (c =~ /\p{Lu}/)
+                    count_sentences['unfinished?'] = true
+                elsif (c =~ /[.!?]/ && (count_sentences['unfinished?'] || unfinished_sentence))
+                    count_sentences['unfinished?'] = false
+                    unfinished_sentence = false
                     count_sentences['count'] += 1
                 end
-            else
-                count_sentences['unfinished?'] = true
-                count_sentences['count'] = line.scan(/\p{Lu}[^.!?]*[.!?]/).size
-                if(unfinished_sentence && result = line.match(/(?<![.])[.](?![.])/))
-                    count_sentences['count'] += 1
-                end
-            end
-        else
-            count_sentences['count'] = 0
+            }
+        end
+        if(count_sentences['unfinished?'].nil?)
             count_sentences['unfinished?'] = unfinished_sentence
         end
-        return count_sentences
+        count_sentences
     end
 
     private_class_method def self.string_to_time(string)
