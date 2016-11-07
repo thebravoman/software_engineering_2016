@@ -1,0 +1,403 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
+  "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html lang="en" dir="ltr"
+  xmlns:fb="http://ogp.me/ns/fb#"
+  xmlns:og="http://ogp.me/ns#"
+  xmlns:article="http://ogp.me/ns/article#"
+  xmlns:book="http://ogp.me/ns/book#"
+  xmlns:profile="http://ogp.me/ns/profile#"
+  xmlns:video="http://ogp.me/ns/video#"
+  xmlns:product="http://ogp.me/ns/product#">
+<head profile="http://www.w3.org/1999/xhtml/vocab">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:400,700,300,600,100" rel="stylesheet" type="text/css">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="http://marketplace.eclipse.org/sites/all/themes/solstice/_themes/solstice_marketplace/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="description" content="What is the Eclipse Marketplace Client Eclipse Marketplace Client (MPC) is a rich client interface for browsing and installing the Eclipse based solutions listed on the Eclipse Marketplace portal. It is a new feature that allows Eclipse users to discover and install Eclipse solutions directly into their Eclipse installation. Where can I get the Eclipse Marketplace Client MPC is included in all of the packages available from the Eclipse download page (except the Classic Package)." />
+<meta name="generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="http://marketplace.eclipse.org/marketplace-client-intro" />
+<link rel="shortlink" href="http://marketplace.eclipse.org/node/3993" />
+<meta property="og:site_name" content="Eclipse Plugins, Bundles and Products - Eclipse Marketplace" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://marketplace.eclipse.org/marketplace-client-intro" />
+<meta property="og:title" content="Introducing the Eclipse Marketplace Client" />
+<meta property="og:description" content="What is the Eclipse Marketplace Client Eclipse Marketplace Client (MPC) is a rich client interface for browsing and installing the Eclipse based solutions listed on the Eclipse Marketplace portal. It is a new feature that allows Eclipse users to discover and install Eclipse solutions directly into their Eclipse installation. Where can I get the Eclipse Marketplace Client MPC is included in all of the packages available from the Eclipse download page (except the Classic Package)." />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content="http://marketplace.eclipse.org/marketplace-client-intro" />
+<meta name="twitter:title" content="Introducing the Eclipse Marketplace Client" />
+<meta name="twitter:description" content="What is the Eclipse Marketplace Client Eclipse Marketplace Client (MPC) is a rich client interface for browsing and installing the Eclipse based solutions listed on the Eclipse Marketplace portal. It is a new feature that allows Eclipse users to discover and install Eclipse solutions directly into their Eclipse installation. Where can I get the Eclipse Marketplace Client MPC is included in all of the packages available from the Eclipse download page (except the Classic Package)." />
+  <title>Introducing the Eclipse Marketplace Client | Eclipse Plugins, Bundles and Products - Eclipse Marketplace</title>
+  <link type="text/css" rel="stylesheet" href="http://marketplace.eclipse.org/sites/default/files/css/css_lQaZfjVpwP_oGNqdtWCSpJT1EMqXdMiU84ekLLxQnc4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="http://marketplace.eclipse.org/sites/default/files/css/css_lr2o_ExSkGmspU6Jv0EuenlZg0tlRIxvwfnlgwVYz5o.css" media="all" />
+<link type="text/css" rel="stylesheet" href="http://marketplace.eclipse.org/sites/default/files/css/css_GmU_d79Bwy8mtDlPg80MIMohEylGzxvskrYU8W7KpN0.css" media="all" />
+<link type="text/css" rel="stylesheet" href="http://marketplace.eclipse.org/sites/default/files/css/css_zpq4fYlcDkjaoQCBx2xJ95NV6wZqn-IzLqDeJbJMUB8.css" media="all" />
+  <!-- HTML5 element support for IE6-8 -->
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <script src="http://marketplace.eclipse.org/sites/default/files/js/js_BZg21BmXYMrfPmuI0wQsfBEeLNLS4uxbHohyYi1tm6A.js"></script>
+<script src="http://marketplace.eclipse.org/sites/default/files/js/js_KCd8rbJYUruV1tRJnh4um34UYvyhlrSVCPR1jNko2h8.js"></script>
+<script src="http://marketplace.eclipse.org/sites/default/files/js/js_5LISNUkGZLzMcfkp8tlL-Gp5BND0maFfLvAuKMKnmWU.js"></script>
+<script>(function ($) {
+Drupal.behaviors.adSenseUnblock = {
+  attach: function (context) {
+    setTimeout(function() {
+      if ($('.adsense ins').contents().length == 0) {
+        $('.adsense').html(Drupal.t("Please, enable ads on this site. By using ad-blocking software, you're depriving this site of revenue that is needed to keep it free and current. Thank you."));
+        $('.adsense').css({'overflow': 'hidden', 'font-size': 'smaller'});
+      }
+    }, 3000); // wait 3 seconds for adsense async to execute
+  }
+};
+
+})(jQuery);
+</script>
+<script src="http://marketplace.eclipse.org/sites/default/files/js/js_PqRj24TKYftkT0CxvCCUuqhHVshdI7E3KOMY6ZGyD7g.js"></script>
+<script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-910670-5", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");</script>
+<script src="http://marketplace.eclipse.org/sites/default/files/js/js_Rflnn9EC5N19-vpCElrEKZsHK3ZYMd2Hw7kabHhrFIg.js"></script>
+<script src="http://marketplace.eclipse.org/sites/default/files/js/js_gCOAfYslSbZx1EPWPL7xUhVLJ4Ghq81vn0VruokSkmM.js"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"solstice_marketplace","theme_token":"5r0YSYf_buVl9iftSf0hZ2VYZGrK0Z_JUXP7VBBl96k","js":{"sites\/all\/modules\/contrib\/jquery_update\/replace\/jquery\/1.9\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"misc\/form.js":1,"sites\/all\/modules\/contrib\/adsense\/contrib\/adsense_click\/adsense_click.js":1,"sites\/all\/libraries\/colorbox\/jquery.colorbox-min.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/contrib\/colorbox\/styles\/default\/colorbox_style.js":1,"0":1,"misc\/autocomplete.js":1,"sites\/all\/themes\/bootstrap\/js\/misc\/_collapse.js":1,"sites\/all\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"1":1,"sites\/all\/themes\/solstice\/public\/javascript\/main.min.js":1,"sites\/all\/themes\/solstice\/_themes\/solstice_marketplace\/public\/javascript\/marketplace.min.js":1,"sites\/all\/themes\/bootstrap\/js\/misc\/autocomplete.js":1},"css":{"modules\/system\/system.base.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/all\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/contrib\/apachesolr_autocomplete\/apachesolr_autocomplete.css":1,"sites\/all\/modules\/contrib\/colorbox\/styles\/default\/colorbox_style.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/themes\/solstice\/_themes\/solstice_marketplace\/public\/stylesheets\/styles.min.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px"},"urlIsAjaxTrusted":{"\/marketplace-client-intro?mpc_install=759140":true},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1},"eclipseApiUrl":"https:\/\/api.eclipse.org","marketplaceUrl":"https:\/\/marketplace.eclipse.org","bootstrap":{"anchorsFix":1,"anchorsSmoothScrolling":1,"formHasError":1,"popoverEnabled":1,"popoverOptions":{"animation":1,"html":0,"placement":"right","selector":"","trigger":"click","triggerAutoclose":1,"title":"","content":"","delay":0,"container":"body"},"tooltipEnabled":1,"tooltipOptions":{"animation":1,"html":0,"placement":"auto left","selector":"","trigger":"hover focus","delay":0,"container":"body"}}});</script>
+</head>
+<body class="html not-front not-logged-in one-sidebar sidebar-first page-node page-node- page-node-3993 node-type-page" >
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    <a class="sr-only" href="#content">Skip to main content</a>
+  <div class="clearfix toolbar-container-wrapper">
+    <div class="container">
+      <div class="text-right toolbar-row row hidden-print">
+        <div class="col-md-24 row-toolbar-col">
+          <div id="row-toolbar" class="region region-toolbar text-right hidden-print solstice-region-element-count-1 row">
+  <div id="row-toolbar-col" class="col-md-24">
+    <section id="block-site-login-site-login-toolbar" class="block block-site-login block-region-toolbar site_login_toolbar block-site-login-toolbar clearfix">
+
+      
+  <div class="block-content">
+    <ul class="list-inline"><li><a href="https://dev.eclipse.org/site_login/createaccount.php" target="_self"><i class="fa fa-user fa-fw"></i> Create account</a></li>
+<li><a href="https://marketplace.eclipse.org/user/login" target="_self"><i class="fa fa-sign-in fa-fw"></i> Log in</a></li>
+</ul>  </div>
+
+</section> <!-- /.block -->
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+<header id="header-wrapper" class="" role="banner">
+  <div class="container">
+    <div id="header-row" class="row">
+      <div id="header-left" class="col-sm-8 ">
+                <a href="/" title="Home"><img class="logo-eclipse-default img-responsive" src="http://marketplace.eclipse.org/sites/all/themes/solstice/_themes/solstice_marketplace/logo.png" alt="Home" /></a>                        <a class="name navbar-brand element-invisible" href="/" title="Home">
+        Eclipse Plugins, Bundles and Products - Eclipse Marketplace        </a>
+              </div>
+                    <div id="main-menu-wrapper" class="col-sm-16">
+          <div class="navbar yamm" id="main-menu">
+            <div id="navbar-collapse-1" class="navbar-collapse collapse">
+                                <div class="region region-navigation solstice-region-element-count-1">
+    <section id="block-system-main-menu" class="block block-system block-menu block-region-navigation block-main-menu clearfix">
+
+      
+  <div class="block-content">
+    <ul class="menu nav navbar-nav navbar-right"><li class="first leaf"><a href="/my_marketplace" title="My Marketplace favorites.">My Marketplace</a></li>
+<li class="last leaf"><a href="/add_content" title="Add content to Marketplace.">Add Content</a></li>
+<li class="dropdown eclipse-more hidden-xs">
+        <a data-toggle="dropdown" class="dropdown-toggle">More<b class="caret"></b></a>
+        <ul class="dropdown-menu"><li><div class="yamm-content"><div class="row"><ul class="list-unstyled col-sm-6"><li class="link_heading first"><span><p><strong>Eclipse</strong></p></span></li>
+<li class="link_download"><a href="//www.eclipse.org/downloads/">Download</a></li>
+<li class="link_gettingstarted"><a href="//www.eclipse.org/users/">Getting Started</a></li>
+<li class="link_members"><a href="//www.eclipse.org/membership/">Members</a></li>
+<li class="link_projects last"><a href="//www.eclipse.org/projects/">Projects</a></li>
+</ul><ul class="list-unstyled col-sm-6"><li class="link_heading first"><span><p><strong>Community</strong></p></span></li>
+<li class="link_marketplace"><a href="//marketplace.eclipse.org">Marketplace</a></li>
+<li class="link_events"><a href="//events.eclipse.org">Events</a></li>
+<li class="link_planeteclipse"><a href="//www.planeteclipse.org/">Planet Eclipse</a></li>
+<li class="link_community"><a href="//www.eclipse.org/community/eclipse_newsletter/">Newsletter</a></li>
+<li class="link_youtube last"><a href="//www.youtube.com/user/EclipseFdn">Videos</a></li>
+</ul><ul class="list-unstyled col-sm-6"><li class="link_heading first"><span><p><strong>Participate</strong></p></span></li>
+<li class="link_bugzilla"><a href="//bugs.eclipse.org/bugs/">Report a Bug</a></li>
+<li class="link_forums"><a href="//www.eclipse.org/forums/">Forums</a></li>
+<li class="link_mail"><a href="//www.eclipse.org/mail/">Mailing Lists</a></li>
+<li class="link_wiki"><a href="//wiki.eclipse.org/">Wiki</a></li>
+<li class="link_irc"><a href="//wiki.eclipse.org/IRC">IRC</a></li>
+<li class="link_contribute last"><a href="//www.eclipse.org/contribute/">How to Contribute</a></li>
+</ul><ul class="list-unstyled col-sm-6"><li class="link_heading first"><span><p><strong>Working Groups</strong></p></span></li>
+<li class="link_automotive"><a href="//wiki.eclipse.org/Auto_IWG">Automotive</a></li>
+<li class="link_iot"><a href="//iot.eclipse.org">Internet of Things</a></li>
+<li class="link_locationtech"><a href="//www.locationtech.org">LocationTech</a></li>
+<li class="link_lts"><a href="//lts.eclipse.org">Long-Term Support</a></li>
+<li class="link_polarsys"><a href="//www.polarsys.org">PolarSys</a></li>
+<li class="link_science"><a href="//science.eclipse.org">Science</a></li>
+<li class="link_openmdm last"><a href="//openmdm.org">OpenMDM</a></li>
+</ul></div></div></li></ul></li></ul>  </div>
+
+</section> <!-- /.block -->
+  </div>
+                          </div>
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              </button>
+              <a href="/" class="navbar-brand visible-xs"><img class="logo-eclipse-default-mobile" width="140" alt="Eclipse.org logo" src="http://marketplace.eclipse.org/sites/all/themes/solstice/public/images/marketplace/logo.png"/></a>            </div>
+          </div>
+        </div>
+          </div>
+  </div>
+</header>
+
+<section id="breadcrumb" class="default-breadcrumbs hidden-print">
+  <div class="container">
+    <div class="col-xs-24">
+      <ol class="breadcrumb"><li><a href="//www.eclipse.org">Home</a></li>
+<li><a href="/">Marketplace</a></li>
+<li class="active">Introducing the Eclipse Marketplace Client</li>
+</ol>    </div>
+  </div>
+</section>
+
+
+<main role="main" class="no-promo">
+    <div class="container" id="novaContent">
+  <header role="banner" id="page-header">
+          </header>
+  <!-- /#page-header -->
+  <div class="row" id="main-content-row">
+                  <aside class="col-sm-6" role="complementary" id="main-sidebar-first">
+            <div class="region region-sidebar-first solstice-region-element-count-2">
+    <section id="block-marketplace-blocks-marketplace-blocks-categories" class="block block-marketplace-blocks block-region-sidebar-first block-solstice-collapse block-solstice-collapsed solstice-block solstice-block-default block-marketplace-blocks-categories clearfix">
+
+        <h2 class="block-title">Markets</h2>
+    
+  <div class="block-content">
+    <ul class="menu-item-list"><li><a href="/category/markets/eclipse-project">Eclipse Project (59)</a></li>
+<li><a href="/category/markets/tools" class="solstice-menu-collapse solstice-menu-nojs-collapsed">Tools (1638)</a><ul><li><a href="/taxonomy/term/1964%2C31">Application Development Frameworks (195)</a></li>
+<li><a href="/taxonomy/term/28%2C31">Application Management (53)</a></li>
+<li><a href="/taxonomy/term/1%2C31">Application Server (61)</a></li>
+<li><a href="/taxonomy/term/42%2C31">BIRT (20)</a></li>
+<li><a href="/taxonomy/term/4%2C31">Build and Deploy (148)</a></li>
+<li><a href="/taxonomy/term/1973%2C31">Business Intelligence, Reporting and Charting (26)</a></li>
+<li><a href="/taxonomy/term/2%2C31">Code Management (158)</a></li>
+<li><a href="/taxonomy/term/1968%2C31">Collaboration (44)</a></li>
+<li><a href="/taxonomy/term/3%2C31">Database (68)</a></li>
+<li><a href="/taxonomy/term/1970%2C31">Database Development (39)</a></li>
+<li><a href="/taxonomy/term/36%2C31">Database Persistence (34)</a></li>
+<li><a href="/taxonomy/term/5%2C31">Documentation (79)</a></li>
+<li><a href="/taxonomy/term/1963%2C31">EclipseRT Target Platform Components (9)</a></li>
+<li><a href="/taxonomy/term/6%2C31">Editor (376)</a></li>
+<li><a href="/taxonomy/term/7%2C31">Entertainment (23)</a></li>
+<li><a href="/taxonomy/term/1972%2C31">General Purpose Tools (129)</a></li>
+<li><a href="/taxonomy/term/8%2C31">Graphics (45)</a></li>
+<li><a href="/taxonomy/term/24%2C31">IDE (417)</a></li>
+<li><a href="/taxonomy/term/3574%2C31">Internet of Things (IoT) (17)</a></li>
+<li><a href="/taxonomy/term/9%2C31">J2EE Development Platform (85)</a></li>
+<li><a href="/taxonomy/term/27%2C31">J2ME (10)</a></li>
+<li><a href="/taxonomy/term/4397%2C31">Kura Apps (0)</a></li>
+<li><a href="/taxonomy/term/10%2C31">Languages (182)</a></li>
+<li><a href="/taxonomy/term/1969%2C31">Linux Tools (13)</a></li>
+<li><a href="/taxonomy/term/37%2C31">Logging (24)</a></li>
+<li><a href="/taxonomy/term/1974%2C31">Mobile and Device Development (80)</a></li>
+<li><a href="/taxonomy/term/1971%2C31">Modeling (114)</a></li>
+<li><a href="/taxonomy/term/11%2C31">Modeling Tools (210)</a></li>
+<li><a href="/taxonomy/term/38%2C31">Mylyn Connectors (29)</a></li>
+<li><a href="/taxonomy/term/12%2C31">Network (28)</a></li>
+<li><a href="/taxonomy/term/23%2C31">Other (95)</a></li>
+<li><a href="/taxonomy/term/30%2C31">Process (33)</a></li>
+<li><a href="/taxonomy/term/13%2C31">Profiling (27)</a></li>
+<li><a href="/taxonomy/term/1966%2C31">Programming Languages (114)</a></li>
+<li><a href="/taxonomy/term/39%2C31">Reporting (52)</a></li>
+<li><a href="/taxonomy/term/25%2C31">Rich Client Applications (84)</a></li>
+<li><a href="/taxonomy/term/26%2C31">SCM (25)</a></li>
+<li><a href="/taxonomy/term/40%2C31">Search (53)</a></li>
+<li><a href="/taxonomy/term/1965%2C31">SOA Development (24)</a></li>
+<li><a href="/taxonomy/term/14%2C31">Source Code Analyzer (123)</a></li>
+<li><a href="/taxonomy/term/29%2C31">Systems Development (88)</a></li>
+<li><a href="/taxonomy/term/15%2C31">Team Development (101)</a></li>
+<li><a href="/taxonomy/term/16%2C31">Testing (115)</a></li>
+<li><a href="/taxonomy/term/17%2C31">Tools (749)</a></li>
+<li><a href="/taxonomy/term/18%2C31">UI (135)</a></li>
+<li><a href="/taxonomy/term/19%2C31">UML (73)</a></li>
+<li><a href="/taxonomy/term/20%2C31">Web (165)</a></li>
+<li><a href="/taxonomy/term/21%2C31">Web Services (76)</a></li>
+<li><a href="/taxonomy/term/1967%2C31">Web, XML, Java EE and OSGi Enterprise Development (70)</a></li>
+<li><a href="/taxonomy/term/22%2C31">XML (60)</a></li>
+</ul></li>
+<li><a href="/category/markets/iot">IoT (4)</a></li>
+<li><a href="/category/markets/rcp-applications">RCP Applications (185)</a></li>
+<li><a href="/category/markets/training-consulting">Training & Consulting (76)</a></li>
+<li><a href="/category/markets/long-term-support">Long Term Support (11)</a></li>
+</ul>  </div>
+
+</section> <!-- /.block -->
+<section id="block-marketplace-apachesolr-marketplace-apachesolr-sd-search" class="block block-marketplace-apachesolr marketplace-apachesolr-sd-search block-region-sidebar-first block-solstice-collapse solstice-block solstice-block-default block-marketplace-apachesolr-sd-search clearfix">
+
+        <h2 class="block-title">Search</h2>
+    
+  <div class="content-search">
+    <form class="search-form" action="/marketplace-client-intro?mpc_install=759140" method="post" id="search-form" accept-charset="UTF-8"><div><div class="form-inline form-wrapper form-group" id="edit-basic--2"><input type="hidden" name="get" value="{&quot;mpc_install&quot;:&quot;759140&quot;}" />
+<div class="form-item form-type-textfield form-item-keys">
+<div class="input-group"><input placeholder="Search" class="field-search-key auto_submit form-control form-text" type="text" id="edit-keys--2" name="keys" value="" size="30" maxlength="255" /><span class="input-group-addon"><span class="icon glyphicon glyphicon-refresh" aria-hidden="true"></span></span></div><input type="hidden" id="edit-keys--2-autocomplete" value="http://marketplace.eclipse.org/index.php?q=apachesolr_autocomplete" disabled="disabled" class="autocomplete" />
+</div>
+</div><input type="hidden" name="form_build_id" value="form-mpJaB-Z20QaSfWKB6laOkUN_yEEzGXYeTmhMvaKAZ-U" />
+<input type="hidden" name="form_id" value="apachesolr_search_custom_page_search_form" />
+<fieldset  class="panel-warning collapsible collapsed panel panel-default form-wrapper" id="edit-advanced--2">
+          <legend class="panel-heading">
+      <a href="#" class="panel-title fieldset-legend" data-toggle="collapse" data-target="#edit-advanced--2 > .collapse">Advanced Search</a>
+    </legend>
+          <div class="panel-collapse collapse fade">
+    <div class="panel-body">
+        <div class="form-item form-type-select form-item-category">
+ <label for="edit-category--2">Solutions Categories </label>
+ <select class="form-control form-select" id="edit-category--2" name="category"><option value="0">All</option><option value="1964">Application Development Frameworks</option><option value="28">Application Management</option><option value="1">Application Server</option><option value="42">BIRT</option><option value="4">Build and Deploy</option><option value="1973">Business Intelligence, Reporting and Charting</option><option value="2">Code Management</option><option value="1968">Collaboration</option><option value="3">Database</option><option value="1970">Database Development</option><option value="36">Database Persistence</option><option value="5">Documentation</option><option value="1963">EclipseRT Target Platform Components</option><option value="6">Editor</option><option value="7">Entertainment</option><option value="1972">General Purpose Tools</option><option value="8">Graphics</option><option value="24">IDE</option><option value="3574">Internet of Things (IoT)</option><option value="9">J2EE Development Platform</option><option value="27">J2ME</option><option value="4397">Kura Apps</option><option value="10">Languages</option><option value="1969">Linux Tools</option><option value="37">Logging</option><option value="1974">Mobile and Device Development</option><option value="1971">Modeling</option><option value="11">Modeling Tools</option><option value="38">Mylyn Connectors</option><option value="12">Network</option><option value="23">Other</option><option value="30">Process</option><option value="13">Profiling</option><option value="1966">Programming Languages</option><option value="39">Reporting</option><option value="26">SCM</option><option value="40">Search</option><option value="1965">SOA Development</option><option value="14">Source Code Analyzer</option><option value="29">Systems Development</option><option value="15">Team Development</option><option value="16">Testing</option><option value="17">Tools</option><option value="18">UI</option><option value="19">UML</option><option value="20">Web</option><option value="21">Web Services</option><option value="1967">Web, XML, Java EE and OSGi Enterprise Development</option><option value="22">XML</option></select>
+</div>
+<div class="form-item form-type-select form-item-market">
+ <label for="edit-market--2">Markets </label>
+ <select class="form-control form-select" id="edit-market--2" name="market"><option value="0">All</option><option value="3891">Eclipse Project</option><option value="31">Tools</option><option value="4396">IoT</option><option value="33">RCP Applications</option><option value="34">Training &amp; Consulting</option></select>
+</div>
+<div class="form-item form-type-select form-item-status">
+ <label for="edit-status--2">Status </label>
+ <select class="form-control form-select" id="edit-status--2" name="status"><option value="0">All</option><option value="Production/Stable">Production/Stable</option><option value="Beta">Beta</option><option value="Mature">Mature</option><option value="Alpha">Alpha</option></select>
+</div>
+<div class="form-item form-type-select form-item-license">
+ <label for="edit-license--2">License Type </label>
+ <select class="form-control form-select" id="edit-license--2" name="license"><option value="0">All</option><option value="Commercial">Commercial</option><option value="Commercial - Free">Commercial - Free</option><option value="EPL">EPL</option><option value="GPL">GPL</option><option value="ASL">ASL</option><option value="MIT">MIT</option><option value="BSD-Like">BSD-Like</option><option value="LGPL">LGPL</option><option value="Free for non-commerical use">Free for non-commercial use</option><option value="Other Open Source">Other Open Source</option><option value="Other">Other</option></select>
+</div>
+  </div>
+    </div>
+  </fieldset>
+<button class="btn-warning btn form-submit" type="submit" id="edit-submit--2" name="op" value="Search">Search</button>
+</div></form>  </div>
+
+</section> <!-- /.block -->
+  </div>
+        </aside>
+      <!-- /#sidebar-first -->
+      
+              <section  class="col-sm-18 id="main-content">
+      
+      
+        
+        
+                  <a id="main-content"></a>
+          <div id="maint-content-area">
+            
+                          <h1  class="page-header"><div class="marketplace-badges-container"></div><span  class="listing-title">Introducing the Eclipse Marketplace Client</span></h1>
+                                
+                                
+          
+          
+            <div class="region region-content solstice-region-element-count-2">
+    <section id="block-system-main" class="block block-system block-region-content block-main clearfix">
+
+      
+  <div class="block-content">
+    <article id="node-3993" class="node node-page clearfix">
+    <!-- google_ad_section_start --><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><h3>What is the Eclipse Marketplace Client</h3>
+<p>Eclipse Marketplace Client (MPC) is a rich client interface for browsing and installing the Eclipse based solutions listed on the Eclipse Marketplace portal. It is a new feature that allows Eclipse users to discover and install Eclipse solutions directly into their Eclipse installation. </p>
+<h3>Where can I get the Eclipse Marketplace Client</h3>
+<p>MPC is included in all of the packages available from the <a href="http://www.eclipse.org/downloads">Eclipse download page</a>. </p>
+<h3>How do I access the Eclipse Marketplace Client</h3>
+<p>You can start MPC by launching Eclipse and accessing it from the Help menu.<br /><img src="/sites/all/themes/solstice/_themes/solstice_marketplace/public/images/help.jpg" /></p>
+<p>Once launched the Marketplace Client presents a wizard that looks like this:<br /><img src="http://www.eclipse.org/mpc/images/newNoteworthy/mpc-client.png" /></p>
+<h3>Drag and Drop Install</h3>
+<p>You can use the Drag and Drop install feature by dragging  the <img src="/sites/all/themes/solstice/public/images/components/drag-drop/installbutton.png" alt="Install button" /> button to your running Eclipse workspace.</p>
+<h4>Useful Links</h4>
+<p><a href="http://live.eclipse.org/node/921">MarketPlace Client Introduction Demo Video</a><br /><br /><a href="http://www.eclipse.org/mpc/newNoteworthy.php">Eclipse Marketplace Client New + Noteworthy</a></p>
+</div></div></div><!-- google_ad_section_end -->    <footer>
+          </footer>
+    </article>
+  </div>
+
+</section> <!-- /.block -->
+<div id="block--managed-0" class="block block--managed block-region-content block-0 hidden-xs margin-top-15 margin-bottom-20">
+
+    
+  <div class="content" class="block-content">
+    <div style='text-align:center'><div class='adsense' style='display:inline-block;width:468px;height:60px;'>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 468x60 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:468px;height:60px"
+     data-ad-client="ca-pub-6797025590085056"
+     data-ad-slot="0096919806"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div></div>  </div>
+</div>
+  </div>
+                  </div>
+
+        
+            </section>
+
+    
+    </div>
+  </div>
+
+  
+</main>
+
+<p id="back-to-top">
+  <a class="visible-xs" href="#top">Back to the top</a>
+</p>
+
+  <footer role="contentinfo" id="solstice-footer">
+  <div class="container">
+    <div class="row">
+
+      <section  id="footer-eclipse-foundation" class="col-xs-offset-1 col-xs-11 col-sm-7 col-md-6 col-md-offset-0 hidden-print">
+                  <h2 class="section-title">Eclipse Foundation</h2><ul class="nav"><li class="link_about first"><a href="//www.eclipse.org/org/">About Us</a></li>
+<li class="link_contact"><a href="//www.eclipse.org/org/foundation/contact.php">Contact Us</a></li>
+<li class="link_donate"><a href="//www.eclipse.org/donate">Donate</a></li>
+<li class="link_gouvernance"><a href="//www.eclipse.org/org/documents/">Governance</a></li>
+<li class="link_logo"><a href="//www.eclipse.org/artwork/">Logo and Artwork</a></li>
+<li class="link_board last"><a href="//www.eclipse.org/org/foundation/directors.php">Board of Directors</a></li>
+</ul>              </section>
+
+      <section  id="footer-legal" class="col-xs-offset-1 col-xs-11 col-sm-7 col-md-6 col-md-offset-0 hidden-print">
+                  <h2 class="section-title">Legal</h2><ul class="nav"><li class="link_publishing_guidelines first"><a href="/content/eclipse-marketplace-publishing-guidelines">Publishing Guidelines</a></li>
+<li class="link_privacy"><a href="//www.eclipse.org/legal/privacy.php">Privacy Policy</a></li>
+<li class="link_terms"><a href="//www.eclipse.org/legal/termsofuse.php">Terms of Use</a></li>
+<li class="link_copyright"><a href="//www.eclipse.org/legal/copyright.php">Copyright Agent</a></li>
+<li class="link_epl"><a href="//www.eclipse.org/org/documents/epl-v10.php">Eclipse Public License</a></li>
+<li class="link_legal last"><a href="//www.eclipse.org/legal/">Legal Resources</a></li>
+</ul>              </section>
+
+      <section  id="footer-useful-links" class="col-xs-offset-1 col-xs-11 col-sm-7 col-md-6 col-md-offset-0 hidden-print">
+                  <h2 class="section-title">Useful Links</h2><ul class="nav"><li class="link_marketplace first"><a href="/content/welcome-eclipse-marketplace">Welcome to Marketplace</a></li>
+<li class="link_bugs"><a href="//bugs.eclipse.org/bugs/">Report a Bug</a></li>
+<li class="link_help"><a href="//help.eclipse.org/">Documentation</a></li>
+<li class="link_contribute"><a href="//www.eclipse.org/contribute/">How to Contribute</a></li>
+<li class="link_mail"><a href="//www.eclipse.org/mail/">Mailing Lists</a></li>
+<li class="link_forums last"><a href="//www.eclipse.org/forums/">Forums</a></li>
+</ul>              </section>
+
+      <section  id="footer-other" class="col-xs-offset-1 col-xs-11 col-sm-7 col-md-6 col-md-offset-0 hidden-print">
+                 <h2 class="section-title">Other</h2><ul class="nav"><li class="link_ide first"><a href="//www.eclipse.org/ide/">IDE and Tools</a></li>
+<li class="link_projects"><a href="//www.eclipse.org/projects">Community of Projects</a></li>
+<li class="link_workinggroups last"><a href="//www.eclipse.org/org/workinggroups/">Working Groups</a></li>
+</ul>         <h2 class="section-title sr-only">Other</h2><ul class="list-inline social-media"><li class="link_twitter first"><a href="//twitter.com/EclipseFdn"><i class="fa fa-twitter-square"></i></a></li>
+<li class="link_google"><a href="//plus.google.com/+Eclipse"><i class="fa fa-google-plus-square"></i></a></li>
+<li class="link_facebook"><a href="//www.facebook.com/eclipse.org"><i class="fa fa-facebook-square"></i></a></li>
+<li class="link_youtube last"><a href="//www.youtube.com/user/EclipseFdn"><i class="fa fa-youtube-square"></i></a></li>
+</ul>            </section>
+
+            <div  id="copyright" class="col-xs-offset-1 col-sm-14 col-md-24 col-md-offset-0">
+         <div>
+           <span class="hidden-print"><a href="https://www.eclipse.org/"><img src="http://marketplace.eclipse.org/sites/all/themes/solstice/public/images/logo/eclipse-logo-bw-800x188.png" alt="Eclipse.org black and white logo" width="166" height="39" class="logo-eclipse-white"/></a></span>
+             <p id="copyright-text">Copyright &copy; 2016 The Eclipse Foundation. All Rights Reserved.</p>
+           </div>
+        </div>
+      
+      <a href="#" class="scrollup">Back to the top</a>
+    </div>
+  </div>
+</footer>
+  </body>
+</html>
