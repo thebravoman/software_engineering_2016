@@ -52,7 +52,7 @@ Final score, Class, Number, Name, Score Test |Score Module |comment
 (2),B, 21, Nikola Tzotchev, 1|1 ,Тестът и модулът работят както трябва
 (1),B, 22, Nikolai Romanov, 1|0,  Модулът е ок. Тестът зарежда входните данни по следния начин: 	var data = JSON.parse(fs.readFile('./inputs/none-x.json')); - fs#readFile е асинхронна функция не връща стойност!, Ако оправя теста: пак гърми с  { x1: 4, x2: -1, D: 25 } == { D: 25, x1: 4, x2: -1 } json-a се сравнява като стринг, но полетата са разместени
 (2), B, 23, Nikoleta Dalaktchieva, 1|1, Тестът и модулът работят както трябва 
-(0), B, 24, Slav Kirilov, 0|0, Модулът не връща стойност, => импортите са сбъркани из основи
+(1.8), B, 24, Slav Kirilov, 0|0, Модулът не връща стойност, => импортите са сбъркани из основи
 (0), B, 25, ??, 0|No homework committed
 (0), B, 26, Filip Danailov, 
 (0.9), B, 27, Hristian Genchev, 0|0,Тестът се чупи с AssertionError: { x1: '1.00', x2: '-0.50' } deepEqual { x: 'Any' }
