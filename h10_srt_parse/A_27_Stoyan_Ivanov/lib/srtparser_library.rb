@@ -76,7 +76,7 @@ module SrtparserLibrary
 				file = File.read(filename)
 
 				num_of_subs = file.scan(/^[0-9]+$/).length
-				puts num_of_subs
+				#puts num_of_subs
 				duration = whole_duration(file)
 
 				output["number_of_words"] = number_of_words(file)

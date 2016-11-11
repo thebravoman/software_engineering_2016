@@ -1,0 +1,11 @@
+{
+  "name": "app_b_06",
+  "version": "1.0.0",
+  "description": "",
+  "main": "B_06_Velislav_Velikov.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Velislav Velikov",
+  "license": "ISC"
+}
