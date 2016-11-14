@@ -5,7 +5,7 @@ function handleRequest(request, response)
 {
 	var get_params = url.parse(request.url, true);
 	response.end(JSON.stringify(get_params.query));
-	/*'Hello, ' + get_params.query.first_name + ' ' + get_params.query.last_name*/
+	/*opa*/
 }
 
 
