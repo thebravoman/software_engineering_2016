@@ -1,5 +1,6 @@
 var URL = require('url');
 var HTTP = require('http');
+var content_type = require('content-type');
 var port = 8122
 
 function handleGETRequest(request, response)
