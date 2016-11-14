@@ -1,0 +1,11 @@
+{
+  "name": "app_a_16",
+  "version": "1.0.0",
+  "description": "HIT LIKE B",
+  "main": "nordsfromtheratway.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Iordan Ivanov",
+  "license": "ISC"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "app_b_05",
+  "version": "1.0.0",
+  "description": "B",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Valentin Vurbanov",
+  "license": "ISC"
+}0.0.1');
