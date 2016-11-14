@@ -1,9 +1,9 @@
 var http = require('http');
 var url = require('url');
-// var contentType = require("content-type");
+var content_type = require("content-type");
 
 function handleRequest(request, response) {
-    // contentType.format({type : "application/json"});
+    content_type.format({type: "application/json"});
     var get_params = url.parse(request.url, true);
     response.end(JSON.stringify(get_params.query));
 }
