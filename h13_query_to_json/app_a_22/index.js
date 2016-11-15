@@ -1,15 +1,14 @@
-var URL = require('url');
-var HTTP = require('http');
-var content_type = require('content-type');
+var url = require("url");
+var http = require("http");
 var port = 8122
 
 function handleGETRequest(request, response)
 {
-	contentType.format( {type: "application/json" } );
 	
-	var content = URL.parse(request.URL, true);
-
+	var content = url.parse(request.url, true);
+	response.writeHead(200, {
+    		'Content-Type' : 'application/json'    	
+  	});	  
 	response.end(JSON.stringify(content.query));
 }
-
-HTTP.createServer(handleGETRequest).listen(port, '127.0.0.1');
+http.createServer(handleGETRequest).listen(port, '127.0.0.1');
