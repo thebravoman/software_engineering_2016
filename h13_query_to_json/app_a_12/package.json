@@ -1,6 +1,6 @@
 {
   "name": "app_a_12",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "query_to_json.js",
   "scripts": {
