@@ -4,6 +4,9 @@ var url = require('url');
 function handleRequest(request, response)
 {
 	var get_params = url.parse(request.url, true);
+	response.writeHead(200, {
+                'Content-Type' : 'application/json'
+            });
 	response.end(JSON.stringify(get_params.query));
 	/*opa*/
 }
