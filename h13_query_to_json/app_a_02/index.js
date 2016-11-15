@@ -1,12 +1,16 @@
 var http = require('http');
 var url = require('url');
-var contentType = require('content-type');
+
 
 function handleRequest(request, response)
 {
 
-	contentType.format({type : "application/json"});
-	var get_params = url.parse(request.url, true);	
+
+	var get_params = url.parse(request.url, true);
+	response.writeHead(200, {
+                'Content-Type' : 'application/json'
+});
+	
 	response.end(JSON.stringify(get_params.query,null,2));
 }
 
