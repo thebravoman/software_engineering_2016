@@ -1,6 +1,5 @@
 const http = require("http");
 const url = require("url");
-const contentType = require("content-type");
 
 function GETRequest(request, response){
 	response.writeHead(200,{
@@ -21,4 +20,3 @@ function handleRequest(request, response) {
 }
 
 http.createServer(handleRequest).listen(8114, '127.0.0.1');
-console.log("ASDF");
