@@ -1,0 +1,8 @@
+source 'https://rubygems.org'
+
+# Specify your gem's dependencies in srt_parser.gemspec
+gemspec
+
+gemspec :development_group => :dev
+gemspec :path => '/lib/srt_parser'
+gemspec :name => 'srt_parser'

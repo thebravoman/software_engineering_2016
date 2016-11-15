@@ -50,7 +50,7 @@ else
         else 
         
             if x1%1==0 then
-				print"x1.to_i
+				print x1.to_i
 			else 
 				print x1.round(2)
 			end

@@ -1,0 +1,16 @@
+{
+  "name": "app_a_07",
+  "version": "1.0.0",
+  "description": "URL query string to JSON conversion",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "url",
+    "query",
+    "json"
+  ],
+  "author": "Dimitar Nikolov",
+  "license": "MIT"
+}

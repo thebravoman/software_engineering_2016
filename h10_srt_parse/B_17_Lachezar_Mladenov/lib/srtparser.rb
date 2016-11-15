@@ -1,4 +1,4 @@
-class STRParser
+class SRTParser
 
 	$symbol_pattern = /([~!@#$%^&*(){}\[\]|”:><?\/-])/
 	$time_pattern = /^(\d+):(\d+):(\d+),(\d+).*?(\d+):(\d+):(\d+),(\d+)$/
@@ -34,7 +34,7 @@ class STRParser
 			end
 			
 		end
-		
+		initialization_methods(subtitles)
 		$result["average_duration"] = average_duration(total_subtitles, $result["duration"])
 		
 		return $result
