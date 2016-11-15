@@ -3,7 +3,9 @@ const url = require("url");
 const contentType = require("content-type");
 
 function GETRequest(request, response){
-	contentType.format({type: "application/json"});
+	response.writeHead(200,{
+		"Content-Type": "application/json"
+	});
 	let params = url.parse(request.url, true);
 	response.end(JSON.stringify(params.query, null, 4));
 }
@@ -13,6 +15,7 @@ function handleRequest(request, response) {
 		GETRequest(request, response);
 	}
 	else{
+		response.writeHead(204);
 		response.end();
 	}
 }
