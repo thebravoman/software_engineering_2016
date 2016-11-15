@@ -3,7 +3,6 @@ var url = require('url');
 var http = require('http');
 var port = 8126;
 
-var contentType = require("content-type");
 
 function GetRequest(request, response){
 
