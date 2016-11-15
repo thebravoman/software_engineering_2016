@@ -1,13 +1,24 @@
-var http = require('http');
-var url = require('url');
-var contentType = require('content-type');
+const http = require('http');
+const url = require('url');
+const port = 8104;
 
-function handleGETrequest(request, responce) {
-  contentType.format({type: "application/json"});
-  var get_data = url.parse(request.url, true);
-  responce.end(JSON.stringify(get_data.query));
+function handleRequest(request, response) {
+  switch (request.method) {
+    case 'GET':
+      let query = url.parse(request.url, true).query;
+      response.writeHead(200, {
+        'Content-Type': 'application/json'
+      });
+      response.end(JSON.stringify(query, null, 4));
+      break;
+    default:
+      response.end();
+  }
 }
 
-console.log('listening on localhost: 8104/making things happen :D /: ');
-
-http.createServer(handleGETrequest).listen('8104', '127.0.0.1');
+http.createServer(handleRequest).listen(port, '127.0.0.1', function (err) {
+  if (err) {
+    throw err;
+  }
+  console.log(`Listening on port ${port}...`);
+});
