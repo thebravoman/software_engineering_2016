@@ -7,11 +7,13 @@ var contentType = require("content-type");
 
 function GetRequest(request, response){
 
-    contentType.format( {type: "application/json" } );
+      var queryArguments = url.parse(request.url, true);
 
-    var queryArguments = url.parse(request.url, true);
+    response.writeHead(200, {
+    		'Content-Type' : 'application/json'
+      });
 
-    response.end(JSON.stringify(content.query));
+    response.end(JSON.stringify(queryArguments.query));
 
 
 }
