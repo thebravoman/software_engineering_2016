@@ -2,7 +2,7 @@ const http = require('http');
 const url = require('url');
 
 function handleRequest(request, response) {
-let query = url.parse(request.url, true).query;
+var query = url.parse(request.url, true).query;
 response.writeHead(200, {
 'Content-Type': 'application/json'
 });
