@@ -5,6 +5,7 @@ var content_type = require("content-type");
 
 function GETrequestor(request, response)
 {
+	response.writeHead(200, {'Content-Type' : 'application/json'});
 	content_type.format({type: "application/json"});
 	var GETdata = url.parse(request.url, true);
 	response.end(JSON.stringify(GETdata.query, null , 2));
