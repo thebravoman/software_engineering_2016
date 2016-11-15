@@ -4,7 +4,7 @@ var url=require("url");
 function handleRequest(request, response)
 {
 	var query=url.parse(request.url,true).query;
-	response.writeHead(200
+	response.writeHead(200,
 	{
 		'Content-Type':'application/json'
 	});
