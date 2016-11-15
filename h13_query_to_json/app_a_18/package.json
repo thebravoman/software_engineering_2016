@@ -1,0 +1,11 @@
+{
+  "name": "app_a_18",
+  "version": "1.0.0",
+  "description": "11A",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lilian Vachkov",
+  "license": "ISC"
+}
