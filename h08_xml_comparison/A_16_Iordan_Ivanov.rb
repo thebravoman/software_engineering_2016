@@ -1,7 +1,7 @@
 require "json"
-require "xmlsimple"
+require "crack"
 
-xmlparse = XmlSimple.xml_in(File.read(ARGV[0]))
+xmlparse = Crack::XML.parse(File.read(ARGV[0]))
 jsonparse = JSON.parse(File.read(ARGV[1]))
 
 if xmlparse == jsonparse
