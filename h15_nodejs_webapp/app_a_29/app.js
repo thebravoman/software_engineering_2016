@@ -3,7 +3,7 @@ var url = require('url');
 var dataHandler = require('./modules/handler.js');
 
 var port = 8129;
-var hostname = 'localhost'
+var hostname = 'localhost';
 
 function handleGetRequest(request, response) {
     console.log('Getting');
