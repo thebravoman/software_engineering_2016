@@ -23,7 +23,7 @@ function readData(filename, contentType, response)
 		else
 		{
 			response.writeHead(404);
-			response.end('Image Not Found');
+			response.end('File Not Found');
 		}
 	});
 }
