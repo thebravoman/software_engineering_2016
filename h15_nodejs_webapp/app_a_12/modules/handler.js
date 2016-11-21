@@ -15,7 +15,10 @@ function getHeaders() {
 			return {'Content-Type': 'image/jpeg'};
 	}
 	else if(result == 2) {
-			return {'Content-Type': 'application/json'};
+			return {
+				'Content-Type': 'application/json',
+				'Image-Url': 'http://localhost:' + 8112 + '?image'
+			       };
 	}
 	
 }

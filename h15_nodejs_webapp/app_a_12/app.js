@@ -1,7 +1,7 @@
 var http = require('http');
 var url = require('url');
 var fs = require('fs');
-var handler = require('./handler/handler.js')
+var handler = require('./modules/handler.js')
 
 function handleRequest(request, response)
 {
