@@ -15,7 +15,8 @@ function requestHandle(request, response) {
     } 
     else {
     	responseWriter.responseWriter('./data/data.json', 
-    			{'contentType': 'application/json'}, response);
+    			{'contentType': 'application/json', 
+    			'Image-url':'localhost:8217/?image'}, response);
     }
 }
 
