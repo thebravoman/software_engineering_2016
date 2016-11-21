@@ -8,7 +8,7 @@ var port = 8111;
 function handleRequest(request, response) {
     var get_params = url.parse(request.url, true);
     if(get_params.query.image != null) {
-        imgProvider.provideImage(response);
+        dataProvider.provideData('./images/image.jpeg', {'Content-Type': 'image/jpeg'}, response)
     } else {
         dataProvider.provideData('./data/data.json', {'Content-Type':'application/json', 'Image-Url': 'http://localhost:8111?image'}, response)
     }
