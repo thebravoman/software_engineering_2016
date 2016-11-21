@@ -10,10 +10,9 @@ function handleRequest(request, response)
   {
     dataProvider.provideData('images/image.jpg',{'Content-Type': 'image/jpeg'}, response);
   }else{
-    dataProvider.provideData('./data/data.json', {'Content-Type': 'application/json','Image-Url':'http://localost:8101/?image'}, response);
+    dataProvider.provideData('./data/data.json', {'Content-Type': 'application/json','Image-Url':'http://localhost:8101/?image'}, response);
   }
 
-	/*opa*/
 
 }
 
