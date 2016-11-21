@@ -11,7 +11,8 @@ function handleRequest(request, response)
 		if(request_data.query.image != null)
 		{
 			dataProvider.provideData('images/image.jpg',{'Content-Type': 'image/jpeg'}, response);
-		}		else
+		}		
+		else
 		{
 			dataProvider.provideData('./data/data.json', {'Content-Type': 'application/json','Image-Url':'http://localhost:8116/?image'}, response);
 		}
