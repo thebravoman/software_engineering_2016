@@ -7,7 +7,7 @@ var hostname = 'localhost';
 
 function handleRequest(request, response)
 {
-	if(request.url === '/favicon.ico')
+	if(request.url == '/favicon.ico')
 	{
 		console.log('FAVICON REQUEST -> IGNORE');
 	}
