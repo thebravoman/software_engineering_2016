@@ -1,7 +1,7 @@
 
 var http = require('http');
 var url = require('url');
-var requestHandler = require('./modules/handler.js');
+var dataProvider = require('./modules/data_provider.js');
 
 	var get_params = url.parse(request.url, true);
 		if (get_params.query.image != null && get_params.query.image != null)
