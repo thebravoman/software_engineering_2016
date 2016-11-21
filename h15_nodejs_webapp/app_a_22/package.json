@@ -1,11 +1,14 @@
 {
-  "name": "app_b_06",
+  "name": "app_a_22",
   "version": "1.0.0",
-  "description": "11_b_class",
+  "description": "Node.js Homework",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Velislav Velikov",
+  "keywords": [
+    "Homework"
+  ],
+  "author": "Mihail Ernandes",
   "license": "ISC"
 }

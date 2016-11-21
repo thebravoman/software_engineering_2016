@@ -1,7 +1,8 @@
-var fs = require("fs");
+var fs = require('fs');
 
-function readData(filename, contentType, response)
+function checkData(filename, contentType, response)
 {
+	console.log('Providing ' + filename);
 	fs.exists(filename, function(exists)
 	{
 		if(exists)
@@ -11,24 +12,24 @@ function readData(filename, contentType, response)
 				if(!error)
 				{
 					response.writeHead(200, contentType);
+					console.log(contentType);
 					response.end(data);
 				}
 				else
 				{
 					response.writeHead(500);
-					response.end('Internal Server Error');
+					response.end('Internal Server Error!');
 				}
 			});
 		}
 		else
 		{
 			response.writeHead(404);
-			response.end('File Not Found');
+			response.end('Image not found');
 		}
 	});
 }
-
 exports.provideData = function(filename, contentType, response)
 {
-	return readData(filename, contentType, response);
+	return checkData(filename, contentType, response);
 }
