@@ -1,6 +1,6 @@
 var http = require('http');
 var url = require('url');
-var dataProvider = require('./modules/data_provider.js');
+var dataProvider = require('./modules/handler.js');
 
 var port = 8111;
 
