@@ -8,7 +8,7 @@ function openData(filename, contentType, response) {
                     response.writeHead(500);
                     response.end('Server Error');
                 } else {
-                    response.writeHead(200, contentType);
+                    response.writeHead(200, contentType, {'Image-Url': 'http://localhost:8111?image'});
                     response.end(data);
                 }
             });
