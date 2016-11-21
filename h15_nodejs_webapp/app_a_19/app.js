@@ -14,7 +14,7 @@ function handleRequest(request, response)
 		}
 		else
 		{
-			dataSource.provideData('images/image.png',{'Content-Type': 'image/png'}, response);
+			dataProvider.provideData('images/image.jpg',{'Content-Type': 'image/jpeg'}, response);
 		}
 }
 http.createServer(handleRequest).listen(port, hostname);
