@@ -24,17 +24,14 @@ function provideData(filename, contentType, response) {
 exports.proccessGETRequest = function(request, response) {
 	
 	var get_parametres = url.parse(request.url, true);
-	if (get_parametres.query.data != null) {
-		provideData('data/data.json', 
-								 {'Content-Type': 'application/json'},
-								 response);
-	} else if (get_parametres.query.image != null) {
+	if (get_parametres.query.image != null) {
+
 		provideData('image/image.jpg',
 								 {'Content-Type': 'image/jpeg'},
 								 response);
 	} else {
 		provideData('data/data.json', 
-				 {'Content-Type': 'application/json'},
-				 response);
-	}
-}
+								 {'Content-Type': 'application/json', 'Image-Url':'http://localhost:8209/?image'},
+								 response);		
+	} 
+};
