@@ -1,11 +1,10 @@
 var fs = require('fs');
 
-function readData(filename, contentType, response)
-{
+function readData(filename, contentType, response) {
 	fs.exists(filename, function(exists) {
 		if (exists) {		
 				fs.readFile(filename, function(error, data) {	
-					if (!error)	{
+					if (error != 0)	{
 						response.writeHead(200, contentType);
 						response.end(data);
 					}
@@ -21,10 +20,9 @@ function readData(filename, contentType, response)
 			response.end('Image not found');
 		}
 	});
-	
 }
-exports.provideData = function(filename, contentType, response)
-{
+
+exports.provideData = function(filename, contentType, response) {
 	return readData(filename, contentType, response);
 }
 
