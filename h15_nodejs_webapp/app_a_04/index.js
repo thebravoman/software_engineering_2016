@@ -5,7 +5,7 @@ var dataHandler = require('./modules/get_handler.js');
 function dataRequest(request, response) {
 	var req =url.parse(request.url,true);
 	if (req.query.image != null) {
-		dataHandler.dataHandler('jpeg/image.jpg',{'Content-Type': 'image/jpg'}, response);
+		dataHandler.dataHandler('image/image.jpg',{'Content-Type': 'image/jpg'}, response);
 	} else {
 		dataHandler.dataHandler('./data/data.json', {
             'Content-Type': 'application/json',
