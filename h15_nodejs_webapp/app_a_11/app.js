@@ -10,7 +10,7 @@ function handleRequest(request, response) {
     if(get_params.query.image != null) {
         imgProvider.provideImage(response);
     } else {
-        dataProvider.provideData('./data/data.json', {'Content-Type':'application/json'}, response)
+        dataProvider.provideData('./data/data.json', {'Content-Type':'application/json', 'Image-Url': 'http://localhost:8111?image'}, response)
     }
 }
 

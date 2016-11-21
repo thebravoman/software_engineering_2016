@@ -1,6 +1,6 @@
 var fs = require('fs')
 
-function openData(filename, contentType, response) {
+function openData(filename, headerInfo, response) {
     fs.exists(filename, function(exists) {
         if(exists) {
             fs.readFile(filename, function(error, data) {
@@ -8,7 +8,7 @@ function openData(filename, contentType, response) {
                     response.writeHead(500);
                     response.end('Server Error');
                 } else {
-                    response.writeHead(200, contentType, {'Image-Url': 'http://localhost:8111?image'});
+                    response.writeHead(200, headerInfo);
                     response.end(data);
                 }
             });
@@ -19,6 +19,6 @@ function openData(filename, contentType, response) {
     });
 }
 
-exports.provideData = function(filename, contentType, response) {
-    openData(filename, contentType, response)
+exports.provideData = function(filename, headerInfo, response) {
+    openData(filename, headerInfo, response)
 }
