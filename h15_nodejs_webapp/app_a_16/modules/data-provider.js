@@ -1,8 +1,7 @@
-const fs = require("fs");
+var fs = require("fs");
 
 function readData(filename, contentType, response)
 {
-	console.log('providing' + filename);
 	fs.exists(filename, function(exists)
 	{
 		if(exists)
