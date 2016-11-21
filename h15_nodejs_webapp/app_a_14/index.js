@@ -16,6 +16,9 @@ function handleRequest(request, response){
                 dataProvider.provideData("./data/data.json", {"Content-Type": "application/json", "Image-Url": "http://localhost:" + port + "?image=turboman"}, response);
             }
             break;
+        default:
+            response.writeHead(204);
+            response.end();
     }
 }
 
