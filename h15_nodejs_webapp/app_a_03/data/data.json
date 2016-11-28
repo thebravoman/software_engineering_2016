@@ -1,7 +1,20 @@
 {
-	"first_name":"Bojidar",
-	"last_name":"Stanoev"
-
-
-
+   "characters":[
+      {
+         "firstname":"Dark",
+         "lastname":"Troll",
+         "type":"troll"
+      },
+      {
+          "firstname":"gar",
+          "lastname":"soul",
+          "type":"troll",
+          "waka":"kaka"
+       },
+      {
+    	  "firstname":"Queen",
+    	  "lastname":"Mab",
+    	  "type":"witch"
+      }
+   ]
 }
