@@ -54,16 +54,16 @@ exports.queryData = function(filename, headers, query, response) {
 							allData.characters.forEach(function(character) {
 								
 								for (var key in JSONquery) {
-								    if (key === JSONquery[key]) {
+								    if (JSONquery[key] === character[key]) {
 								    	filteredData.push(character);
 								    }
 								}
 							});
 						}
 						if (filteredData.length > 0) {
-							result[query] = filteredData;
-							var imageUrl = 'images/' + query;
-							headers["Image-Url"] = 'http://localhost:8180/?image='+query;
+							result[query.type] = filteredData;
+							var imageUrl = 'images/' + query.type;
+							headers["Image-Url"] = 'http://localhost:8180/?image='+query.type;
 						}
 						
 							
