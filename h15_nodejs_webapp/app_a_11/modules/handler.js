@@ -32,18 +32,18 @@ exports.queryData = function(filename, headers, query, response) {
 					var filteredData = [];
 					var allData = JSON.parse(data);
 					if (Array.isArray(allData.characters)){
-                            allData.characters.forEach(function(character) {
-                                console.log("In character");
-                                for(var key in query) {
-                                    if(key in character) {
-                                        console.log("Searching eq key..")
-                                        if (character[key] == query[key]) {
-                                            console.log("Pushing Element....")
-                                            filteredData.push(character);
-                                        }
+                        allData.characters.forEach(function(character) {
+                            console.log("In character");
+                            for(var key in query) {
+                                if(key in character) {
+                                    console.log("Searching eq key..")
+                                    if (character[key] == query[key]) {
+                                        console.log("Pushing Element....")
+                                        filteredData.push(character);
                                     }
                                 }
-                            });
+                            }
+                        });
 					}
 					if (filteredData.length > 0) {
 						result = filteredData;
