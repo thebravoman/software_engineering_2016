@@ -1,20 +1,30 @@
+
 var http = require('http');
 var url = require('url');
-var dataSource = require('./modules/data-provider.js');
-var port = 8119;
+var dataProvider = require('./modules/data-provider.js');
+
+var port = 8102;
 var hostname = 'localhost';
 
 function handleRequest(request, response)
 {
-	var get_params = url.parse(request.url, true);
-
-	if (get_params.query.image == null)
+	
+		var get_params = url.parse(request.url, true);
+		if (get_params.query.image != null)
 		{
-			dataSource.provideData('data/data.json',{'Content-Type': 'application/json','Image-Url': 'http://localhost:8119?image' }, response);
+			dataProvider.provideData('images/'+get_params.query.image+'.jpg',{'Content-Type': 'image/jpeg'}, response);
+		}
+		else if (get_params.query)
+		{
+
+				dataProvider.queryData('./data/data.json',{'Content-Type': 'application/json'}, get_params.query, response);
+
 		}
 		else
 		{
-			dataProvider.provideData('images/image.jpg',{'Content-Type': 'image/jpeg'}, response);
+			dataProvider.provideList('data/data.json',{'Content-Type': 'application/json'}, response);
 		}
+
 }
+
 http.createServer(handleRequest).listen(port, hostname);
