@@ -1,9 +1,9 @@
-var http = require('http');
-var url = require('url');
-var dataProvider = require('./modules/data-provider.js');
+let http = require('http');
+let url = require('url');
+let dataProvider = require('./modules/data-provider.js');
 
-var port = 8217;
-var hostname = 'localhost';
+let port = 8180;
+let hostname = 'localhost';
 
 function handleRequest(request, response)
 {
@@ -13,12 +13,13 @@ function handleRequest(request, response)
 	}
 	else
 	{	
-		var get_params = url.parse(request.url, true);
+		let get_params = url.parse(request.url, true);
+
 		if (get_params.query.image != null)
 		{
 			dataProvider.provideData('images/'+get_params.query.image+'.jpg',{'Content-Type': 'image/jpeg'}, response);
 		}
-		else if (Object.keys(get_params.query).length > 0)
+		else if (Object.keys(get_params).length > 0)
 		{
 			dataProvider.queryData('data/data.json',{'Content-Type': 'application/json'}, get_params.query, response);
 		}
