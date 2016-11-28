@@ -13,7 +13,7 @@
         "strength": 100
       },
       {
-        "firstname":"Kiril",
+          "firstname":"Kiril",
         "lastname":"Mitov",
         "type":"bok",
         "strength": 10000
