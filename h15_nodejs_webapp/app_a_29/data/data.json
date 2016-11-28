@@ -1,4 +1,14 @@
 {
-	"first_name": "Hristo",
-	"last_name": "Spasov"
+   "characters":[
+      {
+         "firstname":"Dark",
+         "lastname":"Troll",
+         "type":"troll"
+      },
+      {
+    	  "firstname":"Dark",
+    	  "lastname":"Mab",
+    	  "type":"witch"
+      }
+   ]
 }
