@@ -23,42 +23,43 @@ exports.provideData = function(filename, headerInfo, response) {
     openData(filename, headerInfo, response);
 };
 
-exports.queryData = function(filename, headers, key, query, response) {
-    console.log("Querry Data called...");
+exports.queryData = function(filename, headers, query, response) {
 	fs.exists(filename, function(exists) {
 		if (exists) {
-            console.log('File found');
-		    fs.readFile(filename, function(error, data) {
-		        if (!error) {
-					var result = {};
-					var filteredData = [];
-					var allData = JSON.parse(data);
-                    console.log("Reading file...");
-					if (Array.isArray(allData.characters)) {
-                        console.log("This is array");
-                        allData.characters.forEach(function(character) {
-                            console.log(character[key] + ' ' + query);
-							if (character[key] === query) {
-								filteredData.push(character);
-							}
-						});
-					}
-					if (filteredData.length > 0) {
-						result[query] = filteredData;
-						var imageUrl = 'images/' + query;
-						headers["Image-Url"] = 'http://localhost:8180/?image='+query;
-					}
+				fs.readFile(filename, function(error, data) {
+					if (!error)	{
+						var result = {};
+						var filteredData = [];
+						var allData = JSON.parse(data);
+						if (Array.isArray(allData.characters)){
+                                allData.characters.forEach(function(character) {
+                                    console.log("In character");
+                                    for(var key in query) {
+                                        if(key in character) {
+                                            console.log("Searching eq key..")
+                                            if (character[key] == query[key]) {
+                                                console.log("Pushing Element....")
+                                                filteredData.push(character);
+                                            }
+                                        }
+                                    }
+                                });
+						}
+						if (filteredData.length > 0) {
+							result = filteredData;
+							// var imageUrl = 'images/' + key;
+							headers["Image-Url"] = 'http://localhost:8180/?image='+filteredData.type;
+						}
 
 
-					response.writeHead(200, headers);
-                    console.log(result);
-					response.end(JSON.stringify(result));
-				}
-				else {
-					response.writeHead(500);
-					response.end('Internal Server Error');
-				}
-			});
+						response.writeHead(200, headers);
+						response.end(JSON.stringify(result));
+					}
+					else {
+						response.writeHead(500);
+						response.end('Internal Server Error');
+					}
+				});
 		}
 		else
 		{
