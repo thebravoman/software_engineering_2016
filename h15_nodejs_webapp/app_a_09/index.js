@@ -13,15 +13,19 @@ http.createServer(function(request, response)
 	}
 	else
 	{	
-		var get_params = url.parse(request.url, true);
+		const query = url.parse(request.url, true).query;
 
-		if (get_params.query.image != null)
+		if (query.image != null)
 		{
-			dataProvider.provideData('images/image.jpg',{'Content-Type': 'image/jpeg'}, response);
+			dataProvider.provideData('images/'+query.image+'.jpg',{'Content-Type': 'image/jpg'}, response);
+		}
+		else if(query != null && Object.keys(query).length > 0)
+		{
+			dataProvider.queryData('data/data.json',{'Content-Type': 'application/json'}, query, response);
 		}
 		else
 		{
-			dataProvider.provideData('data/data.json',{'Content-Type': 'application/json', 'Image-Url': 'http://localhost:8109/?image'}, response);
+			dataProvider.provideList('data/data.json', {'Content-Type': 'application/json'}, response);
 		}
 	}
 }).listen(port, hostname);

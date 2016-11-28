@@ -1,4 +1,46 @@
 {
-	"firstname":"Zachary",
-	"lastname":"Georgiev"
+   "characters" : [
+      {
+        "firstname" : "Dark",
+        "lastname" : "Bugger",
+        "type" : "troll",
+        "strength" : "100"
+      },
+      {
+        "firstname" : "Rosko",
+        "secondname" :  "Picha",
+        "type" : "shkendzi",
+        "strength" : "9000"
+      },
+      {
+        "firstname" : "Miguel",
+        "secondname" : "Hernandez",
+        "type" : "smeshnik",
+        "strength" : "2"
+      },
+      {
+      "firstname" : "Ivan",
+      "lastname" : "Ganchev",
+      "type" : "zagubenqk",
+      "strength" : "1"
+      },
+      {
+        "firstname" : "Dark",
+        "lastname" : "Shkendzi",
+        "type" : "troll",
+        "strength" : "69"
+      },
+      {
+        "firstname" : "Queen",
+        "lastname" : "Maya",
+        "type" : "bee",
+        "strength" : "300"
+      },
+      {
+        "firstname" : "Queen",
+        "lastname" : "Anne",
+        "type" : "witch",
+        "strength" : "400"
+      }
+   ]
 }
