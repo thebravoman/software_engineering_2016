@@ -4,20 +4,13 @@
          "firstname":"Dark",
          "lastname":"Troll",
          "type":"troll",
-				 "strength" : "0"
+         "lel":"LUl"
       },
       {
     	  "firstname":"Queen",
     	  "lastname":"Mab",
     	  "type":"witch",
-				"strength" : "1000",
-				"sth": "2"
-      },
-			{
-				"firstname": "Marina",
-				"lastname": "Tihova",
-				"type": "student",
-				"strength" : "-100"
-			}
+    	   "lel":"LUl"
+      }
    ]
 }
