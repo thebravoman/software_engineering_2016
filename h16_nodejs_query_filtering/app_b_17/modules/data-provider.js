@@ -52,11 +52,15 @@ exports.queryData = function(filename, headers, query, response) {
 						var allData = JSON.parse(data);
 						if (Array.isArray(allData.characters)){
 							allData.characters.forEach(function(character) {
-								
+								var legit = false;
 								for (var key in JSONquery) {
 								    if (JSONquery[key] === character[key]) {
-								    	filteredData.push(character);
+								    	legit = true;
 								    }
+								}
+								
+								if(legit) {
+									filteredData.push(character);
 								}
 							});
 						}
