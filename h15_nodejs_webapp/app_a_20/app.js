@@ -11,8 +11,6 @@ function handleRequest(request, response) {
 
 	var query = url.parse(request.url, true).query;
 
-	console.log(query);
-
 	if(query.image != null){
 		console.log(query.image);
 		handler.provideData('./images/'+ query.image +'.jpg',{'Content-Type': 'image/jpeg'}, response);

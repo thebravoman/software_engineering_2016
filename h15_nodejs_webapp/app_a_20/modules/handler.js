@@ -26,33 +26,34 @@ exports.queryData = function(filename, headers, query, response) {
     if (exists) {
       fs.readFile(filename, function(error, data) {
 
-				if (!error) {
+		if (!error) {
           var filteredData = [];
           var allData = JSON.parse(data);
 
-          if (Array.isArray(allData.characters)) {
-	          allData.characters.forEach(function(character) {
-							var equal = false;
+        if (Array.isArray(allData.characters)) {
+          allData.characters.forEach(function(character) {
+			var equal = false;
 
-							for(var key in query){
-								if(key in character){
-									if(character[key] === query[key]){
-										equal = true;
-									}
-								}
-							}
-
-							if(equal){
-								filteredData.push(character);
-							}
-	          });
-          }
-					if (filteredData.length > 0) {
-							headers["Image-Url"] = 'http://localhost:8120/?image='+filteredData[0].type;
+			for(var key in query){
+				if(key in character){
+					if(character[key] === query[key]){
+						equal = true;
 					}
+				}
+			}
 
-          response.writeHead(200, headers);
-          response.end(JSON.stringify(filteredData));
+			if(equal){
+				filteredData.push(character);
+			}
+          });
+        }
+
+		if (filteredData.length > 0) {
+			headers["Image-Url"] = 'http://localhost:8120/?image='+filteredData[0].type;
+		}
+
+		  response.writeHead(200, headers);
+		  response.end(JSON.stringify(filteredData));
         }
         else {
           response.writeHead(500);
