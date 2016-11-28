@@ -1,4 +1,42 @@
 {
-	"first_name":"Alexander",
-	"last_name":"Stoyanov"
+
+
+
+
+  "characters":[
+
+
+     {
+
+
+        "firstname":"Dark",
+        "lastname":"Troll",
+        "type":"troll",
+        "strength":"10"
+
+
+
+
+     },
+
+
+     {
+
+
+         "firstname":"Queen",
+
+
+         "lastname":"Mab",
+
+
+         "type":"witch",
+         "strength":"100"
+
+
+     }
+
+
+  ]
+
+
 }
