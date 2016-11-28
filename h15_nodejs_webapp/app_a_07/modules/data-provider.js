@@ -48,7 +48,7 @@ exports.queryData = function(filename, headers, query, response) {
 						var filteredData = [];
 						var allData = JSON.parse(data);
 						if (Array.isArray(allData.characters)){
-							allData.characters.forEach(function(character) {
+								allData.characters.forEach(function(character) {
 								var eligible = true;
 
 								Object.keys(query).forEach(function (param) {

@@ -18,7 +18,7 @@ function handleRequest(request, response)
 		{
 			dataProvider.provideData('images/'+get_params.query.image+'.jpg',{'Content-Type': 'image/jpeg'}, response);
 		}
-		else if (Object.keys(get_params.query).length !== 0)
+			else if (Object.keys(get_params.query).length !== 0)
 		{
 			console.log('query', get_params.query);
 			dataProvider.queryData('data/data.json',{'Content-Type': 'application/json'}, get_params.query, response);
