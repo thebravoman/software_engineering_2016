@@ -1,10 +1,8 @@
-/**
- * New node file
- */
- 
 var fs = require('fs');
+
 function readImage(filename, response)
 {
+	console.log('providing ' + filename);
 	fs.exists(filename, function(exists) {
 		if (exists) {		
 				fs.readFile(filename, function(error, data) {	
@@ -30,5 +28,4 @@ function readImage(filename, response)
 exports.provideImage = function(response)
 {
 	readImage('./images/image.jpg', response);	
-}; 
- 
+};
