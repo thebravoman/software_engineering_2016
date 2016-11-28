@@ -40,9 +40,7 @@ exports.provideList = function(filename, contentType,  response)
 };
 
 exports.queryData = function(filename, headers, query, response) {
-	
-	var JSONquery = JSON.parse(JSON.stringify(query));
-	
+	var print = 0;
 	fs.exists(filename, function(exists) {
 		if (exists) {		
 				fs.readFile(filename, function(error, data) {	
@@ -50,18 +48,21 @@ exports.queryData = function(filename, headers, query, response) {
 						var result = {};
 						var filteredData = [];
 						var allData = JSON.parse(data);
-						if (Array.isArray(allData.characters)){
+						if (Array.isArray(allData.characters)) {
 							allData.characters.forEach(function(character) {
-								var legit = false;
-								for (var key in JSONquery) {
-								    if (JSONquery[key] === character[key]) {
-								    	legit = true;
-								    }
-								}
-								
-								if(legit) {
+								Object.keys(query).forEach(function(key) {
+									if (character[key] === query[key]) {
+										print = 1;
+									}else if (character[key] !== query[key]){
+										print = 0;
+										return false;
+									}
+									
+								});
+								if(print === 1){
 									filteredData.push(character);
 								}
+								
 							});
 						}
 						if (filteredData.length > 0) {
