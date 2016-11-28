@@ -1,0 +1,16 @@
+{
+   "characters":[
+      {
+         "firstname":"Dark",
+         "lastname":"Troll",
+         "type":"troll",
+         "greeting": "yourgonnadie"
+      },
+      {
+    	  "firstname":"Queen",
+    	  "lastname":"Mab",
+    	  "type":"witch",
+    	  "greeting":"yourgonnadietoo"
+      }
+   ]
+}
