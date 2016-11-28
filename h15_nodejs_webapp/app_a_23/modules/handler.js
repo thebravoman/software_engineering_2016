@@ -2,19 +2,6 @@ var fs = require('fs');
 var url = require('url');
 var port = 8123;
 
-exports.handleRequest = function handleRequest(request, response) {
-	if(!Object.keys(url.parse(request.url, true).query).indexOf('image')) {
-		var img = fs.readFileSync(image);
-		response.writeHead(200, { 'Content-Type': 'image/jpeg' });
-		response.end(img, 'binary');
-	} else {
-		response.writeHead(200, {
-			'Content-Type': 'application/json',
-			'Image-Url': 'http://localhost:' + port + '?image' });
-		response.end(JSON.stringify(data));
-	}
-};
-
 exports.image = function image(filename, response) {
 	fs.exists(filename, function(exists) {
 		if (exists) {
