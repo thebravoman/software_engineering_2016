@@ -31,15 +31,24 @@ exports.queryData = function(filename, headers, query, response) {
 					var result = {};
 					var filteredData = [];
 					var allData = JSON.parse(data);
+                    var done;
 					if (Array.isArray(allData.characters)){
                         allData.characters.forEach(function(character) {
                             console.log("In character");
                             for(var key in query) {
                                 if(key in character) {
+                                    done = false;
                                     console.log("Searching eq key..")
                                     if (character[key] == query[key]) {
                                         console.log("Pushing Element....")
-                                        filteredData.push(character);
+                                        for(var i = 0; i < filteredData.length; i++) {
+                                            if(filteredData[i] == character) {
+                                                done = true;
+                                            }
+                                        }
+                                        if(!done) {
+                                            filteredData.push(character);
+                                        }
                                     }
                                 }
                             }
