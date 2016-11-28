@@ -1,0 +1,16 @@
+{
+   "characters":[
+      {
+         "firstname":"Dark",
+         "lastname":"Troll",
+         "type":"troll",
+         "gender":"Male"
+      },
+   {
+    	  "firstname":"Isen",
+    	  "lastname":"Stain",
+    	  "type":"ghost",
+    	  "gender":"Male"
+      }
+   ]
+}
