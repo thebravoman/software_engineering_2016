@@ -60,7 +60,7 @@ exports.queryData = function(name, headers, query, response) {
 					}
 					length=filter.length
 					if (length > 0) {
-						var imageUrl = 'images/' + query.type;
+						var imageUrl = 'image/' + query.type;
 						headers["Image-Url"] = 'http://localhost:8105/?image=' + query.type;
 					}
 					response.writeHead(200, headers);
