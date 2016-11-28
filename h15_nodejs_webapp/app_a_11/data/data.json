@@ -1,4 +1,19 @@
 {
-	"firstname":"Ivan",
-	"lastname":"Milev"
+   "characters":[
+      {
+         "firstname":"Dark",
+         "lastname":"Troll",
+         "type":"troll"
+      },
+      {
+    	  "firstname":"Queen",
+    	  "lastname":"Mab",
+    	  "type":"witch"
+      },
+		{
+			"firstname":"Ivan",
+			"lastname":"Milev",
+			"type":"OTKA4EH"
+		}
+   ]
 }
