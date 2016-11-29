@@ -1,4 +1,26 @@
 {
-	"firstname":"Ivo",
-	"lastname":"Stefanov"
+   "characters": [
+      {
+         "firstname":"Dark",
+         "lastname":"Troll",
+         "type":"troll",
+         "strength":"100"
+      },
+      {
+    	  "firstname":"Queen",
+    	  "lastname":"Mab",
+    	  "type":"witch",
+    	  "strength":"100"
+      },
+      {
+          "firstname":"Execute",
+          "lastname":"Order",
+          "type":"66"
+      },
+      {
+          "firstname":"Attack",
+          "lastname":"Helicopter",
+          "type":"human"
+      }
+   ]
 }

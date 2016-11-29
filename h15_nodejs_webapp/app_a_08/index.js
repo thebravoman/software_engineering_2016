@@ -8,22 +8,25 @@ function handleGetRequest(request, response)
 	var get_params=url.parse(request.url,true);
 	if (get_params.query.image!=null)
 	{
-		data.provideData("./image/image.jpg", 
+		data.provideData('./image/'+get_params.quer.image+'jpg', 
 		{
 			'Content-Type':'image/jpeg'
 		}, response);
 	}
-	else
+	else if (get_params.query)
 	{
-		data.provideData("./data/data.json",
+		data.queryData("./data/data.json",
 		{
 			'Content-Type':'application/json',
-			'Image-Url':'http://localhost:'+8108+'?image'
+		}, get_params.query, response);
+	}
+	else
+	{
+		data.provideList('./data/data.json',
+		{
+			'Content-Type':'application/json'
 		}, response);
 	}
 }
 
-http.createServer(handleGetRequest).listen(8108,'localhost',function()
-{
-	console.log('listening on','localhost',':',8108);
-});
+http.createServer(handleGetRequest).listen(8108,'localhost');

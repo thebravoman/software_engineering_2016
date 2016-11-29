@@ -1,57 +1,35 @@
-const http = require('http');
-const url = require('url');
-const fs = require('fs');
-const port = 8107;
+var http = require('http');
+var url = require('url');
+var dataProvider = require('./modules/data-provider.js');
 
-function handleRequest(request, response) {
-  switch (request.method) {
-    case 'GET':
+var port = 8107;
+var hostname = 'localhost';
 
-      const query = url.parse(request.url, true).query;
-
-      if (typeof query.image !== 'undefined') {
-        const imagePath = `./images/${query.image}`;
-
-        fs.exists(imagePath, exists => {
-          if (exists) {
-            fs.readFile(imagePath, (err, image) => {
-              if (err) {
-                console.log(err);
-                response.writeHead(500);
-                response.end("Internal server error!");
-              } else {
-                response.writeHead(200, {
-                  'Content-Type': 'image/jpeg'
-                });
-                response.end(image);
-              }
-            });
-          } else {
-            response.writeHead(404);
-            response.end("Image not found!");
-          }
-        });
-      } else {
-        const jsonObject = require('./data/data.json');
-
-        response.writeHead(200, {
-          'Content-Type': 'application/json',
-          'Image-Url': `http://localhost:${port}?image`
-        });
-
-        response.end(JSON.stringify(jsonObject, null, 4));
-      }
-
-      break;
-
-    default:
-      response.end();
-  }
+function handleRequest(request, response)
+{
+	if (request.url ==='/favicon.ico')
+	{	
+		console.log('Ignore facicon request...');
+	}
+	else
+	{	
+		var get_params = url.parse(request.url, true);
+		if (get_params.query.image != null)
+		{
+			dataProvider.provideData('images/'+get_params.query.image+'.jpg',{'Content-Type': 'image/jpeg'}, response);
+		}
+			else if (Object.keys(get_params.query).length !== 0)
+		{
+			console.log('query', get_params.query);
+			dataProvider.queryData('data/data.json',{'Content-Type': 'application/json'}, get_params.query, response);
+		}
+		else
+		{
+			dataProvider.provideList('data/data.json',{'Content-Type': 'application/json'}, response);
+		}
+	}
 }
 
-http.createServer(handleRequest).listen(port, '127.0.0.1', err => {
-  if (err) {
-    throw err;
-  }
-  console.log(`Listening on port ${port}...`);
+http.createServer(handleRequest).listen(port, hostname, () => {
+	console.log(`Listening on port ${port}...`);
 });

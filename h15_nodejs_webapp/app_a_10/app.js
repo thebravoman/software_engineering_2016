@@ -12,11 +12,17 @@ function handleRequest(request, response)
 	if (params.query.image != null)
 	{
 		dataProvider.provideData('./image/image.jpeg', {'Content-Type': 'image/jpeg'}, response);
-	}else{
-		dataProvider.provideData('./data/data.json', {
-            		'Content-Type': 'application/json',
-            		'Image-Url': 'http://localhost:' + port + '?image'
-		}, response);
+	}
+    	else if (params.query != null) 
+    	{
+        	for(var key in params.query)
+        	{
+            		dataProvider.queryData('./data/data.json',{'Content-Type': 'application/json'}, key, params.query[key], response);
+       		}
+	} 
+    	else 
+    	{
+       	 	dataProvider.provideData('./data/data.json', {'Content-Type': 'application/json'}, response);
     	}
 }
 

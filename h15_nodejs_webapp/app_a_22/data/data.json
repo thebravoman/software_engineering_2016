@@ -1,5 +1,24 @@
 {
-
-	"firstname":"Obicham",
-	"lastname":"Rukavichki"
+	"characters" : [
+		{
+			"firstname" : "Dark",
+			"lastname" : "Troll",
+			"type" : "troll"
+		},
+		{
+			"firstname" : "Dark",
+			"lastname" : "Dolan",
+			"type" : "witch"
+		},
+		{
+			"firstname" : "White",
+			"lastname" : "Dolan",
+			"type" : "troll"
+		},
+		{
+			"firstname" : "White",
+			"lastname" : "Troll",
+			"type" : "witch"
+		} 
+  	]	
 }

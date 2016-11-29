@@ -1,4 +1,17 @@
 {
-	"first_name":"Velislav",
-	"last_name":"Yotov"
+   "characters":[
+      {
+         "firstname":"Dark",
+         "lastname":"Troll",
+         "type":"troll",
+         "strength":"100"
+      },
+
+      {
+    	  "firstname":"Queen",
+    	  "lastname":"Mab",
+    	  "type":"witch",
+    	  "strength":"100"
+      }
+   ]
 }

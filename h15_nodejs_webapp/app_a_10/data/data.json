@@ -1,4 +1,26 @@
 {
-    "firstname": "Iva",
-    "lastname": "Zahova"
+   "characters": [
+      {
+         "firstname":"Dark",
+         "lastname":"Troll",
+         "type":"troll",
+         "strength":"100"
+      },
+      {
+    	  "firstname":"Queen",
+    	  "lastname":"Mab",
+    	  "type":"witch",
+    	  "strength":"100"
+      },
+      {
+          "firstname":"Sportacus",
+          "lastname":"Number",
+          "type":"10"
+      },
+      {
+          "firstname":"Inside",
+          "lastname":"Job",
+          "type":"911"
+      }
+   ]
 }

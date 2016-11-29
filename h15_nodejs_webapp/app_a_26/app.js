@@ -1,37 +1,30 @@
-var url = require('url');
 var http = require('http');
+var url = require('url');
 
-var module = require('./modules/get.js');
 var port = 8126;
 
+var hostname = "127.0.0.1"
 
-function GetRequest(request, response){
-  console.log('GetRequest initiated.');
-      var queryArguments = url.parse(request.url, true);
+var module = require('./modules/querryHandle.js');
 
-    for(var attributename in queryArguments.query){
+function handleRequest(request, response) {
+	var get_params = url.parse(request.url,true);
 
-      if(attributename == "image"){
-          module.provideData('./image/hackerman.jpg',
-          {'Content-Type': 'image/jpg'},
-          response);
+	if(get_params.query.image) {
+		console.log('getting image'+ get_params.query.image + '.jpg..');
+		module.image('./image/' + get_params.query.image + '.jpg', response);
+	}
 
-      }
-      else{
-        module.provideData('./data/data.json',
-        {'Content-Type': 'application/json',
-        'Image-Url': 'http://localhost:8126/?image'},
-        response);
-      }
+  else if(Object.keys(get_params.query).length) {
+      	console.log('Getting Element..');
+		module.data('./data/data.json', get_params.query, response,port);
+	}
 
-
-    }
-
-//    response.end(JSON.stringify(queryArguments.query));
-
-
+  else {
+    console.log('Getting all data ..');
+		module.jsonOut('./data/data.json', response,port);
+	}
 }
 
-
-http.createServer(GetRequest).listen(port, '127.0.0.1');
-  console.log('listening on 127.0.0.1:',port);
+console.log('listening on localhost:' + port);
+http.createServer(handleRequest).listen(port, hostname);

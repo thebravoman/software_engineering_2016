@@ -1,4 +1,23 @@
 {
-	"first_name": "Marina",
-	"last_name": "Tihova"
+	"characters":[
+		{
+			"firstname":"Dark",
+			"lastname":"Troll",
+			"type":"troll",
+			"strength" : "0"
+		},
+		{
+			"firstname":"Queen",
+			"lastname":"Mab",
+			"type":"witch",
+			"strength" : "1000",
+			"sth": "2"
+		},
+		{
+			"firstname": "Marina",
+			"lastname": "Tihova",
+			"type": "student",
+			"strength" : "-100"
+		}
+	]
 }
