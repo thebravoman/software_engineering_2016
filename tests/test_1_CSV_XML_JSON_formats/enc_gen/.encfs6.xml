@@ -24,13 +24,13 @@
 	<allowHoles>1</allowHoles>
 	<encodedKeySize>44</encodedKeySize>
 	<encodedKeyData>
-AayiMVU9JBriMaqfBJD+sEwrtY+RXixGN5k8Ws7lYENL4UzLOe8btbLNhws=
+hxrbAoQzX0ULWsV+dF3c7cxAhA+TJor0xKC70rw00+9MZu/phGaaO04tv0A=
 	</encodedKeyData>
 	<saltLen>20</saltLen>
 	<saltData>
-o9XQeDdlwNTxP2edsde4igh8Mhs=
+VK9G7Y9pm1nh3DBTY9Re113vTy8=
 	</saltData>
-	<kdfIterations>388679</kdfIterations>
+	<kdfIterations>383412</kdfIterations>
 	<desiredKDFDuration>500</desiredKDFDuration>
 </cfg>
 </boost_serialization>

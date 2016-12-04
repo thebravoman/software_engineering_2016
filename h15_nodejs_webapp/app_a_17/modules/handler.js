@@ -1,4 +1,4 @@
-var fs = require	('fs');
+var fs = require('fs');
 
  function getData(filename,type, response) {
 	 fs.exists(filename, function(exists) {
