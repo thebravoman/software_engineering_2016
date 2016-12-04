@@ -1,0 +1,11 @@
+{
+  "name": "app_b_09",
+  "version": "1.0.0",
+  "description": "B",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Georgi Nizamski",
+  "license": "ISC"
+}
