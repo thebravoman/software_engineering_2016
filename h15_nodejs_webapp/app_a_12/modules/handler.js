@@ -8,31 +8,25 @@ function queryData(query, callback) {
 	fs.exists(filename, function(exists) {
 		if (exists) {		
 				fs.readFile(filename, function(error, data) {	
-						var arr=query.split("&");
-						var params = arr.map(function(el){
-						el.split("=");	
-						var characters = data.characters;
-						params.forEach(function(param){
+						var str = data.toString();
+						var obj = JSON.parse(data);
+						var characters = obj.characters;				
+						for(var key in query) {
 							characters = characters.filter(function(hero){
-								return hero[param[0]] === param[1];
-							})
-						});
+									return hero[key] === query[key];
+							});							
+						}
 						
 						response.statusCode = 200;
 						response.data = JSON.stringify(characters);	
-						
-					});	
+						callback(response);
 				});
-		}
-		else
-		{
+		} else {
 			response.statusCode = 404;
 			response.data = 'data.json not found';
+			callback(response);
 		}
-		
-		callback(response);
 	});	
-	
 }
 	
 function getHeaders() {
@@ -42,6 +36,10 @@ function getHeaders() {
 function getRequestBody() {
 	return response;
 }
+
+module.exports.queryData = queryData;
+module.exports.getHeaders = getHeaders;
+module.exports.getRequestBody = getRequestBody;
 
 module.exports.queryData = queryData;
 module.exports.getHeaders = getHeaders;
