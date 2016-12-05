@@ -12,9 +12,9 @@ router.get('/', function(request, response, next)
 	{	
 		var get_params = request.query;
 
-		if (get_params.image !== null)
+		if (get_params.image != null)
 		{
-			dataProvider.provideData('images/'+get_params.image+'.jpg',{'Content-Type': 'image/jpeg'}, response);
+			dataProvider.provideData('images/' + get_params.image + '.jpg', {'Content-Type': 'image/jpeg'}, response);
 		}
 		else if (Object.keys(get_params).length > 0)
 		{
@@ -22,7 +22,7 @@ router.get('/', function(request, response, next)
 		}
 		else
 		{
-			dataProvider.provideList('data/data.json', "json", response);
+			dataProvider.provideList('data/data.json', {'Content-Type': 'application/json'}, response);
 		}
 	}
 });
