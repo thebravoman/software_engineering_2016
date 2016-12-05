@@ -43,10 +43,10 @@ exports.provideList = function(filename, contentType,  response)
 	readData(filename,contentType, response);
 };
 
-exports.queryData = function(filename, headers, query, response) {
+exports.queryData = function(filename, query, response) {
 	
 	var JSONquery = JSON.parse(JSON.stringify(query));
-	
+
 	fs.exists(filename, function(exists) {
 		if (exists) {		
 				fs.readFile(filename, function(error, data) {	
@@ -56,23 +56,23 @@ exports.queryData = function(filename, headers, query, response) {
 						var allData = JSON.parse(data);
 						if (Array.isArray(allData.characters)){
 							allData.characters.forEach(function(character) {
-								
+								var legit = false;
 								for (var key in JSONquery) {
-								    if (key === JSONquery[key]) {
-								    	filteredData.push(character);
+								    if (JSONquery[key] === character[key]) {
+								    	legit = true;
 								    }
+								}
+								
+								if(legit) {
+									filteredData.push(character);
 								}
 							});
 						}
 						if (filteredData.length > 0) {
 							result[query] = filteredData;
 							var imageUrl = 'images/' + query;
-							headers["Image-Url"] = 'http://localhost:8180/?image='+query;
 						}
-						
-							
-						response.writeHead(200, headers);
-						response.end(JSON.stringify(result));
+						response.json(result);
 					}
 					else {			
 						response.writeHead(500);
