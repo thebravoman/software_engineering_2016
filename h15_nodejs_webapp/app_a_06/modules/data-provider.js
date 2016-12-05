@@ -6,27 +6,29 @@ function readData(filename, response) {
 		if (exists) {		
 				fs.readFile(filename, (error, data) => {	
 					if (!error)	{
-						response.send(data);
+						response.set('Content-Type', 'image/jpeg');
+						console.log('upper');
+						response.end(data);
 					}
 					else {			
-						response.send('Internal Server Error');
+						response.end('Internal Server Error');
 					}
 				});
 		}
 		else {
-			response.send('Image not found');
+			response.end('Image not found');
 		}
 	});	
 }
 
 
 
-exports.provideData = function(filename, contentType, response) {
-	readData(filename,contentType, response);
+exports.provideData = function(filename, response) {
+	readData(filename, response);
 };
 
 exports.provideList = function(filename,  response) {
-	readData(filename,contentType, response);
+	readData(filename, response);
 };
 
 exports.queryData = function(filename, headers, query, response) {
@@ -57,12 +59,11 @@ exports.queryData = function(filename, headers, query, response) {
 						headers["Image-Url"] = 'http://localhost:8180/?image=' + query.type;
 					}
 					
-						
 					response.set(headers);
-					response.send(JSON.stringify(result));
+					response.json(result);
 				}
 				else {			
-					response.send('Internal Server Error');
+					response.end('Internal Server Error');
 				}
 			});
 		}

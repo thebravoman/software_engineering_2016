@@ -17,7 +17,7 @@ router
 		let get_params = url.parse(req.url, true);
 
 		if (get_params.query.image != null) {
-			dataProvider.provideData('images/'+get_params.query.image+'.jpg',{'Content-Type': 'image/jpeg'}, res);
+			dataProvider.provideData('images/' + get_params.query.image + '.jpg', res);
 		}
 		else if (Object.keys(get_params).length > 0) {
 			dataProvider.queryData('data/data.json', {}, get_params.query, res);
