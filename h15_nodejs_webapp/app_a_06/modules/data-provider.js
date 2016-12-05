@@ -1,85 +1,73 @@
-/**
- * New node file
- */
 let fs = require('fs');
 
-function readData(filename, contentType, response)
-{
+function readData(filename, response) {
 	console.log('providing ' + filename);
-	fs.exists(filename, function(exists) {
+	fs.exists(filename, (exists) => {
 		if (exists) {		
-				fs.readFile(filename, function(error, data) {	
+				fs.readFile(filename, (error, data) => {	
 					if (!error)	{
-						response.writeHead(200, contentType);
-						response.end(data);
+						response.send(data);
 					}
 					else {			
-						response.writeHead(500);
-						response.end('Internal Server Error');
+						response.send('Internal Server Error');
 					}
 				});
 		}
-		else
-		{
-			response.writeHead(404);
-			response.end('Image not found');
+		else {
+			response.send('Image not found');
 		}
 	});	
 }
 
 
 
-exports.provideData = function(filename, contentType, response)
-{
+exports.provideData = function(filename, contentType, response) {
 	readData(filename,contentType, response);
 };
 
-exports.provideList = function(filename, contentType,  response)
-{
+exports.provideList = function(filename,  response) {
 	readData(filename,contentType, response);
 };
 
 exports.queryData = function(filename, headers, query, response) {
-	fs.exists(filename, function(exists) {
+	fs.exists(filename, (exists) => {
 		if (exists) {		
-				fs.readFile(filename, function(error, data) {	
-					if (!error)	{
-						let result = {};
-						let filteredData = [];
-						let allData = JSON.parse(data);
-						if (Array.isArray(allData.characters)){
-							allData.characters.forEach(function(character) {
-								let match = true;
-								for(let key in query){
-									if(query[key] != character[key]){
-										match = false;
-										break;
-									}
+			fs.readFile(filename, (error, data) => {	
+				if (!error)	{
+					let result = {};
+					let filteredData = [];
+					let allData = JSON.parse(data);
+					if (Array.isArray(allData.characters)){
+						allData.characters.forEach((character) => {
+							let match = true;
+							for(let key in query){
+								if(query[key] != character[key]){
+									match = false;
+									break;
 								}
-								if(match){
-									filteredData.push(character);
-								}
-							});
-						}
-						if (filteredData.length > 0) {
-							result = filteredData;
-							let imageUrl = 'images/' + query.type;
-							headers["Image-Url"] = 'http://localhost:8180/?image=' + query.type;
-						}
+							}
+							if(match){
+								filteredData.push(character);
+							}
+						});
+					}
+					if (filteredData.length > 0) {
+						result = filteredData;
+						let imageUrl = 'images/' + query.type;
+						headers["Image-Url"] = 'http://localhost:8180/?image=' + query.type;
+					}
+					
 						
-							
-						response.writeHead(200, headers);
-						response.end(JSON.stringify(result));
-					}
-					else {			
-						response.writeHead(500);
-						response.end('Internal Server Error');
-					}
-				});
+					response.set(headers);
+					response.send(JSON.stringify(result));
+				}
+				else {			
+					response.send('Internal Server Error');
+				}
+			});
 		}
 		else
 		{
-			response.writeHead(404);
 			response.end('Image not found');
 		}
 	});	
