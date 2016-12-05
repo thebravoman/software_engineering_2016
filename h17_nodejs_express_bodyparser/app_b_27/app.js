@@ -57,5 +57,5 @@ app.use(function(err, req, res, next) {
 });
 
 http.createServer(app).listen(8227, function(){
-	  console.log('Express server listening on port 8217');  
+	  console.log('Express server listening on port 8227');  
 	});
