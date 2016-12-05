@@ -4,8 +4,8 @@ exports.provideData = function(filename, headerData, response) {
     readData(filename, headerData, response);
 }
 
-exports.searchData = function(filename, headerData, query, response) {
-    matchData(filename, headerData, query, response);
+exports.searchData = function(filename, query, response) {
+    matchData(filename, query, response);
 }
 
 function readData(filename, headerData, response) {
@@ -28,7 +28,7 @@ function readData(filename, headerData, response) {
     });
 }
 
-function matchData(filename, headerData, query, response) {
+function matchData(filename, query, response) {
     console.log('providing', filename);
 
     fs.exists(filename, function(exists) {
@@ -58,7 +58,6 @@ function matchData(filename, headerData, query, response) {
                             }
                             if (filteredData.length > 0) {
                                 queryData[JSON.stringify(query)] = filteredData;
-                                headerData["Image-Url"] = 'http://localhost:8129/?image=' + query[key];
                             }
                         });
                         if (Object.keys(queryData).length <= 0) {
@@ -66,8 +65,10 @@ function matchData(filename, headerData, query, response) {
                             response.end('Data not found');
                         }
                     }
-                    response.writeHead(200, headerData);
-                    response.end(JSON.stringify(queryData, null , 2));
+                    if (!response.finished) {
+                        response.writeHead(200);
+                        response.end(JSON.stringify(queryData, null , 2));
+                    }
                 }
             });
         } else {

@@ -7,6 +7,7 @@ var hostname = 'localhost';
 
 function handleGetRequest(request, response) {
     console.log('Getting');
+
     var get_params = url.parse(request.url, true);
     if (get_params.query.image != null) {
         dataHandler.provideData('./image/' + get_params.query.image + '.jpg', {
