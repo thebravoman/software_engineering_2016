@@ -10,12 +10,8 @@ function readData(filename, contentType, response)
 		if (exists) {		
 				fs.readFile(filename, function(error, data) {	
 					if (!error)	{
-						if (filename === 'data/data.json'){
-							response.json(JSON.parse(data));
-						} else {
-							response.writeHead(200, contentType);
-							response.end(data);
-						}
+						response.writeHead(200, contentType);
+						response.end(data);
 					}
 					else {			
 						response.writeHead(500);
@@ -43,10 +39,7 @@ exports.provideList = function(filename, contentType,  response)
 	readData(filename,contentType, response);
 };
 
-exports.queryData = function(filename, query, response) {
-	
-	var JSONquery = JSON.parse(JSON.stringify(query));
-
+exports.queryData = function(filename, headers, query, response) {
 	fs.exists(filename, function(exists) {
 		if (exists) {		
 				fs.readFile(filename, function(error, data) {	
@@ -56,14 +49,7 @@ exports.queryData = function(filename, query, response) {
 						var allData = JSON.parse(data);
 						if (Array.isArray(allData.characters)){
 							allData.characters.forEach(function(character) {
-								var legit = false;
-								for (var key in JSONquery) {
-								    if (JSONquery[key] === character[key]) {
-								    	legit = true;
-								    }
-								}
-								
-								if(legit) {
+								if (character.type === query) {
 									filteredData.push(character);
 								}
 							});
@@ -71,8 +57,12 @@ exports.queryData = function(filename, query, response) {
 						if (filteredData.length > 0) {
 							result[query] = filteredData;
 							var imageUrl = 'images/' + query;
+							headers["Image-Url"] = 'http://localhost:8180/?image='+query;
 						}
-						response.json(result);
+						
+							
+						response.writeHead(200, headers);
+						response.end(JSON.stringify(result));
 					}
 					else {			
 						response.writeHead(500);

@@ -10,12 +10,8 @@ function readData(filename, contentType, response)
 		if (exists) {		
 				fs.readFile(filename, function(error, data) {	
 					if (!error)	{
-						if (filename === 'data/data.json'){
-							response.json(JSON.parse(data));
-						} else {
-							response.writeHead(200, contentType);
-							response.end(data);
-						}
+						response.writeHead(200, contentType);
+						response.end(data);
 					}
 					else {			
 						response.writeHead(500);
@@ -43,10 +39,10 @@ exports.provideList = function(filename, contentType,  response)
 	readData(filename,contentType, response);
 };
 
-exports.queryData = function(filename, query, response) {
+exports.queryData = function(filename, headers, query, response) {
 	
 	var JSONquery = JSON.parse(JSON.stringify(query));
-
+	
 	fs.exists(filename, function(exists) {
 		if (exists) {		
 				fs.readFile(filename, function(error, data) {	
@@ -54,25 +50,33 @@ exports.queryData = function(filename, query, response) {
 						var result = {};
 						var filteredData = [];
 						var allData = JSON.parse(data);
+						var returner = 0;
 						if (Array.isArray(allData.characters)){
 							allData.characters.forEach(function(character) {
-								var legit = false;
 								for (var key in JSONquery) {
-								    if (JSONquery[key] === character[key]) {
-								    	legit = true;
+								    if (key === JSONquery[key]) {
+								    	returner = 1;
 								    }
-								}
-								
-								if(legit) {
-									filteredData.push(character);
+								    else {
+								    	returner = 0;
+                                    }
+
+                                    if (returner == 1) {
+                                        filteredData.push(character);
+									}
+
 								}
 							});
 						}
 						if (filteredData.length > 0) {
 							result[query] = filteredData;
 							var imageUrl = 'images/' + query;
+							headers["Image-Url"] = 'http://localhost:8180/?image='+query;
 						}
-						response.json(result);
+						
+							
+						response.writeHead(200, headers);
+						response.end(JSON.stringify(result));
 					}
 					else {			
 						response.writeHead(500);

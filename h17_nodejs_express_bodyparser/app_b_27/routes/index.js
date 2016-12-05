@@ -2,6 +2,9 @@ var express = require('express');
 var router = express.Router();
 var dataProvider = require('../modules/data-provider.js');
 
+
+/* GET home page. */
+
 router.get('/', function(request, response, next)
 {
 	if (request.url ==='/favicon.ico')
@@ -11,10 +14,11 @@ router.get('/', function(request, response, next)
 	else
 	{	
 		var get_params = request.query;
+        var image = request.query.image;
 
-		if (get_params.image != null)
+		if (image !== null)
 		{
-			dataProvider.provideData('images/' + get_params.image + '.jpg', {'Content-Type': 'image/jpeg'}, response);
+			dataProvider.provideData('images/'+image+'.jpg',{'Content-Type': 'image/jpeg'}, response);
 		}
 		else if (Object.keys(get_params).length > 0)
 		{
@@ -22,7 +26,7 @@ router.get('/', function(request, response, next)
 		}
 		else
 		{
-			dataProvider.provideList('data/data.json', {'Content-Type': 'application/json'}, response);
+			dataProvider.provideList('data/data.json', "json", response);
 		}
 	}
 });

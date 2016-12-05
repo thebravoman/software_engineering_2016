@@ -1,12 +1,13 @@
+
 {
-  "name": "app_b_15",
+  "name": "app_b_27",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Ivaylo Velkov",
+  "author": "Hristian Genchev",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.2"
