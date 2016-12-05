@@ -10,8 +10,12 @@ function readData(filename, contentType, response)
 		if (exists) {		
 				fs.readFile(filename, function(error, data) {	
 					if (!error)	{
-						response.writeHead(200, contentType);
-						response.end(data);
+						if (filename === 'data/data.json'){
+							response.json(JSON.parse(data));
+						} else {
+							response.writeHead(200, contentType);
+							response.end(data);
+						}
 					}
 					else {			
 						response.writeHead(500);
