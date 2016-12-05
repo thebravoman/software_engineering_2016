@@ -1,8 +1,8 @@
 var express=require("express");
-var router = express.Router();
-var handle = require("../module/handler.js");
-var url = require("url");
-var http = require("http");
+var router=express.Router();
+var handle=require("../module/handler.js");
+var url=require("url");
+var http=require("http");
 
 router.get('/', function(req, res, next) 
 {
