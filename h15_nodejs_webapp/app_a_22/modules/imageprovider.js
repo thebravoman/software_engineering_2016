@@ -1,7 +1,4 @@
-/**
- * New node file
- */
-var fs = require('fs');
+let fs = require('fs');
 
 function readImage(filename, response)
 {
@@ -32,4 +29,5 @@ exports.provideImage = function(response)
 {
 	readImage('./images/image.jpg', response);	
 };
+
 

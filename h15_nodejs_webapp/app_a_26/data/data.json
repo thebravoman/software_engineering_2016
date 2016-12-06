@@ -17,6 +17,12 @@
 				"lastname":"Witch",
 				"type":"witch",
 				"strength":"150"
+			},
+			{
+				"firstname":"Dark",
+				"lastname":"pesho",
+				"type":"troll",
+				"strength":"120"
 			}
 		     ]
 }

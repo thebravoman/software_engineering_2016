@@ -17,7 +17,7 @@ function handleRequest(request, response)
 		else if (get_params.query)
 		{
 
-				dataProvider.queryData('./data/data.json',{'Content-Type': 'application/json'}, get_params.query, response);
+				dataProvider.provideData('./data/data.json',{'Content-Type': 'application/json'}, get_params.query, response);
 
 		}
 		else
@@ -26,5 +26,5 @@ function handleRequest(request, response)
 		}
 
 }
-
+console.log('listening on host ' + port);
 http.createServer(handleRequest).listen(port, hostname);
