@@ -3,7 +3,8 @@ var fs = require('fs');
 exports.provideData=function readData(filename, contentType, response)
 {
 
-					fs.exists(filename, function(exists) {						
+					fs.exists(filename, function(exists) {
+					console.log(filename)						
 						if (exists) {
 							
 							fs.readFile(filename, function(error, data) {
