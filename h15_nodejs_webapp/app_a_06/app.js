@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 let http = require('http');
 let url = require('url');
 let dataProvider = require('./modules/data-provider.js');
@@ -18,6 +19,28 @@ function handleRequest(request, response)
 		if (get_params.query.image != null)
 		{
 			dataProvider.provideData('images/'+get_params.query.image+'.jpg',{'Content-Type': 'image/jpeg'}, response);
+=======
+const express = require('express');
+const bodyParser = require('body-parser');
+const url = require('url');
+
+const dataProvider = require('./modules/data-provider.js');
+
+const port = 8180;
+
+let app = express();
+
+app.use(bodyParser.json());
+
+let router = express.Router();
+
+router
+	.get('/', (req, res) => {
+		let get_params = url.parse(req.url, true);
+
+		if (get_params.query.image != null) {
+			dataProvider.provideData('images/' + get_params.query.image + '.jpg', res);
+>>>>>>> 527c97df9ab45c0b59d13b9ab64d5e046afdde85
 		}
 		else if (Object.keys(get_params).length > 0)
 		{

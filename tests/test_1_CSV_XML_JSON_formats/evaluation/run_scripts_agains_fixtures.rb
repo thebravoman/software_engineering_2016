@@ -1,6 +1,7 @@
 # ruby run_scripts_agains_fixtures.rb "folder for the class" "folder with fixtures"
 require 'csv'
 require 'open3'
+require 'byebug'
 
 def find_expected_and_task script_file, fixture_to_result
 	expects_path = ARGV[0]+"expects/"
@@ -15,7 +16,7 @@ def find_expected_and_task script_file, fixture_to_result
 		if hex != nil
 			p tasks_path+number+"_"+hex+".txt"
 			fixture_to_result[:expected] = File.read(expects_path+hex+".csv")
-			fixture_to_result[:task] = File.read(tasks_path+number+"_"+hex+".txt")
+			fixture_to_result[:task] = File.read(tasks_path+number.to_i.to_s+"_"+hex+".txt")
 		end	
 		true
 	rescue Exception=>ex
@@ -32,21 +33,22 @@ results_path =ARGV[0]+"results/*.rb"
 Dir.glob(results_path).each do |script_file|
 	p "++++++++++++++++++++++++++++++++++++++++++++++++++="
 	results[script_file] = Hash.new
-	args = [ARGV[1]+"fixture1/",ARGV[1]+"fixture2/",4]
-	
-	fixture_to_result = results[script_file]	
+	csv_file =ARGV[1]+"fixture1/file.csv"
+	json_file = ARGV[1]+"fixture1/file.json"
+	xml_file = ARGV[1]+"fixture1/file.xml"
+
+	fixture_to_result = results[script_file]
 	if find_expected_and_task script_file, fixture_to_result
 		p "Expected content is"
 		p fixture_to_result[:expected]	
 
-		stdin, stdout, stderr = Open3.popen3("ruby #{script_file} #{args[0]} #{args[1]} #{args[2]}")
+		stdin, stdout, stderr = Open3.popen3("ruby #{script_file} #{csv_file} #{json_file} ")
 		program_error = stderr.readlines.inject(:+)
 		begin 
-			fixture_to_result[:output] = File.read("result.csv")
-			`rm -f result.csv`
+			fixture_to_result[:output] = stdout.readlines.inject(:+).gsub(/\s/,"")
 		rescue Exception=>ex
 			p ex
-			fixture_to_result[:output] = "#{ex}. No result.csv file was found."
+			fixture_to_result[:output] = "#{ex}. No output to stdout from the program."
 			fixture_to_result[:program_error] = program_error
 		end 
 		p "output is"

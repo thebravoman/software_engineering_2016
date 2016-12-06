@@ -1,0 +1,207 @@
+Дадена е част от декларацията на класа X. Класът X има само една член-променлива int* pi_. Необходимо ли е за този клас да се дефинира оператор за присвояване?
+
+ 1: 
+ 2: class X{
+ 3:   int* pi_;
+ 4: public:
+ 5:   X(void)
+ 6:     : pi_(new int)
+ 7:   {}
+ 8:   ~X(void){delete pi_;}
+
+ 9:   //...
+
+10: };
+Select one:
+a. да --- автоматично генерираният оператор за присвояване не е коректен
+b. да --- иначе при присвояване на обекти от типа X компилаторът ще даде съобщение за грешка
+c. не --- автоматично генерираният оператор за присвояване е коректен Incorrect
+d. не --- защото се заделя памет само за едно цяло число
+Question 2
+Correct
+Mark 1.00 out of 1.00
+ Not flaggedFlag question
+Question text
+Разгледайте представения код. Каква операция се изпълнява в ред 8?
+
+ 1: 
+ 2: class X {
+ 3: public:
+ 4:   X(void);
+
+ 5:   //...
+
+ 6: };
+ 7: X x1;
+ 8: X x2(x1);
+Select one:
+a. копиращ конструктор Correct
+b. конструкцията е невалидна в C++
+c. в ред 7 има грешка, тъй като не е дефиниран копиращ конструктор за класа X
+d. конструктор по подразбиране
+Question 3
+Correct
+Mark 1.00 out of 1.00
+ Not flaggedFlag question
+Question text
+Дадена е декларацията на класа X. Кой е правилният начин да се създаде динамичен обект от типа X, за който да се извика конструкторът на X с параметър 10?
+
+  1: 
+  2: class X{
+  3: public:
+  4:   X(int v);
+  5:   X(void);
+  6:   ...
+  7: };
+ 
+Select one:
+a. X* x=new X[10]
+b. X* x=new X(10) Correct
+c. X* x=new(X,10)
+d. X* x=malloc(X,10)
+Question 4
+Incorrect
+Mark 0.00 out of 1.00
+ Not flaggedFlag question
+Question text
+Разгледайте представения код. Каква операция се изпълнява в ред 8?
+
+ 1: 
+ 2: class X {
+ 3: public:
+ 4:   X(void);
+
+ 5:   //...
+
+ 6: };
+ 7: X x1;
+ 8: X x2=x1;
+Select one:
+a. оператор за присвояване
+b. конструкцията е невалидна в C++
+c. конструктор по подразбиране, а след него --- оператор за присвояване Incorrect
+d. копиращ конструктор
+Question 5
+Correct
+Mark 1.00 out of 1.00
+ Not flaggedFlag question
+Question text
+Дадена е декларацията на класа X. Кой е правилният начин да се създаде динамичен обект от типа X?
+
+  1: 
+  2: class X{
+  3: public:
+  4:   X(void);
+  5:   ...
+  6: };
+ 
+Select one:
+a. X* x=new(X)
+b. X* x=malloc(X)
+c. X* x=new X Correct
+d. X* x=malloc X
+Question 6
+Incorrect
+Mark 0.00 out of 1.00
+ Not flaggedFlag question
+Question text
+Нека са дадени следните променливи: point p1,p2; double a; Кой от следните оператори трябва се дефинира извън класа point, за да може да се изпълни операцията p1=p2*a?
+
+  1: 
+  2: class point {
+  3:   double x_, y_;
+  4: public:
+  5: ...
+  6: };
+ 
+Select one:
+a. point& operator*=(double a)
+b. point operator*(const point& p, double a)
+c. point operator*(double a, const point& p) Incorrect
+d. double operator*(double a, const point& p)
+Question 7
+Correct
+Mark 1.00 out of 1.00
+ Not flaggedFlag question
+Question text
+Дадена е дефиниция на класа X. Има ли грешки в дефиницията и какви са те?
+
+01: class X{
+02:   int v_;
+03: public:
+04:   X(void)
+05:   : v_(0) 
+06:   {}
+07:   
+08:   void inc(void){
+09:         this++;
+10:   }
+11: };
+Select one:
+a. грешка в ред 5 - невалидна конструкция
+b. грешка в ред 4 - за метода, дефиниран в ред 4, не е указан типът на резултата
+c. грешка в ред 9 - променливата this не е дефинирана
+d. грешка в ред 9 - методите на класа не могат да променят стойността на указателя this Correct
+Question 8
+Correct
+Mark 1.00 out of 1.00
+ Not flaggedFlag question
+Question text
+Разгледайте представения фрагмент от код и определете какви грешки има в него.
+
+1: const int counter=0;
+2: const double pi=3.14;
+3: double area;
+4: area=pi*10*10;
+5: counter+=10;
+Select one:
+a. ред 4 --- неправилна употреба на константната променлива pi
+b. ред 3 --- променливата area е дефинирана без да се инициализира
+c. ред 5 - стойността на константните променливи не може да се променя Correct
+d. ред 1 и ред 2 - неправилно се използва ключовата дума const
+Question 9
+Correct
+Mark 1.00 out of 1.00
+ Not flaggedFlag question
+Question text
+Разгледайте представения фрагмент от код и определете какви са проблемите в него.
+
+01: class Point {
+02:   double x_,y_;
+03: public:
+04:   double get_x() const {
+05:     return x_;
+06:   }
+07:   void set_x(double x) const {
+08:     x_=x;
+09:   }
+10: };
+Select one:
+a. в ред 7 - неправилна употреба на ключовата дума const
+b. в ред 8 - в константни член-функции не може да се променя състоянието на обекта Correct
+c. в ред 4 и ред 7 - неправилна употреба на ключовата дума const
+d. в ред 4 - неправилна употреба на ключовата дума const
+Question 10
+Correct
+Mark 1.00 out of 1.00
+ Not flaggedFlag question
+Question text
+Разгледайте представения фрагмент от код. Каква ще бъде стойността на член-променливата x2.v_ след изпълнението на ред 12?
+
+01: class X {
+02:   int v_;
+03: public:
+04:   X(void) {v_=1;}
+05:   void add(X* xp){
+06:     v_+=xp->v_;
+07:   };
+08: };
+09: ...
+10: X x1;
+11: X x2;
+12: x2.add(&x2);
+Select one:
+a. грешка в ред 6 - член-променливата v_ е скрита и е недостъпна в ред 6
+b. x2.v_=2 Correct
+c. грешка в ред 5 - не може да се предава указател към X, тъй като класът X все още не е дефиниран изцяло
+d. грешка в ред 4 --- невалидна конструкция в C++
