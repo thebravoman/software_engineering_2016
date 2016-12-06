@@ -59,7 +59,7 @@ exports.queryData = function(filename, headers, query, response) {
 							}});
 						}
 						if (filteredData.length > 0) {
-							var imageUrl = 'images/' + query.type;
+							var imageUrl = 'image/' + query.type;
 							headers["Image-Url"] = 'http://localhost:8103/?image=' + query.type;
 						}
 						response.writeHead(200, headers);
