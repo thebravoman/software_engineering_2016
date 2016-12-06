@@ -9,7 +9,7 @@ function handleRequest(request, response)
 		var get_params = url.parse(request.url, true);
 		if (get_params.query.image != null)
 		{
-			dataProvider.provideData('images/'+get_params.query.image+'.jpg',{'Content-Type': 'image/jpeg'}, response);
+			dataProvider.provideData('image/'+get_params.query.image+'.jpg',{'Content-Type': 'image/jpeg'}, response);
 		}
 		else if (Object.keys(get_params.query).length !== 0)
 		{
