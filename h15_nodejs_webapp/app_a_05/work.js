@@ -10,7 +10,7 @@ function handleRequest(request, response)
 		var get_params = url.parse(request.url, true);
 		if (get_params.query.image != null)
 		{
-		dataProvider.provide_resources('images/'+get_params.query.image+'.jpg',{'Content-Type': 'image/jpeg'}, response);
+		dataProvider.provide_resources('image/'+get_params.query.image+'.jpg',{'Content-Type': 'image/jpeg'}, response);
 		}
 		else if (get_params.query==null)
 		{
