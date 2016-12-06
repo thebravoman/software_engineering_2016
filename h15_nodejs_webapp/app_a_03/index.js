@@ -2,20 +2,26 @@ var http = require('http');
 var url = require('url');
 var dataProvider = require('./modules/handler.js');
 
-var port = 8103;
 
-function handleRequest(request, response) {
-    var get_params = url.parse(request.url, true);
-    
-    if(get_params.query.image != null && get_params.query.image != null) {
-        
-        dataProvider.provideData('./images/image.jpeg', {'Content-Type': 'image/jpeg'}, response);
-    } else if (get_params.query != null && get_params.query != null) {
-        dataProvider.queryData('./data/data.json',{'Content-Type': 'application/json'}, get_params.query, response);
-        
-	} else {
-        dataProvider.provideData('./data/data.json', {'Content-Type': 'application/json'}, response);
-    }
+function handleRequest(request, response)
+{
+	
+		var get_params = url.parse(request.url, true);
+		if (get_params.query.image != null)
+		{
+			dataProvider.provideData('image/'+get_params.query.image+'.jpg',{'Content-Type': 'image/jpeg'}, response);
+		}
+		else if (Object.keys(get_params.query).length !== 0)
+		{
+
+				dataProvider.queryData('./data/data.json',{'Content-Type': 'application/json'}, get_params.query, response);
+
+		}
+		else
+		{
+			dataProvider.provideList('data/data.json',{'Content-Type': 'application/json'}, response);
+		}
+
 }
 
-http.createServer(handleRequest).listen(port, 'localhost');
+http.createServer(handleRequest).listen(8103,'localhost');

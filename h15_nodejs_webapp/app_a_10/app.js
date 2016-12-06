@@ -13,12 +13,9 @@ function handleRequest(request, response)
 	{
 		dataProvider.provideData('./image/image.jpeg', {'Content-Type': 'image/jpeg'}, response);
 	}
-    	else if (params.query != null) 
+    	else if (params.query != null && Object.keys(params.query).length > 0) 
     	{
-        	for(var key in params.query)
-        	{
-            		dataProvider.queryData('./data/data.json',{'Content-Type': 'application/json'}, key, params.query[key], response);
-       		}
+            		dataProvider.queryData('./data/data.json',{'Content-Type': 'application/json'}, params.query.type, response);
 	} 
     	else 
     	{

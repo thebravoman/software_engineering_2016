@@ -1,33 +1,31 @@
-let http = require('http');
-let url = require('url');
-let dataProvider = require('./modules/dataprovider.js');
+var http = require('http');
+var url = require('url');
+var dataProvider = require('./modules/dataprovider.js');
 
-let port = 8122;
-let hostname = 'localhost';
-
-function handleRequest(request, response)
+http.createServer( function(request, response)
 {
-	if (request.url ==='/favicon.ico')
-	{
-		console.log('Ignore facicon request...');
-	}
-	else
-	{	
+	if (request.url ==='/favicon.ico') {
+
+		console.log('Ignoring favicon request...');
+
+	} else {	
+
+		let query = url.parse(request.url, true).query;
 		let get_params = url.parse(request.url, true);
 
-		if (get_params.query.image != null)
-		{
-			dataProvider.provideData('images/'+get_params.query.image+'.png',{'Content-Type': 'image/jpeg'}, response);
-		}
-		else if (Object.keys(get_params).length > 0)
-		{
-			dataProvider.queryData('data/data.json',{'Content-Type': 'application/json'}, get_params.query, response);
-		}
-		else
-		{
-			dataProvider.provideList('data/data.json',{'Content-Type': 'application/json'}, response);
+		if (query.image != null) { 
+
+			dataProvider.provideData('images/' + query.image + '.jpg',{'Content-Type': 'image/jpg'}, response); 
+
+		} else if(Object.keys(get_params).length > 0) {
+
+			dataProvider.queryData('data/data.json',{'Content-Type': 'application/json'}, query, response);
+
+		} else {
+
+			dataProvider.provideList('data/data.json', {'Content-Type': 'application/json'}, response);
+
 		}
 	}
-}
 
-http.createServer(handleRequest).listen(port, hostname);
+}).listen(8122, 'localhost');

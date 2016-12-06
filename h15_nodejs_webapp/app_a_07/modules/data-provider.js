@@ -53,9 +53,6 @@ exports.queryData = function(filename, headers, query, response) {
 
 								Object.keys(query).forEach(function (param) {
 									if (character[param] !== query[param]) {
-										if (!isNaN(query[param])) {
-											query[param] = parseFloat(query[param]);
-										}
 										console.log('comparing', character[param], ' and ', query[param]);
 										eligible = false;
 									}

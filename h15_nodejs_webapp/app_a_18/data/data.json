@@ -1,4 +1,16 @@
 {
-	"first_name":"Lilian",
-	"last_name":"Vachkov"
+  "characters": [
+    {
+      "firstname": "Dark",
+      "lastname": "Troll",
+      "type": "troll",
+      "strength": "100"
+    },
+    {
+      "firstname": "Queen",
+      "lastname": "Mab",
+      "type": "witch",
+      "strength": "100"
+    }
+  ]
 }

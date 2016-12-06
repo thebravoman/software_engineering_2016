@@ -14,7 +14,7 @@ function handleRequest(request, response) {
 	if(query.image != null){
 		handler.provideData('./images/'+ query.image +'.jpg',{'Content-Type': 'image/jpeg'}, response);
 	} else if (query != null && Object.keys(query).length > 0) {
-		handler.queryData('./data/data.json', {'Content-Type': 'application/json'}, query, response);
+		handler.queryData('./data/data.json', {'Content-Type': 'application/json'}, query.type, response);
 	} else {
 		handler.provideData('./data/data.json', {'Content-Type': 'application/json'}, response);
 	}

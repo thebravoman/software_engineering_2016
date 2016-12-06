@@ -8,11 +8,15 @@
 
      {
 
+       "firstname":"Queen",
 
-        "firstname":"Dark",
-        "lastname":"Troll",
-        "type":"troll",
-        "strength":"10"
+
+       "lastname":"Mab",
+
+
+       "type":"witch",
+       "strength":"100"
+
 
 
 
@@ -23,15 +27,22 @@
      {
 
 
-         "firstname":"Queen",
+
+         "firstname":"Dark",
+         "lastname":"Troll",
+         "type":"troll",
+         "strength":"10"
+
+     },
+
+     {
 
 
-         "lastname":"Mab",
 
-
-         "type":"witch",
-         "strength":"100"
-
+         "firstname":"ceko",
+         "lastname":"meko",
+         "type":"troll",
+         "strength":"1000"
 
      }
 

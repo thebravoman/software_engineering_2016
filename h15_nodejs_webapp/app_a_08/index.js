@@ -1,32 +1,27 @@
-var http=require("http");
-var url=require("url");
-var data=require("./handler/handler.js");
+const http = require("http");
+const url = require("url");
+const dataProvider = require("./modules/handler.js");
+const hostname = "localhost";
 
-function handleGetRequest(request, response)
+function handleRequest(request, response)
 {
-	console.log('Getting');
-	var get_params=url.parse(request.url,true);
-	if (get_params.query.image!=null)
+	console.log("Getting" + 8108);
+	var params = url.parse(request.url, true);
+
+	if (params.query.image != null)
 	{
-		data.provideData('./image/'+get_params.quer.image+'jpg', 
-		{
-			'Content-Type':'image/jpeg'
-		}, response);
+		dataProvider.provideData('./image/image.jpeg', {'Content-Type': 'image/jpeg'}, response);
 	}
-	else if (get_params.query)
-	{
-		data.queryData("./data/data.json",
-		{
-			'Content-Type':'application/json',
-		}, get_params.query, response);
-	}
-	else
-	{
-		data.provideList('./data/data.json',
-		{
-			'Content-Type':'application/json'
-		}, response);
-	}
+    	else if (params.query != null && Object.keys(params.query).length > 0) 
+    	{
+            		dataProvider.queryData('./data/data.json',{'Content-Type': 'application/json'}, params.query.type, response);
+	} 
+    	else 
+    	{
+       	 	dataProvider.provideData('./data/data.json', {'Content-Type': 'application/json'}, response);
+    	}
 }
 
-http.createServer(handleGetRequest).listen(8108,'localhost');
+http.createServer(handleRequest).listen(8108, hostname, function() {
+    console.log("Listening in on" + 8108);
+});
