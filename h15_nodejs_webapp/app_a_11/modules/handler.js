@@ -32,18 +32,23 @@ exports.queryData = function(filename, headers, query, response) {
 					var filteredData = [];
 					var allData = JSON.parse(data);
                     var done;
+                    var was_in = 0;
 					if (Array.isArray(allData.characters)){
                         allData.characters.forEach(function(character) {
                             console.log("In character");
                             for(var key in query) {
                                 if(key in character) {
+                                    console.log(key + " = KEYYYYYYY")
                                     done = false;
                                     console.log("Searching eq key..")
                                     if (character[key] == query[key]) {
-                                        console.log("Pushing Element....")
+                                        was_in += 1
+                                        console.log("ELEMENT = " + query[key])
                                         for(var i = 0; i < filteredData.length; i++) {
                                             if(filteredData[i] == character) {
+                                                console.log("THERE IS SOMETHING")
                                                 done = true;
+                                                console.log(JSON.stringify(filteredData[i]))
                                             }
                                         }
                                         if(!done) {
@@ -51,18 +56,27 @@ exports.queryData = function(filename, headers, query, response) {
                                         }
                                     }
                                 }
+                                else {
+                                    console.log(was_in)
+                					response.writeHead("404");
+                					response.end('Data not found');
+                                }
                             }
                         });
 					}
-					if (filteredData.length > 0) {
+					if (filteredData.length > 0 && was_in == Object.keys(query).length) {
 						result = filteredData;
 						// var imageUrl = 'images/' + key;
-						headers["Image-Url"] = 'http://localhost:8111/?image='+filteredData.type;
-					}
+						headers["Image-Url"] = 'http://localhost:8111/?image='+filteredData[0].type;
 
+                        response.writeHead(200, headers);
+                        response.end(JSON.stringify(result));
+					} else {
+                        console.log(was_in)
+    					response.writeHead("404");
+    					response.end('Data not found');
+                    }
 
-					response.writeHead(200, headers);
-					response.end(JSON.stringify(result));
 				}
 				else {
 					response.writeHead(500);
