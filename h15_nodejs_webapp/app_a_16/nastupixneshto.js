@@ -12,9 +12,9 @@ function handleRequest(request, response)
 		{
 			dataProvider.provideData('images/image.jpg',{'Content-Type': 'image/jpeg'}, response);
 		}		
-		else if(request_data.query.type != null)
+		else if(Object.keys(request_data.query).length > 0)
 		{
-			dataProvider.queryData('data/data.json',{'Content-Type': 'application/json'}, request_data.query.type, response);
+			dataProvider.queryData('data/data.json',{'Content-Type': 'application/json'}, request_data.query, response);
 		}
 		else
 		{
