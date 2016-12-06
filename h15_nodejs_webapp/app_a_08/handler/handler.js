@@ -65,12 +65,12 @@ exports.queryData=function(file, headers, query, response)
 								}
 								if (j==Object.keys(query).length)
 								{
-									filtered.push(character);
+									filteredData.push(character);
 								}
 							}
 						});
 					}
-					if (filtered.length>0)
+					if (filteredData.length>0)
 					{
 						var imageUrl='images/'+query.type;
 						headers["Image-Url"]='http://localhost:8108/?image' + query.type;
