@@ -1,7 +1,7 @@
 
 var http = require('http');
 var url = require('url');
-var dataProvider = require('./modules/data-provider.js');
+var dataProvider = require('./modules/data_provider.js');
 
 var port = 8102;
 var hostname = 'localhost';
