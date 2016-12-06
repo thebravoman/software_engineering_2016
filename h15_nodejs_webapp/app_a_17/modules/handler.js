@@ -56,7 +56,7 @@ var fs = require('fs');
 							var imageUrl = 'image/' + query.type;
 							headers["Image-Url"] = 'http://localhost:8117/?image='+   query.type;
 				
-						
+				}		
 							
 						response.writeHead(200, headers);
 						response.end(JSON.stringify(result));
@@ -65,7 +65,7 @@ var fs = require('fs');
 						response.writeHead(500);
 						response.end('Internal Server Error');
 					}
-				}
+				
 			});
 		}
 		else
@@ -75,11 +75,6 @@ var fs = require('fs');
 		}
 	});	
 };
- 
- 
- 
- 
- 
  
  
  
