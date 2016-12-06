@@ -59,7 +59,7 @@ exports.queryData=function(file, headers, query, response)
 							j=0;
 							for (key in query)
 							{
-								if (character[key]===query[ke])
+								if (character[key]===query[key])
 								{
 									j++;
 								}
