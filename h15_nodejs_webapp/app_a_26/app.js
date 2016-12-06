@@ -1,30 +1,35 @@
 var http = require('http');
 var url = require('url');
+var dataProvider = require('./modules/data-provider.js');
 
 var port = 8126;
+var hostname = 'localhost';
 
-var hostname = "127.0.0.1"
-
-var module = require('./modules/querryHandle.js');
-
-function handleRequest(request, response) {
-	var get_params = url.parse(request.url,true);
-
-	if(get_params.query.image) {
-		console.log('getting image'+ get_params.query.image + '.jpg..');
-		module.image('./image/' + get_params.query.image + '.jpg', response);
+function handleRequest(request, response)
+{
+	if (request.url ==='/favicon.ico')
+	{
+		console.log('Ignore facicon request...');
 	}
-
-  else if(Object.keys(get_params.query).length) {
-      	console.log('Getting Element..');
-		module.data('./data/data.json', get_params.query, response,port);
-	}
-
-  else {
-    console.log('Getting all data ..');
-		module.jsonOut('./data/data.json', response,port);
+	else
+	{
+		var get_params = url.parse(request.url, true);
+		if (get_params.query.image != null)
+		{
+			dataProvider.provideData('images/'+get_params.query.image+'.jpg',{'Content-Type': 'image/jpeg'}, response);
+		}
+			else if (Object.keys(get_params.query).length !== 0)
+		{
+			console.log('query', get_params.query);
+			dataProvider.queryData('data/data.json',{'Content-Type': 'application/json'}, get_params.query, response);
+		}
+		else
+		{
+			dataProvider.provideList('data/data.json',{'Content-Type': 'application/json'}, response);
+		}
 	}
 }
 
-console.log('listening on localhost:' + port);
-http.createServer(handleRequest).listen(port, hostname);
+http.createServer(handleRequest).listen(port, hostname, () => {
+	console.log("Listening on",port);
+});

@@ -71,7 +71,7 @@ exports.queryData = function(filename, headers, query, response) {
                                 headers["Image-Url"] = "Cannot extract image URL from character type";
                             }
                             else{
-                                headers["Image-Url"] = 'http://localhost:8180/?image='+filteredData[0].type;
+                                headers["Image-Url"] = 'http://localhost:8114/?image='+filteredData[0].type;
                             }
                         }
 

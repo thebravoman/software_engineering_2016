@@ -1,35 +1,33 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const url = require('url');
+let http = require('http');
+let url = require('url');
+let dataProvider = require('./modules/data-provider.js');
 
-const dataProvider = require('./modules/data-provider.js');
+let port = 8106;
+let hostname = 'localhost';
 
-const port = 8180;
+function handleRequest(request, response)
+{
+	if (request.url ==='/favicon.ico')
+	{
+		console.log('Ignore facicon request...');
+	}
+	else
+	{	
+		let get_params = url.parse(request.url, true);
 
-let app = express();
-
-app.use(bodyParser.json());
-
-let router = express.Router();
-
-router
-	.get('/', (req, res) => {
-		let get_params = url.parse(req.url, true);
-
-		if (get_params.query.image != null) {
-			dataProvider.provideData('images/' + get_params.query.image + '.jpg', res);
+		if (get_params.query.image != null)
+		{
+			dataProvider.provideData('images/'+get_params.query.image+'.jpg',{'Content-Type': 'image/jpeg'}, response);
 		}
-		else if (Object.keys(get_params).length > 0) {
-			dataProvider.queryData('data/data.json', {}, get_params.query, res);
+		else if (Object.keys(get_params).length > 0)
+		{
+			dataProvider.queryData('data/data.json',{'Content-Type': 'application/json'}, get_params.query, response);
 		}
-		else {
-			dataProvider.provideList('data/data.json', res);
+		else
+		{
+			dataProvider.provideList('data/data.json',{'Content-Type': 'application/json'}, response);
 		}
-	});	
+	}
+}
 
-app.use('/', router);
-
-app.listen(port, () => {
-	console.log(`App running at port: ${port}`);
-});
-
+http.createServer(handleRequest).listen(port, hostname);

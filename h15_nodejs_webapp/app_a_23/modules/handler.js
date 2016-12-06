@@ -46,6 +46,9 @@ exports.data = function data(filename, query, response) {
 							'Image-Url': 'http://localhost:' + port +
 										 '/?image=' + result[0].type });
 						response.end(JSON.stringify(result));
+					} else {
+						response.writeHead(404);
+						response.end('Data not found');
 					}
 				} else {
 					response.writeHead(500);
