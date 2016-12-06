@@ -26,5 +26,5 @@ function handleRequest(request, response)
 		}
 
 }
-
+console.log('listening on host' + port);
 http.createServer(handleRequest).listen(port, hostname);
