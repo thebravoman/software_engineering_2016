@@ -1,9 +1,9 @@
 
 var http = require('http');
 var url = require('url');
-var dataProvider = require('./modules/data-provider.js');
+var dataProvider = require('./modules/data_provider.js');
 
-var port = 8102;
+var port = 8119;
 var hostname = 'localhost';
 
 function handleRequest(request, response)
@@ -17,7 +17,7 @@ function handleRequest(request, response)
 		else if (get_params.query)
 		{
 
-				dataProvider.queryData('./data/data.json',{'Content-Type': 'application/json'}, get_params.query, response);
+				dataProvider.provideData('./data/data.json',{'Content-Type': 'application/json'}, get_params.query, response);
 
 		}
 		else
@@ -26,5 +26,5 @@ function handleRequest(request, response)
 		}
 
 }
-
+console.log('listening on host ' + port);
 http.createServer(handleRequest).listen(port, hostname);

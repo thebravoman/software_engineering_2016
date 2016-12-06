@@ -20,7 +20,7 @@ function handleRequest(request, response) {
             }
             break;
         default:
-            writeHead(204);
+            response.writeHead(204);
             response.end();
     }
 }

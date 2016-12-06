@@ -1,22 +1,33 @@
-var url = require('url');
-var http = require('http');
-var datapr = require('./modules/dataprovider.js');
-var port = 8122;
-var host = 'localhost';
+let http = require('http');
+let url = require('url');
+let dataProvider = require('./modules/dataprovider.js');
 
-function handleGETRequest(request, response) {
-	var content = url.parse(request.url, true);
+let port = 8122;
+let hostname = 'localhost';
 
-	if (content.query.image != null) {
-		datapr.provideData('images/gloves.jpg',{'Content-Type': 'image/jpeg'}, response);
+function handleRequest(request, response)
+{
+	if (request.url ==='/favicon.ico')
+	{
+		console.log('Ignore facicon request...');
 	}
-	else if (content.query.data != null) {
-		datapr.provideData('data/data.json',{'Content-Type': 'application/json'}, response);
+	else
+	{	
+		let get_params = url.parse(request.url, true);
+
+		if (get_params.query.image != null)
+		{
+			dataProvider.provideData('images/'+get_params.query.image+'.png',{'Content-Type': 'image/jpeg'}, response);
+		}
+		else if (Object.keys(get_params).length > 0)
+		{
+			dataProvider.queryData('data/data.json',{'Content-Type': 'application/json'}, get_params.query, response);
+		}
+		else
+		{
+			dataProvider.provideList('data/data.json',{'Content-Type': 'application/json'}, response);
+		}
 	}
-	else {
-		datapr.provideData('data/data.json',{'Content-Type': 'application/json'}, response);
-	}	
-	
 }
 
-http.createServer(handleGETRequest).listen(port, host);
+http.createServer(handleRequest).listen(port, hostname);

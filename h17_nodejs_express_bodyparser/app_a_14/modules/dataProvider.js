@@ -53,6 +53,16 @@ exports.queryData = function(filename, query, response) {
             });
         }
         //console.log(filteredData);
+        
+        if (filteredData.length > 0) {
+            if(filteredData[0].type == undefined){
+                response.set("Image-Url", "Cannot extract image URL from character type");
+            }
+            else{
+                response.set("Image-Url", "http://localhost:8114/?image="+filteredData[0].type)
+            }
+	}
+        
         return JSON.stringify(filteredData, null, 4);
     }
     else{
