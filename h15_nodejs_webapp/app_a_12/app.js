@@ -1,18 +1,22 @@
 var http = require('http');
 var url = require('url');
 var fs = require('fs');
-var handler = require('./modules/handler.js')
+var handler = require('./modules/handler');
+
 
 function handleRequest(request, response)
 {
 	
     var query = url.parse(request.url, true).query;
-    handler.init(query);
     var headers = handler.getHeaders();
-    response.writeHead(200, headers);
+    
     
     var requestBody = handler.getRequestBody();
-    response.end(requestBody);
+    var callback = function(result){
+    	response.writeHead(result.statusCode, headers);
+     	response.end(result.data);  	
+    }
+    var requestData = handler.queryData(query, callback);
 }
 
 

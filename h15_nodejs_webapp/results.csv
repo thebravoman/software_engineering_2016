@@ -1,0 +1,57 @@
+Class, Number, Name, Score,Comment,
+A,1, Alexander Stoyanov,0,list doesn't work http://localhost:8101 returns empty object, filtering doesn't work http://localhost:8101?type=troll&strength=100 - returns all types of heroes, regardless of the strength
+A,2, Blagovest Mihailov,0, list doesn't work http://localhost:8102 returns an empty array
+A,3, Bojidar Stanoev,0, list doesn't work http://localhost:8103 returns empty object, filtering doesn't work http://localhost:8103?type=troll&waka=kaka returns all data, etc...
+A,4, Boyan Dimitrov,0, !!Never tried application doesn't start -Cannot find module './modules/get_handler.js' wrong module path
+A,5, Valislav Yotov,0, !!Never tried application doesn't start -Cannot find module './modules/dataProvider.js' wrong module path
+A,6, Georgi Karaboichev !!!0, Port is wrong it should be 8106, but the app is ok, however the image-url header is hardcoded
+A,7, Dimitar Nikolov, 0, http://localhost:8107?type=troll returns wrong Image-Url header - Image-Url →http://localhost:8107/?image=undefined
+A,8, Evga Dobreva,0, error in the module line 73: filtered is not defined
+A,9, Zachary Georgiev,0, filtering doesn't work http://localhost:8109?type=troll&strength=69 - retuns trolls with any strength; http://localhost:8109?type=troll&sfirstname=Bugger returns trolls with
+A,10, Iva Zahova,0, http://localhost:8110 doesnot return anything
+A,11, Ivan Milev,0, http://localhost:8111 returns an empty array
+A,12, Ivan Ganchev,0, http://localhost:8112?type=troll has no Image-Url header
+A,13, Ivo Stefanov,0, http://localhost:8113 - returns an empty array
+A,14, Ivo Todorov,0, Wrong Image-Url header - hardcoded to 8180!
+A,15, Joan Kosev,0, No homework committed
+A,16, Iordan Ivanov,0, http://localhost:8116?type=troll leads to SyntaxError: Unexpected token } in JSON at position 137 at Object.parse (native) at  h15_nodejs_webapp/app_a_16/modules/data-provider.js:48:25
+A,17, Kristian Radkov, 0, !!Wrong Image-Url header http://localhost:8127/?image=gorilla - server is not listening on this port!,
+A,18, Lilian Vachkov,0, !!Never tried! argument is named responce but used as response /home/valio/git/software_engineering_2016/h15_nodejs_webapp/app_a_18/app.js:12 data.provideData('data/data.json',{'Content-Type': 'application/json', 'Image-Url': 'http://localhost:8118/?image'}, response);
+A,19, Lachezar Zahariev,!!Never tried requesting './modules/data-provider.js' but the name is data_provider.js!!!
+A,20, Marina Tihova,0,! Filtering is wrong http://localhost:8120/?type=troll1&firstname=Dark returns result where type troll1 does not exist seems that the condition is or
+A,21, Martin Bozhinov,0, fs.readfile is not a function, function name is readFile
+A,22, Mihail Ernandes,0, filtering doesn't work http://localhost:8122?type=troll returns characters of any kind Image-Url header is missing
+A,23, Nikolay Stanishev,0, filtering doesn't work http://localhost:8123?firstname=Dark&type=troll1 where troll1 is non existing type hangs
+A,24, Petko Mihaylov,0, !http://localhost:8124?first_name=valio returns results...
+A,25, Rangel Ivanov,0, !!!http://localhost:8125?type=troll&firstname=123, i.e. filtering against non existing value does not return anything
+A,26, Stiliyan Hristov,0, filtering against none existing value does not return
+A,27, Stoyan Ivanov,0, http://localhost:8127 returns empty object
+A,28, Teodor Spasov,0, No homework committed
+A,29, Hristo Spasov,0, http://localhost:8129?type=troll - missing Image-Url header, http://localhost:8129 returns wrong json
+B,1, Alexander Verbovskiy,,
+B,2, Andrey Strinski,,
+B,3, Boris Mutafov,,
+B,4, Daniel Tuechki,,
+B,5, Valentin Vurbanov,,
+B,6, Velislav Velikov,,
+B,7, Victor Gyoshev,,
+B,8, Vladimir Mladenov,,
+B,9, Georgi Nizamski,,
+B,10, ??,,
+B,11, Daniel Tuechki,,
+B,12, Daniel Raykov,,
+B,13, Dimityr Neshev,,
+B,14, Ivaylo Vasilev 0,,
+B,15, Ivaylo Velkov,,
+B,16, Ivan Trifonov,,
+B,17, Lachezar Mladenov,,
+B,18, ??,,
+B,19, ??,,
+B,20, ??,,
+B,21, Nikola Tzotchev,,
+B,22, Nikolai Romanov,,
+B,23, Nikoleta Dalaktchieva,,
+B,24, Slav Kirilov,,
+B,25, ??,,
+B,26, Filip Danailov,,
+B,27, Hristian Genchev,,

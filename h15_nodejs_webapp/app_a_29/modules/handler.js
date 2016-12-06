@@ -45,29 +45,29 @@ function matchData(filename, headerData, query, response) {
                     var queryData = {};
                     
                     if (Array.isArray(allData.characters)) {
-                        
                         allData.characters.forEach(function(character) {
-                            
+                            var matchingQueryParams = 0;
                             var key;
                             for (key in query) {
-                                if (character[key] === query[key] && key in character) {
-                                    filteredData.push(character);
-                                    break;
+                                if (character[key] === query[key]) {
+                                    matchingQueryParams++;
                                 }
-                            
+                            }
+                            if (matchingQueryParams == Object.keys(query).length) {
+                                filteredData.push(character);
                             }
                             if (filteredData.length > 0) {
                                 queryData[JSON.stringify(query)] = filteredData;
-                            
-                            } else {
-                                response.writeHead(404);
-                                response.end('Data not found');
+                                headerData["Image-Url"] = 'http://localhost:8129/?image=' + query[key];
                             }
                         });
-                        queryData = JSON.stringify(queryData, null , 2);
+                        if (Object.keys(queryData).length <= 0) {
+                            response.writeHead(404);
+                            response.end('Data not found');
+                        }
                     }
                     response.writeHead(200, headerData);
-                    response.end(queryData);
+                    response.end(JSON.stringify(queryData, null , 2));
                 }
             });
         } else {

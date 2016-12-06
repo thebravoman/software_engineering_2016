@@ -1,27 +1,21 @@
-/**
- * New node file
- */
 let fs = require('fs');
 
-function readData(filename, contentType, response)
-{
+function readData(filename, response) {
 	console.log('providing ' + filename);
-	fs.exists(filename, function(exists) {
+	fs.exists(filename, (exists) => {
 		if (exists) {		
-				fs.readFile(filename, function(error, data) {	
+				fs.readFile(filename, (error, data) => {	
 					if (!error)	{
-						response.writeHead(200, contentType);
+						response.set('Content-Type', 'image/jpeg');
+						console.log('upper');
 						response.end(data);
 					}
 					else {			
-						response.writeHead(500);
 						response.end('Internal Server Error');
 					}
 				});
 		}
-		else
-		{
-			response.writeHead(404);
+		else {
 			response.end('Image not found');
 		}
 	});	
@@ -29,57 +23,52 @@ function readData(filename, contentType, response)
 
 
 
-exports.provideData = function(filename, contentType, response)
-{
-	readData(filename,contentType, response);
+exports.provideData = function(filename, response) {
+	readData(filename, response);
 };
 
-exports.provideList = function(filename, contentType,  response)
-{
-	readData(filename,contentType, response);
+exports.provideList = function(filename,  response) {
+	readData(filename, response);
 };
 
 exports.queryData = function(filename, headers, query, response) {
-	fs.exists(filename, function(exists) {
+	fs.exists(filename, (exists) => {
 		if (exists) {		
-				fs.readFile(filename, function(error, data) {	
-					if (!error)	{
-						let result = {};
-						let filteredData = [];
-						let allData = JSON.parse(data);
-						if (Array.isArray(allData.characters)){
-							allData.characters.forEach(function(character) {
-								let match = true;
-								for(let key in query){
-									if(query[key] != character[key]){
-										match = false;
-										break;
-									}
+			fs.readFile(filename, (error, data) => {	
+				if (!error)	{
+					let result = {};
+					let filteredData = [];
+					let allData = JSON.parse(data);
+					if (Array.isArray(allData.characters)){
+						allData.characters.forEach((character) => {
+							let match = true;
+							for(let key in query){
+								if(query[key] != character[key]){
+									match = false;
+									break;
 								}
-								if(match){
-									filteredData.push(character);
-								}
-							});
-						}
-						if (filteredData.length > 0) {
-							result = filteredData;
-							let imageUrl = 'images/' + query.type;
-							headers["Image-Url"] = 'http://localhost:8180/?image=' + query.type;
-						}
-						
-							
-						response.writeHead(200, headers);
-						response.end(JSON.stringify(result));
+							}
+							if(match){
+								filteredData.push(character);
+							}
+						});
 					}
-					else {			
-						response.writeHead(500);
-						response.end('Internal Server Error');
+					if (filteredData.length > 0) {
+						result = filteredData;
+						let imageUrl = 'images/' + query.type;
+						headers["Image-Url"] = 'http://localhost:8180/?image=' + query.type;
 					}
-				});
+					
+					response.set(headers);
+					response.json(result);
+				}
+				else {			
+					response.end('Internal Server Error');
+				}
+			});
 		}
 		else
 		{
-			response.writeHead(404);
 			response.end('Image not found');
 		}
 	});	
