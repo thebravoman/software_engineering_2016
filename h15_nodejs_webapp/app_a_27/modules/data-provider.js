@@ -38,7 +38,7 @@ exports.provideList = function(filename, contentType,  response)
 };
 
 exports.queryData = function(filename, headers, query_str, response) {
-
+	
 	fs.exists(filename, function(exists) {
 		if (exists) {		
 				fs.readFile(filename, function(error, data) {	
@@ -46,16 +46,17 @@ exports.queryData = function(filename, headers, query_str, response) {
 						var result = {};
 						var filteredData = [];
 						var allData = JSON.parse(data);
+						var numb_of_keys = Object.keys(query_str).length;
 				
 						if (Array.isArray(allData.characters)){
 							allData.characters.forEach(function(character) {
 								i = 0;
 								for(key in query_str){
 									if(query_str[key] == character[key]){
-										i = 1;
+										i = i + 1;
 									}
 								}
-								if(i) {
+								if(numb_of_keys == i) {
 									filteredData.push(character) 
 								}
 							});
