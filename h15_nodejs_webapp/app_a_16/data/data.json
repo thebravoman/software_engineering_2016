@@ -4,35 +4,35 @@
         "firstname":"Dark",
         "lastname":"Troll",
         "type":"troll",
-        "strength":"100",
+        "strength":"100"
      },
 
      {
       "firstname":"Queen",
       "lastname":"Mab",
       "type":"witch",
-      "strength":"100",
+      "strength":"100"
      },
 
      {
       "firstname":"Benis",
       "lastname":"Perkele",
       "type":"finnish",
-      "strength":"500",
+      "strength":"500"
      },
 
      {
       "firstname":"Van",
       "lastname":"Darkholme",
       "type":"performance_artist",
-      "strength":"700",
+      "strength":"700"
      },
 
      {
       "firstname":"Billy",
       "lastname":"Herrington",
       "type":"wrestler",
-      "strength":"1000",
+      "strength":"1000"
      }
   ]
 }
