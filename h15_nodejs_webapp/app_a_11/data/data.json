@@ -10,10 +10,10 @@
     	  "lastname":"Mab",
     	  "type":"witch"
       },
-		{
-			"firstname":"Ivan",
-			"lastname":"Milev",
-			"type":"OTKA4EH"
-		}
+	   {
+		  "firstname":"Ivan",
+		  "lastname":"Milev",
+		  "type":"image"
+	   }
    ]
 }
