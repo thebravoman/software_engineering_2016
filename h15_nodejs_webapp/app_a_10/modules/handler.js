@@ -24,51 +24,50 @@ exports.provideData = function(filename, headerContent, response)
 	});
 };
 
-exports.queryData = function(filename, headers, key, query, response)
+
+exports.queryData = function(filename, headers, query, response)
 {
-	fs.exists(filename, function(exists) 
+	fs.exists(filename, function(exists)
 	{
-		if (exists) 
-		{
-			fs.readFile(filename, function(error, data) 
-			{
-				if (!error) 
-		        	{
-					var result = {};
-					var filteredData = [];
-					var allData = JSON.parse(data);
-					
-					if (Array.isArray(allData.characters)) 
+		if (exists)
+		{		
+				fs.readFile(filename, function(error, data)
+				{	
+					if (!error)
 					{
-                        			allData.characters.forEach(function(character) 
-                        			{
-							if (character[key] === query) 
+						var result = {};
+						var filteredData = [];
+						var allData = JSON.parse(data);
+						if (Array.isArray(allData.characters))
+						{
+							allData.characters.forEach(function(character)
 							{
-								filteredData.push(character);
-							}
-						});
+								if (character.type === query)
+								{
+									filteredData.push(character);
+								}
+							});
+						}
+						if (filteredData.length > 0)
+						{
+							result[query] = filteredData;
+							var imageUrl = 'images/' + query;
+							headers["Image-Url"] = 'http://localhost:8110/?image='+query;
+						}						
+						response.writeHead(200, headers);
+						response.end(JSON.stringify(result));
 					}
-					if (filteredData.length > 0)
-					{
-						result[query] = filteredData;
-						var imageUrl = 'image/' + query;
-						headers["Image-Url"] = 'http://localhost:8110/?image='+query;
+					else
+					{			
+						response.writeHead(500);
+						response.end('Internal Server Error');
 					}
-					response.writeHead(200, headers);
-                    			console.log(result);
-					response.end(JSON.stringify(result));
-					}
-				else 
-				{
-					response.writeHead(500);
-					response.end('Internal Server Error');
-				}
-			});
+				});
 		}
 		else
 		{
 			response.writeHead(404);
 			response.end('Image not found');
 		}
-	});
+	});	
 };
