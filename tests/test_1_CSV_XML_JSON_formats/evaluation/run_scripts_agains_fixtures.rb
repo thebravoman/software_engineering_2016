@@ -34,13 +34,15 @@ Dir.glob(results_path).each do |script_file|
 	p "++++++++++++++++++++++++++++++++++++++++++++++++++="
 	results[script_file] = Hash.new
 	csv_file =ARGV[1]+"fixture1/file.csv"
+	json_file = ARGV[1]+"fixture1/file.json"
+	xml_file = ARGV[1]+"fixture1/file.xml"
 
 	fixture_to_result = results[script_file]
 	if find_expected_and_task script_file, fixture_to_result
 		p "Expected content is"
 		p fixture_to_result[:expected]	
 
-		stdin, stdout, stderr = Open3.popen3("ruby #{script_file} #{csv_file}")
+		stdin, stdout, stderr = Open3.popen3("ruby #{script_file} #{csv_file} #{json_file} ")
 		program_error = stderr.readlines.inject(:+)
 		begin 
 			fixture_to_result[:output] = stdout.readlines.inject(:+).gsub(/\s/,"")
