@@ -28,30 +28,51 @@ A,26, Stiliyan Hristov,0, filtering against none existing value does not return
 A,27, Stoyan Ivanov,0, http://localhost:8127 returns empty object
 A,28, Teodor Spasov,0, No homework committed
 A,29, Hristo Spasov,0, http://localhost:8129?type=troll - missing Image-Url header, http://localhost:8129 returns wrong json
-B,1, Alexander Verbovskiy,,
-B,2, Andrey Strinski,,
-B,3, Boris Mutafov,,
-B,4, Daniel Tuechki,,
-B,5, Valentin Vurbanov,,
-B,6, Velislav Velikov,,
-B,7, Victor Gyoshev,,
-B,8, Vladimir Mladenov,,
-B,9, Georgi Nizamski,,
-B,10, ??,,
-B,11, Daniel Tuechki,,
-B,12, Daniel Raykov,,
-B,13, Dimityr Neshev,,
-B,14, Ivaylo Vasilev 0,,
-B,15, Ivaylo Velkov,,
-B,16, Ivan Trifonov,,
-B,17, Lachezar Mladenov,,
-B,18, ??,,
-B,19, ??,,
-B,20, ??,,
-B,21, Nikola Tzotchev,,
-B,22, Nikolai Romanov,,
-B,23, Nikoleta Dalaktchieva,,
-B,24, Slav Kirilov,,
-B,25, ??,,
-B,26, Filip Danailov,,
-B,27, Hristian Genchev,,
+
+15 HW
+B, 01, Alexander Verbovskiy, 0, Headers are wrong, the application uses contentType instead of Content-Type
+B, 02, Andrey Strinski,0, No homework committed
+B, 03, Boris Mutafov, 0, Started on port 8180 insteadof 8203, but Image-URL: http://localhost:8209/?image 
+B, 04, Daniel Tuechki, 0, !!Never tried, SyntaxError - Cannot find module './responseWriter.js', module modules/handler.js tries to load responseWriter.js but it does not exist, copied from No17?
+B, 05, Valentin Vurbanov, 0, No homework committed
+B, 06, Velislav Velikov, 0, No homework committed, No homework committed
+B, 07, Victor Gyoshev, 0, Header Image-URL is missing, port is wrong the app is started on 8180 instead of 8207
+B, 08, Vladimir Mladenov,0, Headers are wrong, the application uses contentType instead of Content-Type
+B, 09, Georgi Nizamski, 1, OK
+B, 10, Gergana Peikova, 0, !No http server started can't request localhost:8210
+B, 11, Daniel Tuechki,  0, Headers are wrong, the application uses contentType instead of Content-Type
+B, 12, Daniel Raykov, 0, Nice image \m/ ;) But Image-URL header is missing when reqesting http://localhost:8212
+B, 13, Dimityr Neshev, 0, No homework committed, No homework committed
+B, 14, Ivaylo Vasilev, 0, Headers are wrong, the application uses contentType instead of Content-Type
+B, 15, Ivaylo Velkov, 1, OK
+B, 16, Ivan Trifonov, 0, Headers are wrong, the application uses contentType instead of Content-Type
+B, 17, Lachezar Mladenov, 0, Headers are wrong, the application uses contentType instead of Content-Type
+B, 18, ??, 0, No homework committed
+B, 19, ??, 0, No homework committed 
+B, 20, ??, 0, No homework committed 
+B, 21, Nikola Tzotchev, !!!Image-URL header points to http://localhost:8208/?image but the app is started on 8221!!!
+B, 22, Nikolai Romanov, 0, Headers are wrong, the application uses contentType instead of Content-Type
+B, 23, Nikoleta Dalaktchieva, 0, No homework committed, 
+B, 24, Slav Kirilov, 0, Headers are wrong, the application uses contentType instead of Content-Type
+B, 25, Teodor Dimitrov, 0, No homework committed, 
+B, 26, Filip Danailov, 0, No homework committed
+B, 27, Hristian Genchev, !Never tried SyntaxError - writer module calls readFile with undefined arguments 
+
+HW 17
+
+B, 03, Boris Mutafov, list doesn't work http://localhost:8201 returns empty object, filtering doesn't work, when requesting http://localhost:8203?type=troll the Image-URL header points to http://localhost:8180/?image=troll 
+B, 07, Victor Gyoshev, 1
+B, 08, Vladimir Mladenov, 0, Requesting http://localhost:8208/?type=baby returns Imaage-Url: http://localhost:8180/?image=baby 
+B, 09, Georgi Nizamski, 1, Let's fix this in class list returns non expected image-url header: http://localhost:8209/?image=undefined, pointing to non existing image
+B, 10, Gergana Peikova, 1, Let's fix this in class filtering http://localhost:8210/?gender=Male returns http://localhost:8210/?image=undefined
+B, 11, Daniel Tuechki, 0, Server wrongly started at port 8180, requesting http://localhost:8180, returns non expected image-url header: http://localhost:8209/?image=undefined 
+B, 14, Ivaylo Vasilev, 0, !!!Not started Error: Cannot find module './modules/data-provider.js' syntax error module in the modules - directory is named data_provider Copied form someone else?!
+B, 15, Ivaylo Velkov, 0, !!! Not started SyntaxError: Unexpected token else 
+B, 16, Ivan Trifonov, 1, OK
+B, 17, Lachezar Mladenov, 0, Requesting http://localhost:8217?type=troll returns header Imaage-Url: http://localhost:8180/?image=troll, but this is not a valid location has to be localhost:8217
+B, 21, Nikola Tzotchev, 0 list doesn't work http://localhost:8221 returns empty object, Requesting http://localhost:8221?type=troll returns header Imaage-Url: http://localhost:8180/?image=troll, but this is not a valid location has to be localhost:8221
+B, 23, Nikoleta Dalaktchieva, 0, filtering doesn't work http://localhost:8223?type=troll returns empty object but http://localhost:8223 shows there are trolls, Image-Url header is missing
+
+B, 24, Slav Kirilov, 1, OK
+B, 25, Teodor Dimitrov, 0, requesting http://localhost:8225/ returns empty object, Image-Url header in http://localhost:8225?type=troll is wrongly set to http://localhost:8180/?image=troll instead of http://localhost:8225/?image=troll
+

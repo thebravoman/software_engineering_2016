@@ -10,8 +10,8 @@ json = JSON.parse(json1)
 
 CSV.foreach(csv_path) do |row|
 	json.each do |key|
-		if min < key[row[1]].to_i
-			min = key
+		if min < row[key[1]].to_i
+			min = row
 		end
 	end
 end
