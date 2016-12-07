@@ -7,4 +7,4 @@ const HOST = '127.0.0.1';
 var server = http.createServer(getRequest.requestHandler);
 
 server.listen(PORT, HOST);
-//console.log('Server is listening on ' + HOST + ':' + PORT);
+console.log('Server is listening on ' + HOST + ':' + PORT);
