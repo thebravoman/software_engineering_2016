@@ -1,3 +1,0 @@
-Fixed the square equation task.
-
-
