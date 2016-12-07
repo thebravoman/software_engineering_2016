@@ -19,7 +19,7 @@ function handleRequest(request, response)
 		{
 			dataProvider.provideData('images/'+get_params.query.image+'.jpg',{'Content-Type': 'image/jpeg'}, response);
 		}
-		else if (Object.keys(get_params.query) != null)
+		else if (Object.keys(get_params.query).lenght)
 		{
 			dataProvider.queryData('data/data.json',{'Content-Type': 'application/json'},get_params.query, response);
 		}
