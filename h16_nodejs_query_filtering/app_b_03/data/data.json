@@ -4,13 +4,13 @@
          "firstname":"Dark",
          "lastname":"Troll",
          "type":"troll",
-         "lel":"LUl"
+         "kuche" : "guz"
       },
       {
     	  "firstname":"Queen",
     	  "lastname":"Mab",
     	  "type":"witch",
-    	   "lel":"LUl"
+    	  "kuche" : "guz"
       }
    ]
 }

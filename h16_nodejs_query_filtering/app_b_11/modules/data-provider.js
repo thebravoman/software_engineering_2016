@@ -82,7 +82,7 @@ exports.queryData = function(filename, headers, params, response) {
 						if (filteredData.length > 0) {
 							result[params.type] = filteredData;
 							var imageUrl = 'images/' + params.type;
-							headers["Image-Url"] = 'http://localhost:8180/?image='+params.type;
+							headers["Image-Url"] = 'http://localhost:8211/?image='+params.type;
 						}
 						
 							

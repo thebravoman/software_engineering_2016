@@ -16,7 +16,7 @@ function handlingRequest(request, response)
 	else {
 			dataProvider.provideData('./data/data.json', {
 					'Content-Type': 'application/json',
-					'Image-Url': 'http://localhost:8221/?image'
+					'Image-Url': 'http://localhost:8208/?image'
 			}, response);
 		}	
 }	
