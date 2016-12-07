@@ -1,0 +1,16 @@
+[1mdiff --cc h16_nodejs_query_filtering/app_b_21/app.js[m
+[1mindex 65822b8,392d6e8..0000000[m
+[1m--- a/h16_nodejs_query_filtering/app_b_21/app.js[m
+[1m+++ b/h16_nodejs_query_filtering/app_b_21/app.js[m
+[36m@@@ -19,7 -19,7 +19,11 @@@[m [mfunction handleRequest(request, respons[m
+  		{[m
+  			dataProvider.provideData('images/'+get_params.query.image+'.jpg',{'Content-Type': 'image/jpeg'}, response);[m
+  		}[m
+[32m++<<<<<<< HEAD[m
+[32m +		else if (Object.keys(get_params.query).length)[m
+[32m++=======[m
+[32m+ 		else if (Object.keys(get_params.query).lenght)[m
+[32m++>>>>>>> 9ef9e612d4fb7fbbcff66076b9c5fcd7d65004d5[m
+  		{[m
+  			dataProvider.queryData('data/data.json',{'Content-Type': 'application/json'},get_params.query, response);[m
+  		}[m
