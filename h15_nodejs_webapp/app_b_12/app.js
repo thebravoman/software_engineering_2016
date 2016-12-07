@@ -16,7 +16,7 @@ function handleRequest(request, response)
 		var get_params = url.parse(request.url, true);
 		if (get_params.query.image != null && get_params.query.image != null)
 		{
-			dataProvider.provideData('images/image.jpg',{'Content-Type': 'image/jpeg', 'Image-Url':'http://localhost:8212/?image'}, response);
+			dataProvider.provideData('images/image.jpg',{'Content-Type': 'image/jpeg'}, response);
 		}
 		else if (get_params.query.data != null && get_params.query.data != null)
 		{
@@ -30,3 +30,4 @@ function handleRequest(request, response)
 }
 
 http.createServer(handleRequest).listen(port, hostname);
+

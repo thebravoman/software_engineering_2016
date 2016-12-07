@@ -40,7 +40,7 @@ exports.provideList = function(filename, contentType,  response)
 };
 
 exports.queryData = function(filename, headers, query, response) {
-	var file = JSON.parse(JSON.stringify(query));
+	var file = JSON.parse(JSON.stringify(headers));
 
 	fs.exists(filename, function(exists) {
 		if (exists) {		
@@ -51,11 +51,11 @@ exports.queryData = function(filename, headers, query, response) {
 						var allData = JSON.parse(data);
 						if (Array.isArray(allData.characters)){
 							allData.characters.forEach(function(character) {
-								var helper = 1;
+								var helper = 0;
 								
 								for (var key in file) {
-										if(file[key] != character[key]) {
-											helper = 0;
+										if(file[key] == character[key]) {
+											helper = 1;
 										}
 								}
 
