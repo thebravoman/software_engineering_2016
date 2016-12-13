@@ -4,7 +4,7 @@ const url = require('url');
 
 const dataProvider = require('./modules/data-provider.js');
 
-const port = 8180;
+const port = 8106;
 
 let app = express();
 

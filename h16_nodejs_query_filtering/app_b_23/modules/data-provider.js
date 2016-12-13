@@ -51,11 +51,11 @@ exports.queryData = function(filename, headers, query, response) {
 						var allData = JSON.parse(data);
 						if (Array.isArray(allData.characters)){
 							allData.characters.forEach(function(character) {
-								var helper = 0;
+								var helper = 1;
 								
 								for (var key in file) {
-										if(file[key] == character[key]) {
-											helper = 1;
+										if(file[key] != character[key]) {
+											helper = 0;
 										}
 								}
 
