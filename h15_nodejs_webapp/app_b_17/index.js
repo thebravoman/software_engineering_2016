@@ -11,7 +11,7 @@ function requestHandle(request, response) {
     
     if(params.query.image != null) {
     	responseWriter.responseWriter('./image/image.jpeg', 
-        		{'contentType': 'image/jpeg'}, response);
+        		{'Content-Type': 'image/jpeg'}, response);
     } 
     else {
     	responseWriter.responseWriter('./data/data.json', 
