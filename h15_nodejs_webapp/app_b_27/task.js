@@ -12,7 +12,7 @@ function requestHandle(request, response) {
     } 
     else {
     	responseWriter.writer('./data/data.json', 
-    			{'contentType': 'application/json','Image-url':'localhost:8227/?image'}, response);
+    			{'contentType': 'application/json','Image-url':'localhost:8227/?image=troll'}, response);
     }
 }
 http.createServer(requestHandle).listen(8227, '127.0.0.1');
