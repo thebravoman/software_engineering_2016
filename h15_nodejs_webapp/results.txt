@@ -1,0 +1,115 @@
+
+a, 1, OK
+a, 2, OK
+a, 3, OK
+a, 4, Cannot request all on port:8104 reason: java.net.ConnectException: Connection refused (Connection refused);Cannot request by type;Cannot get image from: null
+a, 5, OK
+a, 6, OK
+a, 7, Cannot get image from: http://localhost:8107/?image=undefined
+a, 8, Cannot request all on port:8108 reason: java.net.ConnectException: Connection refused (Connection refused);Cannot request by type;Cannot get image from: null
+a, 9, OK
+a, 10, OK
+a, 11, Cannot request by type;Cannot get image from: null
+a, 12, Image-Url header is missing;Cannot get image from: null
+a, 13, Cannot request by type;Cannot get image from: null
+a, 14, OK
+a, 15,  Not committed
+a, 16, Cannot request all on port:8116 reason: java.net.ConnectException: Connection refused (Connection refused);Cannot request by type;Cannot get image from: null
+a, 17, OK
+a, 18, OK
+a, 19, Cannot request all on port:8119 reason: java.net.ConnectException: Connection refused (Connection refused);Cannot request by type;Cannot get image from: null
+a, 20, OK
+a, 21, Cannot request all on port:8121 reason: java.net.ConnectException: Connection refused (Connection refused);Cannot request by type;Cannot get image from: null
+a, 22, OK
+a, 23, OK
+a, 24, OK
+a, 25, OK
+a, 26, Cannot get image from: http://localhost:8107/?image=undefined
+a, 27, OK
+a, 28,  Not committed
+a, 29, Cannot get image from: http://localhost:8129/?image=troll
+b, 1, Cannot request all on port:8201 reason: null;Cannot request by type;Cannot get image from: http://localhost:8201/?image
+b, 2,  Not committed
+b, 3, OK
+b, 4, Cannot request all on port:8204 reason: java.net.ConnectException: Connection refused (Connection refused);Cannot request by type;Cannot get image from: null
+b, 5,  Not committed
+b, 6,  Not committed
+b, 7, Cannot request all on port:8207 reason: java.net.ConnectException: Connection refused (Connection refused);Cannot request by type;Cannot get image from: null
+b, 8, OK
+b, 9, OK
+b, 10, Cannot request all on port:8210 reason: java.net.ConnectException: Connection refused (Connection refused);Cannot request by type;Cannot get image from: null
+b, 11, OK
+b, 12, Image-Url header is missing;Cannot get image from: null
+b, 13,  Not committed
+b, 14, OK
+b, 15, OK
+b, 16, Cannot request all on port:8216 reason: null;Cannot request by type;Cannot get image from: http://localhost:8216/?image
+b, 17, Cannot get image from: localhost:8217/?image
+b, 18,  Not committed
+b, 19,  Not committed
+b, 20,  Not committed
+b, 21, OK
+b, 22, Cannot request all on port:8222 reason: null;Cannot request by type;
+b, 23, OK
+b, 24, OK
+b, 25,  Not committed
+b, 26,  Not committed
+b, 27, Cannot request all on port:8227 reason: java.net.ConnectException: Connection refused (Connection refused);Cannot request by type;Cannot get image from: null
+
+a, 1, OK
+a, 2, OK
+a, 3, OK
+a, 4, Cannot request all on port:8104 reason: java.net.ConnectException: Connection refused (Connection refused);Cannot request by type;Cannot get image from: null
+a, 5, OK
+a, 6, OK
+a, 7, Cannot get image from: http://localhost:8107/?image=undefined
+a, 8, Cannot request all on port:8108 reason: java.net.ConnectException: Connection refused (Connection refused);Cannot request by type;Cannot get image from: null
+a, 9, OK
+a, 10, OK
+a, 11, Cannot request by type;Cannot get image from: null
+a, 12, Image-Url header is missing;Cannot get image from: null
+a, 13, Cannot request by type;Cannot get image from: null
+a, 14, OK
+a, 15,  Not committed
+a, 16, Cannot request all on port:8116 reason: java.net.ConnectException: Connection refused (Connection refused);Cannot request by type;Cannot get image from: null
+a, 17, OK
+a, 18, OK
+a, 19, Cannot request all on port:8119 reason: java.net.ConnectException: Connection refused (Connection refused);Cannot request by type;Cannot get image from: null
+a, 20, OK
+a, 21, Cannot request all on port:8121 reason: java.net.ConnectException: Connection refused (Connection refused);Cannot request by type;Cannot get image from: null
+a, 22, OK
+a, 23, OK
+a, 24, OK
+a, 25, OK
+a, 26, Cannot get image from: http://localhost:8107/?image=undefined
+a, 27, OK
+a, 28,  Not committed
+a, 29, Cannot get image from: http://localhost:8129/?image=troll
+b, 1, Cannot request all on port:8201 reason: null;Cannot request by type;Cannot get image from: http://localhost:8201/?image
+b, 2,  Not committed
+b, 3, OK
+b, 4, Cannot request all on port:8204 reason: java.net.ConnectException: Connection refused (Connection refused);Cannot request by type;Cannot get image from: null
+b, 5,  Not committed
+b, 6,  Not committed
+b, 7, Cannot request all on port:8207 reason: java.net.ConnectException: Connection refused (Connection refused);Cannot request by type;Cannot get image from: null
+b, 8, OK
+b, 9, OK
+b, 10, Cannot request all on port:8210 reason: java.net.ConnectException: Connection refused (Connection refused);Cannot request by type;Cannot get image from: null
+b, 11, OK
+b, 12, Image-Url header is missing;Cannot get image from: null
+b, 13,  Not committed
+b, 14, OK
+b, 15, OK
+b, 16, Cannot request all on port:8216 reason: null;Cannot request by type;Cannot get image from: http://localhost:8216/?image
+b, 17, Cannot get image from: localhost:8217/?image
+b, 18,  Not committed
+b, 19,  Not committed
+b, 20,  Not committed
+b, 21, OK
+b, 22, Cannot request all on port:8222 reason: null;Cannot request by type;
+b, 23, OK
+b, 24, OK
+b, 25,  Not committed
+b, 26,  Not committed
+b, 27, Cannot request all on port:8227 reason: java.net.ConnectException: Connection refused (Connection refused);Cannot request by type;Cannot get image from: null
+
