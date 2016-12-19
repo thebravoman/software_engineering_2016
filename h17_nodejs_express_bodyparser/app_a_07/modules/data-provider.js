@@ -66,7 +66,9 @@ exports.queryData = function (filename, contentType, query, response) {
                     }
 
                     // console.log('logging -> query', query);
-                    response.setHeader('Image-Url', `http://localhost:8107/?image=${query.type}`);
+                    if (typeof query.type !== 'undefined') {
+                        response.setHeader('Image-Url', `http://localhost:8107/?image=${query.type}`);
+                    }
                     response.json(result);
                 }
                 else {
