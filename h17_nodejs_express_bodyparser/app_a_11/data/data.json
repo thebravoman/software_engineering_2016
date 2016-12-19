@@ -1,0 +1,22 @@
+{
+   "characters":[
+      {
+         "firstname":"Dark",
+         "lastname":"Troll",
+         "type":"troll",
+         "strength": 100
+      },
+      {
+    	  "firstname":"Queen",
+    	  "lastname":"Mab",
+    	  "type":"witch",
+ 	       "strength": 100
+      },
+      {
+         "firstname":"BAHKATA",
+        "lastname":"Milev",
+        "type":"OTKA4EH?",
+        "strength": 10000
+      }
+   ]
+}
