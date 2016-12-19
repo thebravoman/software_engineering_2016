@@ -34,8 +34,8 @@ app.use('/', routes);
 // production error handler
 // no stacktraces leaked to user
 
-http.createServer(app).listen(3000, function(){
-	  console.log('Express server listening on port 3000');  
+http.createServer(app).listen(8221, function(){
+	  console.log('Express server listening on port 8221');  
 	});
 
 

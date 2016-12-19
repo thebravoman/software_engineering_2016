@@ -47,7 +47,7 @@ exports.provideList = function(filename, contentType,  response)
 exports.queryData = function(filename, query, response) {
 	var print = 0;
 	fs.exists(filename, function(exists) {
-		if (exists) {		
+		if (exists) {	
 				fs.readFile(filename, function(error, data) {	
 					if (!error)	{
 						var result = {};
@@ -67,12 +67,12 @@ exports.queryData = function(filename, query, response) {
 								if(print === 1){
 									filteredData.push(character);
 								}
-								
 							});
 						}
 						if (filteredData.length > 0) {
 							result[query.type] = filteredData;
 							var imageUrl = 'images/' + query.type;
+							response.header("Image-Url", 'http://localhost:8221/?image=' + query.type);
 						}						
 							
 						response.json(result);

@@ -1,14 +1,28 @@
 {
    "characters":[
       {
-         "firstname":"Dark",
-         "lastname":"Troll",
-         "type":"troll"
+         "firstname":"Troll",
+         "lastname":"One",
+         "type":"troll",
+         "strength": "50"
       },
       {
-    	  "firstname":"Queen",
-    	  "lastname":"Mab",
-    	  "type":"witch"
+         "firstname":"Troll",
+         "lastname":"Two",
+         "type":"troll",
+         "strength":"100"
+      },
+      {
+         "firstname":"Troll",
+         "lastname":"Three",
+         "type":"troll",
+         "strength":"75"
+      },
+      {
+    	  "firstname":"Witch",
+    	  "lastname":"One",
+    	  "type": "witch",
+    	  "strength":"50"
       }
    ]
 }
