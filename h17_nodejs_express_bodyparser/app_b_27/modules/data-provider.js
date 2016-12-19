@@ -10,8 +10,13 @@ function readData(filename, contentType, response)
 		if (exists) {		
 				fs.readFile(filename, function(error, data) {	
 					if (!error)	{
-						response.writeHead(200, contentType);
-						response.end(data);
+						if(contentType == "json"){
+							result = JSON.parse(data);
+							response.json(result);
+						}else {
+							response.writeHead(200, contentType);
+							response.end(data);
+						}
 					}
 					else {			
 						response.writeHead(500);
@@ -31,52 +36,49 @@ function readData(filename, contentType, response)
 
 exports.provideData = function(filename, contentType, response)
 {
-	readData(filename,contentType, response);
+	readData(filename, contentType, response);
 };
 
-exports.provideList = function(filename, contentType,  response)
+exports.provideList = function(filename, contentType, response)
 {
-	readData(filename,contentType, response);
+	readData(filename, contentType, response);
 };
 
-exports.queryData = function(filename, headers, query, response) {
-	
-	var JSONquery = JSON.parse(JSON.stringify(query));
-	
+exports.queryData = function(filename, json, response) {
 	fs.exists(filename, function(exists) {
 		if (exists) {		
 				fs.readFile(filename, function(error, data) {	
 					if (!error)	{
+						var headers = {};
 						var result = {};
 						var filteredData = [];
+						var i = 0;
 						var allData = JSON.parse(data);
-						var returner = 0;
 						if (Array.isArray(allData.characters)){
 							allData.characters.forEach(function(character) {
-								for (var key in JSONquery) {
-								    if (key === JSONquery[key]) {
-								    	returner = 1;
-								    }
-								    else {
-								    	returner = 0;
-                                    }
-
-                                    if (returner == 1) {
-                                        filteredData.push(character);
+								if(json){
+									i = 0;
+									for(key in json) {
+										if (character[key] === json[key]) {
+											i++;
+										}
+										if(i == Object.keys(json).length) {
+											filteredData.push(character);
+										}
 									}
-
 								}
 							});
 						}
 						if (filteredData.length > 0) {
-							result[query] = filteredData;
-							var imageUrl = 'images/' + query;
-							headers["Image-Url"] = 'http://localhost:8180/?image='+query;
+								result = filteredData;
+							var imageUrl = 'images/' + json.type;
+							headers["Image-Url"] = "https://localhost:8227/?image=" + json.type;
+							response.set(headers);
+							response.json(result);
+						}else {
+							response.writeHead(404);
+							response.end("No such type");
 						}
-						
-							
-						response.writeHead(200, headers);
-						response.end(JSON.stringify(result));
 					}
 					else {			
 						response.writeHead(500);
