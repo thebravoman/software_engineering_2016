@@ -12,6 +12,12 @@
 			"lastname":"Mab",
 			"type":"witch",
 			"strength":"100"
+		},
+		{
+			"firstname":"Dark",
+			"lastname":"Witch",
+			"type":"witch",
+			"strength":"150"
 		}
 	]
 }
