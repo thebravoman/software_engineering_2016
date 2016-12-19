@@ -1,0 +1,11 @@
+{
+  "name": "app_a_05",
+  "version": "1.0.0",
+  "description": "Yo m8 wassup ",
+  "main": "application.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Velislav Yotov",
+  "license": "ISC"
+}
