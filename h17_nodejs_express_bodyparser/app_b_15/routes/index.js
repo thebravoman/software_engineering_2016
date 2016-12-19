@@ -12,7 +12,7 @@ router.get('/', function(request, response, next){
 		var get_params = request.query;
 		if (get_params.image)
 		{
-			dataProvider.provideData('images/'+get_params.image+'.jpg', {"Content-Type":"image/pgn"}, response);
+			dataProvider.provideData('images/'+get_params.image+'.jpg', {"Content-Type":"image/png"}, response);
 		}
 		else if (Object.keys(get_params).length)
 		{

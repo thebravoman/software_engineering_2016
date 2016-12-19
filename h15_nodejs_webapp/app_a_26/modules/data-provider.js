@@ -69,7 +69,7 @@ exports.queryData = function(filename, headers, query, response) {
 							result.characters = filteredData;
 							if (query.image !== null) {
 								var imageUrl = 'images/' + query.image;
-								headers["Image-Url"] = `http://localhost:8107/?image=${query.image}`;
+								headers["Image-Url"] = `http://localhost:8126/?image=${query.image}`;
 							}
 						}
 
