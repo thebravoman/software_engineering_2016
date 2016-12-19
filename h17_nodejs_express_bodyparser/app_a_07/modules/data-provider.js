@@ -61,12 +61,12 @@ exports.queryData = function (filename, contentType, query, response) {
 
                     if (filteredData.length > 0) {
                         result.characters = filteredData;
-                        if (query.image !== null) {
-                            let imageUrl = 'images/' + query.image;
-                            response.setHeader('Image-Url', `http://localhost:8107/?image=${query.image}`);
-                        }
+                    } else {
+                        response.status(404);
                     }
 
+                    // console.log('logging -> query', query);
+                    response.setHeader('Image-Url', `http://localhost:8107/?image=${query.type}`);
                     response.json(result);
                 }
                 else {
