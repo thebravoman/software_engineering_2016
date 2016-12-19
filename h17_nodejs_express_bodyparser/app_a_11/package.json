@@ -2,7 +2,7 @@
   "name": "app_a_11",
   "version": "1.0.2",
   "description": "11a",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
