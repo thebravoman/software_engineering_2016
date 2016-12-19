@@ -73,7 +73,10 @@ exports.queryData = function(filename, query, response) {
 							result[query.type] = filteredData;
 							var imageUrl = 'images/' + query.type;
 							response.header("Image-Url", 'http://localhost:8221/?image=' + query.type);
-						}						
+						}else {
+							response.writeHead(404);
+							response.end('no such type');
+						}					
 							
 						response.json(result);
 					}
