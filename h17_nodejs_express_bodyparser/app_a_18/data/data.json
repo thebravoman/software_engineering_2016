@@ -1,0 +1,28 @@
+{
+   "characters":[
+      {
+         "firstname":"Dark",
+         "lastname":"Troll",
+         "type":"troll",
+         "strength": 100
+      },
+      {
+    	  "firstname":"Queen",
+    	  "lastname":"Mab",
+    	  "type":"witch",
+        "strength": 100
+      },
+      {
+        "firstname":"ne6to",
+        "lastname":":ooe",
+        "type":"artist",
+        "strength": 6969
+      },
+      {
+        "firstname":"Simson",
+        "lastname":"S511",
+        "type":"Motociklet",
+        "strength": 70
+      }
+   ]
+}

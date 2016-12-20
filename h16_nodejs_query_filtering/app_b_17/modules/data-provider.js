@@ -7,13 +7,13 @@ function readData(filename, contentType, response)
 {
 	console.log('providing ' + filename);
 	fs.exists(filename, function(exists) {
-		if (exists) {		
-				fs.readFile(filename, function(error, data) {	
+		if (exists) {
+				fs.readFile(filename, function(error, data) {
 					if (!error)	{
 						response.writeHead(200, contentType);
 						response.end(data);
 					}
-					else {			
+					else {
 						response.writeHead(500);
 						response.end('Internal Server Error');
 					}
@@ -24,7 +24,7 @@ function readData(filename, contentType, response)
 			response.writeHead(404);
 			response.end('Image not found');
 		}
-	});	
+	});
 }
 
 
@@ -40,41 +40,43 @@ exports.provideList = function(filename, contentType,  response)
 };
 
 exports.queryData = function(filename, headers, query, response) {
-	
-	var JSONquery = JSON.parse(JSON.stringify(query));
-	
+	var queryJSON = JSON.parse(JSON.stringify(query));
+
 	fs.exists(filename, function(exists) {
-		if (exists) {		
-				fs.readFile(filename, function(error, data) {	
+		if (exists) {
+				fs.readFile(filename, function(error, data) {
 					if (!error)	{
 						var result = {};
 						var filteredData = [];
 						var allData = JSON.parse(data);
 						if (Array.isArray(allData.characters)){
 							allData.characters.forEach(function(character) {
-								var legit = false;
-								for (var key in JSONquery) {
-								    if (JSONquery[key] === character[key]) {
-								    	legit = true;
-								    }
-								}
-								
-								if(legit) {
+								var isPrintable = true;
+								Object.keys(character).forEach(function(key) {
+									if(queryJSON[key] !== undefined) {
+										if(queryJSON[key] !== character[key]) {
+											isPrintable = false;
+										}
+									}
+								});
+
+								if (isPrintable) {
 									filteredData.push(character);
 								}
 							});
 						}
+
 						if (filteredData.length > 0) {
-							result[query.type] = filteredData;
-							var imageUrl = 'images/' + query.type;
-							headers["Image-Url"] = 'http://localhost:8180/?image='+query.type;
+							result[queryJSON.type] = filteredData;
+							var imageUrl = 'images/' + queryJSON.type;
+							headers["Image-Url"] = 'http://localhost:8217/?image='+queryJSON.type;
 						}
-						
-							
+
+
 						response.writeHead(200, headers);
 						response.end(JSON.stringify(result));
 					}
-					else {			
+					else {
 						response.writeHead(500);
 						response.end('Internal Server Error');
 					}
@@ -85,5 +87,5 @@ exports.queryData = function(filename, headers, query, response) {
 			response.writeHead(404);
 			response.end('Image not found');
 		}
-	});	
+	});
 };

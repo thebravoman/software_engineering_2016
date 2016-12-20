@@ -1,32 +1,33 @@
 var http = require('http');
 var url = require('url');
-var dataProvider = require('./modules/data-provider.js');
+var handler = require('./modules/handler.js');
 
-var port = 8180;
-var hostname = 'localhost';
+var filename = "data/data.json";
+var imagename = "images/image.jpg";
+
+var port = 8203;
+var contentType = {};
 
 function handleRequest(request, response)
 {
-	if (request.url ==='/favicon.ico')
-	{
-		console.log('Ignore facicon request...');
-	}
-	else
-	{	
-		var get_params = url.parse(request.url, true);
-		if (get_params.query.image != null && get_params.query.image != null)
-		{
-			dataProvider.provideData('images/image.jpg',{'Content-Type': 'image/jpeg',  'Image-Url':'http://localhost:8209/?image'}, response);
-		}
-		else if (get_params.query.data != null && get_params.query.data != null)
-		{
-			dataProvider.provideData('data/data.json',{'Content-Type': 'application/json',  'Image-Url':'http://localhost:8209/?image'}, response);
-		}
-		else
-		{
-			dataProvider.provideData('data/data.json',{'Content-Type': 'application/json',  'Image-Url':'http://localhost:8209/?image'}, response);
-		}
-	}
+
+    var get_params = url.parse(request.url, true);
+    if(get_params.query.image == null) {
+        contentType = {
+            'Content-Type' : 'application/json',
+            'Image-Url' : 'http://localhost:' + port + '/?image'
+        };
+        handler.provideData(filename, contentType, response);
+    } else {
+        contentType = {
+            'Content-Type' : 'application/jpeg'
+        };
+        handler.provideImage(imagename, response);
+    }
 }
 
-http.createServer(handleRequest).listen(port, hostname);
+
+console.log('listening on localhost:' + port + '\n ...');
+
+
+http.createServer(handleRequest).listen(port, '127.0.0.1');
