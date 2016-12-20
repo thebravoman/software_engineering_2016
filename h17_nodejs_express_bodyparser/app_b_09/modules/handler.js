@@ -14,6 +14,7 @@ exports.provideData = function(filename, query, response) {
 					response.status(500);
 					response.send("Internal server error");
 				} else {
+					
 					if(query.image != null) response.header('Content-Type', 'image/jpeg');
 					else response.header('Content-Type', 'application/json');
 					
@@ -55,10 +56,16 @@ exports.queryData = function(filename, query, response) {
 							if(check) filteredData.push(character);
 						});
 					}
-					if (filteredData.length > 0) {
+					if (filteredData.length > 0) {		
 						result.characters = filteredData;
 						var imageUrl = 'images/' + query.type;
-						response.header("Image-Url", 'http://localhost:8209/?image=' + query.type);
+						if (query.type !== undefined) {
+							response.header("Image-Url", 'http://localhost:8209/?image=' + query.type);
+						}
+						
+					} else {
+						response.status(404);
+						response.send("Not Found");
 					}
 					
 					response.status(200);
