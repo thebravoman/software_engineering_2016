@@ -33,9 +33,9 @@ results_path =ARGV[0]+"results/*.rb"
 Dir.glob(results_path).each do |script_file|
 	p "++++++++++++++++++++++++++++++++++++++++++++++++++="
 	results[script_file] = Hash.new
-	csv_file =ARGV[1]+"fixture1/file.csv"
-	json_file = ARGV[1]+"fixture1/file.json"
-	xml_file = ARGV[1]+"fixture1/file.xml"
+	csv_file =ARGV[1]+"file.csv"
+	json_file = ARGV[1]+"file.json"
+	xml_file = ARGV[1]+"file.xml"
 
 	fixture_to_result = results[script_file]
 	if find_expected_and_task script_file, fixture_to_result
