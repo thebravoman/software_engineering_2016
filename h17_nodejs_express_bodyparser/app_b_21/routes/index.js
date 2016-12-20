@@ -27,7 +27,6 @@ router.get('/' , function (req , res , next){
 	{
 		console.log('Data requested');
 		console.log(image);
-	   // res.header('Content-Type', 'application/json');
 		dataProvider.queryData('data/data.json', url, res);
 	}
 	else

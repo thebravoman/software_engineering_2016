@@ -5,16 +5,14 @@ var url = require('url');
 var http = require('http');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-	handle.allData('./data/data.json', response);
-});
 
-router.get('/:type', function(request, response, next) {
+router.get('/', function(request, response, next) {
 	var get_params = url.parse(request.url, true);
-	if('image' in get_params.query) {
-		handle.image('./image' + get_params.pathname + '.jpg', response);
+	if(get_params.query.image) {
+		console.log('image/' + get_params.query.image + '.jpg');
+		handle.image('./image/' + get_params.query.image + '.jpg', response);
 	} else if(Object.keys(get_params.query).length) {
-		handle.data('./data/data.json', request.params.type, response);
+		handle.data('./data/data.json', get_params.query, response);
 	} else {
 		handle.allData('./data/data.json', response);
 	}

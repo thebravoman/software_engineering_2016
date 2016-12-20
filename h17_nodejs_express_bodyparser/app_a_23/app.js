@@ -46,6 +46,6 @@ app.use(function(err, req, res, next) {
 
 module.exports = app;
 
-http.createServer(app).listen(3000, function(){
-    console.log('Express server listening on port 3000');
+http.createServer(app).listen(8123, function(){
+    console.log('Express server listening on port 8123');
 });
