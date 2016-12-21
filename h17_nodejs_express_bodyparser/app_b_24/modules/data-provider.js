@@ -71,7 +71,7 @@ exports.queryData = function(filename, json, response) {
 						if (filteredData.length > 0) {
 								result = filteredData;
 							var imageUrl = 'images/' + json.type;
-							headers["Image-Url"] = "https://localhost:8224/?image=" + json.type;
+							headers["Image-Url"] = "http://localhost:8224/?image=" + json.type;
 							response.set(headers);
 							response.json(result);
 						}else {
