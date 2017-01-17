@@ -9,7 +9,7 @@ Free Dyno;
 Post > database - set id;
 Get < database - get id;
 
-count how much visitors;
+count how many visitors;
 how many times one id visited;
 
 REST API
