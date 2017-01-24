@@ -25,3 +25,11 @@ http://localhost:3000/:type с Content-Type: image/jpeg и тяло снимка
 Илементирайте GET заявка към http://localhost:3000/:type - която да връща картинката записана за съответния герой и header Content-Type: image/jpeg
 
 Картинките да се запзват в mongodb чрез grid-fs модула
+
+### 
+Добавете функционалност, която да връща http status 404 ако картинката за даден тип не съществува.
+Например:
+
+http://localhost:3000/non-existing-character/image
+
+За целта използвайте exist функцията на gridfs-stream - документацията е тук: https://www.npmjs.com/package/gridfs-stream секция check if file exists
