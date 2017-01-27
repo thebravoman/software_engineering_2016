@@ -14,7 +14,7 @@ function readData(filename, request, response)
                         response.set(200);
                         var get_params = url.parse(request.url, true);
                         if(get_params.query.image != null && get_params.query.image != null) {
-                            response.header('content-type', 'image/jpeg');
+                        	response.header('Content-Type', 'image/jpeg');
                         } response.end(data);
 					}
 					else {
@@ -74,11 +74,14 @@ exports.queryData = function(filename, query, response) {
 							result[queryJSON.type] = filteredData;
 							var imageUrl = 'images/' + queryJSON.type;
 							response.header("Image-Url", 'http://localhost:8208/?image='+queryJSON.type);
-                        }
+
+							response.set(200);
+							response.json(filteredData);
+                        } else {
+							response.sendStatus(404);
+						}
 
 
-						response.set(200);
-						response.json(filteredData);
 					}
 					else {
 						response.set(500);

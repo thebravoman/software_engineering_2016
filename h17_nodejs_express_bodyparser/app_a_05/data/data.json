@@ -1,0 +1,31 @@
+{
+   "characters":[
+      {
+         "firstname":"Dark",
+         "lastname":"Troll",
+         "type":"troll",
+         "strength":"100"
+      },
+
+      {
+    	  "firstname":"Queen",
+    	  "lastname":"Mab",
+    	  "type":"witch",
+    	  "strength":"100"
+      },
+      
+      {
+    	  "firstname":"Vernon",
+    	  "lastname":"Roche",
+    	  "type":"Patriot",
+    	  "strength":"1500"
+      },
+      
+      {
+    	  "firstname":"Iorveth",
+    	  "lastname":"Asshole",
+    	  "type":"bastard",
+    	  "strength":"1"
+      }
+   ]
+}

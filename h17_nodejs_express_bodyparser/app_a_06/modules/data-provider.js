@@ -6,30 +6,39 @@ function readData(filename, response) {
 		if (exists) {		
 				fs.readFile(filename, (error, data) => {	
 					if (!error)	{
-						response.send(data);
+						let headers = {
+							"Content-Type": "image/jpeg"
+						}
+
+						response.set(headers);
+						response.end(data);
 					}
 					else {			
-						response.send('Internal Server Error');
+						response.status(404)
+								.send('Internal Server Error');
 					}
 				});
 		}
 		else {
-			response.send('Image not found');
+			response.status(404)
+					.send('Image not found');
 		}
 	});	
 }
 
 
 
-exports.provideData = function(filename, contentType, response) {
-	readData(filename,contentType, response);
+exports.provideData = function(filename, response) {
+	readData(filename, response);
 };
 
 exports.provideList = function(filename,  response) {
-	readData(filename,contentType, response);
+	readData(filename, response);
 };
 
-exports.queryData = function(filename, headers, query, response) {
+exports.queryData = function(filename, query, response) {
+	let headers = {};
+
 	fs.exists(filename, (exists) => {
 		if (exists) {		
 			fs.readFile(filename, (error, data) => {	
@@ -56,19 +65,20 @@ exports.queryData = function(filename, headers, query, response) {
 						let imageUrl = 'images/' + query.type;
 						headers["Image-Url"] = 'http://localhost:8180/?image=' + query.type;
 					}
-					
-						
+
 					response.set(headers);
-					response.send(JSON.stringify(result));
+					response.json(result);
 				}
-				else {			
-					response.send('Internal Server Error');
+				else {		
+					response.status(404)
+							.send('Internal Server Error');
 				}
 			});
 		}
 		else
 		{
-			response.end('Image not found');
+			response.status(404)
+					.end('Image not found');
 		}
 	});	
 };

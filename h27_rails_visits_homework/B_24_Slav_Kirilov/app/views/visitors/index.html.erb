@@ -1,0 +1,4 @@
+<% @id.each do |one| %>
+<% h = {"user" => one.user, "count" => one.count } %>
+<%= h.to_json %>
+<% end %>

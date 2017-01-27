@@ -1,0 +1,14 @@
+{
+  "name": "app_a_11",
+  "version": "1.0.2",
+  "description": "11a",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ivan Milev",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
