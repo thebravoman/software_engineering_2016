@@ -31,7 +31,7 @@ exports.proccessGETRequest = function(request, response) {
 								 response);
 	} else {
 		provideData('data/data.json', 
-								 {'Content-Type': 'application/json', 'Image-Url':'http://localhost:8209/?image'},
+								 {'Content-Type': 'application/json', 'Image-Url':'http://localhost:8212/?image'},
 								 response);		
 	} 
 };

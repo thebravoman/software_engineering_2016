@@ -56,7 +56,7 @@ function queryData(filename, headers, query, response) {
 					if (filteredData.length > 0) {
 						result.characters = filteredData;
 						var imageUrl = 'images/' + query.type;
-						headers["Image-Url"] = 'http://localhost:8209/?image=' + query.type;
+						headers["Image-Url"] = 'http://localhost:8212/?image=' + query.type;
 					}
 					
 						
