@@ -155,6 +155,7 @@ DEPENDENCIES
   cowsay
   jbuilder (~> 2.0)
   jquery-rails
+  json
   pg (~> 0.15)
   rails (= 4.2.6)
   rails_12factor

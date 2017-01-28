@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 gem 'cowsay'
-
+gem 'json'
 gem 'rails_12factor', group: :production
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
