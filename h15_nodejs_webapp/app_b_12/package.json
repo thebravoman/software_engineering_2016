@@ -1,15 +1,11 @@
 {
-  "name": "app",
+  "name": "app_b_12",
   "version": "1.0.0",
-  "description": "Web application",
+  "description": "B",
   "main": "app.js",
   "scripts": {
-    "test": "test"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "http",
-    "application"
-  ],
   "author": "Daniel Raykov",
   "license": "ISC"
 }
