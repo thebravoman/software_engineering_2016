@@ -115,14 +115,12 @@ exports.saveImage = function(request, response) {
 
 exports.getImage = function(request, response) {
 	let exists = true;
-	console.log(request.params.type);
-	if(models.gridImage.exist({ _id: request.params.type }, (err, found) => {
+	models.gridImage.exist({ _id: request.params.type + '.jpg' }, (err, found) => {
 		if (err) {
-			response.send('500', 'Internal Server Error');
-			return;
+			response.status(500);
+			response.end('Internal Server Error');
 		}
-		else if (found) {
-			console.log("SADMAMSSDFOI")
+		if (found) {
 			var readStream = models.gridImage.createReadStream({
 				_id : request.params.type,
 				filename : 'image',
@@ -142,7 +140,7 @@ exports.getImage = function(request, response) {
 		else {
 			response.status(404).end('Image not found');
 		}
-	}));
+	});
 };
 
 function toCharacter(characterObject) {
