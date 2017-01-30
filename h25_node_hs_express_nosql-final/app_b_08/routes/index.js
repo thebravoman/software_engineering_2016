@@ -26,7 +26,7 @@ router.get('/:type/image', function(request, response, next){
 });
 
 router.get('/:type', function(request, response, next){
-	dbProvider.queryData({}, request.params, request.query, response);
+	dbProvider.queryData({}, request.params.type, response);
 });
 
 module.exports = router;

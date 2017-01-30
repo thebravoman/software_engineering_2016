@@ -21,10 +21,8 @@ exports.provideList = function(response) {
 };
 
 
-exports.queryData = function(headers, queryType, query, response) {
-	query['type'] = queryType;
-	console.log(query);
-	Character.find(query, function(error, result) {
+exports.queryData = function(headers, queryData, response) {
+	Character.find(queryData, function(error, result) {
 		if (error) {
 			console.error(error);
 			return null;
@@ -32,10 +30,10 @@ exports.queryData = function(headers, queryType, query, response) {
 		if (result != null) {
 			response.writeHead(200, {
 				'Content-Type':'application/json',
-				'Image-Url':'http://localhost:3000/'+ query.type + '/image'});
+				'Image-Url':'http://localhost:3000/'+ queryType + '/image'});
 			response.end(JSON.stringify(result));
 		}
-		
+
 	});
 
 };
@@ -82,7 +80,7 @@ exports.saveCharacter = function(request, response)
 												result.save();
 												response.json(request.body);
 											}
-											
+
 										}
 									});
 				}
@@ -91,78 +89,59 @@ exports.saveCharacter = function(request, response)
 
 
 exports.saveImage = function(request, response) {
-	
-	
+
+
 	var writeStream = models.Grid.createWriteStream({
 		_id : request.params.type,
 		filename : 'image',
 		mode : 'w'
 	});
-	
+
 	writeStream.on('error', function(error) {
 		response.send('500', 'Internal Server Error');
 		console.log('error write');
 		return;
 	})
-	
+
 	writeStream.on('close', function() {
 		var readStream = models.Grid.createReadStream({
 			_id : request.params.type,
 			filename : 'image',
 			mode : 'r'
 		});
-		
+
 		readStream.on('error', function(error) {
 			console.log('error read');
 			console.log(error);
 			response.send('500', 'Internal Server Error');
 			return;
 		});
-		
+
 		response.writeHead(200, {'Content-Type' : 'image/jpeg'});
 		readStream.pipe(response);
 	});
-	
+
 	request.pipe(writeStream);
 
 };
 
 exports.getImage = function(request, response) {
-	models.Grid.exist({ 
-						_id : request.params.type,
-						filename : 'image'
-					  }, function (error, exists){
-		if (error) {
-			console.log('exist error');
-			response.send(500, 'Internal Server Error');
-			return;
-		}
-		else if (exists){
-			console.log('Image does not exist');
-			response.writeHead(404);
-			response.end('Image Does Not Exist');
-			return;
-			
-		}
-		else if (!exists){
-			
-			var readStream = models.Grid.createReadStream({
-				_id : request.params.type,
-				filename : 'image',
-				mode : 'r'
-			});
-			
-			readStream.on('error', function(error) {
-				console.log('error read');
-				console.log(error);
-				response.send('500', 'Internal Server Error');
-				return;
-			});
-
-			response.writeHead(200, {'Content-Type' : 'image/jpeg'});
-			readStream.pipe(response);
-		}
+	var readStream = models.Grid.createReadStream({
+		_id : request.params.type,
+		filename : 'image',
+		mode : 'r'
 	});
+
+	readStream.on('error', function(error) {
+		console.log('error read');
+		console.log(error);
+		response.send('500', 'Internal Server Error');
+		return;
+	});
+
+
+	response.writeHead(200, {'Content-Type' : 'image/jpeg'});
+	readStream.pipe(response);
 };
 
 function toCharacter(characterObject) {
