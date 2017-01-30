@@ -17,7 +17,10 @@ exports.provideList = function(response) {
 
 
 exports.queryData = function(headers, queryType, response) {
-	Character.find({type : queryType}, function(error, result) {
+	let searchTerms = {type: queryType};
+	searchTerms = require('util')._extend(searchTerms, headers);
+	console.log(searchTerms);
+	Character.find(searchTerms, function(error, result) {
 		if (error) {
 			console.error(error);
 			return null;
