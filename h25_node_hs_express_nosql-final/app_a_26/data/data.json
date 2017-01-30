@@ -1,0 +1,14 @@
+{
+   "characters":[
+      {
+         "firstname":"Dark",
+         "lastname":"Troll",
+         "type":"troll"
+      },
+      {
+    	  "firstname":"Queen",
+    	  "lastname":"Mab",
+    	  "type":"witch"
+      }
+   ]
+}
