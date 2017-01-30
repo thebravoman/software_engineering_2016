@@ -9,7 +9,7 @@ const http = require('http');
 const routes = require('./routes/index');
 
 const app = express();
-const port = 3000;
+const port = 8106;
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
