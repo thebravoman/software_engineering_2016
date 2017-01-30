@@ -1,5 +1,5 @@
 {
-  "name": "app_b_09",
+  "name": "app_b_16",
   "version": "1.0.0",
   "description": "MongoDB - Web Application",
   "main": "app-mongodb.js",
@@ -10,7 +10,7 @@
     "http",
     "application"
   ],
-  "author": "Georgi Nizamski",
+  "author": "Ivan Trifonov",
   "license": "ISC",
   "dependencies": {
     "gridfs-stream": "^1.1.1"
