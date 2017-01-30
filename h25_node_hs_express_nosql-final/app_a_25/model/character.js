@@ -16,4 +16,5 @@ var Character = mongoose.model('Character', characterSchema);
 var GridImage = GridImage(mongoose.connection.db, mongoose.mongo);
 
 module.exports = {Character: Character,
-                  Grid: GridImage}
+                  Grid: GridImage};
+
