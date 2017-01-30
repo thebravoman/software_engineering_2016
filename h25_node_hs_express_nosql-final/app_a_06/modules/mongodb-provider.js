@@ -115,7 +115,7 @@ exports.saveImage = function(request, response) {
 
 exports.getImage = function(request, response) {
 	let exists = true;
-	models.gridImage.exist({ _id: request.params.type + '.jpg' }, (err, found) => {
+	models.gridImage.exist({ _id: request.params.type }, (err, found) => {
 		if (err) {
 			response.status(500);
 			response.end('Internal Server Error');
