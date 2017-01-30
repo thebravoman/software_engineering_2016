@@ -21,7 +21,7 @@ exports.provideList = function(response) {
 };
 
 
-exports.queryData = function(headers, queryType, queryData response) {
+exports.queryData = function(headers, queryType, queryData, response) {
 	queryData['type'] = queryType.type;
 	Character.find(queryData, function(error, result) {
 		if (error) {
