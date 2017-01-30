@@ -4,7 +4,10 @@ class VisitorsController < ApplicationController
   end
 
   def show
-  	@id = Visitor.find(params[:user])
+        @id = Visitor.find(params[:user])
+        h = Hash.new
+        h["count"] = @id.count
+        render :json => h.to_json
   end
 
   def create
