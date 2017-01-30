@@ -1,8 +1,8 @@
-const var models = require('../model/character.js')
+const var models = require('../model/character.js');
 
-const var Character = models.Character
+const var Character = models.Character;
 
-const var port = 8108
+const var port = 8108;
 
 exports.provideList = function(response) 
 {
