@@ -1,11 +1,8 @@
-var express = require('express');
-var router = express.Router();
-var dataProvider = require('../modules/data-provider.js');
+const express = require('express');
+const router = express.Router();
+const dataProvider = require('../modules/data-provider.js');
 
-var dbProvider = require('../modules/mongodb-provider.js');
-
-/* GET home page. */
-
+const dbProvider = require('../modules/mongodb-provider.js');
 
 router.get('/', function(request, response, next){
 	console.log('Get all');
