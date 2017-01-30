@@ -21,8 +21,11 @@ exports.provideList = function(response) {
 };
 
 
-exports.queryData = function(headers, queryType, response) {
-	Character.find({type : queryType}, function(error, result) {
+exports.queryData = function(queryParams, type, response) {
+	if (type) {
+		queryParams.type = type;
+	}
+	Character.find(queryParams, function(error, result) {
 		if (error) {
 			console.error(error);
 			return null;
@@ -30,7 +33,7 @@ exports.queryData = function(headers, queryType, response) {
 		if (result != null) {
 			response.writeHead(200, {
 				'Content-Type':'application/json',
-				'Image-Url':'http://localhost:3000/'+ queryType + '/image'});
+				'Image-Url':'http://localhost:3000/'+ type + '/image'});
 			response.end(JSON.stringify(result));
 		}
 		
