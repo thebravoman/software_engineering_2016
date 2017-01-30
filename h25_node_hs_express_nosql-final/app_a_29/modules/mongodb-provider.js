@@ -12,11 +12,28 @@ exports.getImage = function(req, res) {
 	readStream.on('error', function(error) {
 		console.log('error read');
 		console.log(error);
-		response.send('500', 'Internal Server Error');
+		res.send('500', 'Internal Server Error');
+		return;
 	});
 
-	res.writeHead(200, {'Content-Type' : 'image/jpeg'});
-	readStream.pipe(res);
+	models.Grid.exist({
+		_id : req.params.type,
+		filename : 'image',
+		mode : 'w'
+	}, function (error, found) {
+		if (error) {
+			console.log('error exist');
+			console.log(error);
+			res.send('500', 'Internal Server Error');
+			return;
+		}
+		if (found) {
+			res.writeHead(200, {'Content-Type' : 'image/jpeg'});
+			readStream.pipe(res);
+		} else {
+			res.writeHead(404, {'Content-Type' : 'image/jpeg'})
+		}
+	});
 }
 
 exports.saveImage = function(req, res) {
@@ -51,7 +68,7 @@ exports.saveImage = function(req, res) {
 	req.pipe(writeStream);
 }
 
-exports.SaveCharacter = function(req, res) {
+exports.saveCharacter = function(req, res) {
 	var character = parseCharacter(req.body);
 	character.save(function(error) {
 		if (!error) {
@@ -105,8 +122,8 @@ function parseCharacter(characterObject) {
 	});
 }
 
-exports.provideData = function(headers, queryType, res) {
-	Character.find({type : queryType}, function(error, result) {
+exports.provideData = function(headers, query, res) {
+	Character.find(query, function(error, result) {
 		if (error) {
 			console.error(error);
 			return null;
@@ -114,7 +131,7 @@ exports.provideData = function(headers, queryType, res) {
 		if (result != null) {
 			res.writeHead(200, {
 				'Content-Type' : 'application/json',
-				'Image-Url' : 'http://localhost:8129/' + queryType + '/image'
+				'Image-Url' : 'http://localhost:8129/' + query.imageUrl + '/image'
 			});
 			res.end(JSON.stringify(result));
 		}
