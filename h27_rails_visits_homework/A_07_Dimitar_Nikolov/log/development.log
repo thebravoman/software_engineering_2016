@@ -1,0 +1,3129 @@
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3375845397996303855);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateVisits (20170126190419)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (77.8ms)[0m  [1m[35mCREATE TABLE "visits" ("id" serial primary key, "count" integer, "user" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170126190419"]]
+  [1m[35m (14.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3375845397996303855)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for 127.0.0.1 at 2017-01-26 21:08:15 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/dimitar/.rvm/gems/ruby-2.4.0/gems/railties-5.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/dimitar/.rvm/gems/ruby-2.4.0/gems/railties-5.0.1/lib/rails/templates/rails/welcome/index.html.erb (2.0ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/visits" for 127.0.0.1 at 2017-01-26 21:08:16 +0200
+Processing by VisitsController#index as HTML
+  [1m[36mVisit Load (0.5ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "visits" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", 2017-01-26 19:08:16 UTC], ["updated_at", 2017-01-26 19:08:16 UTC]]
+  [1m[35m (11.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 16.2ms)
+
+
+  
+NoMethodError (undefined method `first' for #<Visit:0x000000031fc040>):
+  
+app/controllers/visits_controller.rb:14:in `find_visit'
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:08:21 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.5ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "mitko"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "visits" ("user", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user", "mitko"], ["created_at", 2017-01-26 19:08:21 UTC], ["updated_at", 2017-01-26 19:08:21 UTC]]
+  [1m[35m (70.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 76ms (ActiveRecord: 71.1ms)
+
+
+  
+NoMethodError (undefined method `first' for #<Visit:0x007f1f48012318>):
+  
+app/controllers/visits_controller.rb:14:in `find_visit'
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:08:36 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.6ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "mitko"], ["LIMIT", 1]]
+Completed 200 OK in 12ms (Views: 0.5ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:10:15 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "mitko"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (private method `select' called for #<Visit:0x007f1f482e4ac8>):
+  
+app/controllers/visits_controller.rb:14:in `find_visit'
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:10:20 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "mitko"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (private method `select' called for #<Visit:0x007f1f4840f448>):
+  
+app/controllers/visits_controller.rb:14:in `find_visit'
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:10:38 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 AND "visits"."select" = $2 LIMIT $3[0m  [["user", "mitko"], ["select", "count"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 1.2ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column visits.select does not exist
+LINE 1: ...s".* FROM "visits" WHERE "visits"."user" = $1 AND "visits"."...
+                                                             ^
+: SELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 AND "visits"."select" = $2 LIMIT $3):
+  
+app/controllers/visits_controller.rb:14:in `find_visit'
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:10:41 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 AND "visits"."select" = $2 LIMIT $3[0m  [["user", "mitko"], ["select", "count"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column visits.select does not exist
+LINE 1: ...s".* FROM "visits" WHERE "visits"."user" = $1 AND "visits"."...
+                                                             ^
+: SELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 AND "visits"."select" = $2 LIMIT $3):
+  
+app/controllers/visits_controller.rb:14:in `find_visit'
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:10:55 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 AND "visits"."select" = $2 LIMIT $3[0m  [["user", "mitko"], ["select", "count"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 1.5ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column visits.select does not exist
+LINE 1: ...s".* FROM "visits" WHERE "visits"."user" = $1 AND "visits"."...
+                                                             ^
+: SELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 AND "visits"."select" = $2 LIMIT $3):
+  
+app/controllers/visits_controller.rb:14:in `find_visit'
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:10:57 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 AND "visits"."select" = $2 LIMIT $3[0m  [["user", "mitko"], ["select", "count"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column visits.select does not exist
+LINE 1: ...s".* FROM "visits" WHERE "visits"."user" = $1 AND "visits"."...
+                                                             ^
+: SELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 AND "visits"."select" = $2 LIMIT $3):
+  
+app/controllers/visits_controller.rb:14:in `find_visit'
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:11:30 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.5ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 AND "visits"."select" = $2 LIMIT $3[0m  [["user", "mitko"], ["select", "user"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 1.6ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column visits.select does not exist
+LINE 1: ...s".* FROM "visits" WHERE "visits"."user" = $1 AND "visits"."...
+                                                             ^
+: SELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 AND "visits"."select" = $2 LIMIT $3):
+  
+app/controllers/visits_controller.rb:14:in `find_visit'
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:11:32 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 AND "visits"."select" = $2 LIMIT $3[0m  [["user", "mitko"], ["select", "user"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column visits.select does not exist
+LINE 1: ...s".* FROM "visits" WHERE "visits"."user" = $1 AND "visits"."...
+                                                             ^
+: SELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 AND "visits"."select" = $2 LIMIT $3):
+  
+app/controllers/visits_controller.rb:14:in `find_visit'
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:11:48 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 AND "visits"."select" = $2 LIMIT $3[0m  [["user", "mitko"], ["select", "user"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column visits.select does not exist
+LINE 1: ...s".* FROM "visits" WHERE "visits"."user" = $1 AND "visits"."...
+                                                             ^
+: SELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 AND "visits"."select" = $2 LIMIT $3):
+  
+app/controllers/visits_controller.rb:14:in `find_visit'
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:11:50 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "mitko"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.8ms)
+
+
+  
+NoMethodError (private method `select' called for #<Visit:0x00000002f30ff0>):
+  
+app/controllers/visits_controller.rb:14:in `find_visit'
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:11:51 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "mitko"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (private method `select' called for #<Visit:0x007f1f48288c78>):
+  
+app/controllers/visits_controller.rb:14:in `find_visit'
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:11:52 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "mitko"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (private method `select' called for #<Visit:0x007f1f4822f6a0>):
+  
+app/controllers/visits_controller.rb:14:in `find_visit'
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:12:19 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits"."count" FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "mitko"], ["LIMIT", 1]]
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:12:22 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits"."count" FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "mitko"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:14:10 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "visits"."id" FROM "visits"[0m
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 1.1ms)
+
+
+  
+NoMethodError (undefined method `find_or_create_by' for [1, 2]:Array):
+  
+app/controllers/visits_controller.rb:14:in `find_visit'
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:14:12 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "visits"."id" FROM "visits"[0m
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `find_or_create_by' for [1, 2]:Array):
+  
+app/controllers/visits_controller.rb:14:in `find_visit'
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:14:21 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.1ms)[0m  [1m[34mSELECT "visits"."count" FROM "visits"[0m
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.8ms)
+
+
+  
+NoMethodError (undefined method `pluck!' for #<Visit::ActiveRecord_Relation:0x000000031ea890>
+Did you mean?  pluck):
+  
+app/controllers/visits_controller.rb:14:in `find_visit'
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:14:22 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT "visits"."count" FROM "visits"[0m
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `pluck!' for #<Visit::ActiveRecord_Relation:0x007f1f48351588>
+Did you mean?  pluck):
+  
+app/controllers/visits_controller.rb:14:in `find_visit'
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:14:23 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT "visits"."count" FROM "visits"[0m
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `pluck!' for #<Visit::ActiveRecord_Relation:0x007f1f5c069168>
+Did you mean?  pluck):
+  
+app/controllers/visits_controller.rb:14:in `find_visit'
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:14:28 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT "visits"."count" FROM "visits"[0m
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `pluck!' for #<Visit::ActiveRecord_Relation:0x0000000331e360>
+Did you mean?  pluck):
+  
+app/controllers/visits_controller.rb:14:in `find_visit'
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:14:29 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits"."count" FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "mitko"], ["LIMIT", 1]]
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:14:30 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits"."count" FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "mitko"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:15:23 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits"."count" FROM "visits" LIMIT $1[0m  [["LIMIT", 1]]
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 2.2ms)
+
+
+  
+NoMethodError (undefined method `find_or_create_by' for #<Visit id: nil, count: nil>):
+  
+app/controllers/visits_controller.rb:14:in `find_visit'
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:15:24 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits"."count" FROM "visits" LIMIT $1[0m  [["LIMIT", 1]]
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `find_or_create_by' for #<Visit id: nil, count: nil>):
+  
+app/controllers/visits_controller.rb:14:in `find_visit'
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:16:06 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits"."count" FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:17:18 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "visits"."count" FROM "visits"[0m
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `first_or_create' for [nil, nil]:Array):
+  
+app/controllers/visits_controller.rb:14:in `find_visit'
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:17:19 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "visits"."count" FROM "visits"[0m
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `first_or_create' for [nil, nil]:Array):
+  
+app/controllers/visits_controller.rb:14:in `find_visit'
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:17:38 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "visits"."count" FROM "visits"[0m
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `first_or_create' for [nil, nil]:Array):
+  
+app/controllers/visits_controller.rb:14:in `find_visit'
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:17:40 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits"."count" FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:18:43 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "visits"."count" FROM "visits"[0m
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `first_or_create' for [nil, nil]:Array):
+  
+app/controllers/visits_controller.rb:14:in `find_visit'
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:18:45 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "visits"."count" FROM "visits"[0m
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `first_or_create' for [nil, nil]:Array):
+  
+app/controllers/visits_controller.rb:14:in `find_visit'
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:19:15 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits"."count" FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:19:16 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.5ms)[0m  [1m[34mSELECT  "visits"."count" FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:19:20 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits"."id" FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:19:21 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits"."id" FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:20:15 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "visits"."count" FROM "visits"[0m
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.5ms)
+
+
+  
+NoMethodError (undefined method `find_or_create_by' for [nil, nil]:Array):
+  
+app/controllers/visits_controller.rb:14:in `find_visit'
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:20:23 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "visits"."count" FROM "visits"[0m
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `find_or_create_by' for nil:NilClass):
+  
+app/controllers/visits_controller.rb:14:in `find_visit'
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:20:23 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "visits"."count" FROM "visits"[0m
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `find_or_create_by' for nil:NilClass):
+  
+app/controllers/visits_controller.rb:14:in `find_visit'
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:20:24 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "visits"."count" FROM "visits"[0m
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `find_or_create_by' for nil:NilClass):
+  
+app/controllers/visits_controller.rb:14:in `find_visit'
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:20:32 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "visits"."count" FROM "visits"[0m
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `find_or_create_by' for nil:NilClass):
+  
+app/controllers/visits_controller.rb:14:in `find_visit'
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:20:33 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits"."count" FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "mitko"], ["LIMIT", 1]]
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:20:34 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits"."count" FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "mitko"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:21:08 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "visits"."count" FROM "visits"[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:21:09 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "visits"."count" FROM "visits"[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=mitkodkn" for 127.0.0.1 at 2017-01-26 21:21:17 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitkodkn"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "visits"."count" FROM "visits"[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:21:21 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "visits"."count" FROM "visits"[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:26:00 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT "visits"."count" FROM "visits"[0m
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 2.5ms)
+
+
+  
+NoMethodError (undefined method `find_or_create_by' for [nil, nil]:Array):
+  
+app/controllers/visits_controller.rb:14:in `find_visit'
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:26:01 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT "visits"."count" FROM "visits"[0m
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `find_or_create_by' for [nil, nil]:Array):
+  
+app/controllers/visits_controller.rb:14:in `find_visit'
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:26:02 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT "visits"."count" FROM "visits"[0m
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `find_or_create_by' for [nil, nil]:Array):
+  
+app/controllers/visits_controller.rb:14:in `find_visit'
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:26:08 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT "visits"."count" FROM "visits"[0m
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `map!' for #<Visit::ActiveRecord_Relation:0x007f1f48035c00>
+Did you mean?  map):
+  
+app/controllers/visits_controller.rb:14:in `find_visit'
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:26:43 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT "visits"."count" FROM "visits"[0m
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.4ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/visits_controller.rb:14:in `find_visit'
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:26:44 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT "visits"."count" FROM "visits"[0m
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.3ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/visits_controller.rb:14:in `find_visit'
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:26:45 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT "visits"."count" FROM "visits"[0m
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/visits_controller.rb:14:in `find_visit'
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:30:21 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits"."count" FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "mitko"], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:31:27 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits"."count" FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "mitko"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (private method `select' called for #<Visit id: nil, count: nil>):
+  
+app/controllers/visits_controller.rb:14:in `find_visit'
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:31:28 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits"."count" FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "mitko"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (private method `select' called for #<Visit id: nil, count: nil>):
+  
+app/controllers/visits_controller.rb:14:in `find_visit'
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:31:54 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits"."count" FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "mitko"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 2.3ms)
+
+
+  
+NoMethodError (undefined method `extract' for #<Visit id: nil, count: nil>):
+  
+app/controllers/visits_controller.rb:14:in `find_visit'
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:31:56 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits"."count" FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "mitko"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `extract' for #<Visit id: nil, count: nil>):
+  
+app/controllers/visits_controller.rb:14:in `find_visit'
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:33:02 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits"."count" FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "mitko"], ["LIMIT", 1]]
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:33:34 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits"."count" FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:33:35 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits"."count" FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:33:36 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits"."count" FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:34:21 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits"."count" FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:34:23 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits"."count" FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:34:24 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits"."count" FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:34:57 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.1ms)[0m  [1m[34mSELECT  "visits"."count" FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:34:58 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits"."count" FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:35:06 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits"."count" FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:35:07 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits"."count" FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:35:12 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits"."count" FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:35:13 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits"."count" FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:35:21 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits"."count" FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:35:22 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits"."count" FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 204 No Content in 5ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:35:23 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits"."count" FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 204 No Content in 1ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:35:23 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits"."count" FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 204 No Content in 1ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:35:32 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits"."count" FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:35:33 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits"."count" FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:35:38 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.1ms)[0m  [1m[34mSELECT  "visits"."count" FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:35:39 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits"."count" FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:35:47 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits"."count" FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 2.1ms)
+
+
+  
+SystemStackError (stack level too deep):
+  
+app/controllers/visits_controller.rb:5:in `index'
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:35:48 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (299.9ms)[0m  [1m[34mSELECT  "visits"."count" FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 500 Internal Server Error in 504ms (ActiveRecord: 299.9ms)
+
+
+  
+SystemStackError (stack level too deep):
+  
+app/controllers/visits_controller.rb:5:in `index'
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:36:18 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits"."count" FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.4ms)
+
+
+  
+SystemStackError (stack level too deep):
+  
+app/controllers/visits_controller.rb:5:in `index'
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:36:32 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.5ms)[0m  [1m[34mSELECT  "visits"."count" FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:36:48 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits"."count" FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:36:49 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits"."count" FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:37:11 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits"."count" FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:38:15 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:38:25 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:38:51 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "visits"."count" FROM "visits"[0m
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:39:11 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "visits"."count" FROM "visits"[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:40:21 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:42:08 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:42:13 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=mitkoa" for 127.0.0.1 at 2017-01-26 21:42:14 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitkoa"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:42:19 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:42:40 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:42:50 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:43:10 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:43:11 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:48:00 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "visits"."count" FROM "visits" WHERE "visits"."user" = $1[0m  [["user", "mitko"]]
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:49:07 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:50:39 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:50:40 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:50:43 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:50:44 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:50:45 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:51:06 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:53:15 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:53:52 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:55:21 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/visits?user=mitko" for 127.0.0.1 at 2017-01-26 21:56:14 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitko"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3375845397996303855);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddDefaultValueToVisitCount (20170126195806)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3375845397996303855)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3375845397996303855);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddDefaultValueToVisitCount (20170126195806)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "visits" ALTER COLUMN "count" TYPE integer[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "visits" ALTER COLUMN "count" SET DEFAULT 0[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170126195806"]]
+  [1m[35m (28.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(3375845397996303855)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/visits?user=mitkodkn" for 127.0.0.1 at 2017-01-26 22:15:48 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitkodkn"}
+  [1m[36mVisit Load (0.5ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/visits?user=mitkodkn" for 127.0.0.1 at 2017-01-26 22:15:50 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitkodkn"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=mitkodkn" for 127.0.0.1 at 2017-01-26 22:16:38 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitkodkn"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=mitkodkn" for 127.0.0.1 at 2017-01-26 22:16:39 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitkodkn"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/visits?user=asdjalsdjklajsdkajsd" for 127.0.0.1 at 2017-01-26 22:16:57 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"asdjalsdjklajsdkajsd"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=asdjalsdjklajsdkajsd" for 127.0.0.1 at 2017-01-26 22:17:17 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"asdjalsdjklajsdkajsd"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/visits?user=asdjalsdjklajsdkajsd" for 127.0.0.1 at 2017-01-26 22:17:19 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"asdjalsdjklajsdkajsd"}
+  [1m[36mVisit Load (0.5ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/visits?user=asdjalsdjklajsdkajsd" for 127.0.0.1 at 2017-01-26 22:17:30 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"asdjalsdjklajsdkajsd"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=asdjalsdjklajsdkajsd" for 127.0.0.1 at 2017-01-26 22:18:15 +0200
+Started GET "/visits?user=asdjalsdjklajsdkajsd" for 127.0.0.1 at 2017-01-26 22:18:25 +0200
+Started GET "/visits?user=asdjalsdjklajsdkajsd" for 127.0.0.1 at 2017-01-26 22:18:25 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"asdjalsdjklajsdkajsd"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Processing by VisitsController#index as HTML
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"asdjalsdjklajsdkajsd"}
+  Parameters: {"user"=>"asdjalsdjklajsdkajsd"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 2.8ms)
+
+
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/visits?user=asd" for 127.0.0.1 at 2017-01-26 22:18:30 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"asd"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/visits?user=asd" for 127.0.0.1 at 2017-01-26 22:18:47 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"asd"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=asd" for 127.0.0.1 at 2017-01-26 22:18:48 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"asd"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/visits?user=asd" for 127.0.0.1 at 2017-01-26 22:19:14 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"asd"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits?user=asd" for 127.0.0.1 at 2017-01-26 22:19:15 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"asd"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits?user=asd" for 127.0.0.1 at 2017-01-26 22:19:40 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"asd"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/visits?user=asd" for 127.0.0.1 at 2017-01-26 22:19:41 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"asd"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/visits?user=asd" for 127.0.0.1 at 2017-01-26 22:19:41 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"asd"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/visits?user=asd" for 127.0.0.1 at 2017-01-26 22:19:48 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"asd"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=asd" for 127.0.0.1 at 2017-01-26 22:19:49 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"asd"}
+  [1m[36mVisit Load (0.5ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/visits?user=asd" for 127.0.0.1 at 2017-01-26 22:19:50 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"asd"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=asd" for 127.0.0.1 at 2017-01-26 22:19:50 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"asd"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/visits?user=asd" for 127.0.0.1 at 2017-01-26 22:20:27 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"asd"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 15ms (Views: 0.2ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-01-26 22:21:01 +0200
+Processing by Rails::WelcomeController#index as */*
+  Parameters: {"internal"=>true}
+  Rendering /home/dimitar/.rvm/gems/ruby-2.4.0/gems/railties-5.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/dimitar/.rvm/gems/ruby-2.4.0/gems/railties-5.0.1/lib/rails/templates/rails/welcome/index.html.erb (1.7ms)
+Completed 200 OK in 225ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/visits" for 127.0.0.1 at 2017-01-26 22:21:08 +0200
+Processing by VisitsController#index as */*
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits" for 127.0.0.1 at 2017-01-26 22:21:10 +0200
+Processing by VisitsController#index as */*
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits?user=m1tko" for 127.0.0.1 at 2017-01-26 22:21:20 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"m1tko"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=m1tko" for 127.0.0.1 at 2017-01-26 22:21:22 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"m1tko"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:21:48 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundaryI4lwc5LQgDXlpTle\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\nm1tko\r\n------WebKitFormBoundaryI4lwc5LQgDXlpTle--\r\n"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.4ms)
+
+
+  
+NoMethodError (undefined method `increment_count' for {:count=>0}:Hash):
+  
+app/controllers/visits_controller.rb:9:in `increment'
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:22:17 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundary2CM5WQCEh4ZXl1Kb\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\nm1tko\r\n------WebKitFormBoundary2CM5WQCEh4ZXl1Kb--\r\n"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 1], ["updated_at", 2017-01-26 20:22:17 UTC], ["id", 1]]
+  [1m[35m (33.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 42ms (ActiveRecord: 34.8ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:22:36 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundaryB3uW9VU439ygGfgZ\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\nm1tko\r\n------WebKitFormBoundaryB3uW9VU439ygGfgZ--\r\n"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 2], ["updated_at", 2017-01-26 20:22:36 UTC], ["id", 1]]
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 15ms (Views: 0.1ms | ActiveRecord: 6.9ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:22:37 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundaryZfHBVjhc3tgjpjTt\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\nm1tko\r\n------WebKitFormBoundaryZfHBVjhc3tgjpjTt--\r\n"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 3], ["updated_at", 2017-01-26 20:22:37 UTC], ["id", 1]]
+  [1m[35m (26.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 30ms (Views: 0.1ms | ActiveRecord: 27.7ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:22:37 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundaryllUkbn7b8RDY8mza\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\nm1tko\r\n------WebKitFormBoundaryllUkbn7b8RDY8mza--\r\n"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 4], ["updated_at", 2017-01-26 20:22:37 UTC], ["id", 1]]
+  [1m[35m (25.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 32ms (Views: 0.1ms | ActiveRecord: 26.4ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:22:38 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundary6s1eiPH77lQuJ0WW\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\nm1tko\r\n------WebKitFormBoundary6s1eiPH77lQuJ0WW--\r\n"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 5], ["updated_at", 2017-01-26 20:22:38 UTC], ["id", 1]]
+  [1m[35m (31.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 35ms (Views: 0.1ms | ActiveRecord: 31.8ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:22:38 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundaryzEZOlzKuSFORlaPW\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\nm1tko\r\n------WebKitFormBoundaryzEZOlzKuSFORlaPW--\r\n"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 6], ["updated_at", 2017-01-26 20:22:38 UTC], ["id", 1]]
+  [1m[35m (26.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 31ms (Views: 0.1ms | ActiveRecord: 27.6ms)
+
+
+Started GET "/visits" for 127.0.0.1 at 2017-01-26 22:22:45 +0200
+Processing by VisitsController#index as */*
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits" for 127.0.0.1 at 2017-01-26 22:22:47 +0200
+Processing by VisitsController#index as */*
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits" for 127.0.0.1 at 2017-01-26 22:22:47 +0200
+Processing by VisitsController#index as */*
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/visits" for 127.0.0.1 at 2017-01-26 22:22:48 +0200
+Processing by VisitsController#index as */*
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits" for 127.0.0.1 at 2017-01-26 22:22:48 +0200
+Processing by VisitsController#index as */*
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=test" for 127.0.0.1 at 2017-01-26 22:22:56 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"test"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=test" for 127.0.0.1 at 2017-01-26 22:22:59 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"test"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=test" for 127.0.0.1 at 2017-01-26 22:22:59 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"test"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=test" for 127.0.0.1 at 2017-01-26 22:22:59 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"test"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=testsfgdfgsdfgsdfg" for 127.0.0.1 at 2017-01-26 22:23:11 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"testsfgdfgsdfgsdfg"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=testsfgdfgsdfgsdfg" for 127.0.0.1 at 2017-01-26 22:23:11 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"testsfgdfgsdfgsdfg"}
+  [1m[36mVisit Load (0.5ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/visits?user=testsfgdfgsdfgsdfg" for 127.0.0.1 at 2017-01-26 22:23:12 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"testsfgdfgsdfgsdfg"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=testsfgdfgsdfgsdfg" for 127.0.0.1 at 2017-01-26 22:23:19 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"testsfgdfgsdfgsdfg"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=testsfgdfgsdfgsdfg" for 127.0.0.1 at 2017-01-26 22:23:20 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"testsfgdfgsdfgsdfg"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=testsfgdfgsdfgsdfg" for 127.0.0.1 at 2017-01-26 22:23:30 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"testsfgdfgsdfgsdfg"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=testsfgdfgsdfgsdfg" for 127.0.0.1 at 2017-01-26 22:23:30 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"testsfgdfgsdfgsdfg"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits?user=testsfgdfgsdfgsdfg" for 127.0.0.1 at 2017-01-26 22:23:31 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"testsfgdfgsdfgsdfg"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits?user=testsfgdfgsdfgsdfg" for 127.0.0.1 at 2017-01-26 22:23:31 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"testsfgdfgsdfgsdfg"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits?user=testsfgdfgsdfgsdfg" for 127.0.0.1 at 2017-01-26 22:23:31 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"testsfgdfgsdfgsdfg"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=testsfgdfgsdfgsdfg" for 127.0.0.1 at 2017-01-26 22:23:31 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"testsfgdfgsdfgsdfg"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits?user=testsfgdfgsdfgsdfg" for 127.0.0.1 at 2017-01-26 22:23:31 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"testsfgdfgsdfgsdfg"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=testsfgdfgsdfgsdfg" for 127.0.0.1 at 2017-01-26 22:23:32 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"testsfgdfgsdfgsdfg"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=testsfgdfgsdfgsdfg" for 127.0.0.1 at 2017-01-26 22:23:32 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"testsfgdfgsdfgsdfg"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=testsfgdfgsdfgsdfg" for 127.0.0.1 at 2017-01-26 22:23:32 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"testsfgdfgsdfgsdfg"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits?user=testsfgdfgsdfgsdfg" for 127.0.0.1 at 2017-01-26 22:23:32 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"testsfgdfgsdfgsdfg"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits?user=testsfgdfgsdfgsdfg" for 127.0.0.1 at 2017-01-26 22:23:32 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"testsfgdfgsdfgsdfg"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=testsfgdfgsdfgsdfg" for 127.0.0.1 at 2017-01-26 22:23:33 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"testsfgdfgsdfgsdfg"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=testsfgdfgsdfgsdfg" for 127.0.0.1 at 2017-01-26 22:23:33 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"testsfgdfgsdfgsdfg"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits?user=testsfgdfgsdfgsdfg" for 127.0.0.1 at 2017-01-26 22:23:33 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"testsfgdfgsdfgsdfg"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits?user=asd" for 127.0.0.1 at 2017-01-26 22:23:35 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"asd"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=asd" for 127.0.0.1 at 2017-01-26 22:23:36 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"asd"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/visits?user=asd" for 127.0.0.1 at 2017-01-26 22:23:36 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"asd"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits?user=asd" for 127.0.0.1 at 2017-01-26 22:23:47 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"asd"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=asd" for 127.0.0.1 at 2017-01-26 22:23:48 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"asd"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=asd" for 127.0.0.1 at 2017-01-26 22:23:49 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"asd"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/visits?user=asdasdasdasd" for 127.0.0.1 at 2017-01-26 22:23:52 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"asdasdasdasd"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits?user=asdasdasdasd" for 127.0.0.1 at 2017-01-26 22:23:53 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"asdasdasdasd"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/visits?user=asdasdasdasd" for 127.0.0.1 at 2017-01-26 22:24:01 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"asdasdasdasd"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=asdasdasdasd" for 127.0.0.1 at 2017-01-26 22:24:02 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"asdasdasdasd"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/visits?user=testsfgdfgsdfgsdfg" for 127.0.0.1 at 2017-01-26 22:24:50 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"testsfgdfgsdfgsdfg"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=testsfgdfgsdfgsdfg" for 127.0.0.1 at 2017-01-26 22:24:50 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"testsfgdfgsdfgsdfg"}
+  [1m[36mVisit Load (0.5ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/visits?user=testsfgdfgsdfgsdfg" for 127.0.0.1 at 2017-01-26 22:24:51 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"testsfgdfgsdfgsdfg"}
+  [1m[36mVisit Load (0.5ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/visits?user=testsfgdfgsdfgsdfg" for 127.0.0.1 at 2017-01-26 22:24:51 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"testsfgdfgsdfgsdfg"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=asdfasdfasdf" for 127.0.0.1 at 2017-01-26 22:24:55 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"asdfasdfasdf"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=asdasdasdasd" for 127.0.0.1 at 2017-01-26 22:25:07 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"asdasdasdasd"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/visits?user=asdfasdfasdf" for 127.0.0.1 at 2017-01-26 22:25:22 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"asdfasdfasdf"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "asdfasdfasdf"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "visits" ("user", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user", "asdfasdfasdf"], ["created_at", 2017-01-26 20:25:32 UTC], ["updated_at", 2017-01-26 20:25:32 UTC]]
+  [1m[35m (27.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 34ms (Views: 0.1ms | ActiveRecord: 27.9ms)
+
+
+Started GET "/visits?user=asdfasdfasdf" for 127.0.0.1 at 2017-01-26 22:25:34 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"asdfasdfasdf"}
+  [1m[36mVisit Load (0.7ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "asdfasdfasdf"], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/visits?user=asdfasdfasdf" for 127.0.0.1 at 2017-01-26 22:25:34 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"asdfasdfasdf"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "asdfasdfasdf"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:25:46 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundarygTKbLyIOl8Ca6vb9\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\nasdfasdfasdf\r\n------WebKitFormBoundarygTKbLyIOl8Ca6vb9--\r\n"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 7], ["updated_at", 2017-01-26 20:25:46 UTC], ["id", 1]]
+  [1m[35m (3.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 5.3ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:25:48 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundaryxoDBBOplGXqSBERY\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\nasdfasdfasdf\r\n------WebKitFormBoundaryxoDBBOplGXqSBERY--\r\n"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 8], ["updated_at", 2017-01-26 20:25:48 UTC], ["id", 1]]
+  [1m[35m (29.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 32ms (Views: 0.1ms | ActiveRecord: 30.4ms)
+
+
+Started GET "/visits?user=asdfasdfasdf" for 127.0.0.1 at 2017-01-26 22:25:51 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"asdfasdfasdf"}
+  [1m[36mVisit Load (0.6ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "asdfasdfasdf"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/visits?user=asdfasdfasdf" for 127.0.0.1 at 2017-01-26 22:25:52 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"asdfasdfasdf"}
+  [1m[36mVisit Load (0.5ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "asdfasdfasdf"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/visits?user=asdasdasdasd" for 127.0.0.1 at 2017-01-26 22:26:36 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"asdasdasdasd"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "asdasdasdasd"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "visits" ("user", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user", "asdasdasdasd"], ["created_at", 2017-01-26 20:26:36 UTC], ["updated_at", 2017-01-26 20:26:36 UTC]]
+  [1m[35m (30.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 37ms (Views: 0.1ms | ActiveRecord: 31.3ms)
+
+
+Started GET "/visits?user=asdasdasdasd" for 127.0.0.1 at 2017-01-26 22:26:37 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"asdasdasdasd"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "asdasdasdasd"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits?user=asdasdasdasd" for 127.0.0.1 at 2017-01-26 22:26:38 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"asdasdasdasd"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "asdasdasdasd"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:27:04 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundary5GwDX9tK76nMRMDy\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\nasdfasdfasdf\r\n------WebKitFormBoundary5GwDX9tK76nMRMDy--\r\n"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 9], ["updated_at", 2017-01-26 20:27:04 UTC], ["id", 1]]
+  [1m[35m (30.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 33ms (Views: 0.1ms | ActiveRecord: 30.8ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:27:05 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundaryYTyCAjtgCL9rJzjZ\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\nasdfasdfasdf\r\n------WebKitFormBoundaryYTyCAjtgCL9rJzjZ--\r\n"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 10], ["updated_at", 2017-01-26 20:27:05 UTC], ["id", 1]]
+  [1m[35m (28.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 32ms (Views: 0.1ms | ActiveRecord: 29.1ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:27:05 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundaryRRBvOEwozLBqrDn4\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\nasdfasdfasdf\r\n------WebKitFormBoundaryRRBvOEwozLBqrDn4--\r\n"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 11], ["updated_at", 2017-01-26 20:27:05 UTC], ["id", 1]]
+  [1m[35m (25.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 28ms (Views: 0.1ms | ActiveRecord: 26.0ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:27:06 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundaryautbiXFBK47bp5Ef\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\nasdfasdfasdf\r\n------WebKitFormBoundaryautbiXFBK47bp5Ef--\r\n"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 12], ["updated_at", 2017-01-26 20:27:06 UTC], ["id", 1]]
+  [1m[35m (25.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 29ms (Views: 0.1ms | ActiveRecord: 26.7ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:27:07 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundaryGNWBP2S8lNtJVpNM\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\nasdfasdfasdf\r\n------WebKitFormBoundaryGNWBP2S8lNtJVpNM--\r\n"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 13], ["updated_at", 2017-01-26 20:27:07 UTC], ["id", 1]]
+  [1m[35m (27.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 30ms (Views: 0.1ms | ActiveRecord: 27.9ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:27:07 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundaryUzSHWV1p406SjAFF\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\nasdfasdfasdf\r\n------WebKitFormBoundaryUzSHWV1p406SjAFF--\r\n"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 14], ["updated_at", 2017-01-26 20:27:07 UTC], ["id", 1]]
+  [1m[35m (28.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 32ms (Views: 0.1ms | ActiveRecord: 29.2ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:27:08 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundaryuqi6HAZu89mAlj1Z\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\nasdfasdfasdf\r\n------WebKitFormBoundaryuqi6HAZu89mAlj1Z--\r\n"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 15], ["updated_at", 2017-01-26 20:27:08 UTC], ["id", 1]]
+  [1m[35m (80.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 84ms (Views: 0.2ms | ActiveRecord: 81.6ms)
+
+
+Started GET "/visits?user=asdasdasdasd" for 127.0.0.1 at 2017-01-26 22:29:00 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"asdasdasdasd"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "asdasdasdasd"], ["LIMIT", 1]]
+Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/visits?user=asdasdasdasd" for 127.0.0.1 at 2017-01-26 22:29:01 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"asdasdasdasd"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "asdasdasdasd"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:29:06 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundaryMi8qABK87gVOGAXw\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\nasdfasdfasdf\r\n------WebKitFormBoundaryMi8qABK87gVOGAXw--\r\n"}
+  [1m[36mVisit Load (0.6ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 16], ["updated_at", 2017-01-26 20:29:06 UTC], ["id", 1]]
+  [1m[35m (29.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 33ms (Views: 0.2ms | ActiveRecord: 30.1ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:29:06 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundaryVhOUYNVOE3tDWAJt\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\nasdfasdfasdf\r\n------WebKitFormBoundaryVhOUYNVOE3tDWAJt--\r\n"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 17], ["updated_at", 2017-01-26 20:29:06 UTC], ["id", 1]]
+  [1m[35m (30.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 33ms (Views: 0.1ms | ActiveRecord: 31.3ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:29:07 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundaryEXS82oqUIWtsMLo6\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\nasdfasdfasdf\r\n------WebKitFormBoundaryEXS82oqUIWtsMLo6--\r\n"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 18], ["updated_at", 2017-01-26 20:29:07 UTC], ["id", 1]]
+  [1m[35m (30.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 36ms (Views: 0.2ms | ActiveRecord: 32.8ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:29:07 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundaryNTwPvtjxhRvATzUC\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\nasdfasdfasdf\r\n------WebKitFormBoundaryNTwPvtjxhRvATzUC--\r\n"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 19], ["updated_at", 2017-01-26 20:29:07 UTC], ["id", 1]]
+  [1m[35m (26.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 30ms (Views: 0.3ms | ActiveRecord: 26.9ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:29:07 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundaryhm5LEatzArPCFkUM\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\nasdfasdfasdf\r\n------WebKitFormBoundaryhm5LEatzArPCFkUM--\r\n"}
+  [1m[36mVisit Load (0.6ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 20], ["updated_at", 2017-01-26 20:29:07 UTC], ["id", 1]]
+  [1m[35m (11.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 22ms (Views: 0.1ms | ActiveRecord: 12.5ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:29:08 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundaryHBLUH2FL2iT3S9S5\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\nasdfasdfasdf\r\n------WebKitFormBoundaryHBLUH2FL2iT3S9S5--\r\n"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 21], ["updated_at", 2017-01-26 20:29:08 UTC], ["id", 1]]
+  [1m[35m (8.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 9.8ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:29:08 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundarycE2D0J0frDJTOBsZ\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\nasdfasdfasdf\r\n------WebKitFormBoundarycE2D0J0frDJTOBsZ--\r\n"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 22], ["updated_at", 2017-01-26 20:29:08 UTC], ["id", 1]]
+  [1m[35m (11.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 11.6ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:29:08 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundaryLWAgBUEBw0kPg0zB\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\nasdfasdfasdf\r\n------WebKitFormBoundaryLWAgBUEBw0kPg0zB--\r\n"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 23], ["updated_at", 2017-01-26 20:29:08 UTC], ["id", 1]]
+  [1m[35m (15.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 19ms (Views: 0.1ms | ActiveRecord: 16.1ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:29:09 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundaryWozxtEGYmBjmBES4\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\nasdfasdfasdf\r\n------WebKitFormBoundaryWozxtEGYmBjmBES4--\r\n"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 24], ["updated_at", 2017-01-26 20:29:09 UTC], ["id", 1]]
+  [1m[35m (42.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 47ms (Views: 0.1ms | ActiveRecord: 44.5ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:29:09 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundarywNeAtdHUaJeRSNe8\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\nasdfasdfasdf\r\n------WebKitFormBoundarywNeAtdHUaJeRSNe8--\r\n"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 25], ["updated_at", 2017-01-26 20:29:09 UTC], ["id", 1]]
+  [1m[35m (16.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 19ms (Views: 0.2ms | ActiveRecord: 16.9ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:29:13 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundaryIuHhaGwP6dRfSqQ9\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\nasdfasdfasdf\r\n------WebKitFormBoundaryIuHhaGwP6dRfSqQ9--\r\n"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 26], ["updated_at", 2017-01-26 20:29:13 UTC], ["id", 1]]
+  [1m[35m (14.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 19ms (Views: 0.2ms | ActiveRecord: 15.8ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:29:13 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundaryv7LMANxG8uGB4uWO\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\nasdfasdfasdf\r\n------WebKitFormBoundaryv7LMANxG8uGB4uWO--\r\n"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 27], ["updated_at", 2017-01-26 20:29:13 UTC], ["id", 1]]
+  [1m[35m (24.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 29ms (Views: 0.2ms | ActiveRecord: 25.6ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:29:13 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundaryc8vYAAPZBV0toOYH\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\nasdfasdfasdf\r\n------WebKitFormBoundaryc8vYAAPZBV0toOYH--\r\n"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 28], ["updated_at", 2017-01-26 20:29:13 UTC], ["id", 1]]
+  [1m[35m (24.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 28ms (Views: 0.1ms | ActiveRecord: 25.5ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:29:13 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundaryHXJrswXB8e2deZgN\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\nasdfasdfasdf\r\n------WebKitFormBoundaryHXJrswXB8e2deZgN--\r\n"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 29], ["updated_at", 2017-01-26 20:29:13 UTC], ["id", 1]]
+  [1m[35m (25.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 29ms (Views: 0.1ms | ActiveRecord: 25.8ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:29:13 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundaryi3Is6XT0YmTkyJR8\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\nasdfasdfasdf\r\n------WebKitFormBoundaryi3Is6XT0YmTkyJR8--\r\n"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 30], ["updated_at", 2017-01-26 20:29:13 UTC], ["id", 1]]
+  [1m[35m (30.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 33ms (Views: 0.1ms | ActiveRecord: 31.2ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:29:14 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundary80F2UNxxOYgJB1fM\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\nasdfasdfasdf\r\n------WebKitFormBoundary80F2UNxxOYgJB1fM--\r\n"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 31], ["updated_at", 2017-01-26 20:29:14 UTC], ["id", 1]]
+  [1m[35m (27.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 31ms (Views: 0.1ms | ActiveRecord: 28.6ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:29:14 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundaryM6GBB5NmTkgCDD7s\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\nasdfasdfasdf\r\n------WebKitFormBoundaryM6GBB5NmTkgCDD7s--\r\n"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 32], ["updated_at", 2017-01-26 20:29:14 UTC], ["id", 1]]
+  [1m[35m (26.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 29ms (Views: 0.2ms | ActiveRecord: 27.1ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:29:14 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundaryWw1kee5tFqBD3eCZ\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\nasdfasdfasdf\r\n------WebKitFormBoundaryWw1kee5tFqBD3eCZ--\r\n"}
+  [1m[36mVisit Load (0.8ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 33], ["updated_at", 2017-01-26 20:29:14 UTC], ["id", 1]]
+  [1m[35m (26.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 31ms (Views: 0.2ms | ActiveRecord: 28.1ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:29:14 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundarykgEoHvyi2gNqqomr\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\nasdfasdfasdf\r\n------WebKitFormBoundarykgEoHvyi2gNqqomr--\r\n"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 34], ["updated_at", 2017-01-26 20:29:14 UTC], ["id", 1]]
+  [1m[35m (25.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 31ms (Views: 0.2ms | ActiveRecord: 26.6ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:29:14 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundarycQeAr59fHVrGpl3M\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\nasdfasdfasdf\r\n------WebKitFormBoundarycQeAr59fHVrGpl3M--\r\n"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 35], ["updated_at", 2017-01-26 20:29:14 UTC], ["id", 1]]
+  [1m[35m (25.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 29ms (Views: 0.1ms | ActiveRecord: 26.0ms)
+
+
+Started GET "/visits?user=asdfasdfasdf" for 127.0.0.1 at 2017-01-26 22:29:19 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"asdfasdfasdf"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "asdfasdfasdf"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=asdfasdfasdf" for 127.0.0.1 at 2017-01-26 22:29:19 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"asdfasdfasdf"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "asdfasdfasdf"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=asdfasdfasdf" for 127.0.0.1 at 2017-01-26 22:29:19 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"asdfasdfasdf"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "asdfasdfasdf"], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits?user=asdfasdfasdf" for 127.0.0.1 at 2017-01-26 22:29:19 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"asdfasdfasdf"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "asdfasdfasdf"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=asdfasdfasdf" for 127.0.0.1 at 2017-01-26 22:29:20 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"asdfasdfasdf"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "asdfasdfasdf"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=asdfasdfasdf" for 127.0.0.1 at 2017-01-26 22:29:20 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"asdfasdfasdf"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "asdfasdfasdf"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:32:22 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundaryBxarMqMyT9oAhxQE\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\nasdfasdfasdf\r\n------WebKitFormBoundaryBxarMqMyT9oAhxQE--\r\n"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 36], ["updated_at", 2017-01-26 20:32:23 UTC], ["id", 1]]
+  [1m[35m (9.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 23ms (Views: 0.2ms | ActiveRecord: 13.1ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:33:41 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundaryp4rBcrSvLingPXX3\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\nasdfasdfasdfa\r\n------WebKitFormBoundaryp4rBcrSvLingPXX3\r\nContent-Disposition: form-data; name=\"\"\r\n\r\n\r\n------WebKitFormBoundaryp4rBcrSvLingPXX3--\r\n"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 37], ["updated_at", 2017-01-26 20:33:51 UTC], ["id", 1]]
+  [1m[35m (26.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 35ms (Views: 0.1ms | ActiveRecord: 27.1ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:33:53 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundaryeNHLlIG57omhhAE7\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\nasdfasdfasdfa\r\n------WebKitFormBoundaryeNHLlIG57omhhAE7\r\nContent-Disposition: form-data; name=\"\"\r\n\r\n\r\n------WebKitFormBoundaryeNHLlIG57omhhAE7--\r\n"}
+  [1m[36mVisit Load (0.6ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 38], ["updated_at", 2017-01-26 20:33:53 UTC], ["id", 1]]
+  [1m[35m (49.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 56ms (Views: 0.1ms | ActiveRecord: 51.0ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:33:53 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundaryH4qhF2Eov7RghkAh\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\nasdfasdfasdfa\r\n------WebKitFormBoundaryH4qhF2Eov7RghkAh\r\nContent-Disposition: form-data; name=\"\"\r\n\r\n\r\n------WebKitFormBoundaryH4qhF2Eov7RghkAh--\r\n"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 39], ["updated_at", 2017-01-26 20:33:53 UTC], ["id", 1]]
+  [1m[35m (15.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 20ms (Views: 0.1ms | ActiveRecord: 16.8ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:33:53 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundaryBUogHMKMZ8kz6F5x\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\nasdfasdfasdfa\r\n------WebKitFormBoundaryBUogHMKMZ8kz6F5x\r\nContent-Disposition: form-data; name=\"\"\r\n\r\n\r\n------WebKitFormBoundaryBUogHMKMZ8kz6F5x--\r\n"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 40], ["updated_at", 2017-01-26 20:33:54 UTC], ["id", 1]]
+  [1m[35m (9.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 9.8ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:33:54 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundaryBcLALIqyWeWojKAZ\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\nasdfasdfasdfa\r\n------WebKitFormBoundaryBcLALIqyWeWojKAZ\r\nContent-Disposition: form-data; name=\"\"\r\n\r\n\r\n------WebKitFormBoundaryBcLALIqyWeWojKAZ--\r\n"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 41], ["updated_at", 2017-01-26 20:33:54 UTC], ["id", 1]]
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 12ms (Views: 0.6ms | ActiveRecord: 9.3ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:33:54 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundaryQZAlyROO4YVDYt6I\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\nasdfasdfasdfa\r\n------WebKitFormBoundaryQZAlyROO4YVDYt6I\r\nContent-Disposition: form-data; name=\"\"\r\n\r\n\r\n------WebKitFormBoundaryQZAlyROO4YVDYt6I--\r\n"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 42], ["updated_at", 2017-01-26 20:33:54 UTC], ["id", 1]]
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 4.6ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:33:54 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundaryHAYE9cdzee8WtEP8\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\nasdfasdfasdfa\r\n------WebKitFormBoundaryHAYE9cdzee8WtEP8\r\nContent-Disposition: form-data; name=\"\"\r\n\r\n\r\n------WebKitFormBoundaryHAYE9cdzee8WtEP8--\r\n"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 43], ["updated_at", 2017-01-26 20:33:54 UTC], ["id", 1]]
+  [1m[35m (26.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 31ms (Views: 0.7ms | ActiveRecord: 27.1ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:33:54 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundarya1AKkT8SoSHvWvwx\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\nasdfasdfasdfa\r\n------WebKitFormBoundarya1AKkT8SoSHvWvwx\r\nContent-Disposition: form-data; name=\"\"\r\n\r\n\r\n------WebKitFormBoundarya1AKkT8SoSHvWvwx--\r\n"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 44], ["updated_at", 2017-01-26 20:33:54 UTC], ["id", 1]]
+  [1m[35m (12.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 18ms (Views: 0.2ms | ActiveRecord: 14.0ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:33:55 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundaryGB4gntog7tFpaxND\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\nasdfasdfasdfa\r\n------WebKitFormBoundaryGB4gntog7tFpaxND\r\nContent-Disposition: form-data; name=\"\"\r\n\r\n\r\n------WebKitFormBoundaryGB4gntog7tFpaxND--\r\n"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 45], ["updated_at", 2017-01-26 20:33:55 UTC], ["id", 1]]
+  [1m[35m (12.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 17ms (Views: 0.1ms | ActiveRecord: 13.5ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:33:55 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundarywbQA0XZEzppqcrB0\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\nasdfasdfasdfa\r\n------WebKitFormBoundarywbQA0XZEzppqcrB0\r\nContent-Disposition: form-data; name=\"\"\r\n\r\n\r\n------WebKitFormBoundarywbQA0XZEzppqcrB0--\r\n"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 46], ["updated_at", 2017-01-26 20:33:55 UTC], ["id", 1]]
+  [1m[35m (30.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 35ms (Views: 0.1ms | ActiveRecord: 31.1ms)
+
+
+Started GET "/visits?user=asdasdasdasd" for 127.0.0.1 at 2017-01-26 22:37:27 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"asdasdasdasd"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 500 Internal Server Error in 8ms (Views: 0.1ms | ActiveRecord: 2.2ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/visits_controller.rb:21:in `render_visit'
+app/controllers/visits_controller.rb:6:in `index'
+Started GET "/visits?user=asdasdasdasd" for 127.0.0.1 at 2017-01-26 22:37:28 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"asdasdasdasd"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 500 Internal Server Error in 1ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/visits_controller.rb:21:in `render_visit'
+app/controllers/visits_controller.rb:6:in `index'
+Started GET "/visits?user=asdasdasdasd" for 127.0.0.1 at 2017-01-26 22:37:31 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"asdasdasdasd"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 500 Internal Server Error in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/visits_controller.rb:21:in `render_visit'
+app/controllers/visits_controller.rb:6:in `index'
+Started GET "/visits?user=asdasdasdasd" for 127.0.0.1 at 2017-01-26 22:37:43 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"asdasdasdasd"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=asdasdasdasd" for 127.0.0.1 at 2017-01-26 22:37:43 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"asdasdasdasd"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/visits?user=asdasdasdasd" for 127.0.0.1 at 2017-01-26 22:37:44 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"asdasdasdasd"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/visits?user=asdasdasdasd" for 127.0.0.1 at 2017-01-26 22:37:45 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"asdasdasdasd"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=asdasdasdasd" for 127.0.0.1 at 2017-01-26 22:37:45 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"asdasdasdasd"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits?user=56" for 127.0.0.1 at 2017-01-26 22:37:49 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"56"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=56" for 127.0.0.1 at 2017-01-26 22:37:50 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"56"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=56" for 127.0.0.1 at 2017-01-26 22:37:51 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"56"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/visits?user=123" for 127.0.0.1 at 2017-01-26 22:37:53 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"123"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/visits?user=123" for 127.0.0.1 at 2017-01-26 22:39:04 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"123"}
+  [1m[36mVisit Load (0.5ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "123"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "visits" ("user", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user", "123"], ["created_at", 2017-01-26 20:39:04 UTC], ["updated_at", 2017-01-26 20:39:04 UTC]]
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 15ms (Views: 0.1ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/visits?user=123" for 127.0.0.1 at 2017-01-26 22:39:05 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"123"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "123"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits?user=123" for 127.0.0.1 at 2017-01-26 22:39:06 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"123"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "123"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/visits/new?user=123" for 127.0.0.1 at 2017-01-26 22:39:09 +0200
+Processing by VisitsController#increment as HTML
+  Parameters: {"user"=>"123"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "123"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 1], ["updated_at", 2017-01-26 20:39:09 UTC], ["id", 5]]
+  [1m[35m (29.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 33ms (Views: 0.1ms | ActiveRecord: 30.7ms)
+
+
+Started GET "/visits/new?user=123" for 127.0.0.1 at 2017-01-26 22:39:10 +0200
+Processing by VisitsController#increment as HTML
+  Parameters: {"user"=>"123"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "123"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 2], ["updated_at", 2017-01-26 20:39:10 UTC], ["id", 5]]
+  [1m[35m (9.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 12ms (Views: 0.1ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/visits/new?user=123" for 127.0.0.1 at 2017-01-26 22:39:11 +0200
+Processing by VisitsController#increment as HTML
+  Parameters: {"user"=>"123"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "123"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 3], ["updated_at", 2017-01-26 20:39:11 UTC], ["id", 5]]
+  [1m[35m (27.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 30ms (Views: 0.2ms | ActiveRecord: 28.1ms)
+
+
+Started GET "/visits?user=123" for 127.0.0.1 at 2017-01-26 22:39:17 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"123"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "123"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=123" for 127.0.0.1 at 2017-01-26 22:39:18 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"123"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "123"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/visits?user=123" for 127.0.0.1 at 2017-01-26 22:39:18 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"123"}
+  [1m[36mVisit Load (0.6ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "123"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/visits?user=123" for 127.0.0.1 at 2017-01-26 22:39:19 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"123"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "123"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=123" for 127.0.0.1 at 2017-01-26 22:39:19 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"123"}
+  [1m[36mVisit Load (0.5ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "123"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/visits?user=123" for 127.0.0.1 at 2017-01-26 22:39:19 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"123"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "123"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits?user=123" for 127.0.0.1 at 2017-01-26 22:39:20 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"123"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "123"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=123" for 127.0.0.1 at 2017-01-26 22:39:21 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"123"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "123"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:40:45 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundarymR1GwgZFk5lMAXc4\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\n4000\r\n------WebKitFormBoundarymR1GwgZFk5lMAXc4\r\nContent-Disposition: form-data; name=\"\"\r\n\r\n\r\n------WebKitFormBoundarymR1GwgZFk5lMAXc4--\r\n"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 47], ["updated_at", 2017-01-26 20:40:45 UTC], ["id", 1]]
+  [1m[35m (28.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 40ms (Views: 0.1ms | ActiveRecord: 31.4ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:40:48 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundaryUrIdCXP03YCVORlH\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\n4000\r\n------WebKitFormBoundaryUrIdCXP03YCVORlH\r\nContent-Disposition: form-data; name=\"\"\r\n\r\n\r\n------WebKitFormBoundaryUrIdCXP03YCVORlH--\r\n"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 48], ["updated_at", 2017-01-26 20:40:48 UTC], ["id", 1]]
+  [1m[35m (25.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 29ms (Views: 0.2ms | ActiveRecord: 26.3ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:40:48 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundarylLSXljdvOCFSPb6n\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\n4000\r\n------WebKitFormBoundarylLSXljdvOCFSPb6n\r\nContent-Disposition: form-data; name=\"\"\r\n\r\n\r\n------WebKitFormBoundarylLSXljdvOCFSPb6n--\r\n"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 49], ["updated_at", 2017-01-26 20:40:48 UTC], ["id", 1]]
+  [1m[35m (27.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 30ms (Views: 0.2ms | ActiveRecord: 28.0ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-26 22:40:49 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundaryAdLjRrBT9TP0ofZ3\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\n4000\r\n------WebKitFormBoundaryAdLjRrBT9TP0ofZ3\r\nContent-Disposition: form-data; name=\"\"\r\n\r\n\r\n------WebKitFormBoundaryAdLjRrBT9TP0ofZ3--\r\n"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 50], ["updated_at", 2017-01-26 20:40:49 UTC], ["id", 1]]
+  [1m[35m (29.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 32ms (Views: 0.1ms | ActiveRecord: 30.0ms)
+
+
+Started GET "/visits?user=123" for 127.0.0.1 at 2017-01-26 22:41:55 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"123"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "123"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits?user=123" for 127.0.0.1 at 2017-01-26 22:41:56 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"123"}
+  [1m[36mVisit Load (0.6ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "123"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/visits?user=400" for 127.0.0.1 at 2017-01-26 22:44:56 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundaryCwywBrLciOkOCJWF\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\n4000\r\n------WebKitFormBoundaryCwywBrLciOkOCJWF--\r\n", "user"=>"400"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "400"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "visits" ("user", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user", "400"], ["created_at", 2017-01-26 20:44:56 UTC], ["updated_at", 2017-01-26 20:44:56 UTC]]
+  [1m[35m (22.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 1], ["updated_at", 2017-01-26 20:44:56 UTC], ["id", 6]]
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 45ms (Views: 0.2ms | ActiveRecord: 29.5ms)
+
+
+Started POST "/visits?user=400" for 127.0.0.1 at 2017-01-26 22:44:59 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundaryuINyr79pVeFJeLS6\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\n4000\r\n------WebKitFormBoundaryuINyr79pVeFJeLS6--\r\n", "user"=>"400"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "400"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 2], ["updated_at", 2017-01-26 20:44:59 UTC], ["id", 6]]
+  [1m[35m (28.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 32ms (Views: 0.1ms | ActiveRecord: 29.6ms)
+
+
+Started POST "/visits?user=400" for 127.0.0.1 at 2017-01-26 22:44:59 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundaryPHjfSwtpiAKuPhkV\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\n4000\r\n------WebKitFormBoundaryPHjfSwtpiAKuPhkV--\r\n", "user"=>"400"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "400"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 3], ["updated_at", 2017-01-26 20:44:59 UTC], ["id", 6]]
+  [1m[35m (32.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 35ms (Views: 0.1ms | ActiveRecord: 32.8ms)
+
+
+Started POST "/visits?user=400" for 127.0.0.1 at 2017-01-26 22:45:00 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundaryfL2HgmOIsxnpIei6\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\n4000\r\n------WebKitFormBoundaryfL2HgmOIsxnpIei6--\r\n", "user"=>"400"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "400"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 4], ["updated_at", 2017-01-26 20:45:00 UTC], ["id", 6]]
+  [1m[35m (31.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 34ms (Views: 0.1ms | ActiveRecord: 31.9ms)
+
+
+Started POST "/visits?user=400" for 127.0.0.1 at 2017-01-26 22:45:00 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundaryHjUa2EX71BLsGcH7\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\n4000\r\n------WebKitFormBoundaryHjUa2EX71BLsGcH7--\r\n", "user"=>"400"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "400"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 5], ["updated_at", 2017-01-26 20:45:00 UTC], ["id", 6]]
+  [1m[35m (31.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 35ms (Views: 0.1ms | ActiveRecord: 32.3ms)
+
+
+Started POST "/visits?user=400" for 127.0.0.1 at 2017-01-26 22:45:00 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundaryFQIBAWzVRpLYNh7W\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\n4000\r\n------WebKitFormBoundaryFQIBAWzVRpLYNh7W--\r\n", "user"=>"400"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "400"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 6], ["updated_at", 2017-01-26 20:45:00 UTC], ["id", 6]]
+  [1m[35m (29.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 33ms (Views: 0.1ms | ActiveRecord: 30.1ms)
+
+
+Started POST "/visits?user=400" for 127.0.0.1 at 2017-01-26 22:45:01 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundarymYJdpQWq6L9vYs3D\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\n4000\r\n------WebKitFormBoundarymYJdpQWq6L9vYs3D--\r\n", "user"=>"400"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "400"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 7], ["updated_at", 2017-01-26 20:45:01 UTC], ["id", 6]]
+  [1m[35m (31.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 35ms (Views: 0.2ms | ActiveRecord: 32.6ms)
+
+
+Started POST "/visits?user=400" for 127.0.0.1 at 2017-01-26 22:45:01 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundaryKht8mdERvHRacnQd\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\n4000\r\n------WebKitFormBoundaryKht8mdERvHRacnQd--\r\n", "user"=>"400"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "400"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 8], ["updated_at", 2017-01-26 20:45:01 UTC], ["id", 6]]
+  [1m[35m (47.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 51ms (Views: 0.1ms | ActiveRecord: 47.9ms)
+
+
+Started POST "/visits?user=400" for 127.0.0.1 at 2017-01-26 22:45:01 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundaryVxR2OSGlLPAUvQUp\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\n4000\r\n------WebKitFormBoundaryVxR2OSGlLPAUvQUp--\r\n", "user"=>"400"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "400"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 9], ["updated_at", 2017-01-26 20:45:01 UTC], ["id", 6]]
+  [1m[35m (27.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 31ms (Views: 0.2ms | ActiveRecord: 27.8ms)
+
+
+Started POST "/visits?user=400" for 127.0.0.1 at 2017-01-26 22:45:02 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundaryu6MetAG3vUVI7mCT\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\n4000\r\n------WebKitFormBoundaryu6MetAG3vUVI7mCT--\r\n", "user"=>"400"}
+  [1m[36mVisit Load (0.6ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "400"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 10], ["updated_at", 2017-01-26 20:45:02 UTC], ["id", 6]]
+  [1m[35m (25.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 29ms (Views: 0.1ms | ActiveRecord: 26.0ms)
+
+
+Started POST "/visits?user=4000" for 127.0.0.1 at 2017-01-26 22:45:06 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundaryBaNySSDVI1PUfzkt\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\n4000\r\n------WebKitFormBoundaryBaNySSDVI1PUfzkt--\r\n", "user"=>"4000"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "4000"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "visits" ("user", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user", "4000"], ["created_at", 2017-01-26 20:45:06 UTC], ["updated_at", 2017-01-26 20:45:06 UTC]]
+  [1m[35m (13.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 1], ["updated_at", 2017-01-26 20:45:06 UTC], ["id", 7]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 25ms (Views: 0.2ms | ActiveRecord: 21.0ms)
+
+
+Started POST "/visits?user=4000" for 127.0.0.1 at 2017-01-26 22:45:06 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundarypiKBrrLGgSaotNMC\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\n4000\r\n------WebKitFormBoundarypiKBrrLGgSaotNMC--\r\n", "user"=>"4000"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "4000"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 2], ["updated_at", 2017-01-26 20:45:06 UTC], ["id", 7]]
+  [1m[35m (30.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 34ms (Views: 0.1ms | ActiveRecord: 31.4ms)
+
+
+Started POST "/visits?user=4000" for 127.0.0.1 at 2017-01-26 22:45:07 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundaryDbjgEdz8PBsBopJe\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\n4000\r\n------WebKitFormBoundaryDbjgEdz8PBsBopJe--\r\n", "user"=>"4000"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "4000"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 3], ["updated_at", 2017-01-26 20:45:07 UTC], ["id", 7]]
+  [1m[35m (31.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 35ms (Views: 0.1ms | ActiveRecord: 32.0ms)
+
+
+Started POST "/visits?user=4000" for 127.0.0.1 at 2017-01-26 22:45:07 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"------WebKitFormBoundaryAXDIOBQ4x1pBt60Y\r\nContent-Disposition: form-data; name"=>"\"user\"\r\n\r\n4000\r\n------WebKitFormBoundaryAXDIOBQ4x1pBt60Y--\r\n", "user"=>"4000"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "4000"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 4], ["updated_at", 2017-01-26 20:45:07 UTC], ["id", 7]]
+  [1m[35m (26.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 30ms (Views: 0.1ms | ActiveRecord: 27.0ms)
+
+
+Started GET "/visits?user=400" for 127.0.0.1 at 2017-01-26 22:45:12 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"400"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "400"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=400" for 127.0.0.1 at 2017-01-26 22:45:13 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"400"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "400"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=400" for 127.0.0.1 at 2017-01-26 22:45:13 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"400"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "400"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits?user=400" for 127.0.0.1 at 2017-01-26 22:45:13 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"400"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "400"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=400" for 127.0.0.1 at 2017-01-26 22:45:13 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"400"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "400"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits?user=400" for 127.0.0.1 at 2017-01-26 22:45:13 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"400"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "400"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=400" for 127.0.0.1 at 2017-01-26 22:45:14 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"400"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "400"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/visits?user=4000" for 127.0.0.1 at 2017-01-26 22:47:07 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"user"=>"4000"}
+  [1m[36mVisit Load (0.7ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "4000"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 5], ["updated_at", 2017-01-26 20:47:07 UTC], ["id", 7]]
+  [1m[35m (30.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 35ms (Views: 0.1ms | ActiveRecord: 32.2ms)
+
+
+Started POST "/visits?user=4000" for 127.0.0.1 at 2017-01-26 22:47:08 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"user"=>"4000"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "4000"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 6], ["updated_at", 2017-01-26 20:47:08 UTC], ["id", 7]]
+  [1m[35m (24.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 28ms (Views: 0.2ms | ActiveRecord: 25.7ms)
+
+
+Started POST "/visits?user=4000" for 127.0.0.1 at 2017-01-26 22:47:08 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"user"=>"4000"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "4000"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 7], ["updated_at", 2017-01-26 20:47:08 UTC], ["id", 7]]
+  [1m[35m (26.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 29ms (Views: 0.1ms | ActiveRecord: 26.9ms)
+
+
+Started POST "/visits?user=4000" for 127.0.0.1 at 2017-01-26 22:47:09 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"user"=>"4000"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "4000"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 8], ["updated_at", 2017-01-26 20:47:09 UTC], ["id", 7]]
+  [1m[35m (13.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 17ms (Views: 0.2ms | ActiveRecord: 14.6ms)
+
+
+Started GET "/visits?user=4000" for 127.0.0.1 at 2017-01-26 22:47:15 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"4000"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "4000"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits?user=4000" for 127.0.0.1 at 2017-01-26 22:47:15 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"4000"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "4000"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits?user=4000" for 127.0.0.1 at 2017-01-26 22:47:15 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"4000"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "4000"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/visits?user=4000" for 127.0.0.1 at 2017-01-26 22:47:18 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"user"=>"4000"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "4000"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 9], ["updated_at", 2017-01-26 20:47:18 UTC], ["id", 7]]
+  [1m[35m (22.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 26ms (Views: 0.1ms | ActiveRecord: 23.2ms)
+
+
+Started GET "/visits?user=4000" for 127.0.0.1 at 2017-01-26 22:47:20 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"4000"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "4000"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=4000" for 127.0.0.1 at 2017-01-26 22:47:20 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"4000"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "4000"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=4000" for 127.0.0.1 at 2017-01-26 22:47:21 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"4000"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "4000"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits?user=4000" for 127.0.0.1 at 2017-01-26 22:47:21 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"4000"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "4000"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits?user=123" for 127.0.0.1 at 2017-01-26 22:47:25 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"123"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "123"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits?user=4000" for 127.0.0.1 at 2017-01-26 22:47:28 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"4000"}
+  [1m[36mVisit Load (0.5ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "4000"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/visits?user=4000" for 127.0.0.1 at 2017-01-26 22:50:36 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"4000"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "4000"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits?user=4000" for 127.0.0.1 at 2017-01-26 22:50:37 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"4000"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "4000"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=4000" for 127.0.0.1 at 2017-01-26 22:51:09 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"4000"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "4000"], ["LIMIT", 1]]
+Completed 200 OK in 34ms (Views: 0.1ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/visits?user=4000" for 127.0.0.1 at 2017-01-26 22:51:10 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"4000"}
+  [1m[36mVisit Load (0.9ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "4000"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-01-27 16:46:45 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (26.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/dimitar/.rvm/gems/ruby-2.3.0/gems/railties-5.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/dimitar/.rvm/gems/ruby-2.3.0/gems/railties-5.0.1/lib/rails/templates/rails/welcome/index.html.erb (2.5ms)
+Completed 200 OK in 43ms (Views: 12.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2017-01-27 16:46:47 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-01-27 16:47:56 +0200
+Processing by EmptyController#index as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-01-27 17:19:17 +0200
+Processing by EmptyController#index as HTML
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/visits?user=mitkodkn" for 127.0.0.1 at 2017-01-27 17:19:25 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitkodkn"}
+  [1m[36mVisit Load (392.9ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "mitkodkn"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (13.6ms)[0m  [1m[32mINSERT INTO "visits" ("user", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user", "mitkodkn"], ["created_at", 2017-01-27 15:19:27 UTC], ["updated_at", 2017-01-27 15:19:27 UTC]]
+  [1m[35m (61.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 2027ms (Views: 0.2ms | ActiveRecord: 771.8ms)
+
+
+Started GET "/visits?user=mitkodkn" for 127.0.0.1 at 2017-01-27 17:19:28 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitkodkn"}
+  [1m[36mVisit Load (0.6ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "mitkodkn"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/visits?user=mitkodkn" for 127.0.0.1 at 2017-01-27 17:19:29 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitkodkn"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "mitkodkn"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=mitkodkn" for 127.0.0.1 at 2017-01-27 17:20:04 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitkodkn"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "mitkodkn"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits?user=mitkodkn" for 127.0.0.1 at 2017-01-27 17:20:50 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitkodkn"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "mitkodkn"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=mitkodkn" for 127.0.0.1 at 2017-01-27 17:20:51 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitkodkn"}
+  [1m[36mVisit Load (0.5ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "mitkodkn"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/visits?user=mitkodkn" for 127.0.0.1 at 2017-01-27 17:20:51 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitkodkn"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "mitkodkn"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits?user=mitkodkn" for 127.0.0.1 at 2017-01-27 17:21:54 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitkodkn"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "mitkodkn"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=mitkodkn" for 127.0.0.1 at 2017-01-27 17:21:55 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitkodkn"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "mitkodkn"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/visits?user=mitkodkn" for 127.0.0.1 at 2017-01-27 17:22:13 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitkodkn"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "mitkodkn"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/visits?user=mitkodkn" for 127.0.0.1 at 2017-01-27 17:23:05 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitkodkn"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "mitkodkn"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=mitkodkn" for 127.0.0.1 at 2017-01-27 17:23:06 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitkodkn"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "mitkodkn"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=mitkodkn" for 127.0.0.1 at 2017-01-27 17:23:52 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitkodkn"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "mitkodkn"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits?user=mitkodkn" for 127.0.0.1 at 2017-01-27 17:23:55 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitkodkn"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "mitkodkn"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=mitkodkn" for 127.0.0.1 at 2017-01-27 17:23:56 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitkodkn"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "mitkodkn"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits?user=mitkodkn" for 127.0.0.1 at 2017-01-27 17:24:25 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"mitkodkn"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "mitkodkn"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/visits/" for 127.0.0.1 at 2017-01-27 17:28:34 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"user"=>"1"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "visits" ("user", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user", "1"], ["created_at", 2017-01-27 15:28:34 UTC], ["updated_at", 2017-01-27 15:28:34 UTC]]
+  [1m[35m (11.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 1], ["updated_at", 2017-01-27 15:28:35 UTC], ["id", 9]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 22ms (Views: 0.1ms | ActiveRecord: 18.2ms)
+
+
+Started POST "/visits/" for 127.0.0.1 at 2017-01-27 17:28:47 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"user"=>"1"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 2], ["updated_at", 2017-01-27 15:28:47 UTC], ["id", 9]]
+  [1m[35m (36.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 39ms (Views: 0.1ms | ActiveRecord: 36.9ms)
+
+
+Started POST "/visits/" for 127.0.0.1 at 2017-01-27 17:28:58 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"user"=>"1"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 3], ["updated_at", 2017-01-27 15:28:58 UTC], ["id", 9]]
+  [1m[35m (12.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 15ms (Views: 0.1ms | ActiveRecord: 13.0ms)
+
+
+Started POST "/visits/" for 127.0.0.1 at 2017-01-27 17:29:06 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"user"=>"5"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "5"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "visits" ("user", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user", "5"], ["created_at", 2017-01-27 15:29:06 UTC], ["updated_at", 2017-01-27 15:29:06 UTC]]
+  [1m[35m (11.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 1], ["updated_at", 2017-01-27 15:29:06 UTC], ["id", 10]]
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 22ms (Views: 0.1ms | ActiveRecord: 18.9ms)
+
+
+Started POST "/visits/" for 127.0.0.1 at 2017-01-27 17:29:09 +0200
+Processing by VisitsController#increment as */*
+  Parameters: {"user"=>"5"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "5"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 2], ["updated_at", 2017-01-27 15:29:09 UTC], ["id", 10]]
+  [1m[35m (54.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 57ms (Views: 0.1ms | ActiveRecord: 55.1ms)
+
+
+Started GET "/visits?user=1" for 127.0.0.1 at 2017-01-27 17:29:11 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"1"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "1"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=1" for 127.0.0.1 at 2017-01-27 17:29:12 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"1"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "1"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=5" for 127.0.0.1 at 2017-01-27 17:29:21 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"5"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "5"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/visits?user=5" for 127.0.0.1 at 2017-01-27 17:29:22 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"5"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "5"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/visits?user=5" for 127.0.0.1 at 2017-01-27 17:30:36 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"5"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "5"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=5" for 127.0.0.1 at 2017-01-27 17:30:37 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"5"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "5"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits?user=5" for 127.0.0.1 at 2017-01-27 17:30:38 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"5"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "5"], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits?user=5" for 127.0.0.1 at 2017-01-27 17:30:38 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"5"}
+  [1m[36mVisit Load (0.5ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "5"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/visits?user=5" for 127.0.0.1 at 2017-01-27 17:30:40 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"5"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "5"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=1" for 127.0.0.1 at 2017-01-27 17:30:50 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"1"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "1"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/visits?user=1" for 127.0.0.1 at 2017-01-27 17:30:51 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"1"}
+  [1m[36mVisit Load (1.1ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "1"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-01-27 23:25:52 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EmptyController#index as HTML
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2017-01-27 23:25:53 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-01-28 20:45:53 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (26.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EmptyController#index as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2017-01-28 20:45:54 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-01-28 20:45:55 +0200
+Processing by EmptyController#index as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/visits?user=asd" for 127.0.0.1 at 2017-01-28 20:45:58 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"asd"}
+  [1m[36mVisit Load (183.0ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "asd"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (13.5ms)[0m  [1m[32mINSERT INTO "visits" ("user", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user", "asd"], ["created_at", 2017-01-28 18:45:58 UTC], ["updated_at", 2017-01-28 18:45:58 UTC]]
+  [1m[35m (40.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 437ms (Views: 0.2ms | ActiveRecord: 302.9ms)
+
+
+Started GET "/visits?user=1" for 127.0.0.1 at 2017-01-28 20:46:00 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"1"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", "1"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+

@@ -1,0 +1,53 @@
+{
+
+
+
+
+  "characters":[
+
+
+     {
+
+       "firstname":"Queen",
+
+
+       "lastname":"Mab",
+
+
+       "type":"witch",
+       "strength":"100"
+
+
+
+
+
+     },
+
+
+     {
+
+
+
+         "firstname":"Dark",
+         "lastname":"Troll",
+         "type":"troll",
+         "strength":"10"
+
+     },
+
+     {
+
+
+
+         "firstname":"ceko",
+         "lastname":"meko",
+         "type":"troll",
+         "strength":"1000"
+
+     }
+
+
+  ]
+
+
+}

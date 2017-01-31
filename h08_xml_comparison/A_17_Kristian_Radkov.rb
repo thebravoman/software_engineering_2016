@@ -6,7 +6,7 @@ require 'rubygems'
 	file_2 = File.read(ARGV[1])
 
 	data_2 = JSON.parse(file_2)
-	data_1 = CRACK::XML.parse(file_1)
+	data_1 = Crack::XML.parse(file_1)
 
 	if data_1 == data_2
 		puts 1

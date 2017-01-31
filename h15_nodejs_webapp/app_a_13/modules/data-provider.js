@@ -90,7 +90,7 @@ exports.queryData = function(filename, headers, query, response)
 					{
 						var result = {};
 						result = filteredData;
-						headers["Image-Url"] = 'http://localhost:8111/?image='+filteredData[0].type;
+						headers["Image-Url"] = 'http://localhost:8113/?image='+filteredData[0].type;
 
                         response.writeHead(200, headers);
                         response.end(JSON.stringify(result));

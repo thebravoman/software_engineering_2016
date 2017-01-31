@@ -1,0 +1,275 @@
+  [1m[35m (88.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (86.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4253218060829755395);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateVisits (20170129074808)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (37.4ms)[0m  [1m[35mCREATE TABLE "visits" ("id" serial primary key, "visit_counter" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170129074808"]]
+  [1m[35m (10.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-01-29 07:59:24 UTC], ["updated_at", 2017-01-29 07:59:24 UTC]]
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_advisory_unlock(4253218060829755395)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started POST "/visits" for 127.0.0.1 at 2017-01-29 10:01:04 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:VisitsController> at /home/georgi/Desktop/Ruby/count-requests/app/controllers/visits_controller.rb:2)
+Processing by VisitsController#create as */*
+  Parameters: {"user"=>"1"}
+  [1m[36mVisit Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "visits" ("id", "visit_counter", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 1], ["visit_counter", 1], ["created_at", 2017-01-29 08:01:05 UTC], ["updated_at", 2017-01-29 08:01:05 UTC]]
+  [1m[35m (22.4ms)[0m  [1m[35mCOMMIT[0m
+No template found for VisitsController#create, rendering head :no_content
+Completed 204 No Content in 224ms (ActiveRecord: 40.4ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-29 10:01:15 +0200
+Processing by VisitsController#create as */*
+  Parameters: {"user"=>"1"}
+  [1m[36mVisit Exists (2.4ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mVisit Load (0.9ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[33mUPDATE "visits" SET "visit_counter" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["visit_counter", 2], ["updated_at", 2017-01-29 08:01:15 UTC], ["id", 1]]
+  [1m[35m (22.1ms)[0m  [1m[35mCOMMIT[0m
+No template found for VisitsController#create, rendering head :no_content
+Completed 204 No Content in 127ms (ActiveRecord: 27.7ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-29 10:01:25 +0200
+Processing by VisitsController#create as */*
+  Parameters: {"user"=>"1"}
+  [1m[36mVisit Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mVisit Load (1.1ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[33mUPDATE "visits" SET "visit_counter" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["visit_counter", 3], ["updated_at", 2017-01-29 08:01:25 UTC], ["id", 1]]
+  [1m[35m (18.7ms)[0m  [1m[35mCOMMIT[0m
+No template found for VisitsController#create, rendering head :no_content
+Completed 204 No Content in 105ms (ActiveRecord: 22.5ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-29 10:01:38 +0200
+Processing by VisitsController#create as */*
+  Parameters: {"user"=>"1"}
+  [1m[36mVisit Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mVisit Load (1.1ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[33mUPDATE "visits" SET "visit_counter" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["visit_counter", 4], ["updated_at", 2017-01-29 08:01:38 UTC], ["id", 1]]
+  [1m[35m (22.1ms)[0m  [1m[35mCOMMIT[0m
+No template found for VisitsController#create, rendering head :no_content
+Completed 204 No Content in 109ms (ActiveRecord: 25.9ms)
+
+
+Started GET "/visits" for 127.0.0.1 at 2017-01-29 10:02:02 +0200
+Processing by VisitsController#show as */*
+  [1m[36mVisit Load (0.9ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 5ms (ActiveRecord: 0.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Visit with 'id'=):
+  
+app/controllers/visits_controller.rb:23:in `show'
+  Rendering /usr/local/rvm/gems/ruby-2.3.3/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/rvm/gems/ruby-2.3.3/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.3/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (18.9ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.3/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.3/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (26.9ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.3/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.3/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.3/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (137.5ms)
+Started POST "/visits" for 127.0.0.1 at 2017-01-29 10:02:48 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:VisitsController> at /home/georgi/Desktop/Ruby/count-requests/app/controllers/visits_controller.rb:2)
+Processing by VisitsController#create as */*
+  Parameters: {"user"=>"5"}
+  [1m[36mVisit Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "visits" ("id", "visit_counter", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["id", 5], ["visit_counter", 1], ["created_at", 2017-01-29 08:02:49 UTC], ["updated_at", 2017-01-29 08:02:49 UTC]]
+  [1m[35m (20.7ms)[0m  [1m[35mCOMMIT[0m
+No template found for VisitsController#create, rendering head :no_content
+Completed 204 No Content in 219ms (ActiveRecord: 38.4ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-29 10:02:52 +0200
+Processing by VisitsController#create as */*
+  Parameters: {"user"=>"5"}
+  [1m[36mVisit Exists (2.5ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mVisit Load (0.9ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[33mUPDATE "visits" SET "visit_counter" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["visit_counter", 2], ["updated_at", 2017-01-29 08:02:53 UTC], ["id", 5]]
+  [1m[35m (16.4ms)[0m  [1m[35mCOMMIT[0m
+No template found for VisitsController#create, rendering head :no_content
+Completed 204 No Content in 115ms (ActiveRecord: 22.0ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-29 10:02:54 +0200
+Processing by VisitsController#create as */*
+  Parameters: {"user"=>"5"}
+  [1m[36mVisit Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mVisit Load (1.1ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[33mUPDATE "visits" SET "visit_counter" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["visit_counter", 3], ["updated_at", 2017-01-29 08:02:54 UTC], ["id", 5]]
+  [1m[35m (39.2ms)[0m  [1m[35mCOMMIT[0m
+No template found for VisitsController#create, rendering head :no_content
+Completed 204 No Content in 125ms (ActiveRecord: 43.2ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-29 10:02:55 +0200
+Processing by VisitsController#create as */*
+  Parameters: {"user"=>"5"}
+  [1m[36mVisit Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mVisit Load (1.1ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[33mUPDATE "visits" SET "visit_counter" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["visit_counter", 4], ["updated_at", 2017-01-29 08:02:55 UTC], ["id", 5]]
+  [1m[35m (23.1ms)[0m  [1m[35mCOMMIT[0m
+No template found for VisitsController#create, rendering head :no_content
+Completed 204 No Content in 119ms (ActiveRecord: 26.7ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-29 10:02:56 +0200
+Processing by VisitsController#create as */*
+  Parameters: {"user"=>"5"}
+  [1m[36mVisit Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mVisit Load (1.1ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[33mUPDATE "visits" SET "visit_counter" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["visit_counter", 5], ["updated_at", 2017-01-29 08:02:56 UTC], ["id", 5]]
+  [1m[35m (23.5ms)[0m  [1m[35mCOMMIT[0m
+No template found for VisitsController#create, rendering head :no_content
+Completed 204 No Content in 113ms (ActiveRecord: 27.3ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-29 10:02:57 +0200
+Processing by VisitsController#create as */*
+  Parameters: {"user"=>"5"}
+  [1m[36mVisit Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mVisit Load (0.9ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "visits" SET "visit_counter" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["visit_counter", 6], ["updated_at", 2017-01-29 08:02:57 UTC], ["id", 5]]
+  [1m[35m (18.2ms)[0m  [1m[35mCOMMIT[0m
+No template found for VisitsController#create, rendering head :no_content
+Completed 204 No Content in 104ms (ActiveRecord: 21.7ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-29 10:02:58 +0200
+Processing by VisitsController#create as */*
+  Parameters: {"user"=>"5"}
+  [1m[36mVisit Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mVisit Load (0.9ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "visits" SET "visit_counter" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["visit_counter", 7], ["updated_at", 2017-01-29 08:02:58 UTC], ["id", 5]]
+  [1m[35m (18.7ms)[0m  [1m[35mCOMMIT[0m
+No template found for VisitsController#create, rendering head :no_content
+Completed 204 No Content in 104ms (ActiveRecord: 21.9ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-29 10:02:59 +0200
+Processing by VisitsController#create as */*
+  Parameters: {"user"=>"5"}
+  [1m[36mVisit Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mVisit Load (1.1ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[33mUPDATE "visits" SET "visit_counter" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["visit_counter", 8], ["updated_at", 2017-01-29 08:02:59 UTC], ["id", 5]]
+  [1m[35m (21.6ms)[0m  [1m[35mCOMMIT[0m
+No template found for VisitsController#create, rendering head :no_content
+Completed 204 No Content in 112ms (ActiveRecord: 25.4ms)
+
+
+Started GET "/visits?user=1" for 127.0.0.1 at 2017-01-29 10:03:59 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:VisitsController> at /home/georgi/Desktop/Ruby/count-requests/app/controllers/visits_controller.rb:2)
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"1"}
+  [1m[36mVisit Load (1.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 100ms (Views: 1.1ms | ActiveRecord: 15.3ms)
+
+
+Started GET "/visits?user=5" for 127.0.0.1 at 2017-01-29 10:04:06 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"5"}
+  [1m[36mVisit Load (2.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 7ms (Views: 0.8ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/visits?user=1" for 127.0.0.1 at 2017-01-29 10:04:32 +0200
+Processing by VisitsController#show as HTML
+  Parameters: {"user"=>"1"}
+  [1m[36mVisit Load (1.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/visits?user=5" for 127.0.0.1 at 2017-01-29 10:04:35 +0200
+Processing by VisitsController#show as HTML
+  Parameters: {"user"=>"5"}
+  [1m[36mVisit Load (1.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 0.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/visits?user=7" for 127.0.0.1 at 2017-01-29 10:04:37 +0200
+Processing by VisitsController#show as HTML
+  Parameters: {"user"=>"7"}
+  [1m[36mVisit Load (1.1ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Completed 404 Not Found in 5ms (ActiveRecord: 1.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Visit with 'id'=7):
+  
+app/controllers/visits_controller.rb:23:in `show'
+  Rendering /usr/local/rvm/gems/ruby-2.3.3/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /usr/local/rvm/gems/ruby-2.3.3/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.3/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (18.2ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.3/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.3/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.5ms)
+  Rendering /usr/local/rvm/gems/ruby-2.3.3/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.3.3/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.3/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (118.8ms)
+Started GET "/" for 127.0.0.1 at 2017-01-29 10:04:49 +0200
+Processing by VisitsController#index as HTML
+  Rendering html template
+  Rendered html template (0.2ms)
+Completed 200 OK in 19ms (Views: 17.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-29 10:47:25 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:VisitsController> at /home/georgi/Desktop/Ruby/count-requests/app/controllers/visits_controller.rb:2)
+Processing by VisitsController#create as */*
+  Parameters: {"user"=>"5"}
+  [1m[36mVisit Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mVisit Load (0.9ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[33mUPDATE "visits" SET "visit_counter" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["visit_counter", 9], ["updated_at", 2017-01-29 08:47:27 UTC], ["id", 5]]
+  [1m[35m (19.0ms)[0m  [1m[35mCOMMIT[0m
+No template found for VisitsController#create, rendering head :no_content
+Completed 204 No Content in 258ms (ActiveRecord: 38.3ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-29 10:47:29 +0200
+Processing by VisitsController#create as */*
+  Parameters: {"user"=>"5"}
+  [1m[36mVisit Exists (2.2ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mVisit Load (0.9ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[33mUPDATE "visits" SET "visit_counter" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["visit_counter", 10], ["updated_at", 2017-01-29 08:47:29 UTC], ["id", 5]]
+  [1m[35m (23.9ms)[0m  [1m[35mCOMMIT[0m
+No template found for VisitsController#create, rendering head :no_content
+Completed 204 No Content in 115ms (ActiveRecord: 28.5ms)
+
+
+Started GET "/visits?user=5" for 127.0.0.1 at 2017-01-29 10:47:44 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"5"}
+  [1m[36mVisit Load (1.0ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 7ms (Views: 0.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/visits?user=1" for 127.0.0.1 at 2017-01-29 10:47:47 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"1"}
+  [1m[36mVisit Load (1.1ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 1.1ms)
+
+

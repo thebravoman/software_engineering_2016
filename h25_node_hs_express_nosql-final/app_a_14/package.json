@@ -1,0 +1,21 @@
+{
+  "name": "MongoDB app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [],
+  "author": "IvoTod",
+  "license": "ISC",
+  "dependencies": {
+	"express": "^4.14.1",
+    "body-parser": "^1.16.0",
+    "cookie-parser": "^1.4.3",
+    "gridfs-stream": "^1.1.1",
+    "mongoose": "^4.8.0",
+    "morgan": "^1.7.0",
+	"serve-favicon": "^2.3.2"
+  }
+}

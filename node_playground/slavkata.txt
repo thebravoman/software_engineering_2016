@@ -1,0 +1,25 @@
+Rails app;
+Heruko;
+Free Dyno;
+/visits
+  POST 
+    id = {number};
+  GET
+    id = {number};
+Post > database - set id;
+Get < database - get id;
+
+count how many visitors;
+how many times one id visited;
+
+REST API
+
+#1 gem install rails
+#2 Create user in heruko
+#3 Prototype app
+#4  upload the app to heruko
+#5 play with  the app
+#6 new app
+  - controll player(1), {visits} http requests
+  - model {visits}
+  - return result json

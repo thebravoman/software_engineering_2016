@@ -76,7 +76,7 @@ exports.queryData = function(filename, headers, query, response) {
 					}
 					
 					response.set(headers);
-					response.send(JSON.stringify(result));
+					response.json(result);
 
 				} else {			
 

@@ -10,9 +10,14 @@ router.get('/', function(req, res, next) {
             'Content-Type': 'image/jpeg'
         }, res);
     } else if (isEmptyObject(req.query)) {
-        dataHandler.provideData('./data/data.json', null, res);
+        dataHandler.provideData('./data/data.json', {
+            'Content-Type': 'application/json'
+        }, res);
     } else {
-        dataHandler.searchData('./data/data.json', req.query, res);
+        console.log("here,searchData");
+        dataHandler.searchData('./data/data.json', {
+            'Content-Type': 'application/json'
+        }, req.query, res);
     }
 });
 
