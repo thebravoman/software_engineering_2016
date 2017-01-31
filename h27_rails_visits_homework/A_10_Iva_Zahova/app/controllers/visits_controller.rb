@@ -9,6 +9,7 @@ class VisitsController < ApplicationController
 			@visitor = Visitor.new
 			@visitor.nut = params[:user]
 			@visitor.counter = 1
+			@visitor.id = params[:user]
 			@visitor.save
 		end
 

@@ -1,0 +1,1 @@
+json.array! @visitros, partial: 'visitros/visitro', as: :visitro

@@ -1,16 +1,16 @@
-const var express = require('express');
-const var path = require('path');
-const var favicon = require('serve-favicon');
-const var logger = require('morgan');
-const var cookieParser = require('cookie-parser');
-const var bodyParser = require('body-parser');
-const var http = require('http');
+var express = require('express');
+var path = require('path');
+var favicon = require('serve-favicon');
+var logger = require('morgan');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
+var http = require('http');
 
-const var routes = require('./routes/index');
+var routes = require('./routes/index');
 
-const var app = express();
+var app = express();
 
-const var port = 8110;
+var port = 8110;
 
 app.use(logger('dev'));
 app.use(bodyParser.json());

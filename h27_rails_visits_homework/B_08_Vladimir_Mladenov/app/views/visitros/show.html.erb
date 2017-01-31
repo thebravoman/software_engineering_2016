@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @visitro.user_id %>
+</p>
+
+<p>
+  <strong>Count:</strong>
+  <%= @visitro.count %>
+</p>
+
+<%= link_to 'Edit', edit_visitro_path(@visitro) %> |
+<%= link_to 'Back', visitros_path %>

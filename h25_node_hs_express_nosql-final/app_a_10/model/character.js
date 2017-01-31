@@ -1,6 +1,6 @@
-const var mongoose = require('mongoose');
-const var Schema = mongoose.Schema;
-const var GridImage = require('gridfs-stream');
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+var GridImage = require('gridfs-stream');
 
 mongoose.connect('mongodb://localhost/characters');
 

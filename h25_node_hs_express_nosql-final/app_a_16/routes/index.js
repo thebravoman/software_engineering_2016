@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var dataProvider = require('../modules/data-provider.js');
+//var dataProvider = require('../modules/data-provider.js');
 
 var dbProvider = require('../modules/mongodb-provider.js');
 

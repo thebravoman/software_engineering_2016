@@ -1,0 +1,1 @@
+json.partial! "testbases/testbasis", testbasis: @testbasis

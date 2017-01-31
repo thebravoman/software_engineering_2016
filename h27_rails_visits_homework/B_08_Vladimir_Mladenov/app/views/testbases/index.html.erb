@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Testbases</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @testbases.each do |testbasis| %>
+      <tr>
+        <td><%= testbasis.name %></td>
+        <td><%= testbasis.age %></td>
+        <td><%= link_to 'Show', testbasis %></td>
+        <td><%= link_to 'Edit', edit_testbasis_path(testbasis) %></td>
+        <td><%= link_to 'Destroy', testbasis, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Testbasis', new_testbasis_path %>
