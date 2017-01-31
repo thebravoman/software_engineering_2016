@@ -26,8 +26,9 @@ exports.getImage = function(req, res) {
 		if (found) {
 			res.writeHead(200, {'Content-Type' : 'image/jpeg'});
 			readStream.pipe(res);
+			res.end();
 		} else {
-			res.writeHead(404, {'Content-Type' : 'image/jpeg'})
+			res.status(404).end();
 		}
 	});
 }
