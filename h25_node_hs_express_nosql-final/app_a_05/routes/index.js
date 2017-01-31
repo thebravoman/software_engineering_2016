@@ -1,25 +1,19 @@
-var express = require('express');
-var router = express.Router();
-var db = require('../modules/mongodb-provider.js');
-
-router.get('/', function(req, res, next) {
-    db.provideList(res);
+var express = require('express')
+var router = express.Router()
+var dbProvider = require('../modules/mongodb-provider.js')
+router.get('/', function(request, response, next) {
+    dbProvider.provideList(response)
 })
-
-router.post('/', function(req, res, next) {
-    db.saveCharacter(req, res);
+router.post('/', function(request, response, next) {
+    dbProvider.saveCharacter(request, response)
 })
-
-router.post('/:type/image', function(req, res, next) {
-    db.saveImage(req, res);
+router.post('/:type/image', function(request, response, next) {
+    dbProvider.saveImage(request, response)
 })
-
-router.get('/:type/image', function(req, res, next) {
-    db.getImage(req, res);
+router.get('/:type/image', function(request, response, next) {
+    dbProvider.getImage(request, response)
 })
-
-router.get('/:type', function(req, res, next) {
-    db.queryData(req.params.type, res);
+router.get('/:type', function(request, response, next) {
+    dbProvider.queryData(request, response)
 })
-
-module.exports = router;
+module.exports = router
