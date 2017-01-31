@@ -1,7 +1,7 @@
 /**
  * New node file
  */
-
+var assign = require('lodash/assign');
 var models = require('../model/character.js');
 
 var Character = models.Character;
@@ -21,8 +21,13 @@ exports.provideList = function(response) {
 };
 
 
-exports.queryData = function(headers, queryType, response) {
-	Character.find({type : queryType}, function(error, result) {
+exports.queryData = function(headers, request, response) {
+
+	var searchQuery = assign(request.params, request.query);
+	console.log(searchQuery);
+
+	Character.find(searchQuery, function(error, result) {
+		console.log(request.query);
 		if (error) {
 			console.error(error);
 			return null;
@@ -30,7 +35,7 @@ exports.queryData = function(headers, queryType, response) {
 		if (result != null) {
 			response.writeHead(200, {
 				'Content-Type':'application/json',
-				'Image-Url':'http://localhost:8107/'+ queryType + '/image'});
+				'Image-Url':'http://localhost:8107/'+ request.params.type + '/image'});
 			response.end(JSON.stringify(result));
 		}
 		
@@ -92,8 +97,9 @@ exports.saveImage = function(request, response) {
 	
 	
 	var writeStream = models.Grid.createWriteStream({
-		_id : request.params.type,
-		filename : 'image',
+		// _id : request.params.type,
+		// filename : 'image',
+		filename: request.params.type,
 		mode : 'w'
 	});
 	
@@ -105,8 +111,8 @@ exports.saveImage = function(request, response) {
 	
 	writeStream.on('close', function() {
 		var readStream = models.Grid.createReadStream({
-			_id : request.params.type,
-			filename : 'image',
+			// _id : request.params.type,
+			filename : request.params.type,
 			mode : 'r'
 		});
 		
@@ -128,13 +134,15 @@ exports.saveImage = function(request, response) {
 exports.getImage = function(request, response) {
 
 	var options = {
-		_id : request.params.type,
-		filename : 'image',
+		// _id : ,
+		filename : request.params.type,
 		mode : 'r'
 	}
 
 	models.Grid.exist(options, function (err, found) {
-	  // if (err) return false;
+	  if (err) {
+	  	throw err;
+	  }
 	  if (found) {
 	  	var readStream = models.Grid.createReadStream(options);
 	
