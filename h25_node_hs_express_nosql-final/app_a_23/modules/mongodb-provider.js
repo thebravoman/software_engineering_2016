@@ -1,3 +1,4 @@
+var assign = require('lodash/assign')
 var models = require('../model/character.js')
 
 var Character = models.Character
@@ -15,17 +16,22 @@ exports.provideList = function(response) {
     })
 }
 
-exports.queryData = function(queryType, response) {
-    Character.find({type: queryType}, function(error, result) {
+exports.queryData = function(request, response) {
+    var searchQuery = assign(request.params, request.query)
+
+    Character.find(searchQuery, function(error, result) {
         if (error) {
-            return null
+            response.send('500', 'Internal Server Error')
+            return
         }
-        if (result != null) {
+        if (result.length > 0) {
             response.writeHead(200, {
                 'Content-Type': 'aplication/json',
-                'Image-Url': 'http://localhost:' + port + '/' + queryType + '/image'
+                'Image-Url': 'http://localhost:' + port + '/' + request.params.type + '/image'
             })
             response.end(JSON.stringify(result))
+        } else {
+            response.send('404', 'Data not found')
         }
     })
 }
@@ -74,8 +80,7 @@ exports.saveCharacter = function(request, response) {
 
 exports.saveImage = function(request, response) {
     var writeStream = models.Grid.createWriteStream({
-        _id: request.params.type,
-        filename: 'image',
+        filename: request.params.type,
         mode: 'w'
     })
 
@@ -86,8 +91,7 @@ exports.saveImage = function(request, response) {
 
     writeStream.on('close', function() {
         var readStream = models.Grid.createReadStream({
-            _id: request.params.type,
-            filename: 'image',
+            filename: request.params.type,
             mode: 'r'
         })
 
@@ -106,19 +110,30 @@ exports.saveImage = function(request, response) {
 }
 
 exports.getImage = function(request, response) {
-    var readStream = models.Grid.createReadStream({
-        _id: request.params.type,
-        filename: 'image',
+    var options = {
+        filename: request.params.type,
         mode: 'r'
+    }
+
+    models.Grid.exist(options, function (err, found) {
+        if (err) {
+            response.send('500', 'Internal Server Error')
+            return
+        }
+        if (found) {
+            var readStream = models.Grid.createReadStream(options)
+
+            readStream.on('error', function(error) {
+                response.send('500', 'Internal Server Error')
+                return
+            })
+
+            response.writeHead(200, {'Content-Type' : 'image/jpeg'})
+            readStream.pipe(response)
+        } else {
+            response.status(404).end()
+        }
     })
-    
-    readStream.on('error', function(error) {
-        response.send('500', 'Internal Server Error')
-        return
-    })
-    
-    response.writeHead(200, {'Content-Type' : 'image/jpeg'})
-    readStream.pipe(response)
 }
 
 function toCharacter(characterObject) {
