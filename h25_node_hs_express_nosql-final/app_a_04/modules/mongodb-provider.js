@@ -56,6 +56,7 @@ exports.saveImage = function(req, res) {
 		res.writeHead(200, {'Content-Type' : 'image/jpeg'});
 		readStream.pipe(res);
 	});
+
 	req.pipe(writeStream);
 }
 
@@ -124,7 +125,7 @@ exports.provideData = function(headers, req, res) {
 		if (result.length > 0) {
 			res.writeHead(200, {
 				'Content-Type' : 'application/json',
-				'Image-Url' : 'http://localhost:8125/' + req.params.type + '/image'
+				'Image-Url' : 'http://localhost:8129/' + req.params.type + '/image'
 			});
 			res.end(JSON.stringify(result));
 		} else {
