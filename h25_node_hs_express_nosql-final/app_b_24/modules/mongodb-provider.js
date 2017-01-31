@@ -137,14 +137,14 @@ exports.getImage = function(request, response) {
 			response.send(500, 'Internal Server Error');
 			return;
 		}
-		else if (exists){
+		else if (!exists){
 			console.log('Image does not exist');
 			response.writeHead(404);
 			response.end('Image Does Not Exist');
 			return;
 			
 		}
-		else if (!exists){
+		else if (exists){
 			
 			var readStream = models.Grid.createReadStream({
 				_id : request.params.type,
