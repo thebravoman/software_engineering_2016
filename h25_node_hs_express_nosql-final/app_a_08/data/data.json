@@ -3,14 +3,12 @@
       {
          "firstname":"Dark",
          "lastname":"Troll",
-         "type":"troll",
-         "strength":100
+         "type":"troll"
       },
       {
     	  "firstname":"Queen",
     	  "lastname":"Mab",
-    	  "type":"witch",
-    	  "strength":100
+    	  "type":"witch"
       }
    ]
 }
