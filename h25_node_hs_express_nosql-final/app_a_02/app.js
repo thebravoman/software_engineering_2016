@@ -1,3 +1,4 @@
+
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -10,24 +11,31 @@ var routes = require('./routes/index');
 
 var app = express();
 
-var port = 8113;
+
+
 
 app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json({limit: '1mb'}));
+
+app.use(bodyParser.raw({limit: '1mb'}));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 
-app.use(function(req, res, next)
-{
-    var err = new Error('Not Found');
-    err.status = 404;
-    next(err);
+
+
+app.use(function(req, res, next) {
+  var err = new Error('Not Found');
+  err.status = 404;
+  next(err);
 });
 
-app.listen(port, function()
-{
-    console.log('Express server listening on port ' + port);
-});
+
+
+http.createServer(app).listen(8102, function(){
+	  console.log('Express server listening on port 8102');  
+	});
+
+
+

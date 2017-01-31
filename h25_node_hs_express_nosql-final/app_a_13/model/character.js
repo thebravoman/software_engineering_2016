@@ -1,19 +1,29 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
-var GridImage = require('gridfs-stream');
+var express = require('express');
+var router = express.Router();
+var dbProvider = require('../modules/mongodb-provider.js');
 
-mongoose.connect('mongodb://localhost/characters');
-
-var characterSchema = new Schema 
-({
-    firstname: {type: String, index: {unique: true}},
-    lastname: String,
-    strength: Number,
-    imageUrl: String,
-    type: String
+router.get('/', function(request, response, next) 
+{
+    dbProvider.provideList(response);
 });
 
-var Character = mongoose.model('Character', characterSchema);
-var GridImage = GridImage(mongoose.connection.db, mongoose.mongo);
+router.post('/', function(request, response, next)
+{
+    dbProvider.saveCharacter(request, response);
+});
 
-module.exports = { Character: Character, Grid: GridImage };
+router.post('/:type/image', function(request, response, next)
+{
+    dbProvider.saveImage(request, response);
+});
+
+router.get('/:type/image', function(request, response, next)
+{
+    dbProvider.getImage(request, response);
+});
+
+router.get('/:type', function(request, response, next) {
+    dbProvider.queryData({}, request, response);
+});
+
+module.exports = router;
