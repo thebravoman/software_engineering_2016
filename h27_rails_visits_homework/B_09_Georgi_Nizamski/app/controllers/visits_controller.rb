@@ -22,7 +22,7 @@ class VisitsController < ApplicationController
 	def show
 		@visits = Visit.find(params[:user])
 		_result = Hash.new
-		_result.merge!("count:" => @visits.visit_counter).to_json
+		_result.merge!("count" => @visits.visit_counter).to_json
 		render json: _result
 	end
 	

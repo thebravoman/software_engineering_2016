@@ -1,0 +1,159 @@
+const models = require('../model/character.js');
+
+const Character = models.Character;
+
+exports.provideList = function(response) {
+	Character.find({}, function(error, result) {
+		if(error){
+			console.error(error);
+			return null;
+		}
+		if(result != null){
+			response.json(result);
+		}
+	});
+};
+
+
+exports.queryData = function(headers, queryType, response) {
+	let search = {type: queryType};
+
+	search = require('util')._extend(search, headers);
+
+	Character.find(search, function(error, result) {
+		if(error){
+			console.error(error);
+			return null;
+		}
+		if(result != null){
+			response.writeHead(200, {
+				'Content-Type':'application/json',
+				'Image-Url':'http://localhost:8109/'+ queryType + '/image'});
+			response.end(JSON.stringify(result));
+		}
+	});
+};
+
+exports.saveCharacter = function(request, response) {
+	let character = toCharacter(request.body);
+
+	Character.findOne({firstname : character.firstname}, function(error, result) {
+		if(error){
+			response.writeHead(500, {
+				'Content-Type' : 'text/plain'
+			});
+			response.end('Internal Server Error');
+			return
+		}
+		else {
+			if(!result){
+				console.log('Character does not exist. Create new one');
+				character.save(function(error) {
+					if (!error) {
+						response.json(request.body);
+					} 
+					else {
+						response.writeHead(500, {'Content-Type' : 'text/plain'});
+						console.log("Failure saving new character");
+						response.end('Internal Server Error');
+					}
+				});
+			}
+			else{
+				console.log('Character already exists will be updated');
+				result.firstname = character.firstname;
+				result.lastname = character.lastname;
+				result.type = character.type;
+				result.imageUrl = character.imageUrl;
+				result.strength = character.strength;
+				result.save(function(error) {
+					if(!error){
+						response.json(request.body);
+					} 
+					else{
+						response.writeHead(500, {'Content-Type' : 'text/plain'});
+						console.log("Failure updating character");
+						response.end('Internal Server Error');
+					}
+				});
+			}
+		}
+	});
+};
+
+exports.saveImage = function(request, response) {
+	let writeStream = models.Grid.createWriteStream({
+		_id : request.params.type,
+		filename : request.params.type + '.jpg',
+		mode : 'w'
+	});
+	
+	writeStream.on('error', function(error){
+		response.send('500', 'Internal Server Error');
+		console.log('Error Write');
+		return;
+	})
+	
+	writeStream.on('close', function(){
+		let readStream = models.Grid.createReadStream({
+			_id : request.params.type,
+			filename : request.params.type + '.jpg',
+			mode : 'r'
+		});
+		
+		readStream.on('error', function(error){
+			response.send('500', 'Internal Server Error');
+			console.log('Error Read');
+			return;
+		});
+		
+		response.writeHead(200, {'Content-Type' : 'image/jpeg'});
+		readStream.pipe(response);
+	});
+	
+	request.pipe(writeStream);
+};
+
+exports.getImage = function(request, response) {
+	models.Grid.exist({
+		filename : request.params.type + ".jpg"
+	}, function(error, found){
+		if(error){
+			response.writeHead(500, {'Content-Type' : 'text/plain'});
+			console.log("Error checking for image existence");
+			response.end('Internal Server Error');
+		}
+
+		if(!found){
+			response.writeHead(404, {'Content-Type' : 'text/plain'});
+			console.log("Image not found");	
+			response.end('Image not found');
+		}
+		else{
+			let readStream = models.Grid.createReadStream({
+				_id : request.params.type,
+				filename : request.params.type + '.jpg',
+				mode : 'r'
+			});
+
+			readStream.on('error', function(error){
+				console.log('Error Read');
+				response.send('500', 'Internal Server Error');
+				return;
+			});
+
+			response.writeHead(200, {'Content-Type' : 'image/jpeg'});
+			readStream.pipe(response);
+		}
+	});
+};
+
+function toCharacter(characterObject) {
+	return new Character({
+		firstname : characterObject.firstname,
+		lastname : characterObject.lastname,
+		strength : characterObject.strength,
+		imageUrl : 'http://localhost:8109/' + characterObject.type + '/image',
+		type : characterObject.type
+	});
+}
