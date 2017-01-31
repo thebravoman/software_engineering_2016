@@ -1,6 +1,6 @@
-const var express = require('express');
-const var router = express.Router();
-const var dbProvider = require('../modules/mongodb-provider.js');
+var express = require('express');
+var router = express.Router();
+var dbProvider = require('../modules/mongodb-provider.js');
 
 router.get('/', function(request, response, next) 
 {
@@ -23,7 +23,7 @@ router.get('/:type/image', function(request, response, next)
 });
 
 router.get('/:type', function(request, response, next) {
-    dbProvider.queryData(request.params.type, response);
+    dbProvider.queryData(request.query, request.params.type, response);
 });
 
 module.exports = router;
