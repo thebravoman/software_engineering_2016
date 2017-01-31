@@ -1,77 +1,70 @@
-var models = require('../model/character.js');
-var Char = models.Character;
-var port = 8105;
-exports.provideList = function(res) {
-    Char.find({}, function(error, res) {
-        if (res != null) 
-        {
-            res.json(res);
+var assign = require('lodash/assign')
+var models = require('../model/character.js')
+var Character = models.Character
+var port = 8105
+exports.provideList = function(response) {
+    Character.find({}, function(error, result) {
+        if (error) {
+            return null
         }
-        if (error) 
-        {
-            return null;
+        if (result != null) {
+            response.json(result)
         }
     })
 }
-exports.queryData = function(q_type, res) {
-    Character.find({type: q_type}, function(error, res) {
-        if (error)
-        {
-            return null;
+exports.queryData = function(request, response) {
+    var searchQuery = assign(request.params, request.query)
+
+    Character.find(searchQuery, function(error, result) {
+        if (error) {
+            response.send('500', 'Internal Server Error')
+            return
         }
-        if (res != null)
-        {
-            res.writeHead(200, {
+        if (result.length > 0) {
+            response.writeHead(200, {
                 'Content-Type': 'aplication/json',
-                'Image-Url': 'http://localhost:' + port + '/' + q_type + '/image'
+                'Image-Url': 'http://localhost:' + port + '/' + request.params.type + '/image'
             })
-            res.end(JSON.stringify(res));
+            response.end(JSON.stringify(result))
+        } else {
+            response.send('404', 'Data not found')
         }
     })
 }
-exports.saveCharacter = function(req, res) {
-    var character = toCharacter(req.body);
+exports.saveCharacter = function(request, response) {
+    var character = toCharacter(request.body)
     character.save(function(error) {
-        if (!error)
-        {
-            res.writeHead(201, {
+        if (!error) {
+            response.writeHead(201, {
                 'Content-Type': 'aplication/json'
             })
-            res.end(JSON.stringify(req.body));
-        }
-        else
-        {
+            response.end(JSON.stringify(request.body))
+        } else {
             Character.findOne(
                 {
                     firstname: character.firstname
                 },
-                function(error, res) {
-                    if (error)
-                    {
-                        res.writeHead(500, {
+                function(error, result) {
+                    if (error) {
+                        response.writeHead(500, {
                             'Content-Type': 'text/plain'
                         })
-                        res.end('Internal Server Error')
-                    }
-                    else
-                    {
-                        if (!result)
-                        {
-                            character.save();
-                            res.writeHead(201, {
+                        response.end('Internal Server Error')
+                    } else {
+                        if (!result) {
+                            character.save()
+                            response.writeHead(201, {
                                 'Content-Type': 'application/json'
                             })
-                            res.end(JSON.stringify(req.body));
-                        }
-                        else
-                        {
-                            result.firstname = character.firstname;
-                            result.lastname = character.lastname;
-                            result.strength = character.strength;
-                            result.type = character.type;
-                            result.imageUrl = character.imageUrl;
-                            result.save();
-                            res.json(req.body);
+                            response.end(JSON.stringify(request.body))
+                        } else {
+                            result.firstname = character.firstname
+                            result.lastname = character.lastname
+                            result.strength = character.strength
+                            result.type = character.type
+                            result.imageUrl = character.imageUrl
+                            result.save()
+                            response.json(request.body)
                         }
                     }
                 }
@@ -79,47 +72,61 @@ exports.saveCharacter = function(req, res) {
         }
     })
 }
-exports.saveImage = function(req, res) {
+exports.saveImage = function(request, response) {
     var writeStream = models.Grid.createWriteStream({
-        _id: req.params.type,
-        filename: 'image',
+        filename: request.params.type,
         mode: 'w'
     })
+
     writeStream.on('error', function(error) {
-        res.send('500', 'Internal Server Error')
+        response.send('500', 'Internal Server Error')
         return
     })
+
     writeStream.on('close', function() {
         var readStream = models.Grid.createReadStream({
-            _id: req.params.type,
-            filename: 'image',
+            filename: request.params.type,
             mode: 'r'
         })
-        res.on('error', function(error) {
-            res.send('500', 'Internal Server Error')
+
+        response.on('error', function(error) {
+            response.send('500', 'Internal Server Error')
             return
         })
-        res.writeHead(200, {
+
+        response.writeHead(200, {
             'Content-Type': 'image/jpeg'
         })
-        readStream.pipe(res)
+        readStream.pipe(response)
     })
-    req.pipe(writeStream)
+
+    request.pipe(writeStream)
 }
-exports.getImage = function(req, res) {
-    var readStream = models.Grid.createReadStream({
-        _id: req.params.type,
-        filename: 'image',
+exports.getImage = function(request, response) {
+    var options = {
+        filename: request.params.type,
         mode: 'r'
+    }
+
+    models.Grid.exist(options, function (err, found) {
+        if (err) {
+            response.send('500', 'Internal Server Error')
+            return
+        }
+        if (found) {
+            var readStream = models.Grid.createReadStream(options)
+
+            readStream.on('error', function(error) {
+                response.send('500', 'Internal Server Error')
+                return
+            })
+
+            response.writeHead(200, {'Content-Type' : 'image/jpeg'})
+            readStream.pipe(response)
+        } else {
+            response.status(404).end()
+        }
     })
-    
-    readStream.on('error', function(error) {
-        res.send('500', 'Internal Server Error')
-        return
-    })
-    
-    res.writeHead(200, {'Content-Type' : 'image/jpeg'})
-    readStream.pipe(res)
 }
 function toCharacter(characterObject) {
     return new Character({
