@@ -135,7 +135,7 @@ exports.getImage = function(request, response) {
 			response.send(500, 'Internal Server Error');
 			return;
 		}
-		else if (exists) {
+		else if (!exists) {
 			response.writeHead(404);
 			response.end('Image Does Not Exist');
 			return;
