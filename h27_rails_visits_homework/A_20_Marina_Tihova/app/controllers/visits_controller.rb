@@ -1,4 +1,6 @@
 class VisitsController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
   def get_id
     user_id = params[:user]
 
@@ -15,7 +17,7 @@ class VisitsController < ApplicationController
 
     if !Visit.exists?(user_id)
       @curr_visitor = Visit.new(:user_id => user_id, :count => 0)
-      @user_visitor.id = user_id
+      @curr_visitor.id = user_id
     else
       @curr_visitor = Visit.find(user_id)
     end

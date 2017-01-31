@@ -21,10 +21,9 @@ exports.provideList = function(response) {
 };
 
 
-exports.queryData = function(headers, queryType, query, response) {
-	query['type'] = queryType;
-	console.log(query);
-	Character.find(query, function(error, result) {
+exports.queryData = function(headers, type, params, response) {
+	params['type'] = type;
+	Character.find(params, function(error, result) {
 		if (error) {
 			console.error(error);
 			return null;
@@ -32,7 +31,7 @@ exports.queryData = function(headers, queryType, query, response) {
 		if (result != null) {
 			response.writeHead(200, {
 				'Content-Type':'application/json',
-				'Image-Url':'http://localhost:3000/'+ query.type + '/image'});
+				'Image-Url':'http://localhost:3000/' + params.type + '/image'});
 			response.end(JSON.stringify(result));
 		}
 		
@@ -133,18 +132,15 @@ exports.getImage = function(request, response) {
 						filename : 'image'
 					  }, function (error, exists){
 		if (error) {
-			console.log('exist error');
 			response.send(500, 'Internal Server Error');
 			return;
 		}
-		else if (!exists){
-			console.log('Image does not exist');
+		else if (exists) {
 			response.writeHead(404);
 			response.end('Image Does Not Exist');
 			return;
 			
-		}
-		else if (exists){
+		} else {
 			
 			var readStream = models.Grid.createReadStream({
 				_id : request.params.type,
@@ -153,8 +149,6 @@ exports.getImage = function(request, response) {
 			});
 			
 			readStream.on('error', function(error) {
-				console.log('error read');
-				console.log(error);
 				response.send('500', 'Internal Server Error');
 				return;
 			});
