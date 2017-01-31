@@ -13,8 +13,7 @@
 ActiveRecord::Schema.define(version: 20170126185839) do
 
   create_table "visits", force: :cascade do |t|
-    t.integer "count",   default: 0
-    t.integer "user_id"
+    t.integer "count", default: 0
   end
 
 end
