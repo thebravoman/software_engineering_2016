@@ -80,7 +80,7 @@ exports.saveCharacter = function(req, res) {
 						});
 						res.end('Internal Server Error');
 					} else {
-						if (result) {
+						if (!result) {
 							console.log('Character does not exist. Create new one');
 							character.save();
 							res.writeHead(201, {
