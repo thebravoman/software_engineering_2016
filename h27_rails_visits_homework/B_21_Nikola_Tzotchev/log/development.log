@@ -20464,3 +20464,1088 @@ Processing by VisitsController#index as */*
 Completed 200 OK in 70ms (Views: 59.7ms | ActiveRecord: 4.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-01-28 22:06:04 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:VisitsController> at /home/nikola/Desktop/Ruby/myapp/tzot/app/controllers/visits_controller.rb:22)
+Processing by VisitsController#index as */*
+  Parameters: {"visit"=>{}}
+  Rendering visits/index.html.erb within layouts/application
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT "visits".* FROM "visits"[0m
+  Rendered visits/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 363ms (Views: 347.5ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-01-28 22:06:30 +0200
+Processing by VisitsController#index as */*
+  Rendering visits/index.html.erb within layouts/application
+  [1m[36mVisit Load (0.6ms)[0m  [1m[34mSELECT "visits".* FROM "visits"[0m
+  Rendered visits/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 33ms (Views: 26.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-01-28 22:08:02 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"visit"=>{}}
+  Rendering visits/index.html.erb within layouts/application
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT "visits".* FROM "visits"[0m
+  Rendered visits/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 48ms (Views: 42.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-01-28 22:08:03 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"visit"=>{}}
+  Rendering visits/index.html.erb within layouts/application
+  [1m[36mVisit Load (0.5ms)[0m  [1m[34mSELECT "visits".* FROM "visits"[0m
+  Rendered visits/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 40ms (Views: 35.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/visits?user=23" for 127.0.0.1 at 2017-01-28 22:08:20 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"23"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  Rendering visits/show.html.erb within layouts/application
+  Rendered visits/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 55ms (Views: 38.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-01-28 22:09:25 +0200
+Processing by VisitsController#index as */*
+  Rendering visits/index.html.erb within layouts/application
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT "visits".* FROM "visits"[0m
+  Rendered visits/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 41ms (Views: 37.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=23" for 127.0.0.1 at 2017-01-28 22:09:35 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"23"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  Rendering visits/show.html.erb within layouts/application
+  Rendered visits/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 31ms (Views: 27.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=23" for 127.0.0.1 at 2017-01-28 22:10:14 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"23"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  Rendering visits/show.html.erb within layouts/application
+  Rendered visits/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 42ms (Views: 36.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits?user=23" for 127.0.0.1 at 2017-01-28 22:11:32 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"23"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  Rendering visits/show.html.erb within layouts/application
+  Rendered visits/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 38ms (Views: 32.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=23" for 127.0.0.1 at 2017-01-28 22:11:43 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"23"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  Rendering visits/show.html.erb within layouts/application
+  Rendered visits/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 38ms (Views: 33.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=78" for 127.0.0.1 at 2017-01-28 22:12:26 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"78"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 78], ["LIMIT", 1]]
+  Rendering visits/show.html.erb within layouts/application
+  Rendered visits/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 50ms (Views: 43.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits?user=78" for 127.0.0.1 at 2017-01-28 22:14:56 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:VisitsController> at /home/nikola/Desktop/Ruby/myapp/tzot/app/controllers/visits_controller.rb:22)
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"78"}
+  [1m[36mVisit Load (0.5ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 78], ["LIMIT", 1]]
+  Rendering visits/show.html.erb within layouts/application
+  Rendered visits/show.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 4.5ms)
+
+
+  
+SyntaxError (/home/nikola/Desktop/Ruby/myapp/tzot/app/views/visits/show.html.erb:2: syntax error, unexpected ':', expecting keyword_end
+'.freeze;render: json => {"count": @vis.visited } 
+                ^):
+  
+app/views/visits/show.html.erb:2: syntax error, unexpected ':', expecting keyword_end
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (11.1ms)
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.1ms)
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (50.6ms)
+Started GET "/" for 127.0.0.1 at 2017-01-28 22:15:15 +0200
+Processing by VisitsController#index as */*
+  Rendering visits/index.html.erb within layouts/application
+  [1m[36mVisit Load (0.7ms)[0m  [1m[34mSELECT "visits".* FROM "visits"[0m
+  Rendered visits/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 277ms (Views: 271.9ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/visits?user=78" for 127.0.0.1 at 2017-01-28 22:15:43 +0200
+Processing by VisitsController#create as */*
+  Parameters: {"user"=>"78", "visit"=>{"user"=>"78"}}
+  [1m[36mVisit Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 78], ["LIMIT", 1]]
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 78], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "visits" SET "visited" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["visited", 3], ["updated_at", 2017-01-28 20:15:43 UTC], ["id", 78]]
+  [1m[35m (23.2ms)[0m  [1m[35mCOMMIT[0m
+  Rendering visits/create.html.erb within layouts/application
+  Rendered visits/create.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 82ms (Views: 37.5ms | ActiveRecord: 25.0ms)
+
+
+Started GET "/visits?user=78" for 127.0.0.1 at 2017-01-28 22:16:46 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:VisitsController> at /home/nikola/Desktop/Ruby/myapp/tzot/app/controllers/visits_controller.rb:23)
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"78"}
+  [1m[36mVisit Load (0.5ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 78], ["LIMIT", 1]]
+  Rendering visits/show.html.erb within layouts/application
+  Rendered visits/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 391ms (Views: 355.0ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/visits?user=78" for 127.0.0.1 at 2017-01-28 22:16:51 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"78"}
+  [1m[36mVisit Load (0.6ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 78], ["LIMIT", 1]]
+  Rendering visits/show.html.erb within layouts/application
+  Rendered visits/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 44ms (Views: 37.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/visits?user=78" for 127.0.0.1 at 2017-01-28 22:16:52 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"78"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 78], ["LIMIT", 1]]
+  Rendering visits/show.html.erb within layouts/application
+  Rendered visits/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 42ms (Views: 37.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=78" for 127.0.0.1 at 2017-01-28 22:16:53 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"78"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 78], ["LIMIT", 1]]
+  Rendering visits/show.html.erb within layouts/application
+  Rendered visits/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 37ms (Views: 32.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/visits?user=78" for 127.0.0.1 at 2017-01-28 22:17:53 +0200
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:VisitsController> at /home/nikola/Desktop/Ruby/myapp/tzot/app/controllers/visits_controller.rb:22)
+Processing by VisitsController#create as */*
+  Parameters: {"user"=>"78", "visit"=>{"user"=>"78"}}
+  [1m[36mVisit Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 78], ["LIMIT", 1]]
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 78], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "visits" SET "visited" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["visited", 4], ["updated_at", 2017-01-28 20:17:54 UTC], ["id", 78]]
+  [1m[35m (60.5ms)[0m  [1m[35mCOMMIT[0m
+  Rendering visits/create.html.erb within layouts/application
+  Rendered visits/create.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 131ms (Views: 42.3ms | ActiveRecord: 67.0ms)
+
+
+Started POST "/visits?user=78" for 127.0.0.1 at 2017-01-28 22:18:09 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:VisitsController> at /home/nikola/Desktop/Ruby/myapp/tzot/app/controllers/visits_controller.rb:22)
+Processing by VisitsController#create as */*
+  Parameters: {"user"=>"78", "visit"=>{"user"=>"78"}}
+  [1m[36mVisit Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 78], ["LIMIT", 1]]
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 78], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "visits" SET "visited" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["visited", 5], ["updated_at", 2017-01-28 20:18:09 UTC], ["id", 78]]
+  [1m[35m (34.8ms)[0m  [1m[35mCOMMIT[0m
+  Rendering visits/create.html.erb within layouts/application
+  Rendered visits/create.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 431ms (Views: 350.8ms | ActiveRecord: 41.6ms)
+
+
+Started GET "/visits?user=78" for 127.0.0.1 at 2017-01-28 22:18:27 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"78", "visit"=>{}}
+  [1m[36mVisit Load (0.8ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 78], ["LIMIT", 1]]
+  Rendering visits/show.html.erb within layouts/application
+  Rendered visits/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 41ms (Views: 32.7ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-28 22:19:25 +0200
+Processing by VisitsController#create as */*
+  Parameters: {"user"=>"adf", "visit"=>{"user"=>"adf"}}
+  [1m[36mVisit Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "visits" SET "visited" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["visited", 2], ["updated_at", 2017-01-28 20:19:25 UTC], ["id", 0]]
+  [1m[35m (22.2ms)[0m  [1m[35mCOMMIT[0m
+  Rendering visits/create.html.erb within layouts/application
+  Rendered visits/create.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 61ms (Views: 29.7ms | ActiveRecord: 23.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-01-28 22:19:32 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"visit"=>{}}
+  Rendering visits/index.html.erb within layouts/application
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT "visits".* FROM "visits"[0m
+  Rendered visits/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 42ms (Views: 37.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-28 22:19:39 +0200
+Processing by VisitsController#create as */*
+  Parameters: {"user"=>"adf", "visit"=>{"user"=>"adf"}}
+  [1m[36mVisit Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  [1m[36mVisit Load (0.6ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "visits" SET "visited" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["visited", 3], ["updated_at", 2017-01-28 20:19:39 UTC], ["id", 0]]
+  [1m[35m (21.7ms)[0m  [1m[35mCOMMIT[0m
+  Rendering visits/create.html.erb within layouts/application
+  Rendered visits/create.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 76ms (Views: 40.6ms | ActiveRecord: 23.3ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-28 22:19:39 +0200
+Processing by VisitsController#create as */*
+  Parameters: {"user"=>"adf", "visit"=>{"user"=>"adf"}}
+  [1m[36mVisit Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "visited" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["visited", 4], ["updated_at", 2017-01-28 20:19:39 UTC], ["id", 0]]
+  [1m[35m (19.8ms)[0m  [1m[35mCOMMIT[0m
+  Rendering visits/create.html.erb within layouts/application
+  Rendered visits/create.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 70ms (Views: 40.5ms | ActiveRecord: 20.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-01-28 22:19:42 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"visit"=>{}}
+  Rendering visits/index.html.erb within layouts/application
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT "visits".* FROM "visits"[0m
+  Rendered visits/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 41ms (Views: 36.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/visits/" for 127.0.0.1 at 2017-01-28 22:21:14 +0200
+Processing by VisitsController#create as */*
+  Parameters: {"user"=>"1"}
+  [1m[36mVisit Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "visited" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["visited", 2], ["updated_at", 2017-01-28 20:21:14 UTC], ["id", 1]]
+  [1m[35m (17.2ms)[0m  [1m[35mCOMMIT[0m
+  Rendering visits/create.html.erb within layouts/application
+  Rendered visits/create.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 54ms (Views: 26.5ms | ActiveRecord: 18.2ms)
+
+
+Started POST "/visits/" for 127.0.0.1 at 2017-01-28 22:21:21 +0200
+Processing by VisitsController#create as */*
+  Parameters: {"user"=>"1"}
+  [1m[36mVisit Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "visited" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["visited", 3], ["updated_at", 2017-01-28 20:21:21 UTC], ["id", 1]]
+  [1m[35m (14.6ms)[0m  [1m[35mCOMMIT[0m
+  Rendering visits/create.html.erb within layouts/application
+  Rendered visits/create.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 52ms (Views: 28.2ms | ActiveRecord: 15.5ms)
+
+
+Started POST "/visits/" for 127.0.0.1 at 2017-01-28 22:21:25 +0200
+Processing by VisitsController#create as */*
+  Parameters: {"user"=>"1"}
+  [1m[36mVisit Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mVisit Load (0.5ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "visits" SET "visited" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["visited", 4], ["updated_at", 2017-01-28 20:21:25 UTC], ["id", 1]]
+  [1m[35m (17.6ms)[0m  [1m[35mCOMMIT[0m
+  Rendering visits/create.html.erb within layouts/application
+  Rendered visits/create.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 71ms (Views: 40.2ms | ActiveRecord: 19.0ms)
+
+
+Started POST "/visits/" for 127.0.0.1 at 2017-01-28 22:21:27 +0200
+Processing by VisitsController#create as */*
+  Parameters: {"user"=>"1"}
+  [1m[36mVisit Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "visited" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["visited", 5], ["updated_at", 2017-01-28 20:21:27 UTC], ["id", 1]]
+  [1m[35m (10.9ms)[0m  [1m[35mCOMMIT[0m
+  Rendering visits/create.html.erb within layouts/application
+  Rendered visits/create.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 82ms (Views: 63.9ms | ActiveRecord: 11.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-01-28 22:21:33 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"visit"=>{}}
+  Rendering visits/index.html.erb within layouts/application
+  [1m[36mVisit Load (0.8ms)[0m  [1m[34mSELECT "visits".* FROM "visits"[0m
+  Rendered visits/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 42ms (Views: 37.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-01-28 22:21:37 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"visit"=>{}}
+  Rendering visits/index.html.erb within layouts/application
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT "visits".* FROM "visits"[0m
+  Rendered visits/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 40ms (Views: 34.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/visits/" for 127.0.0.1 at 2017-01-28 22:21:58 +0200
+Processing by VisitsController#create as */*
+  Parameters: {"user"=>"4"}
+  [1m[36mVisit Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "visits" ("id", "user", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["id", 4], ["user", 4], ["visited", 1], ["created_at", 2017-01-28 20:21:58 UTC], ["updated_at", 2017-01-28 20:21:58 UTC]]
+  [1m[35m (19.2ms)[0m  [1m[35mCOMMIT[0m
+  Rendering visits/create.html.erb within layouts/application
+  Rendered visits/create.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 66ms (Views: 37.8ms | ActiveRecord: 20.2ms)
+
+
+Started POST "/visits/" for 127.0.0.1 at 2017-01-28 22:21:59 +0200
+Processing by VisitsController#create as */*
+  Parameters: {"user"=>"4"}
+  [1m[36mVisit Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "visited" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["visited", 2], ["updated_at", 2017-01-28 20:21:59 UTC], ["id", 4]]
+  [1m[35m (7.6ms)[0m  [1m[35mCOMMIT[0m
+  Rendering visits/create.html.erb within layouts/application
+  Rendered visits/create.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 51ms (Views: 33.4ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-01-28 22:22:01 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"visit"=>{}}
+  Rendering visits/index.html.erb within layouts/application
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT "visits".* FROM "visits"[0m
+  Rendered visits/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 40ms (Views: 34.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/visits/" for 127.0.0.1 at 2017-01-28 22:22:12 +0200
+Processing by VisitsController#create as */*
+  Parameters: {"user"=>"5"}
+  [1m[36mVisit Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "visits" ("id", "user", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["id", 5], ["user", 5], ["visited", 1], ["created_at", 2017-01-28 20:22:12 UTC], ["updated_at", 2017-01-28 20:22:12 UTC]]
+  [1m[35m (20.1ms)[0m  [1m[35mCOMMIT[0m
+  Rendering visits/create.html.erb within layouts/application
+  Rendered visits/create.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 71ms (Views: 36.1ms | ActiveRecord: 22.1ms)
+
+
+Started POST "/visits/" for 127.0.0.1 at 2017-01-28 22:22:13 +0200
+Processing by VisitsController#create as */*
+  Parameters: {"user"=>"5"}
+  [1m[36mVisit Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mVisit Load (0.8ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "visited" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["visited", 2], ["updated_at", 2017-01-28 20:22:13 UTC], ["id", 5]]
+  [1m[35m (8.2ms)[0m  [1m[35mCOMMIT[0m
+  Rendering visits/create.html.erb within layouts/application
+  Rendered visits/create.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 63ms (Views: 45.5ms | ActiveRecord: 9.8ms)
+
+
+Started POST "/visits/" for 127.0.0.1 at 2017-01-28 22:22:14 +0200
+Processing by VisitsController#create as */*
+  Parameters: {"user"=>"5"}
+  [1m[36mVisit Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "visited" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["visited", 3], ["updated_at", 2017-01-28 20:22:14 UTC], ["id", 5]]
+  [1m[35m (8.7ms)[0m  [1m[35mCOMMIT[0m
+  Rendering visits/create.html.erb within layouts/application
+  Rendered visits/create.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 44ms (Views: 27.0ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-01-28 22:22:17 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"visit"=>{}}
+  Rendering visits/index.html.erb within layouts/application
+  [1m[36mVisit Load (1.2ms)[0m  [1m[34mSELECT "visits".* FROM "visits"[0m
+  Rendered visits/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 33ms (Views: 27.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/visits?user=78" for 127.0.0.1 at 2017-01-28 22:23:08 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"78"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 78], ["LIMIT", 1]]
+  Rendering visits/show.html.erb within layouts/application
+  Rendered visits/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 37ms (Views: 32.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits?user=78" for 127.0.0.1 at 2017-01-28 22:41:38 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"78"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 78], ["LIMIT", 1]]
+  Rendering visits/show.html.erb within layouts/application
+  Rendered visits/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 38ms (Views: 33.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/visits?user=78" for 127.0.0.1 at 2017-01-28 22:41:49 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"78"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 78], ["LIMIT", 1]]
+  Rendering visits/show.html.erb within layouts/application
+  Rendered visits/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 47ms (Views: 40.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-01-28 22:48:36 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"visit"=>{}}
+  Rendering visits/index.html.erb within layouts/application
+  [1m[36mVisit Load (0.5ms)[0m  [1m[34mSELECT "visits".* FROM "visits"[0m
+  Rendered visits/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 43ms (Views: 38.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-01-28 22:48:37 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"visit"=>{}}
+  Rendering visits/index.html.erb within layouts/application
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT "visits".* FROM "visits"[0m
+  Rendered visits/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 42ms (Views: 36.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=7" for 127.0.0.1 at 2017-01-28 22:48:48 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"7"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Visit with 'id'=7):
+  
+app/controllers/visits_controller.rb:7:in `show'
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.0ms)
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.3ms)
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (39.2ms)
+Started GET "/visits?user=78" for 127.0.0.1 at 2017-01-28 22:48:51 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"78"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 78], ["LIMIT", 1]]
+  Rendering visits/show.html.erb within layouts/application
+  Rendered visits/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 34ms (Views: 28.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=78" for 127.0.0.1 at 2017-01-28 22:48:57 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"78"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 78], ["LIMIT", 1]]
+  Rendering visits/show.html.erb within layouts/application
+  Rendered visits/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 43ms (Views: 38.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/visits?user=5" for 127.0.0.1 at 2017-01-31 13:51:26 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (33.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActionController::RoutingError (undefined method `respond_to' for VisitsController:Class):
+  
+app/controllers/visits_controller.rb:2:in `<class:VisitsController>'
+app/controllers/visits_controller.rb:1:in `<top (required)>'
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered collection of /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [3 times] (25.2ms)
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (23.7ms)
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (19.8ms)
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (128.7ms)
+Started POST "/visits" for 127.0.0.1 at 2017-01-31 13:51:52 +0200
+  
+ActionController::RoutingError (undefined method `respond_to' for VisitsController:Class):
+  
+app/controllers/visits_controller.rb:2:in `<class:VisitsController>'
+app/controllers/visits_controller.rb:1:in `<top (required)>'
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered collection of /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [3 times] (1.9ms)
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.1ms)
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (32.3ms)
+Started POST "/visits" for 127.0.0.1 at 2017-01-31 13:54:31 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:VisitsController> at /home/nikola/Desktop/Ruby/myapp/tzot/app/controllers/visits_controller.rb:27)
+Processing by VisitsController#create as */*
+  Parameters: {"user"=>"5", "visit"=>{"user"=>"5"}}
+  [1m[36mVisit Exists (33.8ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "visits" SET "visited" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["visited", 4], ["updated_at", 2017-01-31 11:54:32 UTC], ["id", 5]]
+  [1m[35m (23.4ms)[0m  [1m[35mCOMMIT[0m
+  Rendering visits/create.html.erb within layouts/application
+  Rendered visits/create.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 947ms (Views: 527.3ms | ActiveRecord: 179.1ms)
+
+
+Started GET "/visits?user=5" for 127.0.0.1 at 2017-01-31 13:54:41 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"5"}
+  [1m[36mVisit Load (0.8ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.8ms)
+
+
+  
+NameError (undefined local variable or method `json_res' for #<VisitsController:0x007ff79405a5f8>):
+  
+app/controllers/visits_controller.rb:10:in `block (2 levels) in show'
+app/controllers/visits_controller.rb:9:in `show'
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.5ms)
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (65.9ms)
+Started GET "/" for 127.0.0.1 at 2017-01-31 13:55:02 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"visit"=>{}}
+  Rendering visits/index.html.erb within layouts/application
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT "visits".* FROM "visits"[0m
+  Rendered visits/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 93ms (Views: 24.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=5clear" for 127.0.0.1 at 2017-01-31 13:55:20 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"5clear"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.4ms)
+
+
+  
+NameError (undefined local variable or method `json_res' for #<VisitsController:0x007ff78c008b70>):
+  
+app/controllers/visits_controller.rb:10:in `block (2 levels) in show'
+app/controllers/visits_controller.rb:9:in `show'
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.2ms)
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (65.1ms)
+Started GET "/visits?user=5" for 127.0.0.1 at 2017-01-31 13:55:27 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"5"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.4ms)
+
+
+  
+NameError (undefined local variable or method `json_res' for #<VisitsController:0x007ff78c966aa0>):
+  
+app/controllers/visits_controller.rb:10:in `block (2 levels) in show'
+app/controllers/visits_controller.rb:9:in `show'
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.5ms)
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (66.8ms)
+Started GET "/visits?user=5" for 127.0.0.1 at 2017-01-31 13:55:59 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"5", "visit"=>{}}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 0.4ms)
+
+
+  
+NameError (undefined local variable or method `json_res' for #<VisitsController:0x007ff78d4aeef8>):
+  
+app/controllers/visits_controller.rb:10:in `block (2 levels) in show'
+app/controllers/visits_controller.rb:9:in `show'
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.8ms)
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (71.0ms)
+Started GET "/visits?user=5" for 127.0.0.1 at 2017-01-31 13:56:24 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:VisitsController> at /home/nikola/Desktop/Ruby/myapp/tzot/app/controllers/visits_controller.rb:27)
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"5"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 28ms (Views: 0.2ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/visits?user=5" for 127.0.0.1 at 2017-01-31 13:56:27 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"5"}
+  [1m[36mVisit Load (0.9ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/visits?user=5" for 127.0.0.1 at 2017-01-31 13:56:28 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"5"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits?user=5" for 127.0.0.1 at 2017-01-31 14:16:13 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"5"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=5" for 127.0.0.1 at 2017-01-31 14:16:16 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"5", "visit"=>{}}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits?user=5" for 127.0.0.1 at 2017-01-31 14:16:29 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"5"}
+  [1m[36mVisit Load (0.6ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/visits?user=5" for 127.0.0.1 at 2017-01-31 14:16:30 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"5"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits?user=5" for 127.0.0.1 at 2017-01-31 14:16:31 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"5"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=5" for 127.0.0.1 at 2017-01-31 14:16:31 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"5"}
+  [1m[36mVisit Load (0.5ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/visits?user=3" for 127.0.0.1 at 2017-01-31 14:16:33 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"3"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Visit with 'id'=3):
+  
+app/controllers/visits_controller.rb:7:in `show'
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.9ms)
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (29.1ms)
+Started GET "/visits?user=3" for 127.0.0.1 at 2017-01-31 14:18:55 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+SyntaxError (/home/nikola/Desktop/Ruby/myapp/tzot/app/controllers/visits_controller.rb:33: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/visits_controller.rb:33: syntax error, unexpected keyword_end, expecting end-of-input
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.6ms)
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (10.5ms)
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (38.9ms)
+Started GET "/visits?user=5" for 127.0.0.1 at 2017-01-31 14:18:59 +0200
+  
+SyntaxError (/home/nikola/Desktop/Ruby/myapp/tzot/app/controllers/visits_controller.rb:33: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/visits_controller.rb:33: syntax error, unexpected keyword_end, expecting end-of-input
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.9ms)
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (26.1ms)
+Started GET "/visits?user=5" for 127.0.0.1 at 2017-01-31 14:19:19 +0200
+  
+SyntaxError (/home/nikola/Desktop/Ruby/myapp/tzot/app/controllers/visits_controller.rb:29: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/visits_controller.rb:29: syntax error, unexpected keyword_end, expecting end-of-input
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.5ms)
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (29.4ms)
+Started GET "/visits?user=5" for 127.0.0.1 at 2017-01-31 14:20:04 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:VisitsController> at /home/nikola/Desktop/Ruby/myapp/tzot/app/controllers/visits_controller.rb:27)
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"5"}
+  [1m[36mVisit Load (0.6ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 29ms (Views: 0.2ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/visits?user=3" for 127.0.0.1 at 2017-01-31 14:20:05 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"3"}
+  [1m[36mVisit Load (0.9ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Visit with 'id'=3):
+  
+app/controllers/visits_controller.rb:7:in `show'
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.4ms)
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (30.8ms)
+Started GET "/visits?user=5" for 127.0.0.1 at 2017-01-31 14:20:29 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"5", "visit"=>{}}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits?user=3" for 127.0.0.1 at 2017-01-31 14:20:39 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"3", "visit"=>{}}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Visit with 'id'=3):
+  
+app/controllers/visits_controller.rb:7:in `show'
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.4ms)
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.6ms)
+Started GET "/visits?user=3" for 127.0.0.1 at 2017-01-31 14:22:46 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:VisitsController> at /home/nikola/Desktop/Ruby/myapp/tzot/app/controllers/visits_controller.rb:31)
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"3", "visit"=>{}}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 404 Not Found in 21ms (ActiveRecord: 4.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Visit with 'id'=3):
+  
+app/controllers/visits_controller.rb:7:in `show'
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.4ms)
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (31.4ms)
+Started GET "/visits?user=3" for 127.0.0.1 at 2017-01-31 14:24:45 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:VisitsController> at /home/nikola/Desktop/Ruby/myapp/tzot/app/controllers/visits_controller.rb:30)
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"3", "visit"=>{}}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 404 Not Found in 20ms (ActiveRecord: 4.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Visit with 'id'=3):
+  
+app/controllers/visits_controller.rb:7:in `show'
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.2ms)
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (29.9ms)
+Started GET "/visits?user=3" for 127.0.0.1 at 2017-01-31 14:24:46 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"3", "visit"=>{}}
+  [1m[36mVisit Load (0.6ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Visit with 'id'=3):
+  
+app/controllers/visits_controller.rb:7:in `show'
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.6ms)
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/nikola/.rvm/gems/ruby-2.2.5/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (30.3ms)
+Started GET "/visits?user=3" for 127.0.0.1 at 2017-01-31 14:25:14 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: skip_before_filter is deprecated and will be removed in Rails 5.1. Use skip_before_action instead. (called from <class:VisitsController> at /home/nikola/Desktop/Ruby/myapp/tzot/app/controllers/visits_controller.rb:30)
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"3", "visit"=>{}}
+  [1m[36mVisit Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mVisit Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "visits" ("id", "user", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["id", 3], ["user", 3], ["visited", 1], ["created_at", 2017-01-31 12:25:14 UTC], ["updated_at", 2017-01-31 12:25:14 UTC]]
+  [1m[35m (23.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mVisit Load (0.6ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 63ms (Views: 0.4ms | ActiveRecord: 29.7ms)
+
+
+Started GET "/visits?user=6" for 127.0.0.1 at 2017-01-31 14:25:18 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"6", "visit"=>{}}
+  [1m[36mVisit Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mVisit Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "visits" ("id", "user", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["id", 6], ["user", 6], ["visited", 1], ["created_at", 2017-01-31 12:25:18 UTC], ["updated_at", 2017-01-31 12:25:18 UTC]]
+  [1m[35m (55.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 63ms (Views: 0.2ms | ActiveRecord: 56.8ms)
+
+
+Started GET "/visits?user=7" for 127.0.0.1 at 2017-01-31 14:25:20 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"7", "visit"=>{}}
+  [1m[36mVisit Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mVisit Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "visits" ("id", "user", "visited", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["id", 7], ["user", 7], ["visited", 1], ["created_at", 2017-01-31 12:25:20 UTC], ["updated_at", 2017-01-31 12:25:20 UTC]]
+  [1m[35m (51.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Completed 200 OK in 56ms (Views: 0.1ms | ActiveRecord: 52.5ms)
+
+
+Started GET "/visits?user=7" for 127.0.0.1 at 2017-01-31 14:25:20 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"7", "visit"=>{}}
+  [1m[36mVisit Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/visits?user=7" for 127.0.0.1 at 2017-01-31 14:25:21 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"7", "visit"=>{}}
+  [1m[36mVisit Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/visits?user=7" for 127.0.0.1 at 2017-01-31 14:25:21 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"7", "visit"=>{}}
+  [1m[36mVisit Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/visits?user=7" for 127.0.0.1 at 2017-01-31 14:25:22 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"7", "visit"=>{}}
+  [1m[36mVisit Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-31 14:25:25 +0200
+Processing by VisitsController#create as */*
+  Parameters: {"user"=>"5", "visit"=>{"user"=>"5"}}
+  [1m[36mVisit Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "visits" SET "visited" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["visited", 5], ["updated_at", 2017-01-31 12:25:25 UTC], ["id", 5]]
+  [1m[35m (71.4ms)[0m  [1m[35mCOMMIT[0m
+  Rendering visits/create.html.erb within layouts/application
+  Rendered visits/create.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 333ms (Views: 253.2ms | ActiveRecord: 72.5ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-31 14:25:26 +0200
+Processing by VisitsController#create as */*
+  Parameters: {"user"=>"5", "visit"=>{"user"=>"5"}}
+  [1m[36mVisit Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "visited" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["visited", 6], ["updated_at", 2017-01-31 12:25:26 UTC], ["id", 5]]
+  [1m[35m (52.1ms)[0m  [1m[35mCOMMIT[0m
+  Rendering visits/create.html.erb within layouts/application
+  Rendered visits/create.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 87ms (Views: 26.3ms | ActiveRecord: 53.1ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-31 14:25:30 +0200
+Processing by VisitsController#create as */*
+  Parameters: {"user"=>"7", "visit"=>{"user"=>"7"}}
+  [1m[36mVisit Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "visited" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["visited", 2], ["updated_at", 2017-01-31 12:25:30 UTC], ["id", 7]]
+  [1m[35m (20.9ms)[0m  [1m[35mCOMMIT[0m
+  Rendering visits/create.html.erb within layouts/application
+  Rendered visits/create.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 54ms (Views: 24.4ms | ActiveRecord: 21.9ms)
+
+
+Started POST "/visits" for 127.0.0.1 at 2017-01-31 14:25:31 +0200
+Processing by VisitsController#create as */*
+  Parameters: {"user"=>"7", "visit"=>{"user"=>"7"}}
+  [1m[36mVisit Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "visited" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["visited", 3], ["updated_at", 2017-01-31 12:25:31 UTC], ["id", 7]]
+  [1m[35m (14.5ms)[0m  [1m[35mCOMMIT[0m
+  Rendering visits/create.html.erb within layouts/application
+  Rendered visits/create.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 48ms (Views: 25.0ms | ActiveRecord: 15.7ms)
+
+
+Started GET "/visits?user=7" for 127.0.0.1 at 2017-01-31 14:25:33 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"7", "visit"=>{}}
+  [1m[36mVisit Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/visits?user=7" for 127.0.0.1 at 2017-01-31 14:25:34 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"7", "visit"=>{}}
+  [1m[36mVisit Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/visits?user=7" for 127.0.0.1 at 2017-01-31 14:25:35 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"7", "visit"=>{}}
+  [1m[36mVisit Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/visits?user=7" for 127.0.0.1 at 2017-01-31 14:25:35 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"7", "visit"=>{}}
+  [1m[36mVisit Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/visits?user=7" for 127.0.0.1 at 2017-01-31 14:25:35 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"7", "visit"=>{}}
+  [1m[36mVisit Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/visits?user=7" for 127.0.0.1 at 2017-01-31 14:25:36 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"7", "visit"=>{}}
+  [1m[36mVisit Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/visits?user=7" for 127.0.0.1 at 2017-01-31 14:25:36 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"7", "visit"=>{}}
+  [1m[36mVisit Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/visits?user=7" for 127.0.0.1 at 2017-01-31 14:25:36 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"7", "visit"=>{}}
+  [1m[36mVisit Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/visits?user=7" for 127.0.0.1 at 2017-01-31 14:25:36 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"7", "visit"=>{}}
+  [1m[36mVisit Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/visits?user=7" for 127.0.0.1 at 2017-01-31 14:25:36 +0200
+Processing by VisitsController#show as */*
+  Parameters: {"user"=>"7", "visit"=>{}}
+  [1m[36mVisit Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
