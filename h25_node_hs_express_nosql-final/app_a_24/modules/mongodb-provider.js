@@ -1,7 +1,3 @@
-
-
-
-
 var assign = require('lodash/assign');
 
 var models = require('../model/character.js');
