@@ -1,0 +1,15 @@
+{
+  "name": "app",
+  "version": "1.2.1",
+  "description": "Web application",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "http",
+    "application"
+  ],
+  "author": "Vladimir Mladenov",
+  "license": "ISC"
+}
