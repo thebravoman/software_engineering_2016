@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-const GridImage = require('gridfs-stream');
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+var GridImage = require('gridfs-stream');
 
 mongoose.connect('mongodb://localhost/characters');
 
@@ -14,9 +14,9 @@ var characterSchema = new Schema ({
 });
 
 var Character = mongoose.model('Character', characterSchema);
-var Grid = GridImage(mongoose.connection.db, mongoose.mongo);
+var GridImage = GridImage(mongoose.connection.db, mongoose.mongo);
 
 module.exports = {Character : Character,
-		Grid : Grid};
+		Grid : GridImage};
 
 
