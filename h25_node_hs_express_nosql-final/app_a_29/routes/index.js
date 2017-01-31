@@ -8,19 +8,24 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next) {
+	console.log('Post Character');
 	dbProvider.saveCharacter(req, res);
 });
 
 router.post('/:type/image', function(req, res, next) {
+	console.log('Save image');
 	dbProvider.saveImage(req, res);
 });
 
 router.get('/:type/image', function(req, res, next) {
+	console.log('Get image');
 	dbProvider.getImage(req, res);
 });
 
 router.get('/:type', function(req, res, next) {
-	dbProvider.provideData({}, req.params, res);
+	console.log('Provide data');
+	console.log(req.query);
+	dbProvider.provideData({}, req, res);
 });
 
 function isEmptyObject(obj) {

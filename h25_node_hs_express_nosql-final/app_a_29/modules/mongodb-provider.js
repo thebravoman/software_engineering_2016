@@ -3,22 +3,8 @@ var models = require('../model/character.js');
 var Character = models.Character;
 
 exports.getImage = function(req, res) {
-	var readStream = models.Grid.createReadStream({
-		_id : req.params.type,
-		filename : 'image',
-		mode : 'r'
-	});
-
-	readStream.on('error', function(error) {
-		console.log('error read');
-		console.log(error);
-		res.send('500', 'Internal Server Error');
-		return;
-	});
-
 	models.Grid.exist({
-		_id : req.params.type,
-		filename : 'image',
+		filename : req.params.type,
 		mode : 'w'
 	}, function (error, found) {
 		if (error) {
@@ -27,6 +13,16 @@ exports.getImage = function(req, res) {
 			res.send('500', 'Internal Server Error');
 			return;
 		}
+		var readStream = models.Grid.createReadStream({
+			filename : req.params.type,
+			mode : 'r'
+		});
+		readStream.on('error', function(error) {
+			console.log('error read');
+			console.log(error);
+			res.send('500', 'Internal Server Error');
+			return;
+		});
 		if (found) {
 			res.writeHead(200, {'Content-Type' : 'image/jpeg'});
 			readStream.pipe(res);
@@ -38,8 +34,7 @@ exports.getImage = function(req, res) {
 
 exports.saveImage = function(req, res) {
 	var writeStream = models.Grid.createWriteStream({
-		_id : req.params.type,
-		filename : 'image',
+		filename : req.params.type,
 		mode : 'w'
 	});
 
@@ -50,8 +45,7 @@ exports.saveImage = function(req, res) {
 
 	writeStream.on('close', function() {
 		var readStream = models.Grid.createReadStream({
-			_id : req.params.type,
-			filename : 'image',
+			filename : req.params.type,
 			mode : 'r'
 		});
 
@@ -122,18 +116,22 @@ function parseCharacter(characterObject) {
 	});
 }
 
-exports.provideData = function(headers, query, res) {
-	Character.find(query, function(error, result) {
+exports.provideData = function(headers, req, res) {
+	var searchObj = req.query;
+	searchObj.type = req.params.type;
+	Character.find(searchObj, function(error, result) {
 		if (error) {
 			console.error(error);
 			return null;
 		}
-		if (result != null) {
+		if (result.length > 0) {
 			res.writeHead(200, {
 				'Content-Type' : 'application/json',
-				'Image-Url' : 'http://localhost:8129/' + query.imageUrl + '/image'
+				'Image-Url' : 'http://localhost:8129/' + req.params.type + '/image'
 			});
 			res.end(JSON.stringify(result));
+		} else {
+			res.status(404).end('Character not found');
 		}
 	});
 }
