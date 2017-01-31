@@ -25,7 +25,7 @@ app.use(function(err, req, res, next) {
 });
 
 app.listen(port, () => {
-    console.log('Listening on localhost:8125);
+    console.log('Listening on localhost:8125');
 });
 
 module.exports = app;
