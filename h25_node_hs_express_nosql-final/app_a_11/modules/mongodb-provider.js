@@ -1,7 +1,4 @@
-/**
- * New node file
- */
-
+var assign = require('lodash/assign');
 var models = require('../model/character.js');
 
 var Character = models.Character;
@@ -21,8 +18,13 @@ exports.provideList = function(response) {
 };
 
 
-exports.queryData = function(headers, queryType, response) {
-	Character.find({type : queryType}, function(error, result) {
+exports.queryData = function(headers, request, response) {
+
+	var searchQuery = assign(request.params, request.query);
+	console.log(searchQuery);
+
+	Character.find(searchQuery, function(error, result) {
+		console.log(request.query);
 		if (error) {
 			console.error(error);
 			return null;
@@ -30,7 +32,7 @@ exports.queryData = function(headers, queryType, response) {
 		if (result != null) {
 			response.writeHead(200, {
 				'Content-Type':'application/json',
-				'Image-Url':'http://localhost:8107/'+ queryType + '/image'});
+				'Image-Url':'http://localhost:8111/'+ request.params.type + '/image'});
 			response.end(JSON.stringify(result));
 		}
 		
@@ -41,50 +43,49 @@ exports.queryData = function(headers, queryType, response) {
 exports.saveCharacter = function(request, response)
 {
 	var character = toCharacter(request.body);
-	character
-			.save(function(error) {
-				if (!error) {
-					response.writeHead(201, {
-						'Content-Type' : 'application/json'
-					});
-					response.end(JSON.stringify(request.body));
-				} else {
-					Character
-							.findOne(
-									{
-										firstname : character.firstname
-									},
-									function(error, result) {
-										console.log('Check if such a character exists');
-										if (error) {
-											console.log(error);
-											response.writeHead(500, {
-												'Content-Type' : 'text/plain'
-											});
-											response.end('Internal Server Error');
-										} else {
-											if (!result) {
-												console
-														.log('Character does not exist. Create new one');
-												character.save();
-												response.writeHead(201, {
-													'Content-Type' : 'application/json'
-												});
-												response.end(JSON.stringify(request.body));
-											} else {
-												console.log('Character already exists will be updated');
-												result.firstname = character.firstname;
-												result.lastname = character.lastname;
-												result.type = character.type;
-												result.imageUrl = character.imageUrl;										result.lastname = character.lastname;
-												result.save();
-												response.json(request.body);
-											}
-											
-										}
-									});
-				}
+	character.save(function(error) {
+		if (!error) {
+			response.writeHead(201, {
+				'Content-Type' : 'application/json'
 			});
+			response.end(JSON.stringify(request.body));
+		} else {
+			Character.findOne(
+				{
+					firstname : character.firstname
+				},
+				function(error, result) {
+					console.log('Check if such a character exists');
+					if (error) {
+						console.log(error);
+						response.writeHead(500, {
+							'Content-Type' : 'text/plain'
+						});
+						response.end('Internal Server Error');
+					} else {
+						if (!result) {
+							console
+									.log('Character does not exist. Create new one');
+							character.save();
+							response.writeHead(201, {
+								'Content-Type' : 'application/json'
+							});
+							response.end(JSON.stringify(request.body));
+						} else {
+							console.log('Character already exists will be updated');
+							result.firstname = character.firstname;
+							result.lastname = character.lastname;
+							result.type = character.type;
+							result.imageUrl = character.imageUrl;										
+							result.lastname = character.lastname;
+							result.save();
+							response.json(request.body);
+						}
+						
+					}
+				});
+		}
+	});
 };
 
 
@@ -92,8 +93,7 @@ exports.saveImage = function(request, response) {
 	
 	
 	var writeStream = models.Grid.createWriteStream({
-		_id : request.params.type,
-		filename : 'image',
+		filename: request.params.type,
 		mode : 'w'
 	});
 	
@@ -105,8 +105,7 @@ exports.saveImage = function(request, response) {
 	
 	writeStream.on('close', function() {
 		var readStream = models.Grid.createReadStream({
-			_id : request.params.type,
-			filename : 'image',
+			filename : request.params.type,
 			mode : 'r'
 		});
 		
@@ -128,13 +127,14 @@ exports.saveImage = function(request, response) {
 exports.getImage = function(request, response) {
 
 	var options = {
-		_id : request.params.type,
-		filename : 'image',
+		filename : request.params.type,
 		mode : 'r'
 	}
 
 	models.Grid.exist(options, function (err, found) {
-	  // if (err) return false;
+	  if (err) {
+	  	throw err;
+	  }
 	  if (found) {
 	  	var readStream = models.Grid.createReadStream(options);
 	
