@@ -11,22 +11,19 @@ exports.getImage = function(req, res) {
 			console.log('error exist');
 			console.log(error);
 			res.send('500', 'Internal Server Error');
-			return;
 		}
-		var readStream = models.Grid.createReadStream({
-			filename : req.params.type,
-			mode : 'r'
-		});
-		readStream.on('error', function(error) {
-			console.log('error read');
-			console.log(error);
-			res.send('500', 'Internal Server Error');
-			return;
-		});
 		if (found) {
+			var readStream = models.Grid.createReadStream({
+				filename : req.params.type,
+				mode : 'r'
+			});
+			readStream.on('error', function(error) {
+				console.log('error read');
+				console.log(error);
+				res.send('500', 'Internal Server Error');
+			});
 			res.writeHead(200, {'Content-Type' : 'image/jpeg'});
 			readStream.pipe(res);
-			res.end();
 		} else {
 			res.status(404).end();
 		}
