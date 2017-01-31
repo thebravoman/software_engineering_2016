@@ -119,22 +119,30 @@ exports.saveImage = function(request, response) {
 };
 
 exports.getImage = function(request, response) {
-	var readStream = models.Grid.createReadStream({
-		_id : request.params.type,
-		filename : 'image',
+	var options = {
+		filename : request.params.type,
 		mode : 'r'
+	}
+
+models.Grid.exist(options, function (err, found) {
+	  if (err) {
+	  	throw err;
+	  }
+	  if (found) {
+	  	var readStream = models.Grid.createReadStream(options);
+
+			readStream.on('error', function(error) {
+				console.log(error);
+				response.send('500', 'Internal Server Error');
+				return;
+			});
+			response.writeHead(200, {'Content-Type' : 'image/jpeg'});
+			readStream.pipe(response);
+
+	  } else {
+	  	response.status(404).end();
+	  }
 	});
-
-	readStream.on('error', function(error) {
-		console.log('error read');
-		console.log(error);
-		response.send('500', 'Internal Server Error');
-		return;
-	});
-
-
-	response.writeHead(200, {'Content-Type' : 'image/jpeg'});
-	readStream.pipe(response);
 };
 
 function toCharacter(characterObject) {
