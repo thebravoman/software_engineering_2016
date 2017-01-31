@@ -4,11 +4,11 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var http = require('http');
 
 var routes = require('./routes/index');
 
 var app = express();
+port=8103;
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -24,6 +24,8 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-http.createServer(app).listen(8103, function(){
-	  console.log('Express server listening on port 8103');  
+
+
+app.listen(port, function(){
+  console.log('listening on port 8103');  
 });
