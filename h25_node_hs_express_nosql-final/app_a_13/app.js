@@ -27,7 +27,7 @@ app.use(function(req, res, next)
     next(err);
 });
 
-http.createServer(app).listen(port, function()
+app.listen(port, function()
 {
     console.log('Express server listening on port ' + port);
 });
