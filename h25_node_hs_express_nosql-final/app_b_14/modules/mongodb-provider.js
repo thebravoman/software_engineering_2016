@@ -46,8 +46,7 @@ exports.saveCharacter = function(request, response)
 					});
 					response.end(JSON.stringify(request.body));
 				} else {
-					Character
-							.findOne(
+					Character.findOne(
 									{
 										firstname : character.firstname
 									},
@@ -89,8 +88,7 @@ exports.saveImage = function(request, response) {
 	
 	
 	var writeStream = models.Grid.createWriteStream({
-		_id : request.params.type,
-		filename : 'image',
+		filename : request.params.type,
 		mode : 'w'
 	});
 	
@@ -102,8 +100,7 @@ exports.saveImage = function(request, response) {
 	
 	writeStream.on('close', function() {
 		var readStream = models.Grid.createReadStream({
-			_id : request.params.type,
-			filename : 'image',
+			filename : request.params.type,
 			mode : 'r'
 		});
 		
@@ -123,13 +120,12 @@ exports.saveImage = function(request, response) {
 };
 
 exports.getImage = function(request, response) {
-	models.Grid.exist({_id : request.params.type, filename : 'image'}, function(error, exists) {
+	models.Grid.exist({filename : request.params.type}, function(error, exists) {
 		if(error) {
 			response.send('500', 'Internal Server Error');
-		} else if(!exists) {
+		} else if(exists) {
 			var readStream = models.Grid.createReadStream({
-				_id : request.params.type,
-				filename : 'image',
+				filename : request.params.type,
 				mode : 'r'
 			});
 	
