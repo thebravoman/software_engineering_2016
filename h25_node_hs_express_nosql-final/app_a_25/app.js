@@ -24,7 +24,7 @@ app.use(function(err, req, res, next) {
     res.render('error');
 });
 
-app.listen(port, () => {
+app.listen(8125, () => {
     console.log('Listening on localhost:8125');
 });
 

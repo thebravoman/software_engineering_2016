@@ -22,7 +22,7 @@ exports.provideList = function(response) {
 
 
 exports.queryData = function(headers, queryType, query, response) {
-	query['type'] = queryType;
+	query['type'] = queryType.type;
 	console.log(query);
 	Character.find(query, function(error, result) {
 		if (error) {
@@ -94,8 +94,7 @@ exports.saveImage = function(request, response) {
 	
 	
 	var writeStream = models.Grid.createWriteStream({
-		_id : request.params.type,
-		filename : 'image',
+		filename : request.params.type,
 		mode : 'w'
 	});
 	
@@ -107,8 +106,7 @@ exports.saveImage = function(request, response) {
 	
 	writeStream.on('close', function() {
 		var readStream = models.Grid.createReadStream({
-			_id : request.params.type,
-			filename : 'image',
+			filename : request.params.type,
 			mode : 'r'
 		});
 		
@@ -129,8 +127,7 @@ exports.saveImage = function(request, response) {
 
 exports.getImage = function(request, response) {
 	models.Grid.exist({ 
-						_id : request.params.type,
-						filename : 'image'
+						filename : request.params.type,
 					  }, function (error, exists){
 		if (error) {
 			console.log('exist error');
@@ -147,8 +144,7 @@ exports.getImage = function(request, response) {
 		else if (exists){
 			
 			var readStream = models.Grid.createReadStream({
-				_id : request.params.type,
-				filename : 'image',
+				filename : request.params.type,
 				mode : 'r'
 			});
 			

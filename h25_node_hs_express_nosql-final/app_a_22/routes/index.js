@@ -1,14 +1,12 @@
-const express = require('express');
-const router = express.Router();
-const dataProvider = require('../modules/data-provider.js');
-
-const dbProvider = require('../modules/mongodb-provider.js');
+var express = require('express');
+var router = express.Router();
+var dbProvider = require('../modules/mongodb-provider.js');
 
 router.get('/', function(request, response, next){
 	console.log('Get all');
-	dbProvider.provideList(response);
-	
-});
+	dbProvider.provideList( response);
+})
+
 router.post('/', function(request, response, next){
 	dbProvider.saveCharacter(request, response);
 });
@@ -23,7 +21,7 @@ router.get('/:type/image', function(request, response, next){
 });
 
 router.get('/:type', function(request, response, next){
-	dbProvider.queryData({}, request.params.type, response);
+	dbProvider.queryData({}, request, response);
 });
 
 module.exports = router;
