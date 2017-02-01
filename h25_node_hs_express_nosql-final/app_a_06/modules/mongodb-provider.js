@@ -86,8 +86,7 @@ exports.saveCharacter = function(request, response)
 
 exports.saveImage = function(request, response) {
 	var writeStream = models.gridImage.createWriteStream({
-		_id : request.params.type,
-		filename : 'image',
+		filename : request.params.type,
 		mode : 'w'
 	});
 	
@@ -99,8 +98,7 @@ exports.saveImage = function(request, response) {
 	
 	writeStream.on('close', function() {
 		var readStream = models.gridImage.createReadStream({
-			_id : request.params.type,
-			filename : 'image',
+			filename : request.params.type,
 			mode : 'r'
 		});
 		
@@ -118,15 +116,14 @@ exports.saveImage = function(request, response) {
 
 exports.getImage = function(request, response) {
 	let exists = true;
-	models.gridImage.exist({ _id: request.params.type }, (err, found) => {
+	models.gridImage.exist({ filename: request.params.type }, (err, found) => {
 		if (err) {
 			response.status(500);
 			response.end('Internal Server Error');
 		}
 		if (found) {
 			var readStream = models.gridImage.createReadStream({
-				_id : request.params.type,
-				filename : 'image',
+				filename : request.params.type,
 				mode : 'r'
 			});
 		

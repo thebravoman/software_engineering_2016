@@ -1,0 +1,2670 @@
+ruby check.rb -v .
+
+Checking file is: ./A_06_Georgi_Karaboichev.txt
+file content is: https://my-visits--app.herokuapp.com/
+curl_get is curl https://my-visits--app.herokuapp.com//visits?user=2
+curl_post is curl -X POST --data "user=2" https://my-visits--app.herokuapp.com//visits/
+Waking up instace
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    11  100    11    0     0      9      0  0:00:01  0:00:01 --:--:--     9
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   109  100   103  100     6    105      6  0:00:01 --:--:--  0:00:01   105
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    11  100    11    0     0     11      0  0:00:01 --:--:--  0:00:01    11
+get result is: {"count":1}
+old count is: 1
+sending 2 POST requests
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   109  100   103  100     6    110      6  0:00:01 --:--:--  0:00:01   110
+Result from post is: <html><body>You are being <a href="https://my-visits--app.herokuapp.com/">redirected</a>.</body></html>
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   109  100   103  100     6    117      6  0:00:01 --:--:--  0:00:01   117
+Result from post is: <html><body>You are being <a href="https://my-visits--app.herokuapp.com/">redirected</a>.</body></html>
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    11  100    11    0     0     12      0 --:--:-- --:--:-- --:--:--    12
+get result is: {"count":3}
+new user count is: 3
+Saved for file ./A_06_Georgi_Karaboichev.txt is result: 0
+
+Checking file is: ./B_24_Slav_Kirilov.txt/B_24_Slav_Kirilov.txt
+file content is: http://slavkata1.herokuapp.com
+curl_get is curl http://slavkata1.herokuapp.com/visits?user=5
+curl_post is curl -X POST --data "user=5" http://slavkata1.herokuapp.com/visits/
+Waking up instace
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    13  100    13    0     0     35      0 --:--:-- --:--:-- --:--:--    35
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100     6    0     0  100     6      0     17 --:--:-- --:--:-- --:--:--    17
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    13  100    13    0     0     40      0 --:--:-- --:--:-- --:--:--    40
+get result is: {"count":123}
+old count is: 123
+sending 3 POST requests
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100     6    0     0  100     6      0     18 --:--:-- --:--:-- --:--:--    18
+Result from post is: 
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100     6    0     0  100     6      0     17 --:--:-- --:--:-- --:--:--    17
+Result from post is: 
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100     6    0     0  100     6      0     20 --:--:-- --:--:-- --:--:--    20
+Result from post is: 
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    13  100    13    0     0     47      0 --:--:-- --:--:-- --:--:--    47
+get result is: {"count":126}
+new user count is: 126
+Saved for file ./B_24_Slav_Kirilov.txt/B_24_Slav_Kirilov.txt is result: 0
+
+Checking file is: ./A_18_Lilian_Vachkov.txt
+file content is: https://safe-river-19145.herokuapp.com/
+curl_get is curl https://safe-river-19145.herokuapp.com//visits?user=7
+curl_post is curl -X POST --data "user=7" https://safe-river-19145.herokuapp.com//visits/
+Waking up instace
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  2476  100  2476    0     0   5294      0 --:--:-- --:--:-- --:--:--  5301
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  2482  100  2476  100     6   6179     14 --:--:-- --:--:-- --:--:--  6174
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  2476  100  2476    0     0   5972      0 --:--:-- --:--:-- --:--:--  5980
+get result is: <!DOCTYPE html>
+    <html>
+      <head>
+        <title>Heroku | Welcome to your new app!</title>
+        <style type='text/css'>
+      body {
+        background-color: white;
+        color: #333333;
+          font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 36px;
+        line-height: 1;
+        font-size: 14px; }
+
+      .section {
+        margin-bottom: 36px; }
+        .section.friendly {
+          color: #222222; }
+          .section.friendly h1 {
+            font-size: 26px;
+            background-color: #dad8e4;
+            padding: 18px 22px 15px 22px;
+            margin: 0;
+            overflow: hidden; }
+            .section.friendly h1 strong {
+              display: inline-block;
+              float: left; }
+            .section.friendly h1 small {
+              display: inline-block;
+              float: right;
+              text-align: right;
+              font-size: 18px;
+              padding-top: 4px;
+              color: #333333; }
+          .section.friendly .article {
+            border: 4px solid #dad8e4;
+            padding: 24px 18px 18px 18px; }
+            .section.friendly .article h3 {
+              font-size: 20px;
+              margin: 0 0 18px 0; }
+            .section.friendly .article a {
+              color: #6b6ceb; }
+              .section.friendly .article a:visited {
+                color: #1d1d3b; }
+            .section.friendly .article p {
+              font-size: 14px; }
+            .section.friendly .article ul {
+              list-style-type: square; }
+      .section.original {
+        background-color: #eeeeee;
+        color: #444444; }
+        .section.original h2 {
+          background-color: #dddddd;
+          margin: 0;
+          padding: 18px 22px 18px 22px;
+          font-size: 20px; }
+        .section.original pre {
+          margin: 0;
+          padding: 18px 22px 18px 22px;
+          overflow: auto;
+          font-family: monaco, monospaced; }
+          .section.original pre code {
+            display: block;
+            font-size: 11px;
+            width: 100%; }
+    </style>
+      </head>
+      <body>
+        <div class='container'>
+          <div class='section friendly'>
+            <h1><strong>Heroku | Welcome to your new app!</strong></h1>
+            <div class='article'>
+              <p>Refer to the <a href="//devcenter.heroku.com/">documentation</a> if you need help deploying.</p>
+            </div>
+          </div>
+        </div>
+      </body>
+    </html>
+old count is: 
+sending 2 POST requests
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  2482  100  2476  100     6   6102     14 --:--:-- --:--:-- --:--:--  6098
+Result from post is: <!DOCTYPE html>
+    <html>
+      <head>
+        <title>Heroku | Welcome to your new app!</title>
+        <style type='text/css'>
+      body {
+        background-color: white;
+        color: #333333;
+          font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 36px;
+        line-height: 1;
+        font-size: 14px; }
+
+      .section {
+        margin-bottom: 36px; }
+        .section.friendly {
+          color: #222222; }
+          .section.friendly h1 {
+            font-size: 26px;
+            background-color: #dad8e4;
+            padding: 18px 22px 15px 22px;
+            margin: 0;
+            overflow: hidden; }
+            .section.friendly h1 strong {
+              display: inline-block;
+              float: left; }
+            .section.friendly h1 small {
+              display: inline-block;
+              float: right;
+              text-align: right;
+              font-size: 18px;
+              padding-top: 4px;
+              color: #333333; }
+          .section.friendly .article {
+            border: 4px solid #dad8e4;
+            padding: 24px 18px 18px 18px; }
+            .section.friendly .article h3 {
+              font-size: 20px;
+              margin: 0 0 18px 0; }
+            .section.friendly .article a {
+              color: #6b6ceb; }
+              .section.friendly .article a:visited {
+                color: #1d1d3b; }
+            .section.friendly .article p {
+              font-size: 14px; }
+            .section.friendly .article ul {
+              list-style-type: square; }
+      .section.original {
+        background-color: #eeeeee;
+        color: #444444; }
+        .section.original h2 {
+          background-color: #dddddd;
+          margin: 0;
+          padding: 18px 22px 18px 22px;
+          font-size: 20px; }
+        .section.original pre {
+          margin: 0;
+          padding: 18px 22px 18px 22px;
+          overflow: auto;
+          font-family: monaco, monospaced; }
+          .section.original pre code {
+            display: block;
+            font-size: 11px;
+            width: 100%; }
+    </style>
+      </head>
+      <body>
+        <div class='container'>
+          <div class='section friendly'>
+            <h1><strong>Heroku | Welcome to your new app!</strong></h1>
+            <div class='article'>
+              <p>Refer to the <a href="//devcenter.heroku.com/">documentation</a> if you need help deploying.</p>
+            </div>
+          </div>
+        </div>
+      </body>
+    </html>
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  2482  100  2476  100     6   5900     14 --:--:-- --:--:-- --:--:--  5909
+Result from post is: <!DOCTYPE html>
+    <html>
+      <head>
+        <title>Heroku | Welcome to your new app!</title>
+        <style type='text/css'>
+      body {
+        background-color: white;
+        color: #333333;
+          font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 36px;
+        line-height: 1;
+        font-size: 14px; }
+
+      .section {
+        margin-bottom: 36px; }
+        .section.friendly {
+          color: #222222; }
+          .section.friendly h1 {
+            font-size: 26px;
+            background-color: #dad8e4;
+            padding: 18px 22px 15px 22px;
+            margin: 0;
+            overflow: hidden; }
+            .section.friendly h1 strong {
+              display: inline-block;
+              float: left; }
+            .section.friendly h1 small {
+              display: inline-block;
+              float: right;
+              text-align: right;
+              font-size: 18px;
+              padding-top: 4px;
+              color: #333333; }
+          .section.friendly .article {
+            border: 4px solid #dad8e4;
+            padding: 24px 18px 18px 18px; }
+            .section.friendly .article h3 {
+              font-size: 20px;
+              margin: 0 0 18px 0; }
+            .section.friendly .article a {
+              color: #6b6ceb; }
+              .section.friendly .article a:visited {
+                color: #1d1d3b; }
+            .section.friendly .article p {
+              font-size: 14px; }
+            .section.friendly .article ul {
+              list-style-type: square; }
+      .section.original {
+        background-color: #eeeeee;
+        color: #444444; }
+        .section.original h2 {
+          background-color: #dddddd;
+          margin: 0;
+          padding: 18px 22px 18px 22px;
+          font-size: 20px; }
+        .section.original pre {
+          margin: 0;
+          padding: 18px 22px 18px 22px;
+          overflow: auto;
+          font-family: monaco, monospaced; }
+          .section.original pre code {
+            display: block;
+            font-size: 11px;
+            width: 100%; }
+    </style>
+      </head>
+      <body>
+        <div class='container'>
+          <div class='section friendly'>
+            <h1><strong>Heroku | Welcome to your new app!</strong></h1>
+            <div class='article'>
+              <p>Refer to the <a href="//devcenter.heroku.com/">documentation</a> if you need help deploying.</p>
+            </div>
+          </div>
+        </div>
+      </body>
+    </html>
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  2476  100  2476    0     0   6160      0 --:--:-- --:--:-- --:--:--  6159
+get result is: <!DOCTYPE html>
+    <html>
+      <head>
+        <title>Heroku | Welcome to your new app!</title>
+        <style type='text/css'>
+      body {
+        background-color: white;
+        color: #333333;
+          font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 36px;
+        line-height: 1;
+        font-size: 14px; }
+
+      .section {
+        margin-bottom: 36px; }
+        .section.friendly {
+          color: #222222; }
+          .section.friendly h1 {
+            font-size: 26px;
+            background-color: #dad8e4;
+            padding: 18px 22px 15px 22px;
+            margin: 0;
+            overflow: hidden; }
+            .section.friendly h1 strong {
+              display: inline-block;
+              float: left; }
+            .section.friendly h1 small {
+              display: inline-block;
+              float: right;
+              text-align: right;
+              font-size: 18px;
+              padding-top: 4px;
+              color: #333333; }
+          .section.friendly .article {
+            border: 4px solid #dad8e4;
+            padding: 24px 18px 18px 18px; }
+            .section.friendly .article h3 {
+              font-size: 20px;
+              margin: 0 0 18px 0; }
+            .section.friendly .article a {
+              color: #6b6ceb; }
+              .section.friendly .article a:visited {
+                color: #1d1d3b; }
+            .section.friendly .article p {
+              font-size: 14px; }
+            .section.friendly .article ul {
+              list-style-type: square; }
+      .section.original {
+        background-color: #eeeeee;
+        color: #444444; }
+        .section.original h2 {
+          background-color: #dddddd;
+          margin: 0;
+          padding: 18px 22px 18px 22px;
+          font-size: 20px; }
+        .section.original pre {
+          margin: 0;
+          padding: 18px 22px 18px 22px;
+          overflow: auto;
+          font-family: monaco, monospaced; }
+          .section.original pre code {
+            display: block;
+            font-size: 11px;
+            width: 100%; }
+    </style>
+      </head>
+      <body>
+        <div class='container'>
+          <div class='section friendly'>
+            <h1><strong>Heroku | Welcome to your new app!</strong></h1>
+            <div class='article'>
+              <p>Refer to the <a href="//devcenter.heroku.com/">documentation</a> if you need help deploying.</p>
+            </div>
+          </div>
+        </div>
+      </body>
+    </html>
+new user count is: 
+Saved for file ./A_18_Lilian_Vachkov.txt is result: 
+
+Checking file is: ./B_08_Vladimir_Mladenov.txt
+file content is: http://cepe6-app.herokuapp.com/
+curl_get is curl http://cepe6-app.herokuapp.com//visits?user=1
+curl_post is curl -X POST --data "user=1" http://cepe6-app.herokuapp.com//visits/
+Waking up instace
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    11    0    11    0     0      1      0 --:--:--  0:00:09 --:--:--     2
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   612    0   606  100     6   2210     21 --:--:-- --:--:-- --:--:--  2219
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    11    0    11    0     0     39      0 --:--:-- --:--:-- --:--:--    39
+get result is: {"count":1}
+old count is: 1
+sending 2 POST requests
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   612    0   606  100     6   2174     21 --:--:-- --:--:-- --:--:--  2179
+Result from post is: <!DOCTYPE html>
+<html>
+  <head>
+    <title>Cepe6App</title>
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="MmI/FmoMB8H1cDCxW1tzvth/rQOp32U+AZ3dQTwRod3PoMVZAq3N9Ep390V/XltWT4NBPKoVMKnIx/gvxuCpeg==" />
+
+    <link rel="stylesheet" media="all" href="/assets/application-d12397cbc3a266ce5a99f7b588223090c55ca04a439953bb5f9304395de93fc3.css" data-turbolinks-track="reload" />
+    <script src="/assets/application-c4af4abc284fb68c9655904f16f2fa280d83228171b7b702383a5030333f3548.js" data-turbolinks-track="reload"></script>
+  </head>
+
+  <body>
+    
+  </body>
+</html>
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   612    0   606  100     6   2068     20 --:--:-- --:--:-- --:--:--  2075
+Result from post is: <!DOCTYPE html>
+<html>
+  <head>
+    <title>Cepe6App</title>
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="5qkdqPRRixcClHIvkCqk7mHitfgQ+SzsXURR55vKXxfvMpcyLIpWDTGl6do91RSm7vVZH67SDJmg8Ok8YMRUnw==" />
+
+    <link rel="stylesheet" media="all" href="/assets/application-d12397cbc3a266ce5a99f7b588223090c55ca04a439953bb5f9304395de93fc3.css" data-turbolinks-track="reload" />
+    <script src="/assets/application-c4af4abc284fb68c9655904f16f2fa280d83228171b7b702383a5030333f3548.js" data-turbolinks-track="reload"></script>
+  </head>
+
+  <body>
+    
+  </body>
+</html>
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    11    0    11    0     0     38      0 --:--:-- --:--:-- --:--:--    38
+get result is: {"count":3}
+new user count is: 3
+Saved for file ./B_08_Vladimir_Mladenov.txt is result: 0
+
+Checking file is: ./B_22_Nikolai_Romanov.txt/B_22_Nikolai_Romanov.txt
+file content is: https://iskam-da-zavursha-pishete-mi-3.herokuapp.com/
+curl_get is curl https://iskam-da-zavursha-pishete-mi-3.herokuapp.com//visits?user=5
+curl_post is curl -X POST --data "user=5" https://iskam-da-zavursha-pishete-mi-3.herokuapp.com//visits/
+Waking up instace
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1477  100  1477    0     0    147      0  0:00:10  0:00:10 --:--:--   410
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1483  100  1477  100     6   3562     14 --:--:-- --:--:-- --:--:--  3567
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1477  100  1477    0     0   3604      0 --:--:-- --:--:-- --:--:--  3602
+get result is: <!DOCTYPE html>
+<html>
+<head>
+  <title>We're sorry, but something went wrong (500)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+  body {
+    background-color: #EFEFEF;
+    color: #2E2F30;
+    text-align: center;
+    font-family: arial, sans-serif;
+    margin: 0;
+  }
+
+  div.dialog {
+    width: 95%;
+    max-width: 33em;
+    margin: 4em auto 0;
+  }
+
+  div.dialog > div {
+    border: 1px solid #CCC;
+    border-right-color: #999;
+    border-left-color: #999;
+    border-bottom-color: #BBB;
+    border-top: #B00100 solid 4px;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+    background-color: white;
+    padding: 7px 12% 0;
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  }
+
+  h1 {
+    font-size: 100%;
+    color: #730E15;
+    line-height: 1.5em;
+  }
+
+  div.dialog > p {
+    margin: 0 0 1em;
+    padding: 1em;
+    background-color: #F7F7F7;
+    border: 1px solid #CCC;
+    border-right-color: #999;
+    border-left-color: #999;
+    border-bottom-color: #999;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-color: #DADADA;
+    color: #666;
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  }
+  </style>
+</head>
+
+<body>
+  <!-- This file lives in public/500.html -->
+  <div class="dialog">
+    <div>
+      <h1>We're sorry, but something went wrong.</h1>
+    </div>
+    <p>If you are the application owner check the logs for more information.</p>
+  </div>
+</body>
+</html>
+old count is: 
+sending 3 POST requests
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1483  100  1477  100     6   3533     14 --:--:-- --:--:-- --:--:--  3541
+Result from post is: <!DOCTYPE html>
+<html>
+<head>
+  <title>We're sorry, but something went wrong (500)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+  body {
+    background-color: #EFEFEF;
+    color: #2E2F30;
+    text-align: center;
+    font-family: arial, sans-serif;
+    margin: 0;
+  }
+
+  div.dialog {
+    width: 95%;
+    max-width: 33em;
+    margin: 4em auto 0;
+  }
+
+  div.dialog > div {
+    border: 1px solid #CCC;
+    border-right-color: #999;
+    border-left-color: #999;
+    border-bottom-color: #BBB;
+    border-top: #B00100 solid 4px;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+    background-color: white;
+    padding: 7px 12% 0;
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  }
+
+  h1 {
+    font-size: 100%;
+    color: #730E15;
+    line-height: 1.5em;
+  }
+
+  div.dialog > p {
+    margin: 0 0 1em;
+    padding: 1em;
+    background-color: #F7F7F7;
+    border: 1px solid #CCC;
+    border-right-color: #999;
+    border-left-color: #999;
+    border-bottom-color: #999;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-color: #DADADA;
+    color: #666;
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  }
+  </style>
+</head>
+
+<body>
+  <!-- This file lives in public/500.html -->
+  <div class="dialog">
+    <div>
+      <h1>We're sorry, but something went wrong.</h1>
+    </div>
+    <p>If you are the application owner check the logs for more information.</p>
+  </div>
+</body>
+</html>
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1483  100  1477  100     6   3580     14 --:--:-- --:--:-- --:--:--  3584
+Result from post is: <!DOCTYPE html>
+<html>
+<head>
+  <title>We're sorry, but something went wrong (500)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+  body {
+    background-color: #EFEFEF;
+    color: #2E2F30;
+    text-align: center;
+    font-family: arial, sans-serif;
+    margin: 0;
+  }
+
+  div.dialog {
+    width: 95%;
+    max-width: 33em;
+    margin: 4em auto 0;
+  }
+
+  div.dialog > div {
+    border: 1px solid #CCC;
+    border-right-color: #999;
+    border-left-color: #999;
+    border-bottom-color: #BBB;
+    border-top: #B00100 solid 4px;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+    background-color: white;
+    padding: 7px 12% 0;
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  }
+
+  h1 {
+    font-size: 100%;
+    color: #730E15;
+    line-height: 1.5em;
+  }
+
+  div.dialog > p {
+    margin: 0 0 1em;
+    padding: 1em;
+    background-color: #F7F7F7;
+    border: 1px solid #CCC;
+    border-right-color: #999;
+    border-left-color: #999;
+    border-bottom-color: #999;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-color: #DADADA;
+    color: #666;
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  }
+  </style>
+</head>
+
+<body>
+  <!-- This file lives in public/500.html -->
+  <div class="dialog">
+    <div>
+      <h1>We're sorry, but something went wrong.</h1>
+    </div>
+    <p>If you are the application owner check the logs for more information.</p>
+  </div>
+</body>
+</html>
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1483  100  1477  100     6   3412     13 --:--:-- --:--:-- --:--:--  3411
+Result from post is: <!DOCTYPE html>
+<html>
+<head>
+  <title>We're sorry, but something went wrong (500)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+  body {
+    background-color: #EFEFEF;
+    color: #2E2F30;
+    text-align: center;
+    font-family: arial, sans-serif;
+    margin: 0;
+  }
+
+  div.dialog {
+    width: 95%;
+    max-width: 33em;
+    margin: 4em auto 0;
+  }
+
+  div.dialog > div {
+    border: 1px solid #CCC;
+    border-right-color: #999;
+    border-left-color: #999;
+    border-bottom-color: #BBB;
+    border-top: #B00100 solid 4px;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+    background-color: white;
+    padding: 7px 12% 0;
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  }
+
+  h1 {
+    font-size: 100%;
+    color: #730E15;
+    line-height: 1.5em;
+  }
+
+  div.dialog > p {
+    margin: 0 0 1em;
+    padding: 1em;
+    background-color: #F7F7F7;
+    border: 1px solid #CCC;
+    border-right-color: #999;
+    border-left-color: #999;
+    border-bottom-color: #999;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-color: #DADADA;
+    color: #666;
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  }
+  </style>
+</head>
+
+<body>
+  <!-- This file lives in public/500.html -->
+  <div class="dialog">
+    <div>
+      <h1>We're sorry, but something went wrong.</h1>
+    </div>
+    <p>If you are the application owner check the logs for more information.</p>
+  </div>
+</body>
+</html>
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1477  100  1477    0     0   3673      0 --:--:-- --:--:-- --:--:--  3674
+get result is: <!DOCTYPE html>
+<html>
+<head>
+  <title>We're sorry, but something went wrong (500)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+  body {
+    background-color: #EFEFEF;
+    color: #2E2F30;
+    text-align: center;
+    font-family: arial, sans-serif;
+    margin: 0;
+  }
+
+  div.dialog {
+    width: 95%;
+    max-width: 33em;
+    margin: 4em auto 0;
+  }
+
+  div.dialog > div {
+    border: 1px solid #CCC;
+    border-right-color: #999;
+    border-left-color: #999;
+    border-bottom-color: #BBB;
+    border-top: #B00100 solid 4px;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+    background-color: white;
+    padding: 7px 12% 0;
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  }
+
+  h1 {
+    font-size: 100%;
+    color: #730E15;
+    line-height: 1.5em;
+  }
+
+  div.dialog > p {
+    margin: 0 0 1em;
+    padding: 1em;
+    background-color: #F7F7F7;
+    border: 1px solid #CCC;
+    border-right-color: #999;
+    border-left-color: #999;
+    border-bottom-color: #999;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-color: #DADADA;
+    color: #666;
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  }
+  </style>
+</head>
+
+<body>
+  <!-- This file lives in public/500.html -->
+  <div class="dialog">
+    <div>
+      <h1>We're sorry, but something went wrong.</h1>
+    </div>
+    <p>If you are the application owner check the logs for more information.</p>
+  </div>
+</body>
+</html>
+new user count is: 
+Saved for file ./B_22_Nikolai_Romanov.txt/B_22_Nikolai_Romanov.txt is result: 
+
+Checking file is: ./B_09_Georgi_Nizamski.txt/B_09_Georgi_Nizamski.txt
+file content is: https://count-requests.herokuapp.com/
+curl_get is curl https://count-requests.herokuapp.com//visits?user=4
+curl_post is curl -X POST --data "user=4" https://count-requests.herokuapp.com//visits/
+Waking up instace
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1564  100  1564    0     0    173      0  0:00:09  0:00:09 --:--:--   338
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100     6    0     0  100     6      0     13 --:--:-- --:--:-- --:--:--    13
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    11    0    11    0     0     25      0 --:--:-- --:--:-- --:--:--    25
+get result is: {"count":1}
+old count is: 1
+sending 2 POST requests
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100     6    0     0  100     6      0     14 --:--:-- --:--:-- --:--:--    14
+Result from post is: 
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100     6    0     0  100     6      0     14 --:--:-- --:--:-- --:--:--    14
+Result from post is: 
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    11    0    11    0     0     27      0 --:--:-- --:--:-- --:--:--    27
+get result is: {"count":3}
+new user count is: 3
+Saved for file ./B_09_Georgi_Nizamski.txt/B_09_Georgi_Nizamski.txt is result: 0
+
+Checking file is: ./A_26_Stiliyan_Hristov.txt
+file content is: https://whispering-fortress-84910.herokuapp.com/
+curl_get is curl https://whispering-fortress-84910.herokuapp.com//visits?user=0
+curl_post is curl -X POST --data "user=0" https://whispering-fortress-84910.herokuapp.com//visits/
+Waking up instace
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1564  100  1564    0     0    116      0  0:00:13  0:00:13 --:--:--   351
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100     6    0     0  100     6      0      5  0:00:01  0:00:01 --:--:--     5
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   627    0   627    0     0    641      0 --:--:-- --:--:-- --:--:--   641
+get result is: <!DOCTYPE html>
+<html>
+  <head>
+    <title>Herokuapp</title>
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="zUuIcDvJU3LGRZRnNzCBvHSz0BBITOXzR003gDcbggyzHtZLpl7s01+BdvAFWTsz3QBgFYC0pNSNigW643JtNA==" />
+
+    <link rel="stylesheet" media="all" href="/assets/application-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" data-turbolinks-track="reload" />
+    <script src="/assets/application-85daea6707201d371c4a66870a021e75497bdc733042e91cb6bc2faaada4f94f.js" data-turbolinks-track="reload"></script>
+  </head>
+
+  <body>
+    {&quot;cout&quot;:1}
+  </body>
+</html>
+old count is: 
+sending 3 POST requests
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100     6    0     0  100     6      0      6  0:00:01 --:--:--  0:00:01     6
+Result from post is: 
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100     6    0     0  100     6      0      6  0:00:01 --:--:--  0:00:01     6
+Result from post is: 
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100     6    0     0  100     6      0      6  0:00:01 --:--:--  0:00:01     6
+Result from post is: 
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   627    0   627    0     0    666      0 --:--:-- --:--:-- --:--:--   666
+get result is: <!DOCTYPE html>
+<html>
+  <head>
+    <title>Herokuapp</title>
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="TWERkzNwifuurFXOb5yu4/wbwMOIggX42qchwEhHOMvhgaK5n5A+UOm6B7xZRWgnqkQQtQ9hJpoqjQWWsX3ywg==" />
+
+    <link rel="stylesheet" media="all" href="/assets/application-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" data-turbolinks-track="reload" />
+    <script src="/assets/application-85daea6707201d371c4a66870a021e75497bdc733042e91cb6bc2faaada4f94f.js" data-turbolinks-track="reload"></script>
+  </head>
+
+  <body>
+    {&quot;cout&quot;:4}
+  </body>
+</html>
+new user count is: 
+Saved for file ./A_26_Stiliyan_Hristov.txt is result: 
+
+Checking file is: ./A_14_Ivo_Todorov.txt
+file content is: https://blooming-sands-99869.herokuapp.com/
+curl_get is curl https://blooming-sands-99869.herokuapp.com//visits?user=7
+curl_post is curl -X POST --data "user=7" https://blooming-sands-99869.herokuapp.com//visits/
+Waking up instace
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    11    0    11    0     0      0      0 --:--:--  0:00:11 --:--:--     3
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100     6    0     0  100     6      0      7 --:--:-- --:--:-- --:--:--     7
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    11    0    11    0     0     12      0 --:--:-- --:--:-- --:--:--    12
+get result is: {"count":1}
+old count is: 1
+sending 3 POST requests
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100     6    0     0  100     6      0      7 --:--:-- --:--:-- --:--:--     7
+Result from post is: 
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100     6    0     0  100     6      0      6  0:00:01 --:--:--  0:00:01     6
+Result from post is: 
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100     6    0     0  100     6      0      7 --:--:-- --:--:-- --:--:--     7
+Result from post is: 
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    11    0    11    0     0     13      0 --:--:-- --:--:-- --:--:--    13
+get result is: {"count":4}
+new user count is: 4
+Saved for file ./A_14_Ivo_Todorov.txt is result: 0
+
+Checking file is: ./B_21_Nikola_Tzotchev.txt/B_21_Nikola_Tzotchev.txt
+file content is: https://tzot.herokuapp.com/
+curl_get is curl https://tzot.herokuapp.com//visits?user=4
+curl_post is curl -X POST --data "user=4" https://tzot.herokuapp.com//visits/
+Waking up instace
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    11    0    11    0     0      0      0 --:--:--  0:00:13 --:--:--     3
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   613    0   607  100     6   1307     12 --:--:-- --:--:-- --:--:--  1308
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    11    0    11    0     0     27      0 --:--:-- --:--:-- --:--:--    27
+get result is: {"count":2}
+old count is: 2
+sending 2 POST requests
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   613    0   607  100     6   1219     12 --:--:-- --:--:-- --:--:--  1221
+Result from post is: <!DOCTYPE html>
+<html>
+  <head>
+    <title>posterino</title>
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="ElO2V+NNfbje29kDi6XWeXZzceGWYodTaoO32mTjoIxKM1cq5THoBRmyRomxzRUTmPFpcWpzKCIuZnL5Tc6Ofw==" />
+
+    <link rel="stylesheet" media="all" href="/assets/application-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" data-turbolinks-track="reload" />
+    <script src="/assets/application-c4af4abc284fb68c9655904f16f2fa280d83228171b7b702383a5030333f3548.js" data-turbolinks-track="reload"></script>
+  </head>
+
+  <body>
+    
+  </body>
+</html>
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   613    0   607  100     6   1372     13 --:--:-- --:--:-- --:--:--  1370
+Result from post is: <!DOCTYPE html>
+<html>
+  <head>
+    <title>posterino</title>
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="y7inSmidTcVKJ1AE0IPBlsVX5F6UbI+qMmdvMrM9MpVlREafsuOIgpc2NgmnfFHyRhiv4qwRRgcE68CzW5Bscw==" />
+
+    <link rel="stylesheet" media="all" href="/assets/application-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" data-turbolinks-track="reload" />
+    <script src="/assets/application-c4af4abc284fb68c9655904f16f2fa280d83228171b7b702383a5030333f3548.js" data-turbolinks-track="reload"></script>
+  </head>
+
+  <body>
+    
+  </body>
+</html>
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    11    0    11    0     0     25      0 --:--:-- --:--:-- --:--:--    25
+get result is: {"count":4}
+new user count is: 4
+Saved for file ./B_21_Nikola_Tzotchev.txt/B_21_Nikola_Tzotchev.txt is result: 0
+
+Checking file is: ./A_02_Blagovest_Mihailov.txt
+file content is: https://intense-refuge-78791.herokuapp.com/
+curl_get is curl https://intense-refuge-78791.herokuapp.com//visits?user=6
+curl_post is curl -X POST --data "user=6" https://intense-refuge-78791.herokuapp.com//visits/
+Waking up instace
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    11    0    11    0     0      0      0 --:--:--  0:00:13 --:--:--     2
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100     6    0     0  100     6      0     13 --:--:-- --:--:-- --:--:--    13
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    11    0    11    0     0     27      0 --:--:-- --:--:-- --:--:--    27
+get result is: {"count":1}
+old count is: 1
+sending 3 POST requests
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100     6    0     0  100     6      0     13 --:--:-- --:--:-- --:--:--    13
+Result from post is: 
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100     6    0     0  100     6      0     14 --:--:-- --:--:-- --:--:--    14
+Result from post is: 
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100     6    0     0  100     6      0     12 --:--:-- --:--:-- --:--:--    12
+Result from post is: 
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    11    0    11    0     0     26      0 --:--:-- --:--:-- --:--:--    26
+get result is: {"count":4}
+new user count is: 4
+Saved for file ./A_02_Blagovest_Mihailov.txt is result: 0
+
+Checking file is: ./B_16_Ivan_Trifonov.txt/B_16_Ivan_Trifonov.txt
+file content is: http://request-counter.herokuapp.com
+curl_get is curl http://request-counter.herokuapp.com/visits?user=8
+curl_post is curl -X POST --data "user=8" http://request-counter.herokuapp.com/visits/
+Waking up instace
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1477  100  1477    0     0    116      0  0:00:12  0:00:12 --:--:--   431
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100     7  100     1  100     6      1     11  0:00:01 --:--:--  0:00:01    11
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    24  100    24    0     0     84      0 --:--:-- --:--:-- --:--:--    84
+get result is: 
+{&quot;count&quot;:1}
+
+old count is: 
+sending 2 POST requests
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100     7  100     1  100     6      3     21 --:--:-- --:--:-- --:--:--    21
+Result from post is: 
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100     7  100     1  100     6      2     12 --:--:-- --:--:-- --:--:--    12
+Result from post is: 
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    24  100    24    0     0     87      0 --:--:-- --:--:-- --:--:--    87
+get result is: 
+{&quot;count&quot;:3}
+
+new user count is: 
+Saved for file ./B_16_Ivan_Trifonov.txt/B_16_Ivan_Trifonov.txt is result: 
+
+Checking file is: ./B_12_Daniel_Raykov.txt/B_12_Daniel_Raykov.txt
+file content is: https://ray-on-rails.herokuapp.com/
+curl_get is curl https://ray-on-rails.herokuapp.com//visits?user=7
+curl_post is curl -X POST --data "user=7" https://ray-on-rails.herokuapp.com//visits/
+Waking up instace
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1477  100  1477    0     0    164      0  0:00:09  0:00:08  0:00:01   426
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1483  100  1477  100     6   3596     14 --:--:-- --:--:-- --:--:--  3602
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1477  100  1477    0     0   3732      0 --:--:-- --:--:-- --:--:--  3729
+get result is: <!DOCTYPE html>
+<html>
+<head>
+  <title>We're sorry, but something went wrong (500)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+  body {
+    background-color: #EFEFEF;
+    color: #2E2F30;
+    text-align: center;
+    font-family: arial, sans-serif;
+    margin: 0;
+  }
+
+  div.dialog {
+    width: 95%;
+    max-width: 33em;
+    margin: 4em auto 0;
+  }
+
+  div.dialog > div {
+    border: 1px solid #CCC;
+    border-right-color: #999;
+    border-left-color: #999;
+    border-bottom-color: #BBB;
+    border-top: #B00100 solid 4px;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+    background-color: white;
+    padding: 7px 12% 0;
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  }
+
+  h1 {
+    font-size: 100%;
+    color: #730E15;
+    line-height: 1.5em;
+  }
+
+  div.dialog > p {
+    margin: 0 0 1em;
+    padding: 1em;
+    background-color: #F7F7F7;
+    border: 1px solid #CCC;
+    border-right-color: #999;
+    border-left-color: #999;
+    border-bottom-color: #999;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-color: #DADADA;
+    color: #666;
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  }
+  </style>
+</head>
+
+<body>
+  <!-- This file lives in public/500.html -->
+  <div class="dialog">
+    <div>
+      <h1>We're sorry, but something went wrong.</h1>
+    </div>
+    <p>If you are the application owner check the logs for more information.</p>
+  </div>
+</body>
+</html>
+old count is: 
+sending 2 POST requests
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1483  100  1477  100     6   3721     15 --:--:-- --:--:-- --:--:--  3729
+Result from post is: <!DOCTYPE html>
+<html>
+<head>
+  <title>We're sorry, but something went wrong (500)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+  body {
+    background-color: #EFEFEF;
+    color: #2E2F30;
+    text-align: center;
+    font-family: arial, sans-serif;
+    margin: 0;
+  }
+
+  div.dialog {
+    width: 95%;
+    max-width: 33em;
+    margin: 4em auto 0;
+  }
+
+  div.dialog > div {
+    border: 1px solid #CCC;
+    border-right-color: #999;
+    border-left-color: #999;
+    border-bottom-color: #BBB;
+    border-top: #B00100 solid 4px;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+    background-color: white;
+    padding: 7px 12% 0;
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  }
+
+  h1 {
+    font-size: 100%;
+    color: #730E15;
+    line-height: 1.5em;
+  }
+
+  div.dialog > p {
+    margin: 0 0 1em;
+    padding: 1em;
+    background-color: #F7F7F7;
+    border: 1px solid #CCC;
+    border-right-color: #999;
+    border-left-color: #999;
+    border-bottom-color: #999;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-color: #DADADA;
+    color: #666;
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  }
+  </style>
+</head>
+
+<body>
+  <!-- This file lives in public/500.html -->
+  <div class="dialog">
+    <div>
+      <h1>We're sorry, but something went wrong.</h1>
+    </div>
+    <p>If you are the application owner check the logs for more information.</p>
+  </div>
+</body>
+</html>
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1483  100  1477  100     6   3889     15 --:--:-- --:--:-- --:--:--  3897
+Result from post is: <!DOCTYPE html>
+<html>
+<head>
+  <title>We're sorry, but something went wrong (500)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+  body {
+    background-color: #EFEFEF;
+    color: #2E2F30;
+    text-align: center;
+    font-family: arial, sans-serif;
+    margin: 0;
+  }
+
+  div.dialog {
+    width: 95%;
+    max-width: 33em;
+    margin: 4em auto 0;
+  }
+
+  div.dialog > div {
+    border: 1px solid #CCC;
+    border-right-color: #999;
+    border-left-color: #999;
+    border-bottom-color: #BBB;
+    border-top: #B00100 solid 4px;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+    background-color: white;
+    padding: 7px 12% 0;
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  }
+
+  h1 {
+    font-size: 100%;
+    color: #730E15;
+    line-height: 1.5em;
+  }
+
+  div.dialog > p {
+    margin: 0 0 1em;
+    padding: 1em;
+    background-color: #F7F7F7;
+    border: 1px solid #CCC;
+    border-right-color: #999;
+    border-left-color: #999;
+    border-bottom-color: #999;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-color: #DADADA;
+    color: #666;
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  }
+  </style>
+</head>
+
+<body>
+  <!-- This file lives in public/500.html -->
+  <div class="dialog">
+    <div>
+      <h1>We're sorry, but something went wrong.</h1>
+    </div>
+    <p>If you are the application owner check the logs for more information.</p>
+  </div>
+</body>
+</html>
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1477  100  1477    0     0   3536      0 --:--:-- --:--:-- --:--:--  3533
+get result is: <!DOCTYPE html>
+<html>
+<head>
+  <title>We're sorry, but something went wrong (500)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+  body {
+    background-color: #EFEFEF;
+    color: #2E2F30;
+    text-align: center;
+    font-family: arial, sans-serif;
+    margin: 0;
+  }
+
+  div.dialog {
+    width: 95%;
+    max-width: 33em;
+    margin: 4em auto 0;
+  }
+
+  div.dialog > div {
+    border: 1px solid #CCC;
+    border-right-color: #999;
+    border-left-color: #999;
+    border-bottom-color: #BBB;
+    border-top: #B00100 solid 4px;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+    background-color: white;
+    padding: 7px 12% 0;
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  }
+
+  h1 {
+    font-size: 100%;
+    color: #730E15;
+    line-height: 1.5em;
+  }
+
+  div.dialog > p {
+    margin: 0 0 1em;
+    padding: 1em;
+    background-color: #F7F7F7;
+    border: 1px solid #CCC;
+    border-right-color: #999;
+    border-left-color: #999;
+    border-bottom-color: #999;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-color: #DADADA;
+    color: #666;
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  }
+  </style>
+</head>
+
+<body>
+  <!-- This file lives in public/500.html -->
+  <div class="dialog">
+    <div>
+      <h1>We're sorry, but something went wrong.</h1>
+    </div>
+    <p>If you are the application owner check the logs for more information.</p>
+  </div>
+</body>
+</html>
+new user count is: 
+Saved for file ./B_12_Daniel_Raykov.txt/B_12_Daniel_Raykov.txt is result: 
+
+Checking file is: ./A_25_Rangel_Ivanov.txt
+file content is: https://boiling-earth-80714.herokuapp.com/
+curl_get is curl https://boiling-earth-80714.herokuapp.com//visits?user=5
+curl_post is curl -X POST --data "user=5" https://boiling-earth-80714.herokuapp.com//visits/
+Waking up instace
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1564  100  1564    0     0    119      0  0:00:13  0:00:13 --:--:--   368
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1570  100  1564  100     6   2070      7 --:--:-- --:--:-- --:--:--  2068
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1564  100  1564    0     0   1927      0 --:--:-- --:--:-- --:--:--  1926
+get result is: <!DOCTYPE html>
+<html>
+<head>
+  <title>The page you were looking for doesn't exist (404)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+  body {
+    background-color: #EFEFEF;
+    color: #2E2F30;
+    text-align: center;
+    font-family: arial, sans-serif;
+    margin: 0;
+  }
+
+  div.dialog {
+    width: 95%;
+    max-width: 33em;
+    margin: 4em auto 0;
+  }
+
+  div.dialog > div {
+    border: 1px solid #CCC;
+    border-right-color: #999;
+    border-left-color: #999;
+    border-bottom-color: #BBB;
+    border-top: #B00100 solid 4px;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+    background-color: white;
+    padding: 7px 12% 0;
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  }
+
+  h1 {
+    font-size: 100%;
+    color: #730E15;
+    line-height: 1.5em;
+  }
+
+  div.dialog > p {
+    margin: 0 0 1em;
+    padding: 1em;
+    background-color: #F7F7F7;
+    border: 1px solid #CCC;
+    border-right-color: #999;
+    border-left-color: #999;
+    border-bottom-color: #999;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-color: #DADADA;
+    color: #666;
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  }
+  </style>
+</head>
+
+<body>
+  <!-- This file lives in public/404.html -->
+  <div class="dialog">
+    <div>
+      <h1>The page you were looking for doesn't exist.</h1>
+      <p>You may have mistyped the address or the page may have moved.</p>
+    </div>
+    <p>If you are the application owner check the logs for more information.</p>
+  </div>
+</body>
+</html>
+old count is: 
+sending 3 POST requests
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1570  100  1564  100     6   2168      8 --:--:-- --:--:-- --:--:--  2169
+Result from post is: <!DOCTYPE html>
+<html>
+<head>
+  <title>The page you were looking for doesn't exist (404)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+  body {
+    background-color: #EFEFEF;
+    color: #2E2F30;
+    text-align: center;
+    font-family: arial, sans-serif;
+    margin: 0;
+  }
+
+  div.dialog {
+    width: 95%;
+    max-width: 33em;
+    margin: 4em auto 0;
+  }
+
+  div.dialog > div {
+    border: 1px solid #CCC;
+    border-right-color: #999;
+    border-left-color: #999;
+    border-bottom-color: #BBB;
+    border-top: #B00100 solid 4px;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+    background-color: white;
+    padding: 7px 12% 0;
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  }
+
+  h1 {
+    font-size: 100%;
+    color: #730E15;
+    line-height: 1.5em;
+  }
+
+  div.dialog > p {
+    margin: 0 0 1em;
+    padding: 1em;
+    background-color: #F7F7F7;
+    border: 1px solid #CCC;
+    border-right-color: #999;
+    border-left-color: #999;
+    border-bottom-color: #999;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-color: #DADADA;
+    color: #666;
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  }
+  </style>
+</head>
+
+<body>
+  <!-- This file lives in public/404.html -->
+  <div class="dialog">
+    <div>
+      <h1>The page you were looking for doesn't exist.</h1>
+      <p>You may have mistyped the address or the page may have moved.</p>
+    </div>
+    <p>If you are the application owner check the logs for more information.</p>
+  </div>
+</body>
+</html>
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1570  100  1564  100     6   1718      6  0:00:01 --:--:--  0:00:01  1718
+Result from post is: <!DOCTYPE html>
+<html>
+<head>
+  <title>The page you were looking for doesn't exist (404)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+  body {
+    background-color: #EFEFEF;
+    color: #2E2F30;
+    text-align: center;
+    font-family: arial, sans-serif;
+    margin: 0;
+  }
+
+  div.dialog {
+    width: 95%;
+    max-width: 33em;
+    margin: 4em auto 0;
+  }
+
+  div.dialog > div {
+    border: 1px solid #CCC;
+    border-right-color: #999;
+    border-left-color: #999;
+    border-bottom-color: #BBB;
+    border-top: #B00100 solid 4px;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+    background-color: white;
+    padding: 7px 12% 0;
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  }
+
+  h1 {
+    font-size: 100%;
+    color: #730E15;
+    line-height: 1.5em;
+  }
+
+  div.dialog > p {
+    margin: 0 0 1em;
+    padding: 1em;
+    background-color: #F7F7F7;
+    border: 1px solid #CCC;
+    border-right-color: #999;
+    border-left-color: #999;
+    border-bottom-color: #999;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-color: #DADADA;
+    color: #666;
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  }
+  </style>
+</head>
+
+<body>
+  <!-- This file lives in public/404.html -->
+  <div class="dialog">
+    <div>
+      <h1>The page you were looking for doesn't exist.</h1>
+      <p>You may have mistyped the address or the page may have moved.</p>
+    </div>
+    <p>If you are the application owner check the logs for more information.</p>
+  </div>
+</body>
+</html>
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1570  100  1564  100     6   1711      6  0:00:01 --:--:--  0:00:01  1711
+Result from post is: <!DOCTYPE html>
+<html>
+<head>
+  <title>The page you were looking for doesn't exist (404)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+  body {
+    background-color: #EFEFEF;
+    color: #2E2F30;
+    text-align: center;
+    font-family: arial, sans-serif;
+    margin: 0;
+  }
+
+  div.dialog {
+    width: 95%;
+    max-width: 33em;
+    margin: 4em auto 0;
+  }
+
+  div.dialog > div {
+    border: 1px solid #CCC;
+    border-right-color: #999;
+    border-left-color: #999;
+    border-bottom-color: #BBB;
+    border-top: #B00100 solid 4px;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+    background-color: white;
+    padding: 7px 12% 0;
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  }
+
+  h1 {
+    font-size: 100%;
+    color: #730E15;
+    line-height: 1.5em;
+  }
+
+  div.dialog > p {
+    margin: 0 0 1em;
+    padding: 1em;
+    background-color: #F7F7F7;
+    border: 1px solid #CCC;
+    border-right-color: #999;
+    border-left-color: #999;
+    border-bottom-color: #999;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-color: #DADADA;
+    color: #666;
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  }
+  </style>
+</head>
+
+<body>
+  <!-- This file lives in public/404.html -->
+  <div class="dialog">
+    <div>
+      <h1>The page you were looking for doesn't exist.</h1>
+      <p>You may have mistyped the address or the page may have moved.</p>
+    </div>
+    <p>If you are the application owner check the logs for more information.</p>
+  </div>
+</body>
+</html>
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1564  100  1564    0     0   2036      0 --:--:-- --:--:-- --:--:--  2036
+get result is: <!DOCTYPE html>
+<html>
+<head>
+  <title>The page you were looking for doesn't exist (404)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+  body {
+    background-color: #EFEFEF;
+    color: #2E2F30;
+    text-align: center;
+    font-family: arial, sans-serif;
+    margin: 0;
+  }
+
+  div.dialog {
+    width: 95%;
+    max-width: 33em;
+    margin: 4em auto 0;
+  }
+
+  div.dialog > div {
+    border: 1px solid #CCC;
+    border-right-color: #999;
+    border-left-color: #999;
+    border-bottom-color: #BBB;
+    border-top: #B00100 solid 4px;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+    background-color: white;
+    padding: 7px 12% 0;
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  }
+
+  h1 {
+    font-size: 100%;
+    color: #730E15;
+    line-height: 1.5em;
+  }
+
+  div.dialog > p {
+    margin: 0 0 1em;
+    padding: 1em;
+    background-color: #F7F7F7;
+    border: 1px solid #CCC;
+    border-right-color: #999;
+    border-left-color: #999;
+    border-bottom-color: #999;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-color: #DADADA;
+    color: #666;
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  }
+  </style>
+</head>
+
+<body>
+  <!-- This file lives in public/404.html -->
+  <div class="dialog">
+    <div>
+      <h1>The page you were looking for doesn't exist.</h1>
+      <p>You may have mistyped the address or the page may have moved.</p>
+    </div>
+    <p>If you are the application owner check the logs for more information.</p>
+  </div>
+</body>
+</html>
+new user count is: 
+Saved for file ./A_25_Rangel_Ivanov.txt is result: 
+
+Checking file is: ./A_20_Marina_Tihova.txt
+file content is: https://a-20-marina.herokuapp.com/
+curl_get is curl https://a-20-marina.herokuapp.com//visits?user=5
+curl_post is curl -X POST --data "user=5" https://a-20-marina.herokuapp.com//visits/
+Waking up instace
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    11    0    11    0     0      1      0 --:--:--  0:00:08 --:--:--     2
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100     6    0     0  100     6      0      6  0:00:01 --:--:--  0:00:01     6
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    11    0    11    0     0     12      0 --:--:-- --:--:-- --:--:--    11
+get result is: {"count":1}
+old count is: 1
+sending 2 POST requests
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100     6    0     0  100     6      0      7 --:--:-- --:--:-- --:--:--     7
+Result from post is: 
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100     6    0     0  100     6      0      7 --:--:-- --:--:-- --:--:--     7
+Result from post is: 
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    11    0    11    0     0     13      0 --:--:-- --:--:-- --:--:--    13
+get result is: {"count":3}
+new user count is: 3
+Saved for file ./A_20_Marina_Tihova.txt is result: 0
+
+Checking file is: ./A_07_Dimitar_Nikolov.txt
+file content is: https://lit-caverns-11719.herokuapp.com/
+curl_get is curl https://lit-caverns-11719.herokuapp.com//visits?user=3
+curl_post is curl -X POST --data "user=3" https://lit-caverns-11719.herokuapp.com//visits/
+Waking up instace
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    11    0    11    0     0      1      0 --:--:--  0:00:08 --:--:--     2
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    17    0    11  100     6     11      6  0:00:01 --:--:--  0:00:01    11
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    11    0    11    0     0     12      0 --:--:-- --:--:-- --:--:--    12
+get result is: {"count":6}
+old count is: 6
+sending 2 POST requests
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    17    0    11  100     6     14      7 --:--:-- --:--:-- --:--:--    14
+Result from post is: {"count":7}
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    17    0    11  100     6     12      6  0:00:01 --:--:--  0:00:01    12
+Result from post is: {"count":8}
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    11    0    11    0     0     12      0 --:--:-- --:--:-- --:--:--    12
+get result is: {"count":8}
+new user count is: 8
+Saved for file ./A_07_Dimitar_Nikolov.txt is result: 0
+
+Checking file is: ./A_29_Hristo_Spasov.txt
+file content is: https://morning-garden-12070.herokuapp.com/
+curl_get is curl https://morning-garden-12070.herokuapp.com//visits?user=2
+curl_post is curl -X POST --data "user=2" https://morning-garden-12070.herokuapp.com//visits/
+Waking up instace
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    11    0    11    0     0      0      0 --:--:--  0:00:13 --:--:--     3
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    17    0    11  100     6     26     14 --:--:-- --:--:-- --:--:--    26
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    11    0    11    0     0     26      0 --:--:-- --:--:-- --:--:--    26
+get result is: {"count":1}
+old count is: 1
+sending 3 POST requests
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    17    0    11  100     6     26     14 --:--:-- --:--:-- --:--:--    26
+Result from post is: {"count":2}
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    17    0    11  100     6     24     13 --:--:-- --:--:-- --:--:--    24
+Result from post is: {"count":3}
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    17    0    11  100     6     27     14 --:--:-- --:--:-- --:--:--    27
+Result from post is: {"count":4}
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    11    0    11    0     0     26      0 --:--:-- --:--:-- --:--:--    26
+get result is: {"count":4}
+new user count is: 4
+Saved for file ./A_29_Hristo_Spasov.txt is result: 0
+
+Checking file is: ./A_04_Boyan_Dimitrov.txt
+file content is: https://secure-reef-88885.herokuapp.com/
+curl_get is curl https://secure-reef-88885.herokuapp.com//visits?user=4
+curl_post is curl -X POST --data "user=4" https://secure-reef-88885.herokuapp.com//visits/
+Waking up instace
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1477  100  1477    0     0    145      0  0:00:10  0:00:10 --:--:--   451
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1483  100  1477  100     6   1825      7 --:--:-- --:--:-- --:--:--  1827
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1477  100  1477    0     0   1836      0 --:--:-- --:--:-- --:--:--  1834
+get result is: <!DOCTYPE html>
+<html>
+<head>
+  <title>We're sorry, but something went wrong (500)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+  body {
+    background-color: #EFEFEF;
+    color: #2E2F30;
+    text-align: center;
+    font-family: arial, sans-serif;
+    margin: 0;
+  }
+
+  div.dialog {
+    width: 95%;
+    max-width: 33em;
+    margin: 4em auto 0;
+  }
+
+  div.dialog > div {
+    border: 1px solid #CCC;
+    border-right-color: #999;
+    border-left-color: #999;
+    border-bottom-color: #BBB;
+    border-top: #B00100 solid 4px;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+    background-color: white;
+    padding: 7px 12% 0;
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  }
+
+  h1 {
+    font-size: 100%;
+    color: #730E15;
+    line-height: 1.5em;
+  }
+
+  div.dialog > p {
+    margin: 0 0 1em;
+    padding: 1em;
+    background-color: #F7F7F7;
+    border: 1px solid #CCC;
+    border-right-color: #999;
+    border-left-color: #999;
+    border-bottom-color: #999;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-color: #DADADA;
+    color: #666;
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  }
+  </style>
+</head>
+
+<body>
+  <!-- This file lives in public/500.html -->
+  <div class="dialog">
+    <div>
+      <h1>We're sorry, but something went wrong.</h1>
+    </div>
+    <p>If you are the application owner check the logs for more information.</p>
+  </div>
+</body>
+</html>
+old count is: 
+sending 2 POST requests
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1483  100  1477  100     6   1794      7 --:--:-- --:--:-- --:--:--  1794
+Result from post is: <!DOCTYPE html>
+<html>
+<head>
+  <title>We're sorry, but something went wrong (500)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+  body {
+    background-color: #EFEFEF;
+    color: #2E2F30;
+    text-align: center;
+    font-family: arial, sans-serif;
+    margin: 0;
+  }
+
+  div.dialog {
+    width: 95%;
+    max-width: 33em;
+    margin: 4em auto 0;
+  }
+
+  div.dialog > div {
+    border: 1px solid #CCC;
+    border-right-color: #999;
+    border-left-color: #999;
+    border-bottom-color: #BBB;
+    border-top: #B00100 solid 4px;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+    background-color: white;
+    padding: 7px 12% 0;
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  }
+
+  h1 {
+    font-size: 100%;
+    color: #730E15;
+    line-height: 1.5em;
+  }
+
+  div.dialog > p {
+    margin: 0 0 1em;
+    padding: 1em;
+    background-color: #F7F7F7;
+    border: 1px solid #CCC;
+    border-right-color: #999;
+    border-left-color: #999;
+    border-bottom-color: #999;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-color: #DADADA;
+    color: #666;
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  }
+  </style>
+</head>
+
+<body>
+  <!-- This file lives in public/500.html -->
+  <div class="dialog">
+    <div>
+      <h1>We're sorry, but something went wrong.</h1>
+    </div>
+    <p>If you are the application owner check the logs for more information.</p>
+  </div>
+</body>
+</html>
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1483  100  1477  100     6   1715      6  0:00:01 --:--:--  0:00:01  1715
+Result from post is: <!DOCTYPE html>
+<html>
+<head>
+  <title>We're sorry, but something went wrong (500)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+  body {
+    background-color: #EFEFEF;
+    color: #2E2F30;
+    text-align: center;
+    font-family: arial, sans-serif;
+    margin: 0;
+  }
+
+  div.dialog {
+    width: 95%;
+    max-width: 33em;
+    margin: 4em auto 0;
+  }
+
+  div.dialog > div {
+    border: 1px solid #CCC;
+    border-right-color: #999;
+    border-left-color: #999;
+    border-bottom-color: #BBB;
+    border-top: #B00100 solid 4px;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+    background-color: white;
+    padding: 7px 12% 0;
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  }
+
+  h1 {
+    font-size: 100%;
+    color: #730E15;
+    line-height: 1.5em;
+  }
+
+  div.dialog > p {
+    margin: 0 0 1em;
+    padding: 1em;
+    background-color: #F7F7F7;
+    border: 1px solid #CCC;
+    border-right-color: #999;
+    border-left-color: #999;
+    border-bottom-color: #999;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-color: #DADADA;
+    color: #666;
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  }
+  </style>
+</head>
+
+<body>
+  <!-- This file lives in public/500.html -->
+  <div class="dialog">
+    <div>
+      <h1>We're sorry, but something went wrong.</h1>
+    </div>
+    <p>If you are the application owner check the logs for more information.</p>
+  </div>
+</body>
+</html>
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1477  100  1477    0     0   1500      0 --:--:-- --:--:-- --:--:--  1499
+get result is: <!DOCTYPE html>
+<html>
+<head>
+  <title>We're sorry, but something went wrong (500)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+  body {
+    background-color: #EFEFEF;
+    color: #2E2F30;
+    text-align: center;
+    font-family: arial, sans-serif;
+    margin: 0;
+  }
+
+  div.dialog {
+    width: 95%;
+    max-width: 33em;
+    margin: 4em auto 0;
+  }
+
+  div.dialog > div {
+    border: 1px solid #CCC;
+    border-right-color: #999;
+    border-left-color: #999;
+    border-bottom-color: #BBB;
+    border-top: #B00100 solid 4px;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+    background-color: white;
+    padding: 7px 12% 0;
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  }
+
+  h1 {
+    font-size: 100%;
+    color: #730E15;
+    line-height: 1.5em;
+  }
+
+  div.dialog > p {
+    margin: 0 0 1em;
+    padding: 1em;
+    background-color: #F7F7F7;
+    border: 1px solid #CCC;
+    border-right-color: #999;
+    border-left-color: #999;
+    border-bottom-color: #999;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-color: #DADADA;
+    color: #666;
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  }
+  </style>
+</head>
+
+<body>
+  <!-- This file lives in public/500.html -->
+  <div class="dialog">
+    <div>
+      <h1>We're sorry, but something went wrong.</h1>
+    </div>
+    <p>If you are the application owner check the logs for more information.</p>
+  </div>
+</body>
+</html>
+new user count is: 
+Saved for file ./A_04_Boyan_Dimitrov.txt is result: 
+
+Checking file is: ./B_17_Lachezar_Mladenov.txt/B_17_Lachezar_Mladenov.txt
+file content is: https://peaceful-cove-24932.herokuapp.com/
+curl_get is curl https://peaceful-cove-24932.herokuapp.com//visits?user=1
+curl_post is curl -X POST --data "user=1" https://peaceful-cove-24932.herokuapp.com//visits/
+Waking up instace
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    11    0    11    0     0      0      0 --:--:--  0:00:11 --:--:--     2
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100     6    0     0  100     6      0      6  0:00:01 --:--:--  0:00:01     6
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    11  100    11    0     0     12      0 --:--:-- --:--:-- --:--:--    12
+get result is: {"count":1}
+old count is: 1
+sending 2 POST requests
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100     6    0     0  100     6      0      4  0:00:01  0:00:01 --:--:--     4
+Result from post is: 
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100     6    0     0  100     6      0      5  0:00:01  0:00:01 --:--:--     5
+Result from post is: 
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    11  100    11    0     0     12      0 --:--:-- --:--:-- --:--:--    12
+get result is: {"count":3}
+new user count is: 3
+Saved for file ./B_17_Lachezar_Mladenov.txt/B_17_Lachezar_Mladenov.txt is result: 0
+
+Checking file is: ./A_23_Nikolay_Stanishev.txt
+file content is: http://fast-wave-57639.herokuapp.com/
+curl_get is curl http://fast-wave-57639.herokuapp.com//visits?user=4
+curl_post is curl -X POST --data "user=4" http://fast-wave-57639.herokuapp.com//visits/
+Waking up instace
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    11    0    11    0     0      1      0 --:--:--  0:00:09 --:--:--     2
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100     6    0     0  100     6      0     17 --:--:-- --:--:-- --:--:--    17
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    11    0    11    0     0     41      0 --:--:-- --:--:-- --:--:--    41
+get result is: {"count":1}
+old count is: 1
+sending 2 POST requests
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100     6    0     0  100     6      0     20 --:--:-- --:--:-- --:--:--    20
+Result from post is: 
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100     6    0     0  100     6      0     22 --:--:-- --:--:-- --:--:--    22
+Result from post is: 
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    11    0    11    0     0     43      0 --:--:-- --:--:-- --:--:--    43
+get result is: {"count":3}
+new user count is: 3
+Saved for file ./A_23_Nikolay_Stanishev.txt is result: 0
+
+Checking file is: ./A_10_Iva_Zahova.txt
+file content is: visitsivatp.herokuapp.com
+curl_get is curl visitsivatp.herokuapp.com/visits?user=5
+curl_post is curl -X POST --data "user=5" visitsivatp.herokuapp.com/visits/
+Waking up instace
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    11    0    11    0     0      1      0 --:--:--  0:00:07 --:--:--     2
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   586    0   580  100     6   4132     42 --:--:-- --:--:-- --:--:--  4142
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    11    0    11    0     0     88      0 --:--:-- --:--:-- --:--:--    88
+get result is: {"count":6}
+old count is: 6
+sending 2 POST requests
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   586    0   580  100     6   4527     46 --:--:-- --:--:-- --:--:--  4566
+Result from post is: <!DOCTYPE html>
+<html>
+<head>
+  <title>Visits</title>
+  <link rel="stylesheet" media="all" href="/assets/application-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" data-turbolinks-track="true" />
+  <script src="/assets/application-32aca96fccef5b517f233b349393ff0335e17dd66d613cfc701f61bf0d230635.js" data-turbolinks-track="true"></script>
+  <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="DkQ3SIDVtgmhzGIE8YLv7XKSjfxQYrjUGaQQM962gNykaPkx30eIvAIoO9kqvhmbYYZBlNI6b8NvxdlV7T45LA==" />
+</head>
+<body>
+
+
+
+</body>
+</html>
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   586    0   580  100     6   4438     45 --:--:-- --:--:-- --:--:--  4461
+Result from post is: <!DOCTYPE html>
+<html>
+<head>
+  <title>Visits</title>
+  <link rel="stylesheet" media="all" href="/assets/application-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" data-turbolinks-track="true" />
+  <script src="/assets/application-32aca96fccef5b517f233b349393ff0335e17dd66d613cfc701f61bf0d230635.js" data-turbolinks-track="true"></script>
+  <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="ZczUvGNZeLP+pw/2O2Hh+ksma2uADtXlmefUm4cVksl7LZgtvnV6d16C2v+uhANHEy0cqSSC7I0c9r1BH/S6/g==" />
+</head>
+<body>
+
+
+
+</body>
+</html>
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    11    0    11    0     0     91      0 --:--:-- --:--:-- --:--:--    91
+get result is: {"count":8}
+new user count is: 8
+Saved for file ./A_10_Iva_Zahova.txt is result: 0
+
+Checking file is: ./A_08_Evga_Dobreva.txt
+file content is: https://ancient-lowlands-86044.herokuapp.com/
+curl_get is curl https://ancient-lowlands-86044.herokuapp.com//visits?user=7
+curl_post is curl -X POST --data "user=7" https://ancient-lowlands-86044.herokuapp.com//visits/
+Waking up instace
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1477  100  1477    0     0    145      0  0:00:10  0:00:10 --:--:--   341
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1483  100  1477  100     6   1746      7 --:--:-- --:--:-- --:--:--  1745
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1477  100  1477    0     0   1595      0 --:--:-- --:--:-- --:--:--  1595
+get result is: <!DOCTYPE html>
+<html>
+<head>
+  <title>We're sorry, but something went wrong (500)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+  body {
+    background-color: #EFEFEF;
+    color: #2E2F30;
+    text-align: center;
+    font-family: arial, sans-serif;
+    margin: 0;
+  }
+
+  div.dialog {
+    width: 95%;
+    max-width: 33em;
+    margin: 4em auto 0;
+  }
+
+  div.dialog > div {
+    border: 1px solid #CCC;
+    border-right-color: #999;
+    border-left-color: #999;
+    border-bottom-color: #BBB;
+    border-top: #B00100 solid 4px;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+    background-color: white;
+    padding: 7px 12% 0;
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  }
+
+  h1 {
+    font-size: 100%;
+    color: #730E15;
+    line-height: 1.5em;
+  }
+
+  div.dialog > p {
+    margin: 0 0 1em;
+    padding: 1em;
+    background-color: #F7F7F7;
+    border: 1px solid #CCC;
+    border-right-color: #999;
+    border-left-color: #999;
+    border-bottom-color: #999;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-color: #DADADA;
+    color: #666;
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  }
+  </style>
+</head>
+
+<body>
+  <!-- This file lives in public/500.html -->
+  <div class="dialog">
+    <div>
+      <h1>We're sorry, but something went wrong.</h1>
+    </div>
+    <p>If you are the application owner check the logs for more information.</p>
+  </div>
+</body>
+</html>
+old count is: 
+sending 2 POST requests
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1483  100  1477  100     6   1681      6  0:00:01 --:--:--  0:00:01  1680
+Result from post is: <!DOCTYPE html>
+<html>
+<head>
+  <title>We're sorry, but something went wrong (500)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+  body {
+    background-color: #EFEFEF;
+    color: #2E2F30;
+    text-align: center;
+    font-family: arial, sans-serif;
+    margin: 0;
+  }
+
+  div.dialog {
+    width: 95%;
+    max-width: 33em;
+    margin: 4em auto 0;
+  }
+
+  div.dialog > div {
+    border: 1px solid #CCC;
+    border-right-color: #999;
+    border-left-color: #999;
+    border-bottom-color: #BBB;
+    border-top: #B00100 solid 4px;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+    background-color: white;
+    padding: 7px 12% 0;
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  }
+
+  h1 {
+    font-size: 100%;
+    color: #730E15;
+    line-height: 1.5em;
+  }
+
+  div.dialog > p {
+    margin: 0 0 1em;
+    padding: 1em;
+    background-color: #F7F7F7;
+    border: 1px solid #CCC;
+    border-right-color: #999;
+    border-left-color: #999;
+    border-bottom-color: #999;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-color: #DADADA;
+    color: #666;
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  }
+  </style>
+</head>
+
+<body>
+  <!-- This file lives in public/500.html -->
+  <div class="dialog">
+    <div>
+      <h1>We're sorry, but something went wrong.</h1>
+    </div>
+    <p>If you are the application owner check the logs for more information.</p>
+  </div>
+</body>
+</html>
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1483  100  1477  100     6   1478      6  0:00:01 --:--:--  0:00:01  1478
+Result from post is: <!DOCTYPE html>
+<html>
+<head>
+  <title>We're sorry, but something went wrong (500)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+  body {
+    background-color: #EFEFEF;
+    color: #2E2F30;
+    text-align: center;
+    font-family: arial, sans-serif;
+    margin: 0;
+  }
+
+  div.dialog {
+    width: 95%;
+    max-width: 33em;
+    margin: 4em auto 0;
+  }
+
+  div.dialog > div {
+    border: 1px solid #CCC;
+    border-right-color: #999;
+    border-left-color: #999;
+    border-bottom-color: #BBB;
+    border-top: #B00100 solid 4px;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+    background-color: white;
+    padding: 7px 12% 0;
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  }
+
+  h1 {
+    font-size: 100%;
+    color: #730E15;
+    line-height: 1.5em;
+  }
+
+  div.dialog > p {
+    margin: 0 0 1em;
+    padding: 1em;
+    background-color: #F7F7F7;
+    border: 1px solid #CCC;
+    border-right-color: #999;
+    border-left-color: #999;
+    border-bottom-color: #999;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-color: #DADADA;
+    color: #666;
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  }
+  </style>
+</head>
+
+<body>
+  <!-- This file lives in public/500.html -->
+  <div class="dialog">
+    <div>
+      <h1>We're sorry, but something went wrong.</h1>
+    </div>
+    <p>If you are the application owner check the logs for more information.</p>
+  </div>
+</body>
+</html>
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1477  100  1477    0     0   1496      0 --:--:-- --:--:-- --:--:--  1496
+get result is: <!DOCTYPE html>
+<html>
+<head>
+  <title>We're sorry, but something went wrong (500)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+  body {
+    background-color: #EFEFEF;
+    color: #2E2F30;
+    text-align: center;
+    font-family: arial, sans-serif;
+    margin: 0;
+  }
+
+  div.dialog {
+    width: 95%;
+    max-width: 33em;
+    margin: 4em auto 0;
+  }
+
+  div.dialog > div {
+    border: 1px solid #CCC;
+    border-right-color: #999;
+    border-left-color: #999;
+    border-bottom-color: #BBB;
+    border-top: #B00100 solid 4px;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+    background-color: white;
+    padding: 7px 12% 0;
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  }
+
+  h1 {
+    font-size: 100%;
+    color: #730E15;
+    line-height: 1.5em;
+  }
+
+  div.dialog > p {
+    margin: 0 0 1em;
+    padding: 1em;
+    background-color: #F7F7F7;
+    border: 1px solid #CCC;
+    border-right-color: #999;
+    border-left-color: #999;
+    border-bottom-color: #999;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-color: #DADADA;
+    color: #666;
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  }
+  </style>
+</head>
+
+<body>
+  <!-- This file lives in public/500.html -->
+  <div class="dialog">
+    <div>
+      <h1>We're sorry, but something went wrong.</h1>
+    </div>
+    <p>If you are the application owner check the logs for more information.</p>
+  </div>
+</body>
+</html>
+new user count is: 
+Saved for file ./A_08_Evga_Dobreva.txt is result: 
+
+Checking file is: ./A_11_Ivan_Milev.txt
+file content is: https://imilev.herokuapp.com/
+curl_get is curl https://imilev.herokuapp.com//visits?user=5
+curl_post is curl -X POST --data "user=5" https://imilev.herokuapp.com//visits/
+Waking up instace
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    12    0    12    0     0      1      0 --:--:--  0:00:09 --:--:--     2
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100     6    0     0  100     6      0      6  0:00:01 --:--:--  0:00:01     6
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    12    0    12    0     0     11      0 --:--:--  0:00:01 --:--:--    11
+get result is: {"count":80}
+old count is: 80
+sending 3 POST requests
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100     6    0     0  100     6      0      6  0:00:01 --:--:--  0:00:01     6
+Result from post is: 
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100     6    0     0  100     6      0      6  0:00:01 --:--:--  0:00:01     6
+Result from post is: 
+sending post
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100     6    0     0  100     6      0      6  0:00:01 --:--:--  0:00:01     6
+Result from post is: 
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    12    0    12    0     0     11      0 --:--:--  0:00:01 --:--:--    11
+get result is: {"count":83}
+new user count is: 83
+Saved for file ./A_11_Ivan_Milev.txt is result: 0
+A_06_Georgi_Karaboichev.txt,1
+B_24_Slav_Kirilov.txt,1
+A_18_Lilian_Vachkov.txt,0
+B_08_Vladimir_Mladenov.txt,1
+B_22_Nikolai_Romanov.txt,0
+B_09_Georgi_Nizamski.txt,1
+A_26_Stiliyan_Hristov.txt,0
+A_14_Ivo_Todorov.txt,1
+B_21_Nikola_Tzotchev.txt,1
+A_02_Blagovest_Mihailov.txt,1
+B_16_Ivan_Trifonov.txt,0
+B_12_Daniel_Raykov.txt,0
+A_25_Rangel_Ivanov.txt,0
+A_20_Marina_Tihova.txt,1
+A_07_Dimitar_Nikolov.txt,1
+A_29_Hristo_Spasov.txt,1
+A_04_Boyan_Dimitrov.txt,0
+B_17_Lachezar_Mladenov.txt,1
+A_23_Nikolay_Stanishev.txt,1
+A_10_Iva_Zahova.txt,1
+A_08_Evga_Dobreva.txt,0
+A_11_Ivan_Milev.txt,1

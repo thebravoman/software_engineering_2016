@@ -1,14 +1,11 @@
-const express = require('express');
-const path = require('path');
-const logger = require('morgan');
-const cookieParser = require('cookie-parser');
-const bodyParser = require('body-parser');
-const http = require('http');
-const port = 8122;
-
-const routes = require('./routes/index');
-
-const app = express();
+var express = require('express');
+var path = require('path');
+var favicon = require('serve-favicon');
+var logger = require('morgan');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
+var routes = require('./routes/index');
+var app = express();
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -24,7 +21,6 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-http.createServer(app).listen(port, function(){
-	console.log('Express server listening on port 8122');
+app.listen(8122, function(){
+  console.log('Express server listening on port 8122');
 });
-

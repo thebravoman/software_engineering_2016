@@ -1,162 +1,146 @@
-const models = require('../model/character.js');
+var assign = require('lodash/assign')
+var models = require('../model/character.js')
+var Character = models.Character
 
-const Character = models.Character;
+var port = 8122
 
 exports.provideList = function(response) {
-	Character.find({}, function(error, result) {
-		if (error) {
-			console.error(error);
-			return null;
-		}
-		if (result != null) {
-			response.json(result);
-		}
-	});
+    Character.find({}, function(error, result) {
+        if (error) {
+            return null
+        }
+        if (result != null) {
+            response.json(result)
+        }
+    })
+}
 
-};
+exports.queryData = function(request, response) {
+    var searchQuery = assign(request.params, request.query)
 
-exports.queryData = function(headers, queryType, response) {
-	let searchTerms = {type: queryType};
-	searchTerms = require('util')._extend(searchTerms, headers);
-	console.log(searchTerms);
-	Character.find(searchTerms, function(error, result) {
-		if (error) {
-			console.error(error);
-			return null;
-		}
-		if (result != null) {
-			response.writeHead(200, {
-				'Content-Type':'application/json',
-				'Image-Url':'http://localhost:8122/'+ queryType + '/image'});
-			response.end(JSON.stringify(result));
-		}
-	});
-};
+    Character.find(searchQuery, function(error, result) {
+        if (error) {
+            response.send('500', 'Internal Server Error')
+            return
+        }
+        if (result.length > 0) {
+            response.writeHead(200, {
+                'Content-Type': 'aplication/json',
+                'Image-Url': 'http://localhost:' + port + '/' + request.params.type + '/image'
+            })
+            response.end(JSON.stringify(result))
+        } else {
+            response.send('404', 'Data not found')
+        }
+    })
+}
 
 exports.saveCharacter = function(request, response) {
-	let character = toCharacter(request.body);
-	console.log(character);
-	Character.findOne({firstname : character.firstname}, function(error, result) {
-		if (error) {
-			console.log(error);
-			response.writeHead(500, {
-				'Content-Type' : 'text/plain'
-			});
-			response.end('Internal Server Error');
-			return
-		}
-		else {
-			if (!result) {
-				console.log('Character does not exist. Create new one');
-				character.save(function(error) {
-					if (!error) {
-						response.json(request.body);
-					} 
-					else {
-						response.writeHead(500, {'Content-Type' : 'text/plain'});
-						console.log("Failure saving new character");
-						response.end('Internal Server Error');
-					}
-				});
-			}
-			else {
-				console.log('Character already exists will be updated');
-				result.firstname = character.firstname;
-				result.lastname = character.lastname;
-				result.type = character.type;
-				result.imageUrl = character.imageUrl;
-				result.strength = character.strength;
-				result.save(function(error) {
-					if (!error) {
-						response.json(request.body);
-					} 
-					else {
-						response.writeHead(500, {'Content-Type' : 'text/plain'});
-						console.log("Failure updating character");
-						response.end('Internal Server Error');
-					}
-				});
-			}
-		}
-	});
-};
+    var character = toCharacter(request.body)
+    character.save(function(error) {
+        if (!error) {
+            response.writeHead(201, {
+                'Content-Type': 'aplication/json'
+            })
+            response.end(JSON.stringify(request.body))
+        } else {
+            Character.findOne(
+                    {
+                        firstname: character.firstname
+                    },
+                    function(error, result) {
+                        if (error) {
+                            response.writeHead(500, {
+                                'Content-Type': 'text/plain'
+                            })
+                            response.end('Internal Server Error')
+                        } else {
+                            if (!result) {
+                                character.save()
+                                response.writeHead(201, {
+                                    'Content-Type': 'application/json'
+                                })
+                                response.end(JSON.stringify(request.body))
+                            } else {
+                                result.firstname = character.firstname
+                                result.lastname = character.lastname
+                                result.strength = character.strength
+                                result.type = character.type
+                                result.imageUrl = character.imageUrl
+                                result.save()
+                                response.json(request.body)
+                            }
+                        }
+                    }
+                )
+        }
+    })
+}
 
 exports.saveImage = function(request, response) {
-	console.log("Creating write stream for type " + request.params.type);
-	var writeStream = models.Grid.createWriteStream({
-		_id : request.params.type,
-		filename : request.params.type + ".jpg",
-		mode : 'w'
-	});
-	
-	writeStream.on('error', function(error) {
-		response.send('500', 'Internal Server Error');
-		console.log('error write');
-		return;
-	})
-	
-	writeStream.on('close', function() {
-		var readStream = models.Grid.createReadStream({
-			_id : request.params.type,
-			filename : request.params.type + ".jpg",
-			mode : 'r'
-		});
-		
-		readStream.on('error', function(error) {
-			console.log('error read');
-			console.log(error);
-			response.send('500', 'Internal Server Error');
-			return;
-		});
-		
-		response.writeHead(200, {'Content-Type' : 'image/jpeg'});
-		readStream.pipe(response);
-	});
-	
-	request.pipe(writeStream);
+    var writeStream = models.Grid.createWriteStream({
+        filename: request.params.type,
+        mode: 'w'
+    })
 
-};
+    writeStream.on('error', function(error) {
+        response.send('500', 'Internal Server Error')
+        return
+    })
+
+    writeStream.on('close', function() {
+        var readStream = models.Grid.createReadStream({
+            filename: request.params.type,
+            mode: 'r'
+        })
+
+        response.on('error', function(error) {
+            response.send('500', 'Internal Server Error')
+            return
+        })
+
+        response.writeHead(200, {
+            'Content-Type': 'image/jpeg'
+        })
+        readStream.pipe(response)
+    })
+
+    request.pipe(writeStream)
+}
 
 exports.getImage = function(request, response) {
-	console.log(request.params.type);
-	models.Grid.exist({
-			filename : request.params.type + ".jpg"
-		}, function(err, found) {
-		if (err) {
-			response.writeHead(500, {'Content-Type' : 'text/plain'});
-			console.log("Failure checking if image exists");
-			response.end('Internal Server Error');
-		}
-		if (!found) {
-			response.writeHead(404, {'Content-Type' : 'text/plain'});
-			console.log("Image not found");
-			response.end('Image not found');
-		}
-		else {
-			var readStream = models.Grid.createReadStream({
-				_id : request.params.type,
-				filename : request.params.type + ".jpg",
-				mode : 'r'
-			});
-			readStream.on('error', function(error) {
-				console.log('error read');
-				console.log(error);
-				response.send('500', 'Internal Server Error');
-				return;
-			});
-			response.writeHead(200, {'Content-Type' : 'image/jpeg'});
-			readStream.pipe(response);
-		}
-	});
-};
+    var options = {
+        filename: request.params.type,
+        mode: 'r'
+    }
+
+    models.Grid.exist(options, function (err, found) {
+        if (err) {
+            response.send('500', 'Internal Server Error')
+            return
+        }
+        if (found) {
+            var readStream = models.Grid.createReadStream(options)
+
+            readStream.on('error', function(error) {
+                response.send('500', 'Internal Server Error')
+                return
+            })
+
+            response.writeHead(200, {'Content-Type' : 'image/jpeg'})
+            readStream.pipe(response)
+        } else {
+            response.status(404).end()
+        }
+    })
+}
 
 function toCharacter(characterObject) {
-	return new Character({
-		firstname : characterObject.firstname,
-		lastname : characterObject.lastname,
-		strength : characterObject.strength,
-		imageUrl : 'http://localhost:8122/' + characterObject.type + '/image',
-		type : characterObject.type
-
-	});
+    return new Character({
+        firstname: characterObject.firstname,
+        lastname: characterObject.lastname,
+        strength: characterObject.strength,
+        imageUrl: characterObject.imageUrl,
+        type: characterObject.type
+    })
 }

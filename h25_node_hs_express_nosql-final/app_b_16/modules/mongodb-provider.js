@@ -21,8 +21,8 @@ exports.provideList = function(response) {
 };
 
 
-exports.queryData = function(headers, ReqQuery, response) {
-	console.log(ReqQuery);
+exports.queryData = function(headers, ReqQuery, response,type) {
+	ReqQuery['type'] = type ;
 	Character.find(ReqQuery, function(error, result) {
 		if (error) {
 			console.error(error);
@@ -31,7 +31,7 @@ exports.queryData = function(headers, ReqQuery, response) {
 		if (result != null) {
 			response.writeHead(200, {
 				'Content-Type':'application/json',
-				'Image-Url':'http://localhost:3000/'+ ReqQuery.type + '/image'});
+				'Image-Url':'http://localhost:8216/'+ ReqQuery.type + '/image'});
 			response.end(JSON.stringify(result));
 		}
 		
@@ -93,8 +93,7 @@ exports.saveImage = function(request, response) {
 	
 	
 	var writeStream = models.Grid.createWriteStream({
-		_id : request.params.type,
-		filename : 'image',
+		filename: request.params.type,
 		mode : 'w'
 	});
 	
@@ -106,8 +105,7 @@ exports.saveImage = function(request, response) {
 	
 	writeStream.on('close', function() {
 		var readStream = models.Grid.createReadStream({
-			_id : request.params.type,
-			filename : 'image',
+			filename : request.params.type,
 			mode : 'r'
 		});
 		
@@ -127,14 +125,13 @@ exports.saveImage = function(request, response) {
 };
 
 exports.getImage = function(request, response) {
-	models.Grid.exist({_id : request.params.type}, function(error, found) {
+	models.Grid.exist({filename : request.params.type}, function(error, found) {
         if (error) {
             response.send('500', 'Internal Server Error');
             return;
         } else if(found) {
             var readStream = models.Grid.createReadStream({
-                _id : request.params.type,
-                filename : 'image',
+                filename : request.params.type,
                 mode : 'r'
             });
 

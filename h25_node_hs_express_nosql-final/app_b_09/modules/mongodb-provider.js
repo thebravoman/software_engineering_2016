@@ -1,7 +1,3 @@
-/**
- * New node file
- */
-
 var models = require('../model/character.js');
 
 var Character = models.Character;
@@ -21,8 +17,8 @@ exports.provideList = function(response) {
 };
 
 
-exports.queryData = function(headers, ReqQuery, response) {
-	console.log(ReqQuery);
+exports.queryData = function(headers, ReqQuery, SearchType, response) {
+	ReqQuery.type = SearchType;
 	Character.find(ReqQuery, function(error, result) {
 		if (error) {
 			console.error(error);
@@ -93,8 +89,7 @@ exports.saveImage = function(request, response) {
 	
 	
 	var writeStream = models.Grid.createWriteStream({
-		_id : request.params.type,
-		filename : 'image',
+		filename : request.params.type,
 		mode : 'w'
 	});
 	
@@ -106,8 +101,7 @@ exports.saveImage = function(request, response) {
 	
 	writeStream.on('close', function() {
 		var readStream = models.Grid.createReadStream({
-			_id : request.params.type,
-			filename : 'image',
+			filename : request.params.type,
 			mode : 'r'
 		});
 		
@@ -127,14 +121,13 @@ exports.saveImage = function(request, response) {
 };
 
 exports.getImage = function(request, response) {
-	models.Grid.exist({_id : request.params.type}, function(error, found) {
+	models.Grid.exist({filename : request.params.type}, function(error, found) {
         if (error) {
             response.send('500', 'Internal Server Error');
             return;
         } else if(found) {
             var readStream = models.Grid.createReadStream({
-                _id : request.params.type,
-                filename : 'image',
+                filename : request.params.type,
                 mode : 'r'
             });
 
@@ -148,7 +141,7 @@ exports.getImage = function(request, response) {
             response.writeHead(200, {'Content-Type' : 'image/jpeg'});
             readStream.pipe(response);
 		} else {
-            response.writeHead(404);
+            response.writeHead(404, {'Content-Type' : 'text/plain'});
             response.end('Image for this type, NOT FOUND');
             return;
 		}

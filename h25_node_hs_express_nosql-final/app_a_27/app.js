@@ -10,8 +10,8 @@ var routes = require('./routes/index');
 
 var app = express();
 
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+//app.set('views', path.join(__dirname, 'views'));
+//app.set('view engine', 'jade');
 
 app.use(logger('dev'));
 app.use(bodyParser.json({limit: '1mb'}));
