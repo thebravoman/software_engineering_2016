@@ -22,7 +22,7 @@ exports.queryData = function(headers, queryType, response)
 	let searchTerms = {type: queryType};
 	searchTerms = require('util')._extend(searchTerms, headers);
 
-	Character.find({searchTerms, function(error, result)
+	Character.find(searchTerms, function(error, result)
 	{
 		if (error) 
 		{
@@ -41,6 +41,7 @@ exports.queryData = function(headers, queryType, response)
             		});
 			response.end(JSON.stringify(result));
 		}
+	
 	});
 }
 
