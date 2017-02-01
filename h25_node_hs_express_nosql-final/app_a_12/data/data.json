@@ -1,0 +1,25 @@
+{
+   "characters":[
+      {
+         "firstname":"Dark",
+         "lastname":"Troll",
+         "type":"troll"
+      },
+      {
+    	  "firstname":"Queen",
+    	  "lastname":"Mab",
+    	  "type":"witch"
+      },
+      {
+    	  "firstname":"Mariika",
+    	  "lastname":"Atanasova",
+    	  "type":"witch"
+      },
+      {
+    	  "firstname":"jorko",
+    	  "lastname":"karaboichev",
+    	  "type":"troll"
+      }
+   
+   ]
+}

@@ -1,0 +1,28 @@
+{
+   "characters":[
+      {
+         "firstname":"Troll",
+         "lastname":"One",
+         "type":"troll",
+         "strength": "50"
+      },
+      {
+         "firstname":"Troll",
+         "lastname":"Two",
+         "type":"troll",
+         "strength":"100"
+      },
+      {
+         "firstname":"Troll",
+         "lastname":"Three",
+         "type":"troll",
+         "strength":"75"
+      },
+      {
+    	  "firstname":"Witch",
+    	  "lastname":"One",
+    	  "type": "witch",
+    	  "strength":"50"
+      }
+   ]
+}

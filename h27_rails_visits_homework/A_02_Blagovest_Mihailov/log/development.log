@@ -1,0 +1,624 @@
+Started GET "/visits" for 127.0.0.1 at 2017-01-28 17:27:02 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/visits"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (20.7ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (10.2ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (67.6ms)
+Started GET "/visits" for 127.0.0.1 at 2017-01-28 17:28:05 +0200
+Processing by VisitsController#index as HTML
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant VisitsController::Visit):
+  
+app/controllers/visits_controller.rb:4:in `index'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.2ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.0ms)
+Started GET "/visits" for 127.0.0.1 at 2017-01-28 17:31:14 +0200
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.1) lib/active_record/migration.rb:573:in `check_pending!'
+activerecord (5.0.1) lib/active_record/migration.rb:549:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.2ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (24.2ms)
+  [1m[35m (108.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (91.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2234176694788494645);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateVisits (20170128153102)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (39.1ms)[0m  [1m[35mCREATE TABLE "visits" ("id" serial primary key, "user" integer, "count" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170128153102"]]
+  [1m[35m (15.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-01-28 15:31:38 UTC], ["updated_at", 2017-01-28 15:31:38 UTC]]
+  [1m[35m (18.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2234176694788494645)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/visits" for 127.0.0.1 at 2017-01-28 17:31:53 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by VisitsController#index as HTML
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 23ms (Views: 0.3ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/visits/" for 127.0.0.1 at 2017-01-28 17:33:31 +0200
+Processing by VisitsController#create as */*
+  Parameters: {"user"=>"5"}
+  [1m[36mVisit Load (0.5ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "visits" ("user", "count", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user", 5], ["count", 1], ["created_at", 2017-01-28 15:33:31 UTC], ["updated_at", 2017-01-28 15:33:31 UTC]]
+  [1m[35m (33.8ms)[0m  [1m[35mCOMMIT[0m
+No template found for VisitsController#create, rendering head :no_content
+Completed 204 No Content in 66ms (ActiveRecord: 35.3ms)
+
+
+Started POST "/visits/" for 127.0.0.1 at 2017-01-28 17:33:33 +0200
+Processing by VisitsController#create as */*
+  Parameters: {"user"=>"5"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 2], ["updated_at", 2017-01-28 15:33:33 UTC], ["id", 1]]
+  [1m[35m (33.6ms)[0m  [1m[35mCOMMIT[0m
+No template found for VisitsController#create, rendering head :no_content
+Completed 204 No Content in 54ms (ActiveRecord: 34.5ms)
+
+
+Started POST "/visits/" for 127.0.0.1 at 2017-01-28 17:33:34 +0200
+Processing by VisitsController#create as */*
+  Parameters: {"user"=>"5"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 3], ["updated_at", 2017-01-28 15:33:34 UTC], ["id", 1]]
+  [1m[35m (30.6ms)[0m  [1m[35mCOMMIT[0m
+No template found for VisitsController#create, rendering head :no_content
+Completed 204 No Content in 56ms (ActiveRecord: 31.2ms)
+
+
+Started POST "/visits/" for 127.0.0.1 at 2017-01-28 17:33:35 +0200
+Processing by VisitsController#create as */*
+  Parameters: {"user"=>"5"}
+  [1m[36mVisit Load (0.2ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 4], ["updated_at", 2017-01-28 15:33:35 UTC], ["id", 1]]
+  [1m[35m (33.1ms)[0m  [1m[35mCOMMIT[0m
+No template found for VisitsController#create, rendering head :no_content
+Completed 204 No Content in 63ms (ActiveRecord: 33.6ms)
+
+
+Started POST "/visits/" for 127.0.0.1 at 2017-01-28 17:33:36 +0200
+Processing by VisitsController#create as */*
+  Parameters: {"user"=>"5"}
+  [1m[36mVisit Load (0.6ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 5], ["updated_at", 2017-01-28 15:33:36 UTC], ["id", 1]]
+  [1m[35m (32.9ms)[0m  [1m[35mCOMMIT[0m
+No template found for VisitsController#create, rendering head :no_content
+Completed 204 No Content in 60ms (ActiveRecord: 34.1ms)
+
+
+Started GET "/visits?user=5" for 127.0.0.1 at 2017-01-28 17:33:52 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"5"}
+  [1m[36mVisit Load (0.5ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", 5], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (334.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "project1_development"[0m
+  [1m[35m (223.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "project1_test"[0m
+Started GET "/visits?user=5" for 127.0.0.1 at 2017-01-28 17:34:50 +0200
+  
+ActiveRecord::NoDatabaseError (FATAL:  database "project1_development" does not exist
+):
+  
+activerecord (5.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:675:in `rescue in connect'
+activerecord (5.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `connect'
+activerecord (5.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:217:in `initialize'
+activerecord (5.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `new'
+activerecord (5.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+activerecord (5.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:729:in `new_connection'
+activerecord (5.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:773:in `checkout_new_connection'
+activerecord (5.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:752:in `try_to_checkout_new_connection'
+activerecord (5.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:713:in `acquire_connection'
+activerecord (5.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:490:in `checkout'
+activerecord (5.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:364:in `connection'
+activerecord (5.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:883:in `retrieve_connection'
+activerecord (5.0.1) lib/active_record/connection_handling.rb:128:in `retrieve_connection'
+activerecord (5.0.1) lib/active_record/connection_handling.rb:91:in `connection'
+activerecord (5.0.1) lib/active_record/migration.rb:559:in `connection'
+activerecord (5.0.1) lib/active_record/migration.rb:546:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.6ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (29.5ms)
+Started GET "/visits" for 127.0.0.1 at 2017-01-28 17:35:14 +0200
+  
+ActiveRecord::NoDatabaseError (FATAL:  database "project1_development" does not exist
+):
+  
+activerecord (5.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:675:in `rescue in connect'
+activerecord (5.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `connect'
+activerecord (5.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:217:in `initialize'
+activerecord (5.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `new'
+activerecord (5.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+activerecord (5.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:729:in `new_connection'
+activerecord (5.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:773:in `checkout_new_connection'
+activerecord (5.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:752:in `try_to_checkout_new_connection'
+activerecord (5.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:713:in `acquire_connection'
+activerecord (5.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:490:in `checkout'
+activerecord (5.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:364:in `connection'
+activerecord (5.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:883:in `retrieve_connection'
+activerecord (5.0.1) lib/active_record/connection_handling.rb:128:in `retrieve_connection'
+activerecord (5.0.1) lib/active_record/connection_handling.rb:91:in `connection'
+activerecord (5.0.1) lib/active_record/migration.rb:559:in `connection'
+activerecord (5.0.1) lib/active_record/migration.rb:546:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.2ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.4ms)
+Started GET "/visits" for 127.0.0.1 at 2017-01-28 17:36:46 +0200
+  
+ActiveRecord::NoDatabaseError (FATAL:  database "project1_development" does not exist
+):
+  
+activerecord (5.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:675:in `rescue in connect'
+activerecord (5.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `connect'
+activerecord (5.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:217:in `initialize'
+activerecord (5.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `new'
+activerecord (5.0.1) lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+activerecord (5.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:729:in `new_connection'
+activerecord (5.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:773:in `checkout_new_connection'
+activerecord (5.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:752:in `try_to_checkout_new_connection'
+activerecord (5.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:713:in `acquire_connection'
+activerecord (5.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:490:in `checkout'
+activerecord (5.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:364:in `connection'
+activerecord (5.0.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:883:in `retrieve_connection'
+activerecord (5.0.1) lib/active_record/connection_handling.rb:128:in `retrieve_connection'
+activerecord (5.0.1) lib/active_record/connection_handling.rb:91:in `connection'
+activerecord (5.0.1) lib/active_record/migration.rb:559:in `connection'
+activerecord (5.0.1) lib/active_record/migration.rb:546:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.5ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (21.5ms)
+Started GET "/visits" for 127.0.0.1 at 2017-01-28 17:37:45 +0200
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.1) lib/active_record/migration.rb:573:in `check_pending!'
+activerecord (5.0.1) lib/active_record/migration.rb:549:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (25.1ms)
+  [1m[35m (110.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (82.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2234176694788494645);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateVisits (20170128153102)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (34.7ms)[0m  [1m[35mCREATE TABLE "visits" ("id" serial primary key, "user" integer, "count" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170128153102"]]
+  [1m[35m (20.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-01-28 15:38:15 UTC], ["updated_at", 2017-01-28 15:38:15 UTC]]
+  [1m[35m (13.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2234176694788494645)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/visits" for 127.0.0.1 at 2017-01-28 17:38:33 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by VisitsController#index as HTML
+  [1m[36mVisit Load (0.5ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 26ms (Views: 0.3ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-01-28 18:29:38 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by VisitsController#index as HTML
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 26ms (Views: 0.3ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/visits" for 127.0.0.1 at 2017-01-28 18:29:46 +0200
+Processing by VisitsController#index as HTML
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits@user=9" for 127.0.0.1 at 2017-01-28 18:31:00 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/visits@user=9"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered collection of /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [3 times] (22.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (8.5ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (76.9ms)
+Started GET "/visits?user=9" for 127.0.0.1 at 2017-01-28 18:31:16 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"9"}
+  [1m[36mVisit Load (0.5ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", 9], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/visits?user=5" for 127.0.0.1 at 2017-01-28 18:31:31 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"5"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", 5], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/visits/" for 127.0.0.1 at 2017-01-28 18:31:37 +0200
+Processing by VisitsController#create as */*
+  Parameters: {"user"=>"5"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "visits" ("user", "count", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user", 5], ["count", 1], ["created_at", 2017-01-28 16:31:37 UTC], ["updated_at", 2017-01-28 16:31:37 UTC]]
+  [1m[35m (19.9ms)[0m  [1m[35mCOMMIT[0m
+No template found for VisitsController#create, rendering head :no_content
+Completed 204 No Content in 49ms (ActiveRecord: 21.2ms)
+
+
+Started POST "/visits/" for 127.0.0.1 at 2017-01-28 18:31:38 +0200
+Processing by VisitsController#create as */*
+  Parameters: {"user"=>"5"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 2], ["updated_at", 2017-01-28 16:31:38 UTC], ["id", 1]]
+  [1m[35m (34.8ms)[0m  [1m[35mCOMMIT[0m
+No template found for VisitsController#create, rendering head :no_content
+Completed 204 No Content in 63ms (ActiveRecord: 35.4ms)
+
+
+Started POST "/visits/" for 127.0.0.1 at 2017-01-28 18:31:38 +0200
+Processing by VisitsController#create as */*
+  Parameters: {"user"=>"5"}
+  [1m[36mVisit Load (0.5ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 3], ["updated_at", 2017-01-28 16:31:38 UTC], ["id", 1]]
+  [1m[35m (36.5ms)[0m  [1m[35mCOMMIT[0m
+No template found for VisitsController#create, rendering head :no_content
+Completed 204 No Content in 65ms (ActiveRecord: 37.3ms)
+
+
+Started POST "/visits/" for 127.0.0.1 at 2017-01-28 18:31:39 +0200
+Processing by VisitsController#create as */*
+  Parameters: {"user"=>"5"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "visits" SET "count" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["count", 4], ["updated_at", 2017-01-28 16:31:39 UTC], ["id", 1]]
+  [1m[35m (32.2ms)[0m  [1m[35mCOMMIT[0m
+No template found for VisitsController#create, rendering head :no_content
+Completed 204 No Content in 56ms (ActiveRecord: 33.1ms)
+
+
+Started GET "/visits?user=5" for 127.0.0.1 at 2017-01-28 18:31:41 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"5"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", 5], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits?user=4" for 127.0.0.1 at 2017-01-28 18:31:52 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"4"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", 4], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/visits?user=3" for 127.0.0.1 at 2017-01-28 18:31:56 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"3"}
+  [1m[36mVisit Load (0.5ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", 3], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/visits?user=2" for 127.0.0.1 at 2017-01-28 18:31:57 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"2"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", 2], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits?user=1" for 127.0.0.1 at 2017-01-28 18:31:59 +0200
+Processing by VisitsController#index as */*
+  Parameters: {"user"=>"1"}
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", 1], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits?user=5" for 127.0.0.1 at 2017-01-28 18:34:00 +0200
+Processing by VisitsController#index as HTML
+  Parameters: {"user"=>"5"}
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" = $1 LIMIT $2[0m  [["user", 5], ["LIMIT", 1]]
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/visits" for 127.0.0.1 at 2017-01-28 18:34:08 +0200
+Processing by VisitsController#index as HTML
+  [1m[36mVisit Load (0.4ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/visits" for 127.0.0.1 at 2017-01-28 18:37:17 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by VisitsController#index as HTML
+  [1m[36mVisit Load (0.3ms)[0m  [1m[34mSELECT  "visits".* FROM "visits" WHERE "visits"."user" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 23ms (Views: 0.3ms | ActiveRecord: 3.9ms)
+
+

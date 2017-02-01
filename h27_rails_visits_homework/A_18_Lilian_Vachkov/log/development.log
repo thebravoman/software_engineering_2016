@@ -1,0 +1,42 @@
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2017-01-28 21:45:06 +0200
+Connecting to database specified by database.yml
+Served asset /rails.png - 200 OK (35ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (9.9ms)[0m  [1mselect sqlite_version(*)[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.6ms)[0m  [1mselect sqlite_version(*)[0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2017-01-28 22:42:42 +0200
+Connecting to database specified by database.yml
+Served asset /rails.png - 200 OK (37ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2017-01-28 22:45:32 +0200
+Connecting to database specified by database.yml
+Served asset /rails.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2017-01-28 22:45:35 +0200
+Served asset /rails.png - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2017-01-28 22:59:55 +0200
+Connecting to database specified by database.yml
+Served asset /rails.png - 200 OK (5ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2017-01-28 23:00:38 +0200
+Connecting to database specified by database.yml
+Served asset /rails.png - 304 Not Modified (5ms)
