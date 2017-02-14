@@ -1,3 +1,7 @@
+/**
+ * New node file
+ */
+
 var models = require('../model/character.js');
 
 var Character = models.Character;
@@ -17,9 +21,10 @@ exports.provideList = function(response) {
 };
 
 
-exports.queryData = function(headers, queryType, queryData, response) {
-	queryData['type'] = queryType.type;
-	Character.find(queryData, function(error, result) {
+exports.queryData = function(headers, queryType, query, response) {
+	query['type'] = queryType.type;
+	console.log(query);
+	Character.find(query, function(error, result) {
 		if (error) {
 			console.error(error);
 			return null;
@@ -27,7 +32,7 @@ exports.queryData = function(headers, queryType, queryData, response) {
 		if (result != null) {
 			response.writeHead(200, {
 				'Content-Type':'application/json',
-				'Image-Url':'http://localhost:3000/'+ queryType + '/image'});
+				'Image-Url':'http://localhost:3000/'+ query.type + '/image'});
 			response.end(JSON.stringify(result));
 		}
 		
@@ -46,7 +51,8 @@ exports.saveCharacter = function(request, response)
 					});
 					response.end(JSON.stringify(request.body));
 				} else {
-					Character.findOne(
+					Character
+							.findOne(
 									{
 										firstname : character.firstname
 									},
@@ -120,28 +126,37 @@ exports.saveImage = function(request, response) {
 };
 
 exports.getImage = function(request, response) {
-	models.Grid.exist({filename : request.params.type}, function(error, exists) {
-		if(error) {
-			response.send('500', 'Internal Server Error');
-		} else if(exists) {
+	models.Grid.exist({ 
+						filename : request.params.type,
+					  }, function (error, exists){
+		if (error) {
+			console.log('exist error');
+			response.send(500, 'Internal Server Error');
+			return;
+		}
+		else if (!exists){
+			console.log('Image does not exist');
+			response.writeHead(404);
+			response.end('Image Does Not Exist');
+			return;
+			
+		}
+		else if (exists){
+			
 			var readStream = models.Grid.createReadStream({
 				filename : request.params.type,
 				mode : 'r'
 			});
-	
+			
 			readStream.on('error', function(error) {
 				console.log('error read');
 				console.log(error);
 				response.send('500', 'Internal Server Error');
 				return;
 			});
-	
+
 			response.writeHead(200, {'Content-Type' : 'image/jpeg'});
 			readStream.pipe(response);
-			
-		} else {
-			response.writeHead(404);
-			response.end('Image Does Not Exist');
 		}
 	});
 };
