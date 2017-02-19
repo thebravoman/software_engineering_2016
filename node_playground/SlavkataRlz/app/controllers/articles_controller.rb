@@ -21,7 +21,7 @@ class ArticlesController < ApplicationController
 			end
 			@article = Article.order('normdist')
 			@final = @article.as_json.each do |article|
-				#article.delete("normdist")
+				article.delete("normdist")
 				article.delete("created_at")
 				article.delete("updated_at")
 			end
