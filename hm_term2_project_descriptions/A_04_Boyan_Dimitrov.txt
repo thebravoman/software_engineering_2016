@@ -1,0 +1,20 @@
+Име на проект: Keylashnikoff
+
+Feature-и:
+  Напълно функционална стандартна qwerty клавиатура.
+  Възможност за добавяне на съкращения от user-a, които клавиатурата да запомня и по време на писане да разпознава.
+  Възможност за Auto-Correct при ръчно писане на емотикони(за старомодните хора, които още го правят).
+  В процесът на работа ще се добавят още.
+
+Github репозитори: 
+https://github.com/bojan-dim/TP_project_2017
+
+Youtube канал:
+https://www.youtube.com/channel/UCuaysVUjERqLoWTW6ceJyPw?guided_help_flow=3
+
+Wikiа:
+http://keylashnikoff.wikia.com/wiki/User:Keylashnikoff
+
+Екип:
+  Боян Димитров 11А No.4
+  Мартин Божинов 11А No.21
