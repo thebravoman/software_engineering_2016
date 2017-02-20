@@ -96,7 +96,7 @@ class ArticlesController < ApplicationController
         return phi((z - mu) / sigma).to_f;
     end
     
-    def normdist_v2 x, mu, sig
+    def normdist_v2 x, mean, std
         tmp = 1/((Math.sqrt(2*Math::PI)*std))
         tmp * Math.exp(-0.5 * ((x-mean)/std ** 2))
     end
