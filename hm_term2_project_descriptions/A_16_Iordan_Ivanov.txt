@@ -1,0 +1,13 @@
+Raycasting
+
+Създаване на raycasting engine по подобие на тези използвани за игри като Wolfenstein 3D.
+
+Features:
+- Easy to use text-based map creation
+- Textured rendering
+- Player movement and controls
+- Sprite support
+
+Екип:
+- Йордан Иванов 16№ 11А
+- Теодор Спасов 28№ 11А
