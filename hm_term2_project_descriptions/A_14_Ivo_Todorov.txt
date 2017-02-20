@@ -1,0 +1,29 @@
+Morbid Mask
+
+Overview:
+    2D platformer game in a charming pixelized world with satisfying grappling hook physics, combat mechanics and a mysterious story to push you through the beautifully drawn levels. Fight enemies and absorb their essence to either fight for good or go down a very dark path, should you give into temptation...
+
+Features:
+      - Parsing levels from XML
+      - Parsing spritesheets using an XML for reference
+      - Combat system
+      - Inventory system (keys, usable items/weapons)
+      - Grappling hook physics
+      - Absorb the essence of your enemies to grow stronger
+      - Gorgeous original artwork
+      - Lighting
+      - Audio system
+      - Enemies
+
+Bonus features (jivot i zdrave):
+      - Boss fights
+      - Multiple worlds
+Conversations with helpful locals
+
+Techonologies:
+      - SDL2
+      - OpenGL
+
+Team:
+Иво Тодоров №14 11а клас
+Ива Захова №10 11а клас
