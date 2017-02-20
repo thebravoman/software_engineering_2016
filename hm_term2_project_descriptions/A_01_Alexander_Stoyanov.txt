@@ -1,0 +1,16 @@
+Kitchen saga 
+An  2D action game made with game maker studio.
+An evil rat has taken over the kitchen. It has eaten your entire bread/fruit/vegetable family and your the lonely survivor. Avenge your fallen family , defeat the rat and his minions and free the kitchen.
+ 
+Features:
+-different levels/maps
+-different enemy mobs
+-multiple character skins(bread/fruits/vegetables)
+-melee combat
+-action music
+-boss fight
+-character progression
+
+Team:
+Alexander Stoyanov  № 01 11a
+Bojidar Stanoev № 03 11a 
