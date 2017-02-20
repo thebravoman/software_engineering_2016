@@ -1,0 +1,15 @@
+(Still thinking on the name)
+A survival game set in apocalyptic world with turn-based combat.
+You will play as a lone survivor. 
+Your task is simple:survive.
+
+The game will include:
+-free travelling toughout a big map
+-Leveling up your gear>
+-Story mode full with choices
+-Creation of party(NPCs)
+-And even more in the future 
+
+Team:
+Velislav Yotov XIa 05
+Ivo Stefanov XIa 13
