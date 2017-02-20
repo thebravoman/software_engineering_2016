@@ -1,0 +1,2 @@
+class ArticleVote < ApplicationRecord
+end
