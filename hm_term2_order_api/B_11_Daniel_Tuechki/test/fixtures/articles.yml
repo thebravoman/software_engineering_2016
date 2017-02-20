@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  comments_score: 1.5
+  votes_score: 1.5
+  general_score: 1.5
+
+two:
+  name: MyString
+  comments_score: 1.5
+  votes_score: 1.5
+  general_score: 1.5
