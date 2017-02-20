@@ -1,0 +1,22 @@
+InfiNote
+
+Concept:
+
+A note-taking app with an infinite canvas
+
+Features:
+
+- Zoom out whenever you need more space
+- You can add:
+   - Sketches
+   - Titles
+   - Headings
+   - Photos
+   - Check lists
+   - Bulleted, numbered and dashed lists
+- Everything is stored in the cloud
+
+Team:
+
+Zachary Georgiev   11A
+Georgi Karaboichev 11A
