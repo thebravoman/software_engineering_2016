@@ -95,6 +95,11 @@ class ArticlesController < ApplicationController
         p "1/sigma = #{sigma}"
         return phi((z - mu) / sigma).to_f;
     end
+    
+    def normdist_v2 x, mu, sig
+        tmp = 1/((Math.sqrt(2*Math::PI)*std))
+        tmp * Math.exp(-0.5 * ((x-mean)/std ** 2))
+    end
 ########################################################################################
     def calc_comment_score(art_id)
         x = Comment.where(article_id: art_id.to_i).size
