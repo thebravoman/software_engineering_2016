@@ -1,0 +1,16 @@
+{
+  "name": "hw_09_nodejs_quadratic",
+  "version": "1.0.0",
+  "description": "Program, solving a quadratic equation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "quadratic",
+    "equation",
+    "nodejs"
+  ],
+  "author": "Boyan D.",
+  "license": "ISC"
+}

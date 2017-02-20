@@ -1,0 +1,25 @@
+{
+  "name": "app_a_09",
+  "version": "1.0.1",
+  "description": "Dae brat bachkam spoko",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "http",
+    "application"
+  ],
+  "author": "Zachary Georgiev",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.1",
+    "gridfs-stream": "^1.1.1",
+    "lodash": "^4.17.4",
+    "mongoose": "^4.8.0",
+    "morgan": "^1.7.0",
+    "serve-favicon": "^2.3.2"
+  }
+}

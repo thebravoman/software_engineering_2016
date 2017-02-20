@@ -1,0 +1,23 @@
+{
+	"characters":
+	[
+		{
+			"firstname":"Dark",
+			"lastname":"Troll",
+			"type":"troll",
+			"strength":"100"
+		},
+		{
+			"firstname":"Queen",
+			"lastname":"Mab",
+			"type":"witch",
+			"strength":"100"
+		},
+		{
+			"firstname":"Dark",
+			"lastname":"Witch",
+			"type":"witch",
+			"strength":"150"
+		}
+	]
+}

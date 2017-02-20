@@ -1,57 +1,36 @@
-a = Float(ARGV[0])
-b = Float(ARGV[1])
-c = Float(ARGV[2])
-check_if_int = 0
+a, b, c = ARGV[0].to_f, ARGV[1].to_f, ARGV[2].to_f
 
-if a == 0 then
-  if b == 0 then
-    if c == 0 then
-      result = "#"
-    else
-      result =  "No solutions."
-    end
-  else
-    result = Float(-c/b).round(2)
-    check_if_int = 1
-  end
+def to_int_if_round(number)
+	if number % 1 == 0
+		return number.to_i
+	else 
+		return number
+	end
+end
+
+def solve_quadratic(a, b, c)
+	if a == 0
+		if b==0 && c==0 then
+			return "#"
+		elsif b==0 && (c>0 || c<0) then
+			return ""
+		else
+			return to_int_if_round(-c/b)
+		end
+	else
+		d = b*b - 4*a*c
+		if d > 0 
+			x1 =  +( (-b + Math.sqrt(d)) / (2 * a) ).round(2)
+			x2 =  +( (-b - Math.sqrt(d)) / (2 * a) ).round(2)
+			return to_int_if_round(x1) , to_int_if_round(x2)
+		else
+			return to_int_if_round( (-b) / (2 * a) ).round(2)
+		end
+	end
+end #def
+
+if solve_quadratic(a,b,c).kind_of?(Array) then
+	puts solve_quadratic(a,b,c).join(',')
 else
-  d = b*b - 4*a*c
-  if d > 0 then
-    check_if_int = 2
-    result = Array.new
-    x = ( -b + Math.sqrt(d) ) / (2 * a)
-    result[0] = x.round(2)
-    x = ( -b - Math.sqrt(d) ) / (2 * a)
-    result[1] = x.round(2)
-    if result[0] > result[1] then
-      result[0], result[1] = result[1], result[0]
-    end
-  elsif d == 0 then
-    result = ( ( -b ) / (2 * a) ).round(2)
-    check_if_int = 1
-  else
-    result = "No solutions."
-  end
-end
-
-if check_if_int == 1 && result % 1 == 0 then
-  result = Integer(result)
-end
-
-if check_if_int == 2 then
-  if result[0] % 1 == 0 then
-    print String(Integer(result[0])) << ','
-  else
-    print String(result[0]) << ','
-  end
-
-  if result[1] % 1 == 0 then
-    print String(Integer(result[1])) << "\n"
-  else
-    print String(result[1]) << "\n"
-  end
-end
-
-if check_if_int != 2 then
-  puts result
+	puts solve_quadratic(a,b,c)
 end

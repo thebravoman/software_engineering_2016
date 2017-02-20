@@ -1,0 +1,28 @@
+{
+   "characters":[
+      {
+         "firstname":"Dark",
+         "lastname":"Troll",
+         "type":"troll",
+         "gender":"Male"
+      },
+      {
+         "firstname":"Pollol",
+         "lastname":"Treask",
+         "type":"troll",
+         "gender":"Male"
+      },
+      {
+         "firstname":"Sofi",
+         "lastname":"Loyd",
+         "type":"troll",
+         "gender":"Female"
+      },
+      {
+    	  "firstname":"Queen",
+    	  "lastname":"Mab",
+    	  "type":"witch",
+    	  "gender":"Female"
+      }
+   ]
+}

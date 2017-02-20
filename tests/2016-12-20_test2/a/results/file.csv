@@ -1,0 +1,15 @@
+C1,C2,C3,C4,Context
+1,e,23,20,Context_1
+-10,e,1,-2,Context_1
+10,e,10,7,Context_1 not C1< C4
+1,e,14,10,Context_1 not C3=C4+3
+20,a,4,,Context_2
+20,5,512,,Context_2 not a digit but context_3 digit
+10,a,21,,Context_2 not C1>17
+20,2,2,,Context_2 not a digit but context_3 digit
+20,etues,10,,Context_4
+20,tues,20,,Context_4
+20,tuesrules,7,,Context_4
+10,nottues,10,,Context_4 not C1>17
+20,tue,10,,Context_4 not contains tues
+0,key3_from_json,,,

@@ -1,3 +1,3 @@
-arg = gets.to_i
+arg = ARGV[0].to_i
 
 puts (arg * 2)

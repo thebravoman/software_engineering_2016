@@ -1,0 +1,11 @@
+{
+  "name": "app_b_24",
+  "version": "1.0.0",
+  "description": "Just incase u need one",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Slav Kirilov",
+  "license": "ISC"
+}

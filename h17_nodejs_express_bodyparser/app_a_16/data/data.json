@@ -1,0 +1,28 @@
+{
+   "characters":[
+      {
+         "firstname":"Dark",
+         "lastname":"Troll",
+         "type":"troll",
+         "strength": 100
+      },
+      {
+    	  "firstname":"Queen",
+    	  "lastname":"Mab",
+    	  "type":"witch",
+        "strength": 100
+      },
+      {
+        "firstname":"Van",
+        "lastname":"Darkholme",
+        "type":"artist",
+        "strength": 6969
+      },
+      {
+        "firstname":"Simson",
+        "lastname":"S51",
+        "type":"Motoretkus",
+        "strength": 70
+      }
+   ]
+}

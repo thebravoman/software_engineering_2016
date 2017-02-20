@@ -1,0 +1,283 @@
+Name,Result,Program error,Task,Expected,Output csv
+../../2016-11-15_test1/a/results/test.rb,,,undefined method `split' for nil:NilClass. Can not be determined because of hex  and number ,undefined method `split' for nil:NilClass. Can not be determined since the hex is . Check file name format,
+../../2016-11-15_test1/a/results/Petko_Mihaylov_A_24_41f3cc.rb,,,No such file or directory @ rb_sysopen - ../../2016-11-15_test1/a/expects/24.csv. Can not be determined because of hex 24 and number A,No such file or directory @ rb_sysopen - ../../2016-11-15_test1/a/expects/24.csv. Can not be determined since the hex is 24. Check file name format,
+../../2016-11-15_test1/a/results/Zachary_Georgiev_A_431210.rb,,,No such file or directory @ rb_sysopen - ../../2016-11-15_test1/a/tests/0_431210.txt. Can not be determined because of hex 431210 and number A,No such file or directory @ rb_sysopen - ../../2016-11-15_test1/a/tests/0_431210.txt. Can not be determined since the hex is 431210. Check file name format,
+../../2016-11-15_test1/a/results/Alexander_Stoyanov_01_6dc734.rb,0,"/home/kireto/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/rexml/parsers/baseparser.rb:374:in `pull_event': malformed XML: missing tag start (REXML::ParseException)
+Line: 15
+Position: 438
+Last 80 unconsumed characters:
+< C4 1,e,14,10,Context_1 not C3=C4+3 20,a,4,,Context_2 20,5,512,,Context_2 not a 
+	from /home/kireto/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/rexml/parsers/baseparser.rb:184:in `pull'
+	from /home/kireto/.rvm/gems/ruby-2.2.2/gems/crack-0.4.3/lib/crack/xml.rb:203:in `parse'
+	from /home/kireto/.rvm/gems/ruby-2.2.2/gems/crack-0.4.3/lib/crack/xml.rb:235:in `parse'
+	from ../../2016-11-15_test1/a/results/Alexander_Stoyanov_01_6dc734.rb:18:in `<main>'
+","Develop a program named FirstName_LastName_ClassNumber_6dc734.rb
+
+1. you are given two arguments;
+1.1 if there are other arguments they should be discarded;
+1.2 The first argument is to an XML file
+1.3 The second argument is to a JSON file
+2. Find the number of nodes in the xml that have a name of 3 or less symbols and there are no keys in the JSON with such name
+3. Calculate the sum of the symbols of all this nodes
+4. Print only the result value",12,undefined method `gsub' for nil:NilClass. No output to stdout from the program.
+../../2016-11-15_test1/a/results/Blagovest_Mihailov_2_dd33d0_.rb,0,,"Develop a program named FirstName_LastName_ClassNumber_dd33d0.rb
+
+1. you are given two command line arguments;
+1.1 if there are other arguments they should be discarded;
+1.2 The first argument is the full path of a CSV file with 4 columns
+1.3 The second argument is the full path of a JSON file
+
+2. Find the product of all the values in the JSON file where :
+ the key of this value is not equal to a value in any row on column 2 from the CSV 
+ 
+3. Print only the result value",475,45
+../../2016-11-15_test1/a/results/Bojidar_Stanoev_03_c2955e.rb,0,,"Develop a program named FirstName_LastName_ClassNumber_c2955e.rb
+
+1. you are given two command line arguments;
+1.1 if there are other arguments they should be discarded;
+1.2 The first argument is the full path of a CSV file with 4 columns
+1.3 The second argument is the full path of a JSON file
+
+2. Find the product of all the values in the JSON file where :
+ the key of this value is not equal to a value in any row on column 2 from the CSV 
+ 
+3. Print only the result value",475,675
+../../2016-11-15_test1/a/results/Boyan_Dimitrov_04_cd4708.rb,0,"/home/kireto/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/rexml/parsers/baseparser.rb:374:in `pull_event': malformed XML: missing tag start (REXML::ParseException)
+Line: 15
+Position: 438
+Last 80 unconsumed characters:
+< C4 1,e,14,10,Context_1 not C3=C4+3 20,a,4,,Context_2 20,5,512,,Context_2 not a 
+	from /home/kireto/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/rexml/parsers/baseparser.rb:184:in `pull'
+	from /home/kireto/.rvm/gems/ruby-2.2.2/gems/crack-0.4.3/lib/crack/xml.rb:203:in `parse'
+	from /home/kireto/.rvm/gems/ruby-2.2.2/gems/crack-0.4.3/lib/crack/xml.rb:235:in `parse'
+	from ../../2016-11-15_test1/a/results/Boyan_Dimitrov_04_cd4708.rb:11:in `<main>'
+","Develop a program named FirstName_LastName_ClassNumber_cd4708.rb
+
+1. you are given two arguments;
+1.1 if there are other arguments they should be discarded;
+1.2 The first argument is to an XML file
+1.3 The second argument is to a JSON file
+2. Find the number of nodes in the xml that have a name of 3 or less symbols and there are no keys in the JSON with such name
+3. Calculate the sum of the symbols of all this nodes
+4. Print only the result value",12,undefined method `gsub' for nil:NilClass. No output to stdout from the program.
+../../2016-11-15_test1/a/results/Velislav_Yotov_5_5f49f6.rb,0,,"Develop a program named FirstName_LastName_ClassNumber_5f49f6.rb
+
+1. you are given two command line arguments;
+1.1 if there are other arguments they should be discarded;
+1.2 The first argument is the full path of a CSV file with 4 columns
+1.3 The second argument is the full path of a JSON file
+
+2. Find the the min of all the values in the JSON filee where :
+ the key of this value is contained in the value of any row on column 2 from the CSV 
+ 
+3. Print only the result value",1,""
+../../2016-11-15_test1/a/results/Evga_Dobreva_08_07a87d.rb,0,"/home/kireto/.rvm/gems/ruby-2.2.2/gems/json-1.8.3/lib/json/common.rb:155:in `parse': 757: unexpected token at '../../test_1_CSV_XML_JSON_formats/generation/fixture1/file.json' (JSON::ParserError)
+	from /home/kireto/.rvm/gems/ruby-2.2.2/gems/json-1.8.3/lib/json/common.rb:155:in `parse'
+	from ../../2016-11-15_test1/a/results/Evga_Dobreva_08_07a87d.rb:18:in `<main>'
+","Develop a program named FirstName_LastName_ClassNumber_07a87d.rb
+
+1. you are given two command line arguments;
+1.1 if there are other arguments they should be discarded;
+1.2 The first argument is the full path of a CSV file with 4 columns
+1.3 The second argument is the full path of a JSON file
+
+2. Find the product of all the values in the JSON file where :
+ the key of this value is not equal to a value in any row on column 2 from the CSV 
+ 
+3. Print only the result value",475,undefined method `gsub' for nil:NilClass. No output to stdout from the program.
+../../2016-11-15_test1/a/results/Iva_Zahova_10_7ed1ba.rb,0,,"Develop a program named FirstName_LastName_ClassNumber_7ed1ba.rb
+
+1. you are given two arguments;
+1.1 if there are other arguments they should be discarded;
+1.2 The first argument is to an XML file
+1.3 The second argument is to a JSON file
+2. Find the number of nodes in the xml that have a name of 3 or less symbols and there are no keys in the JSON with such name
+3. Calculate the sum of the symbols of all this nodes
+4. Print only the result value",12,0
+../../2016-11-15_test1/a/results/Ivan_Milev_11_5f5a53.rb,1,,"Develop a program named FirstName_LastName_ClassNumber_5f5a53.rb
+
+1. you are given an argument that is the full path to CSV file
+1.1 if there are other arguments they should be discarded
+2. The CSV file has four columns
+3. The first row of the CSV are the headers with the following names
+
+		C1, C2, C3, C4
+
+4. Find the sum of all the values for column C3 
+	where 
+	C1 > 17
+	and 
+	C2 contais the string 'tues'
+
+5. Print only the result value
+
+
+",37,37
+../../2016-11-15_test1/a/results/Mihail_Ernandes_11_e478a7.rb,,,No such file or directory @ rb_sysopen - ../../2016-11-15_test1/a/tests/11_e478a7.txt. Can not be determined because of hex e478a7 and number 11,No such file or directory @ rb_sysopen - ../../2016-11-15_test1/a/tests/11_e478a7.txt. Can not be determined since the hex is e478a7. Check file name format,
+../../2016-11-15_test1/a/results/Ivan_Ganchev_12_cbc5bb.rb,1,,"Develop a program named FirstName_LastName_ClassNumber_cbc5bb.rb
+
+1. you are given an argument that is the full path to CSV file
+1.1 if there are other arguments they should be discarded
+2. The CSV file has four columns
+3. The first row of the CSV are the headers with the following names
+
+		C1, C2, C3, C4
+
+4. Find the sum of all the values for column C3 
+	where 
+	C1 > 17
+	and 
+	C2 contais the string 'tues'
+
+5. Print only the result value
+
+
+",37,37
+../../2016-11-15_test1/a/results/Ivo_Stefanov_13_f145ab.rb.rb,0,,"Develop a program named FirstName_LastName_ClassNumber_f145ab.rb
+
+1. you are given two arguments;
+1.1 if there are other arguments they should be discarded;
+1.2 The first argument is to an XML file
+1.3 The second argument is to a JSON file
+2. Find the number of nodes in the xml that have a name equal to a key in the JSON file
+3. Calculate the square of this number
+4. Print only the result value",25,0
+../../2016-11-15_test1/a/results/Ivo_Todorov_14_437bcf.rb,0,,"Develop a program named FirstName_LastName_ClassNumber_437bcf.rb
+
+1. you are given two command line arguments;
+1.1 if there are other arguments they should be discarded;
+1.2 The first argument is the full path of a CSV file with 4 columns
+1.3 The second argument is the full path of a JSON file
+
+2. Find the product of all the values in the JSON file where :
+ the key of this value is not equal to a value in any row on column 2 from the CSV 
+ 
+3. Print only the result value",475,0
+../../2016-11-15_test1/a/results/Joan_Kosev_15_b23c0d.rb,0,"../../2016-11-15_test1/a/results/Joan_Kosev_15_b23c0d.rb:24: syntax error, unexpected ',', expecting ')'
+CSV.foreach (ARGV[0], {:headers => true}) do |row|
+                     ^
+","Develop a program named FirstName_LastName_ClassNumber_b23c0d.rb
+
+1. you are given an argument that is the full path to CSV file
+1.1 if there are other arguments they should be discarded
+2. The CSV file has four columns
+3. The first row of the CSV are the headers with the following names
+
+		C1, C2, C3, C4
+
+4. Find the product of all the values for column C3 
+	where 
+	C1 < C4
+	and 
+	C3 = C4+3
+
+5. Print only the result value
+
+
+",23,undefined method `gsub' for nil:NilClass. No output to stdout from the program.
+../../2016-11-15_test1/a/results/Iordan_Ivanov_16_.rb,,,No such file or directory @ rb_sysopen - ../../2016-11-15_test1/a/expects/.csv. Can not be determined because of hex  and number 16,No such file or directory @ rb_sysopen - ../../2016-11-15_test1/a/expects/.csv. Can not be determined since the hex is . Check file name format,
+../../2016-11-15_test1/a/results/Marina_Tihova_20_bb85f9.rb,0,,"Develop a program named FirstName_LastName_ClassNumber_bb85f9.rb
+
+1. you are given an argument that is the full path to CSV file
+1.1 if there are other arguments they should be discarded
+2. The CSV file has four columns
+3. The first row of the CSV are the headers with the following names
+
+		C1, C2, C3, C4
+
+4. Find the sum of all the values for column C3 
+	where 
+	C1 > 17
+	and 
+	C2 is not a digit
+
+5. Print only the result value
+
+
+",11,51
+../../2016-11-15_test1/a/results/Nikolay_Stanishev_23_893f23.rb,0,"/home/kireto/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/rexml/parsers/baseparser.rb:374:in `pull_event': malformed XML: missing tag start (REXML::ParseException)
+Line: 15
+Position: 438
+Last 80 unconsumed characters:
+< C4 1,e,14,10,Context_1 not C3=C4+3 20,a,4,,Context_2 20,5,512,,Context_2 not a 
+	from /home/kireto/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/rexml/parsers/baseparser.rb:184:in `pull'
+	from /home/kireto/.rvm/gems/ruby-2.2.2/gems/crack-0.4.3/lib/crack/xml.rb:203:in `parse'
+	from /home/kireto/.rvm/gems/ruby-2.2.2/gems/crack-0.4.3/lib/crack/xml.rb:235:in `parse'
+	from ../../2016-11-15_test1/a/results/Nikolay_Stanishev_23_893f23.rb:5:in `<main>'
+","Develop a program named FirstName_LastName_ClassNumber_893f23.rb
+
+1. you are given two arguments;
+1.1 if there are other arguments they should be discarded;
+1.2 The first argument is to an XML file
+1.3 The second argument is to a JSON file
+2. Find the number of nodes in the xml that have a name equal to a key in the JSON file
+3. Calculate the square of this number
+4. Print only the result value",25,undefined method `gsub' for nil:NilClass. No output to stdout from the program.
+../../2016-11-15_test1/a/results/Rangel_Ivanov_25_2368ad.rb,0,"../../2016-11-15_test1/a/results/Rangel_Ivanov_25_2368ad.rb:22: syntax error, unexpected end-of-input, expecting keyword_end
+","Develop a program named FirstName_LastName_ClassNumber_2368ad.rb
+
+1. you are given two command line arguments;
+1.1 if there are other arguments they should be discarded;
+1.2 The first argument is the full path of a CSV file with 4 columns
+1.3 The second argument is the full path of a JSON file
+
+2. Find the product of all the values in the JSON file where :
+ the key of this value is not equal to a value in any row on column 2 from the CSV 
+ 
+3. Print only the result value",475,undefined method `gsub' for nil:NilClass. No output to stdout from the program.
+../../2016-11-15_test1/a/results/Stiliyan_Hristov_26_b923c1.rb,0,,"Develop a program named FirstName_LastName_ClassNumber_b923c1.rb
+
+1. you are given an argument that is the full path to CSV file
+1.1 if there are other arguments they should be discarded
+2. The CSV file has four columns
+3. The first row of the CSV are the headers with the following names
+
+		C1, C2, C3, C4
+
+4. Find the sum of all the values for column C3 
+	where 
+	C1 > 17
+	and 
+	C2 is not a digit
+
+5. Print only the result value
+
+
+",11,51
+../../2016-11-15_test1/a/results/Teodor_Spasov_28_7e70f8.rb,0,"/home/kireto/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/rexml/parsers/baseparser.rb:374:in `pull_event': malformed XML: missing tag start (REXML::ParseException)
+Line: 15
+Position: 438
+Last 80 unconsumed characters:
+< C4 1,e,14,10,Context_1 not C3=C4+3 20,a,4,,Context_2 20,5,512,,Context_2 not a 
+	from /home/kireto/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/rexml/parsers/baseparser.rb:184:in `pull'
+	from /home/kireto/.rvm/gems/ruby-2.2.2/gems/crack-0.4.3/lib/crack/xml.rb:203:in `parse'
+	from /home/kireto/.rvm/gems/ruby-2.2.2/gems/crack-0.4.3/lib/crack/xml.rb:235:in `parse'
+	from ../../2016-11-15_test1/a/results/Teodor_Spasov_28_7e70f8.rb:4:in `<main>'
+","Develop a program named FirstName_LastName_ClassNumber_7e70f8.rb
+
+1. you are given two arguments;
+1.1 if there are other arguments they should be discarded;
+1.2 The first argument is to an XML file
+1.3 The second argument is to a JSON file
+2. Find the number of nodes in the xml that have a name equal to a key in the JSON file
+3. Calculate the square of this number
+4. Print only the result value",25,undefined method `gsub' for nil:NilClass. No output to stdout from the program.
+../../2016-11-15_test1/a/results/Hristo_Spasov_29_d66d27.rb,1,,"Develop a program named FirstName_LastName_ClassNumber_d66d27.rb
+
+1. you are given an argument that is the full path to CSV file
+1.1 if there are other arguments they should be discarded
+2. The CSV file has four columns
+3. The first row of the CSV are the headers with the following names
+
+		C1, C2, C3, C4
+
+4. Find the product of all the values for column C3 
+	where 
+	C1 < C4
+	and 
+	C3 = C4+3
+
+5. Print only the result value
+
+
+",23,23

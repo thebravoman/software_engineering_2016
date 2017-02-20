@@ -1,0 +1,29 @@
+{
+   "characters":[
+      {
+        "firstname" : "Dark",
+        "lastname" : "Troll",
+        "type" : "troll",
+	      "strength" : "100"
+      },
+      {
+    	 "firstname" : "Queen",
+    	 "lastname" : "Mab",
+    	 "type" : "witch",
+	     "strength" : "100",
+	     "mana" : "15"
+      },
+      {
+        "firstname" : "Pesho",
+        "lastname": "Drakona",
+        "type" : "troll",
+	     "strength" : "50"
+      },
+      {
+        "firstname" : "Vercheto",
+        "lastname" : "Trolla",
+        "type" : "dwarf",
+	       "strength" : "65"
+      }
+   ]
+}

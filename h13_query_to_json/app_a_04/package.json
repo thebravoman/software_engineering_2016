@@ -1,0 +1,16 @@
+{
+  "name": "hw10_http",
+  "version": "1.0.1",
+  "description": "\"query to json\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "query",
+    "json",
+    "GET"
+  ],
+  "author": "Boyan Dimitrov",
+  "license": "ISC"
+}

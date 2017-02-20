@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Visitros</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Count</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @visitros.each do |visitro| %>
+      <tr>
+        <td><%= visitro.user_id %></td>
+        <td><%= visitro.count %></td>
+        <td><%= link_to 'Show', visitro %></td>
+        <td><%= link_to 'Edit', edit_visitro_path(visitro) %></td>
+        <td><%= link_to 'Destroy', visitro, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Visitro', new_visitro_path %>

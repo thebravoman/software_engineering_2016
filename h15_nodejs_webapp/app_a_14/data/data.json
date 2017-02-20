@@ -1,0 +1,35 @@
+{
+   "characters" : [
+      {
+        "firstname" : "Dark",
+        "lastname" : "Troll",
+        "type" : "troll",
+        "strength" : "9"
+      },
+      {
+        "firstname" : "Ruski",
+        "secondname" :  "Turbo",
+        "type" : "turboman",
+        "realm" : "Silver 1",
+        "strength" : "1014"
+      },
+      {
+        "firstname" : "The legend",
+        "secondname" : "Giantdad",
+        "type" : "giantdad",
+        "level" : "99",
+        "vitality" : "48",
+        "attunement" : "12",
+        "endurance" : "66",
+        "strength" : "16",
+        "dexterity" : "10",
+        "signature" : "git gud"
+      },
+      {
+    	"firstname" : "Queen",
+    	"lastname" : "Mab",
+    	"type" : "witch",
+        "strength" : "65"
+      }
+   ]
+}

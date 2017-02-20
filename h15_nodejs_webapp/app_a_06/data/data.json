@@ -1,0 +1,28 @@
+{
+   "characters":[
+      {
+         "firstname":"Dark",
+         "lastname":"Troll",
+         "type":"troll",
+         "size": 7
+      },
+      {
+    	  "firstname":"Queen",
+    	  "lastname":"Mab",
+    	  "type":"witch",
+          "size": 2
+      },
+      {
+            "firstname":"Kat",
+    	    "lastname":"Bam",
+    	    "type":"witch",
+            "size": 2
+      },
+      {
+            "firstname":"Kat",
+    	    "lastname":"Bam",
+    	    "type":"troll",
+            "size": 1
+      }
+   ]
+}

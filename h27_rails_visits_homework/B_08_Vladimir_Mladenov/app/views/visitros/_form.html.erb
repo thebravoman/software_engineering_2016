@@ -1,0 +1,27 @@
+<%= form_for(visitro) do |f| %>
+  <% if visitro.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(visitro.errors.count, "error") %> prohibited this visitro from being saved:</h2>
+
+      <ul>
+      <% visitro.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %>
+    <%= f.number_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :count %>
+    <%= f.number_field :count %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

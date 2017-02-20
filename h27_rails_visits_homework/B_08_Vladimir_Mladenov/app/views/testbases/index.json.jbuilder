@@ -1,0 +1,1 @@
+json.array! @testbases, partial: 'testbases/testbasis', as: :testbasis

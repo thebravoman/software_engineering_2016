@@ -1,0 +1,21 @@
+var http = require('http');
+var url = require('url');
+var data = require('./modules/data_provider.js');
+
+function requestHandler(request, response) {
+	var get_params = url.parse(request.url, true);
+	if (get_params.query.image != null /*&&& get_params.query.image != null*/) {
+		data.provideData('image/' + get_params.query.image + '.jpg',{'Content-Type': 'image/jpeg'}, response);
+	}
+	else if(Object.keys(get_params.query).length !== 0) {
+		data.queryData('data/data.json', {'Content-Type': 'application/json', 'Image-Url': 'http://localhost:8118/?image'}, get_params.query, response);
+	}
+	else
+	{
+		data.provideList('data/data.json',{'Content-Type': 'application/json'}, response);
+	}
+}
+
+http.createServer(requestHandler).listen(8118, 'localhost');
+
+

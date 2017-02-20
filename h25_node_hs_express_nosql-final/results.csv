@@ -1,0 +1,30 @@
+﻿Final score, Class, Number, Name,|comment
+(1), A, 01, Alexander Stoyanov, 'lodash/assign' 
+(1), A, 02, Blagovest Mihailov,  'lodash/assign' 
+(1), A, 03, Bojidar Stanoev,  'lodash/assign' 
+(2), A, 04, Boyan Dimitrov, OK
+(1), A, 05, Valislav Yotov,  'lodash/assign' 
+(2), A, 06, Georgi Karaboichev, OK
+(2), A, 07, Dimitar Nikolov,  OK
+(1), A, 08, Evga Dobreva, 'lodash/assign' 
+(1), A, 09, Zachary Georgiev, 'lodash/assign' 
+(0), A, 10, Iva Zahova, Приложението не се стартира SyntaxError: Unexpected token ) не е било пускано
+(1), A, 11, Ivan Milev, 'lodash/assign'  
+(1), A, 12, Ivan Ganchev,  'lodash/assign'
+(0), A, 13, Ivo Stefanov,  Error: Cannot find module '../modules/mongodb-provider.js' приложението не се стартирa, и никога не е било пускано - защото модула в директория modules се казва mongodb_provider.js 
+(2), A, 14, Ivo Todorov,  OK
+(0), A, 15, Joan Kosev,  не е предадено домашно
+(1), A, 16, Iordan Ivanov,  Една точка защото филтрирането по множество параметри не работи - т.е. ако кажа ?firstname=Valentin&Lastname=Bojinov не филтрира
+(0), A, 17, Kristian Radkov, Приложението не се стартира SyntaxError: missing ) after argument list
+(0), A, 18, Lilian Vachkov, не е предадено домашно
+(1), A, 19, Lachezar Zahariev, 'lodash/assign'
+(1)A, 20, Marina Tihova,  'lodash/assign'
+(1), A, 21, Martin Bozhinov, Една точка защото филтрирането по множество параметри не работи - т.е. ако кажа ?firstname=Valentin&Lastname=Bojinov не филтрира
+(1), A, 22, Mihail Ernandes, 'lodash/assign' 
+(2) ,A, 23, Nikolay Stanishev, OK
+(0), A, 24, Petko Mihaylov, Syntax in routes/indes.js - require('Express') - имената на модулите са case-sensitive - за това приложението не може да намери модул 'Express', не е пускано
+(1), A, 25, Rangel Ivanov,  - Приложението първоначално не се стартира защото променливата порт, която се подава на app.js ред 27 не дефинирана, една точка защото проверката за несъществуваща картинка все пак работи
+(0), A, 26, Stiliyan Hristov,  Филтрацията не работи, част от заявките завършват с Can't set headers after they are sent.
+(1), A, 27, Stoyan Ivanov,  'lodash/assign' 
+(), A, 28, Teodor Spasov, не е предадено домашно
+(2), A, 29, Hristo Spasov, OK 

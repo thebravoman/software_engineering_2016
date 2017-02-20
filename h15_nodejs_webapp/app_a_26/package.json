@@ -1,0 +1,11 @@
+{
+  "name": "app_a_26",
+  "version": "2.0.0",
+  "description": "a",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Stiliyan Hristov",
+  "license": "ISC"
+}

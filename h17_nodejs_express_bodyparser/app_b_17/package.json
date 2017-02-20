@@ -1,0 +1,15 @@
+
+{
+  "name": "app_b_17",
+  "version": "1.4.1",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lachezar Mladenov",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2"
+  }
+}

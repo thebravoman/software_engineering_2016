@@ -1,0 +1,41 @@
+{
+	
+  "characters":[
+
+
+     {
+        "firstname":"Dark",
+        "lastname":"Troll",
+        "type":"troll",
+        "strength":"100"
+     },
+     {
+   	  "firstname":"Queen",
+   	  "lastname":"Mab",
+   	  "type":"witch",
+              "strength":"100"
+
+     },
+     {
+      	  "firstname":"Queen1",
+      	  "lastname":"Mab",
+      	  "type":"witch",
+                 "strength":"100"
+
+        },
+     {
+      	  "firstname":"Queen",
+      	  "lastname":"Mab",
+      	  "type":"witch",
+                 "strength":"1001"
+
+        },
+     {
+      	  "firstname":"Queen1",
+      	  "lastname":"Mab",
+      	  "type":"witch",
+                 "strength":"1002"
+
+        }
+  ]
+}
