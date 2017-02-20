@@ -1,0 +1,20 @@
+Son Of Olympus
+
+Zeus the greek god got drunk with the Holy Rakija and fell off Olympus.
+Follow him through his journey back home.
+
+1. Menu in greek style. - Interface
+2. Shop for enhancements.
+3. Epic background latin music.
+4. Never-ending game.
+5. Falling rocks from the mountains.
+6. Gathering money for enhancements.
+7. Increasing difficulty throughout the game.
+8. Added "database" for money/ highscore/ and other stuff.
+9. In-game potions/ consumables/ powers.
+10. Many more in the near future.
+
+Team :
+
+Mihail Ernandes №22 XIa class 
+Stoyan Ivanov №27 XIa class
