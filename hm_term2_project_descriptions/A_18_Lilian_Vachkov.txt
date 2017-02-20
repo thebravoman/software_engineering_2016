@@ -1,0 +1,32 @@
+﻿				Events,bars,locations:FUN
+				Project Idea by: Stiliyan Hristov XIA
+                          Liliyan Vachkov XIA
+
+Web app allowing users to view different local events or places of interest according to their personal profile preferences
+
+
+The website will work in the same fashion as sites such as: eventful and so on,but with an easier and more optimal way of browsing through potential events that the client would enjoy and possibly attend.
+
+-Local event browsing
+
+-User added events/Event organizations
+	Containing:
+		What the meetup/event will be for?
+		Is the event free or paid?
+		Where the event is held?
+-Google maps integration allows for fast and easy travel towards the users’ desired destination/event
+
+-Friends list implementation: Check out what your friends are up to and in what mutual events you can partake
+
+-User specific sorting by personal preference
+	Later accompanied by the specific users’ attendance and event viewing history
+
+-Perfect for local musical development(bands,concerts and etc.)
+
+-Perfect for hobbyists
+
+-Perfect for organization
+
+-Possible Android release in the future
+
+(Web app functionality subject to change) 
