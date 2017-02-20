@@ -1,0 +1,13 @@
+OpenFix
+
+Web/mobile application for troubleshooting. Find the best step-by-step solution, specially provided for your system configuration.
+
+Features:
+- Post new problem, providing your system configuration
+- Suggest solution
+- Approve solution as working for given system configuration or declate it's not working for you
+- Easily check for what system configurations any given solution is working or not
+
+Team:
+Dimitar Nikolov, No 7, 11A
+Hristo Spasov, No 29, 11A 
