@@ -1,0 +1,22 @@
+Web базирана игра, базирана Sci-Fi битки
+
+Започваш с празен инвентар
+Имаш levels
+При битка с различни mobs (извънземни etc.) получаваш награди, които scale-ват с level-а и трудността
+Shop, в който може да се продава и купува, за сметка на виртуални пари
+Shop за виртуални пари
+Бонус dungeons които се купуват
+Equipment които зависи от level-а и drop-ва от dungeons
+Арена - players мерят сили като арените могат да зависят от левъла или не
+Масив dungeons за група от хора
+Giveaway events
+Health regeneration за време (immortal тоест не умират, а просто остават на 0 health и се възстановяват)
+Potions (за по-добри drops, regeneration, etc.)
+Space crafts за други dungeons
+Роботи - helpers (нещо като pets, които помагат)
+Shop за платени items
+Stats за всеки вдигнат level
+Ranking system
+
+B 24 Slav Kirilov
+B 27 Hristian Genchev 
