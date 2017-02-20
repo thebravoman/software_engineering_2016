@@ -1,7 +1,10 @@
 Morbid Mask
 
 Overview:
-    2D platformer game in a charming pixelized world with satisfying grappling hook physics, combat mechanics and a mysterious story to push you through the beautifully drawn levels. Fight enemies and absorb their essence to either fight for good or go down a very dark path, should you give into temptation...
+    2D platformer game in a charming pixelized world with satisfying grappling hook physics,
+    combat mechanics and a mysterious story to push you through the beautifully drawn levels.
+    Fight enemies and absorb their essence to either fight for good or go down a very dark path,
+    should you give into temptation...
 
 Features:
       - Parsing levels from XML
