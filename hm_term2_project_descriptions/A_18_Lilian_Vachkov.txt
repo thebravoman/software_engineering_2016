@@ -1,6 +1,6 @@
 ﻿				Events,bars,locations:FUN
 				Project Idea by: Stiliyan Hristov XIA
-                          Liliyan Vachkov XIA
+                          	Liliyan Vachkov XIA
 
 Web app allowing users to view different local events or places of interest according to their personal profile preferences
 
