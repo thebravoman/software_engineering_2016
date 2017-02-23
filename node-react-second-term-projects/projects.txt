@@ -1,0 +1,18 @@
+Опишете проекта си тук и напишете с кого ще работите:
+https://github.com/thebravoman/software_engineering_2016/tree/master/node-react-second-term-projects
+
+https://facebook.github.io/react/docs/installation.html
+
+Using react for development from CDN:
+
+<script src="https://unpkg.com/react@15/dist/react.js"></script>
+<script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+
+Using react for production from CDN
+
+<script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+<script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+
+
+Online JS environment
+http://codepen.io/gaearon/pen/ZpvBNJ?editors=0010
