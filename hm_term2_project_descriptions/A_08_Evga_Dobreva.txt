@@ -1,0 +1,21 @@
+The cat and the caterpillar
+
+"The cat and the caterpillar" is a 2D RPG game with unique combat mechanics.
+Dive into a great story about the friendship between "Keaur" the cat
+and "Stub" the caterpillar, fighting for their survival in the forest.
+
+Features:
+-Large diversity of mini games
+-Original art
+-Hard gameplay based on multitasking
+-Audio
+
+Technologies:
+-C++
+-SDL2
+-OpenGL
+-OpenGameArt
+
+Team:
+Евга Добрева 11а №: 8
+Йоан Косев 11а №: 15
