@@ -1,0 +1,5 @@
+Catalog for GPUs.It will have a menu to choose between AMD and Nvidia and you can sort between specs.
+
+Team
+-Bojidar Stanoev 11a №3
+-Ivan Milev 11a №11
