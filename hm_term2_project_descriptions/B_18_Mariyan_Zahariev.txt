@@ -1,6 +1,6 @@
 WoW Addon
 
-Addon за най-попълярната и най-великата MMORPG игра на света.Ще се казва "Is it wrong to try to pick up Blood Elfs in a game".Езика на който ще бъде написан е LUA.
+Addon за най-попълярната и най-великата MMORPG игра на света.Ще се казва "Is it wrong to try to pick up Blood Elfs in a game".Езика на който ще бъде написан е в процес на мислене.
 
 Features:
   -Предварително ще бъдат оценени всички итеми в играта със SlutPoints.
