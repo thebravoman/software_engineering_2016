@@ -9,3 +9,5 @@ Features:
   -При нисък score ще изписва /ignore "Player's name".
   -Може и да пише в чата някоя команда като /flirt, /wave etc.
   
+Теам:
+Мариян Захариев 11Б клас (IM forever alone guy and i dont have friends os im alone forever)
