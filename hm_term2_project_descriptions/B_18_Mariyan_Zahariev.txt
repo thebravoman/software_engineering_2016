@@ -1,15 +1,11 @@
 WoW Addon
 
-Addon за най-попълярната и най-великата MMORPG игра на света.Ще се казва "Is it wrong to try to pick up Blood Elfs in a game".Езика на който ще бъде написан е в процес на мислене.
+Addon за най-попълярната и най-великата MMORPG игра на света.Ще се казва "Is it wrong to try to pick up Blood Elfs in a game".Езика на който ще бъде написан е LUA.
 
 Features:
-  -Предварително ще бъдат оценени всички итеми в играта със SlutPoints.
-  -Ще сканира екрана за Female Blood Elf characters, с какъв Transmog са и ще сабира точките за всеки итем.
-  -При висок score ще ги таргетва и ще добавя battle.net тага на играче в приятели.
-  -При нисък score ще изписва /ignore "Player's name".
-  -Може и да пише в чата някоя команда като /flirt, /wave etc.
+  -still thinking...
   
 
   
 Теам:
-Мариян Захариев 11Б клас (Im forever alone guy and i dont have friends so im alone forever)
+Мариян Захариев 11Б клас
