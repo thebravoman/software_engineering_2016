@@ -1,0 +1,11 @@
+WoW Addon
+
+Addon за най-попълярната и най-великата MMORPG игра на света.Ще се казва "Is it wrong to try to pick up Blood Elfs in a game".
+
+Features:
+  -Предварително ще бъдат оценени всички итеми в играта със SlutPoints.
+  -Ще сканира екрана за Female Blood Elf characters, с какъв Transmog са и ще сабира точките за всеки итем.
+  -При висок score ще ги таргетва и ще добавя battle.net тага на играче в приятели.
+  -При нисък score ще изписва /ignore "Player's name".
+  -Може и да пише в чата някоя команда като /flirt, /wave etc.
+  
