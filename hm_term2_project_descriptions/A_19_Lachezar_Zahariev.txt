@@ -1,0 +1,18 @@
+Sudoku Application
+A game that is known to a wide variety of people. The application is here to brighten up your day with
+limitless collection of randomly generated sudokus and variety of difficulties.
+
+Features:
+- Sudoku Generator
+  ~ Three difficulty levels
+- Tips for the game
+- Options
+  ~ Screen size 
+  ~ Screen colour
+  <!- Eventually a music background -!>
+- Sudoku Solving Algorithm
+- Animating the solving process
+
+Team: 
+Lachezar Zahariev № 19
+Rangel Ivanov № 25
