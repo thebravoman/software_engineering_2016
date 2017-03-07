@@ -1,0 +1,8 @@
+Tap tap ball
+
+-Игра за Android
+-Endless runner
+
+-различни модове(high score,levels,missions)
+-Къстомизация
+Гергана Пейкова 10б, N11
