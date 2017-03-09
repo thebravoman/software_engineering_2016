@@ -1,0 +1,6 @@
+Екип:
+- Георги Карабойчев 11А,  6№
+- Захари Георгиев 11А, 9№
+
+Проект:
+Online updateable to-do list for kids made by parents.
