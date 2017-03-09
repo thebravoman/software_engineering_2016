@@ -1,3 +1,3 @@
-Joint project /w Stiliyan Hristov 26 11a class
-
+Joint project : Stiliyan Hristov 26 11a class 
+                Liliyan Vachkov 18 11a class
 Website relying on ReactJS game engine with backend node js user/account settings and user game state saving
