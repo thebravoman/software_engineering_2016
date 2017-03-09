@@ -1,0 +1,5 @@
+Online shop with sorting options by price and more...
+
+Team:
+Ivo Stefanov 11a n13
+Alexander Stoqnov 11a n01
