@@ -1,11 +1,22 @@
-WoW Addon
-
-Addon за най-попълярната и най-великата MMORPG игра на света.Ще се казва "Is it wrong to try to pick up Blood Elfs in a game".Езика на който ще бъде написан е LUA.
+Addon за WoW. Езика на който ще бъде написан е LUA.
 
 Features:
-  -still thinking...
-  
-
+  - every player item (raid/party group)
+  - calculates avarage item level
+  - lists the relics of the weapons
+  - shows detailed item information (without hovering over it)
+  - history of killed raid bosses
+  - scans for foodBuff & flaskBuff (raid/party group)
+  - history of mithyc + dungeons
+  - lists all legendary items (equipped only)
+  - arena rating
+  - honorable kills
+  - rated BG rating
+  - artefact traits level
+  - quick settings menu
+  - key binding optimised system
+  - "cooldown ready" message (pops up when a spell can be used again)
   
 Теам:
-Мариян Захариев 11Б клас
+Мариян Захариев 11Б клас, номер 18
+Даниел Райков 11Б клас, номер 12
