@@ -1,14 +1,26 @@
-(Still thinking on the name)
-A survival game set in apocalyptic world with turn-based combat.
-You will play as a lone survivor. 
-Your task is simple:survive.
+[PROTO]
+
+A survival game set in savage alien world with turn-based combat.
+You will play as a lone man/woman trying to survive in the wastes of a desolate world. 
+Your task is simple: survive.
+You will have to choose your origin.
+- scavenger/bandit;
+- deserted soldier from a system-conquering corporation;
+- holy man/woman (missionary) that is on a mission to help people on harsh planets;
+- mercenary - will do anything for the right price;
+- cyborg, escaped from a testing facility (won't neeed food but will require power supplying instead); 
+Depending on you choice you will have one special ability (active or passive).
 
 The game will include:
--free travelling toughout a big map
--Leveling up your gear>
--Story mode full with choices
--Creation of party(NPCs)
--And even more in the future 
+- Free travelling toughout a big map
+- Leveling up your gear
+- Finding new gear
+- Encounters full with choices that matter
+- Creation of party(NPCs)
+- Mistakes will have brutal effect on your well being
+- Permadeath
+
+You will fight with different factions: Mercenary,Soldiers,Cyborgs,Bandits,Scavengers and some shadowy alien species
 
 Team:
 Velislav Yotov XIa 05
