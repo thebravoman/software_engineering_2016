@@ -1,0 +1,23 @@
+{
+   "GPUs":
+   [
+      {
+         "name":"M67",
+		 "type":"fragmentation_grenade",
+		 "filling":"Composition B",
+		 "weight":"0.4kg",
+		 "injure_radius":"15m",
+		 "fatality_radius":"5m",
+		 "fuze_time":"5s"
+      },
+      {
+         "name":"F1",
+		 "type":"fragmentation_grenade",
+		 "filling":"Trinitrotoluene",
+		 "weight":"0.6kg",
+		 "injure_radius":"30m",
+		 "fatality_radius":"15m",
+		 "fuze_time":"4s"
+      }
+   ]
+}
