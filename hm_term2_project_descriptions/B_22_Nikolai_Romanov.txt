@@ -1,0 +1,12 @@
+
+Tap tap ball
+
+-Игра за Android
+-Endless runner
+
+-различни модове(high score,levels,missions)
+-Къстомизация
+
+Екип:
+Гергана Пейкова 11б, N11
+Николай Романов 11б, N22
