@@ -1,0 +1,30 @@
+{
+	"doodles": [
+		{
+			"name":"henlo",
+			"description":"we gotta stop cyberbullying",
+			"category":"original",
+			"tags":[
+				"paint",
+				"ugly"
+			],
+			"createdAt":"TIMESTAMP",
+			"author":"stnkngr",
+			"votes":"1",
+			"downvotes":"1"
+		},
+		{
+			"name":"mr izipre",
+			"description":"guitarman",
+			"category":"speedpaint",
+			"tags":[
+				"mister",
+				"child"
+			],
+			"createdAt":"TIMESTAMP",
+			"author":"stnkngr",
+			"votes":"1",
+			"downvotes":"1"
+		}
+	]
+}
