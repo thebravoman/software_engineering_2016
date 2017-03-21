@@ -5,7 +5,7 @@ Features:
   -in frame will show rated arena rating, rated battleground rating, honorable kills.
   -in frame will show last raid bosses killed and how many 10+ and 15+ mythic+ dungeons the player has cleared.
   -in frame will show rune, food and flash buff of all raid/party members.
-  -when big cds are ready during combat
+  -when big cds are ready during combat(?)
   
 Теам:
 Мариян Захариев 11Б клас, номер 18
