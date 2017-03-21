@@ -1,21 +1,11 @@
 Addon за WoW. Езика на който ще бъде написан е LUA.
 
 Features:
-  - every player item (raid/party group)
-  - calculates avarage item level
-  - lists the relics of the weapons
-  - shows detailed item information (without hovering over it)
-  - history of killed raid bosses
-  - scans for foodBuff & flaskBuff (raid/party group)
-  - history of mithyc + dungeons
-  - lists all legendary items (equipped only)
-  - arena rating
-  - honorable kills
-  - rated BG rating
-  - artefact traits level
-  - quick settings menu
-  - key binding optimised system
-  - "cooldown ready" message (pops up when a spell can be used again)
+  -in frame will show the avr Ilvl of a player, Ilvl of each item, equped legendary items weapon relics and traits.
+  -in frame will show rated arena rating, rated battleground rating, honorable kills.
+  -in frame will show last raid bosses killed and how many 10+ and 15+ mythic+ dungeons the player has cleared.
+  -in frame will show rune, food and flash buff of all raid/party members.
+  -when big cds are ready during combat
   
 Теам:
 Мариян Захариев 11Б клас, номер 18
