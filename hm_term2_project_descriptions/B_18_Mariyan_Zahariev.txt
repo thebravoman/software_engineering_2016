@@ -1,12 +1,20 @@
-Addon за WoW. Езика на който ще бъде написан е LUA.
+Addon за Hearthstone написан на Lua.
 
 Features:
-  -in frame will show the avr Ilvl of a player, Ilvl of each item, equped legendary items weapon relics and traits.
-  -in frame will show rated arena rating, rated battleground rating, honorable kills.
-  -in frame will show last raid bosses killed and how many 10+ and 15+ mythic+ dungeons the player has cleared.
-  -in frame will show rune, food and flash buff of all raid/party members.
-  -when big cds are ready during combat(?)
-  
-Теам:
-Мариян Захариев 11Б клас, номер 18
-Даниел Райков 11Б клас, номер 12
+
+1. Displays a list of the cards in your deck on the right side of the screen. (Drawn cards are blanked)
+2. Displays a list of the cards your opponent has played this game on the left side of the screen.
+3. A tab which gives the following information:
+- The number of cards currently in your hand.
+- The number of cards your opponent is holding.
+- How much remaining cards you have in your deck.
+- How much remaining cards your opponent have in thier deck.
+- How "big" is your C'Thun. (Attack and Health)
+- The number of the current turn.
+4. A number in a circle over each card indicating the turn that it has been drawn.
+5. Timer near the "End Turn" button showing how much time has left before the turn is over.
+6. Nozdormu timer indicating how much REAL time has left before the end of the turn. (there is a bug with the card, the turn should be 15 seconds but its not)
+7. Arena helper and tier list. (Game mode where you have to pick 1 of 3 random cards, the addon suggests the best pick)
+8. Record games. (W/L Ratio, Class, type of deck)
+
+Team: Даниел Райков номер 12, Мариян Захариев номер 18
