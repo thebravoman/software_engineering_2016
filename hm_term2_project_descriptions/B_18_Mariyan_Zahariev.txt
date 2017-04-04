@@ -1,4 +1,4 @@
-Addon за Hearthstone написан на Lua.
+Addon за Hearthstone написан на C#.
 
 Features:
 
