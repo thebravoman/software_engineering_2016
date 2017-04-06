@@ -1,0 +1,18 @@
+{
+   "Car(s)":
+   [
+      {
+         "Manufacturer":"Lada",
+         "Model":"Niva",
+		 "Fuel_type":"Petrol",
+         "Fuel_consumption":"10.4-13.7L/100km",
+		 "Number_of_cylinders":"I 4",
+		 "Engine_capacity":"1568cm3",
+		 "Number_of_valves":"8",
+		 "Aspiration":"N/A",
+		 "Compression Ratio":"8.5",
+		 "Maximum_speed":"130km/h",
+		 "Horse_power":"72hp"
+      }
+   ]
+}
