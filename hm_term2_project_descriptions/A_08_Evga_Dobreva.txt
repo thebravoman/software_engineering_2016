@@ -1,3 +1,5 @@
+Repo: https://github.com/Izikatkakek/The_cat_and_the_caterpillar
+
 The cat and the caterpillar
 
 "The cat and the caterpillar" is a 2D RPG game with unique combat mechanics.
