@@ -20,3 +20,6 @@ Ranking system
 
 B 24 Slav Kirilov
 B 27 Hristian Genchev 
+
+
+Repo: https://github.com/Slavkata/Rails_project
