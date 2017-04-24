@@ -2,6 +2,11 @@
 				Project Idea by: Stiliyan Hristov XIA
                           Liliyan Vachkov XIA
 
+Github repo: 
+	https://github.com/stilihristov/NightOut
+
+
+
 Web app allowing users to view different local events or places of interest according to their personal profile preferences
 
 
