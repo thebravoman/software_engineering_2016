@@ -22,6 +22,8 @@ The game will include:
 
 You will fight with different factions: Mercenary,Soldiers,Cyborgs,Bandits,Scavengers and some shadowy alien species
 
+Repo: https://github.com/IvoStefanov/ProtoTheGame
+
 Team:
 Velislav Yotov XIa 05
 Ivo Stefanov XIa 13
