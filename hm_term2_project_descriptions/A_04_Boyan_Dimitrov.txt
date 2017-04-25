@@ -15,6 +15,9 @@ Features:
 - Registration form, ranklist for the best players
 - Multiplayer game;s
 
+Github rep-o:
+https://github.com/radito3/SudokuApplication
+
 Team: 
 Boyan Dimitrov № 04
 Lachezar Zahariev № 19
