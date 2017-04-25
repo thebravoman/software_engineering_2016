@@ -1,23 +1,21 @@
-Име на проект: Keylashnikoff
+Sudoku Application
+A game that is known to a wide variety of people. The website is here to brighten up your day with
+limitless collection of randomly generated sudokus and variety of difficulties.
 
-Feature-и:
-  -Напълно функционална стандартна qwerty клавиатура.
-  -Възможност за добавяне на съкращения от user-a, които клавиатурата да запомня и по време на писане да разпознава.
-  -Възможност за Auto-Correct при ръчно писане на емотикони(за старомодните хора, които още го правят).
-  -В процесът на работа ще се добавят още.
+Features:
+- Sudoku Generator
+  ~ Three difficulty levels
+- Tips for the game
+- Options
+  ~ Screen size 
+  ~ Screen colour
+  ~ Sudoku dimensions choise
+  <!- Eventually a music background -!>
+- Sudoku Solving Algorithm
+- Registration form, ranklist for the best players
+- Multiplayer game;s
 
-Github репозитори: 
-https://github.com/bojan-dim/TP_project_2017
-
-Youtube канал:
-https://www.youtube.com/channel/UCuaysVUjERqLoWTW6ceJyPw?guided_help_flow=3
-
-Wikiа:
-http://keylashnikoff.wikia.com/wiki/User:Keylashnikoff
-
-Teхнологии:
-Android, Java
-
-Екип:
-  Боян Димитров 11А No.4
-  Мартин Божинов 11А No.21
+Team: 
+Boyan Dimitrov № 04
+Lachezar Zahariev № 19
+Rangel Ivanov № 25
