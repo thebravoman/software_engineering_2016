@@ -9,5 +9,7 @@ The game will include:
 -Creation of party(NPCs)
 -And even more in the future
 
+Repo: https://github.com/IvoStefanov/ProtoTheGame
+
 Velislav Yotov XIa 05
 Ivo Stefanov XIa 13
