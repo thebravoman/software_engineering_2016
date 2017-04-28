@@ -1,20 +1,9 @@
-Addon за Hearthstone написан на C#.
+Addon за World of Warcraft написан на LUA.
 
 Features:
-
-1. Displays a list of the cards in your deck on the right side of the screen. (Drawn cards are blanked)
-2. Displays a list of the cards your opponent has played this game on the left side of the screen.
-3. A tab which gives the following information:
-- The number of cards currently in your hand.
-- The number of cards your opponent is holding.
-- How much remaining cards you have in your deck.
-- How much remaining cards your opponent have in thier deck.
-- How "big" is your C'Thun. (Attack and Health)
-- The number of the current turn.
-4. A number in a circle over each card indicating the turn that it has been drawn.
-5. Timer near the "End Turn" button showing how much time has left before the turn is over.
-6. Nozdormu timer indicating how much REAL time has left before the end of the turn. (there is a bug with the card, the turn should be 15 seconds but its not)
-7. Arena helper and tier list. (Game mode where you have to pick 1 of 3 random cards, the addon suggests the best pick)
-8. Record games. (W/L Ratio, Class, type of deck)
+ -Average Item level of the player showed in the tooltip of the character
+ -Mythic+ dungeon progress
+   *shows how much % each mob will give
+   *shows how many % oyu need to complete the dungeon
 
 Team: Даниел Райков номер 12, Мариян Захариев номер 18
