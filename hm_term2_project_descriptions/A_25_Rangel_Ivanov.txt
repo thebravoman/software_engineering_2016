@@ -1,5 +1,5 @@
 Sudoku Application
-A game that is known to a wide variety of people. The application is here to brighten up your day with
+A game that is known to a wide variety of people. The website is here to brighten up your day with
 limitless collection of randomly generated sudokus and variety of difficulties.
 
 Features:
@@ -9,10 +9,16 @@ Features:
 - Options
   ~ Screen size 
   ~ Screen colour
+  ~ Sudoku dimensions choise
   <!- Eventually a music background -!>
 - Sudoku Solving Algorithm
-- Animating the solving process
+- Registration form, ranklist for the best players
+- Multiplayer game;s
+
+Github rep-o:
+https://github.com/radito3/SudokuApplication
 
 Team: 
+Boyan Dimitrov № 04
 Lachezar Zahariev № 19
 Rangel Ivanov № 25
