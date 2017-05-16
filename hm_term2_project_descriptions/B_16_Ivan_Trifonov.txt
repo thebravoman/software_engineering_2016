@@ -1,4 +1,5 @@
 github repository : https://github.com/Ivan3fonov/UnexpectedHolidayApplication
+prezentaciq - https://drive.google.com/file/d/0B6jcGKRvzOBpdW1IZ1JIMVM2akE/view?usp=sharing
 
 Приложение за пътуване 
 Избираш периметър и приложението ти избира държава или определено място до което трябва да достигнеш.
