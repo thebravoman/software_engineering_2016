@@ -15,5 +15,7 @@ click-to-move, за да има по-бързо темпо играта.
 
 Repo: https://github.com/mutafow/click-move-grid/tree/master
 
+Presentation: https://drive.google.com/file/d/0B9jyN9psuNM7VEZxbGxMLWdvXzQ/view
+
 Борис Мутафов №3
 Никола Цочев №21
