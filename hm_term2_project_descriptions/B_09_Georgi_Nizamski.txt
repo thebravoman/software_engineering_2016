@@ -17,6 +17,8 @@ bluetooth или Wi-Fi.
 
 -> Repo: https://github.com/GeorgiNzm/GestureController2016-2017
 
+-> Presentation: https://drive.google.com/open?id=0Bz3Bn3X_DYC-WkR6UFV2VGdNTEk
+
 Отборен проект от :
 
 Георги Низамски 11Б клас номер 9 и Даниел Туечки 11Б клас номер 11
