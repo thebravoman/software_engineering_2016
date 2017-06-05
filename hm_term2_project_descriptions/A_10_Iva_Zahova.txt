@@ -27,6 +27,8 @@ Techonologies:
       - SDL2
       - OpenGL
 
+Repository: https://bitbucket.org/IvoTod/morbid-mask
+
 Team:
 Иво Тодоров №14 11а клас
 Ива Захова №10 11а клас
