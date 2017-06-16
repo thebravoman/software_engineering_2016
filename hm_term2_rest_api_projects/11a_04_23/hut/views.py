@@ -26,7 +26,7 @@ def add_form(request):
     form = AddHutForm(request.POST, request.FILES)
     if form.is_valid():
         form.save()
-        return redirect('https://hut-searcher.herokuapp.com/huts')
+        return redirect('http://localhost:8000/huts')
 
 
 def huts_page(request, page):
@@ -60,7 +60,7 @@ def update_form(request):
         hut.image = form.cleaned_data['image']
         hut.phone = form.cleaned_data['phone']
         hut.save()
-        return redirect('https://hut-searcher.herokuapp.com/huts')
+        return redirect('http://localhost:8000/huts')
 
 
 def delete(request):

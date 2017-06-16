@@ -15,7 +15,7 @@
 
         <script type="text/jsx">
 
-            var uri = "https://hut-searcher.herokuapp.com/show_huts/{{hutname}}/";
+            var uri = "http://localhost:8000/show_huts/{{hutname}}/";
 
             beforecreate: $.ajax({
                 sync: true,
@@ -116,11 +116,11 @@
     <body background="http://www.protestnamreja.bg/wp-content/uploads/2017/03/pirindron.jpg">
         <ul class="nav nav-pills" role="tablist">
 
-            <li role="presentation"><a href="https://hut-searcher.herokuapp.com/home">Home</a></li>
+            <li role="presentation"><a href="http://localhost:8000/home">Home</a></li>
 
-            <li role="presentation"><a href="https://hut-searcher.herokuapp.com/huts/add">Add Hut</a></li>
+            <li role="presentation"><a href="http://localhost:8000/huts/add">Add Hut</a></li>
 
-            <li role="presentation"><a href="https://hut-searcher.herokuapp.com/huts">Show All Huts</a></li>
+            <li role="presentation"><a href="http://localhost:8000/huts">Show All Huts</a></li>
 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Show Hut</a>
@@ -138,7 +138,7 @@
                 </div>
             </li>
 
-            <li role="presentation"><a href="https://hut-searcher.herokuapp.com/huts/delete">Delete Hut</a></li>
+            <li role="presentation"><a href="http://localhost:8000/huts/delete">Delete Hut</a></li>
 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Show Hut Page</a>
@@ -155,7 +155,7 @@
         <script type="text/javascript">
             $('#searchHut').click(function(){
                 if ($("#hutName").val()) {
-                    location = "https://hut-searcher.herokuapp.com/huts/" + encodeURIComponent($("#hutName").val());
+                    location = "http://localhost:8000/huts/" + encodeURIComponent($("#hutName").val());
                     console.log(location);
                 }
             });
@@ -164,7 +164,7 @@
         <script type="text/javascript">
             $('#searchHutUpdate').click(function(){
                 if ($("#updateHut").val()) {
-                    location = "https://hut-searcher.herokuapp.com/huts/update/" + encodeURIComponent($("#updateHut").val());
+                    location = "http://localhost:8000/huts/update/" + encodeURIComponent($("#updateHut").val());
                     console.log(location);
                 }
             });
@@ -173,7 +173,7 @@
         <script type="text/javascript">
             $('#searchHutPage').click(function(){
                 if ($("#pageNumber").val()) {
-                    location = "https://hut-searcher.herokuapp.com/huts/page=" + encodeURIComponent($("#pageNumber").val());
+                    location = "http://localhost:8000/huts/page=" + encodeURIComponent($("#pageNumber").val());
                     console.log(location);
                 }
             });
