@@ -1,0 +1,16 @@
+{
+  "name": "express-api",
+  "version": "0.5.0",
+  "description": "Express based web app for music album storage",
+  "main": "jquery.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Stiliyan Hristov & Iordan Ivanov",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4"
+  }
+}
