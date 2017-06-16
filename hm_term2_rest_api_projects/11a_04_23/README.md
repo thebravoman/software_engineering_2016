@@ -1,2 +1,2 @@
-# hut
-Project for school
+# hut-searcher
+Application for searching Huts
