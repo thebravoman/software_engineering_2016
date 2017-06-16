@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hut Searcher</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <style type="text/css">
+        body {
+            background-image: "http://www.protestnamreja.bg/wp-content/uploads/2017/03/pirindron.jpg";
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+    </style>
+
+</head>
+    <body background="http://www.protestnamreja.bg/wp-content/uploads/2017/03/pirindron.jpg">
+        <ul class="nav nav-pills" role="tablist">
+
+            <li role="presentation"><a href="https://hut-searcher.herokuapp.com/home">Home</a></li>
+
+            <li role="presentation"><a href="https://hut-searcher.herokuapp.com/huts/add">Add Hut</a></li>
+
+            <li role="presentation"><a href="https://hut-searcher.herokuapp.com/huts">Show All Huts</a></li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Show Hut</a>
+                <div class="dropdown-menu">
+                    <input type="text" class="form-control" id="hutName" placeholder="Hut name">
+                    <input id="searchHut" class="btn btn-lg btn-primary btn-block" type="button" value="Search Hut" />
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Update Hut</a>
+                <div class="dropdown-menu">
+                    <input type="text" class="form-control" id="updateHut" placeholder="Hut name">
+                    <input id="searchHutUpdate" class="btn btn-lg btn-primary btn-block" type="button" value="Update Hut" />
+                </div>
+            </li>
+
+            <li role="presentation"><a href="https://hut-searcher.herokuapp.com/huts/delete">Delete Hut</a></li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Show Hut Page</a>
+                <div class="dropdown-menu">
+                    <input type="text" class="form-control" id="pageNumber" placeholder="Page number">
+                    <input id="searchHutPage" class="btn btn-lg btn-primary btn-block" type="button" value="Search Hut Page" />
+                </div>
+            </li>
+
+        </ul>
+
+        <script type="text/javascript">
+            $('#searchHut').click(function(){
+                if ($("#hutName").val()) {
+                    location = "https://hut-searcher.herokuapp.com/huts/" + encodeURIComponent($("#hutName").val());
+                    console.log(location);
+                }
+            });
+        </script>
+
+        <script type="text/javascript">
+            $('#searchHutUpdate').click(function(){
+                if ($("#updateHut").val()) {
+                    location = "https://hut-searcher.herokuapp.com/huts/update/" + encodeURIComponent($("#updateHut").val());
+                    console.log(location);
+                }
+            });
+        </script>
+
+        <script type="text/javascript">
+            $('#searchHutPage').click(function(){
+                if ($("#pageNumber").val()) {
+                    location = "https://hut-searcher.herokuapp.com/huts/page=" + encodeURIComponent($("#pageNumber").val());
+                    console.log(location);
+                }
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hut Searcher</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://fb.me/react-0.14.6.js"></script>
+        <script src="https://fb.me/react-dom-0.14.6.js"></script>
+        <script src="http://fb.me/JSXTransformer-0.12.1.js"></script>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+        <script type="text/jsx">
+
+            var uri = "https://hut-searcher.herokuapp.com/show_huts/{{hutname}}/";
+
+            beforecreate: $.ajax({
+                sync: true,
+                url: uri,
+                method: 'GET',
+            }).then(function(data) {
+                var hut = data;
+                ReactDOM.render(<Hut hut={hut} />, document.getElementById('huts-details'));
+            }.bind(this));
+            
+            var Hut = React.createClass({
+                render: function() {
+                    return (
+                         <div className="row">
+                             <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+                                 <div className="panel panel-info">
+
+                                     <div className="panel-heading">
+                                        <h3 className="panel-title">{this.props.hut.hutname}</h3>
+                                     </div>
+
+                                     <div className="panel-body">
+                                         <div className="row">
+
+                                             <div className="col-md-3 col-lg-3 " align="center">
+                                                 <img alt="Hut Pic" src={this.props.hut.image} className="img-circle img-responsive"></img>
+                                             </div>
+
+                                             <div className=" col-md-9 col-lg-9 ">
+
+                                                 <table className="table table-user-information">
+                                                     <tbody>
+
+                                                         <tr>
+                                                             <td>Hut Name:</td>
+                                                             <td>{this.props.hut.hutname}</td>
+                                                         </tr>
+
+                                                         <tr>
+                                                             <td>Altitude:</td>
+                                                             <td>{this.props.hut.altitude}</td>
+                                                         </tr>
+
+                                                         <tr>
+                                                             <td>Mountain:</td>
+                                                             <td>{this.props.hut.mountain}</td>
+                                                         </tr>
+
+                                                         <tr>
+                                                             <td>People capacity:</td>
+                                                             <td>{this.props.hut.people_capacity}</td>
+                                                         </tr>
+
+                                                         <tr>
+                                                             <td>Email</td>
+                                                             <td>{this.props.hut.email}</td>
+                                                         </tr>
+
+                                                         <tr>
+                                                             <td>Phone:</td>
+                                                             <td>{this.props.hut.phone}</td>
+                                                         </tr>
+                                                     </tbody>
+                                                 </table>
+                                            </div>
+                                         </div>
+
+
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                    );
+                }
+            });
+        </script>
+
+        <script type="text/javascript">
+            var theForm = document.getElementById('theForm');
+            var theInput = document.getElementById('subj');
+            theForm.onsubmit = function(e){
+                if (theInput.value) {
+                    location = "/hut/" + encodeURIComponent(theInput.value);
+                }
+                return false;
+            }
+        </script>
+
+        <style type="text/css">
+            body {
+            background-image: "http://www.protestnamreja.bg/wp-content/uploads/2017/03/pirindron.jpg";
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            }
+        </style>
+    </head>
+
+    <body background="http://www.protestnamreja.bg/wp-content/uploads/2017/03/pirindron.jpg">
+        <ul class="nav nav-pills" role="tablist">
+
+            <li role="presentation"><a href="https://hut-searcher.herokuapp.com/home">Home</a></li>
+
+            <li role="presentation"><a href="https://hut-searcher.herokuapp.com/huts/add">Add Hut</a></li>
+
+            <li role="presentation"><a href="https://hut-searcher.herokuapp.com/huts">Show All Huts</a></li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Show Hut</a>
+                <div class="dropdown-menu">
+                    <input type="text" class="form-control" id="hutName" placeholder="Hut name">
+                    <input id="searchHut" class="btn btn-lg btn-primary btn-block" type="button" value="Search Hut" />
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Update Hut</a>
+                <div class="dropdown-menu">
+                    <input type="text" class="form-control" id="updateHut" placeholder="Hut name">
+                    <input id="searchHutUpdate" class="btn btn-lg btn-primary btn-block" type="button" value="Update Hut" />
+                </div>
+            </li>
+
+            <li role="presentation"><a href="https://hut-searcher.herokuapp.com/huts/delete">Delete Hut</a></li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Show Hut Page</a>
+                <div class="dropdown-menu">
+                    <input type="text" class="form-control" id="pageNumber" placeholder="Page number">
+                    <input id="searchHutPage" class="btn btn-lg btn-primary btn-block" type="button" value="Search Hut Page" />
+                </div>
+            </li>
+
+        </ul>
+
+        <div class="container" id="huts-details"></div>
+
+        <script type="text/javascript">
+            $('#searchHut').click(function(){
+                if ($("#hutName").val()) {
+                    location = "https://hut-searcher.herokuapp.com/huts/" + encodeURIComponent($("#hutName").val());
+                    console.log(location);
+                }
+            });
+        </script>
+
+        <script type="text/javascript">
+            $('#searchHutUpdate').click(function(){
+                if ($("#updateHut").val()) {
+                    location = "https://hut-searcher.herokuapp.com/huts/update/" + encodeURIComponent($("#updateHut").val());
+                    console.log(location);
+                }
+            });
+        </script>
+
+        <script type="text/javascript">
+            $('#searchHutPage').click(function(){
+                if ($("#pageNumber").val()) {
+                    location = "https://hut-searcher.herokuapp.com/huts/page=" + encodeURIComponent($("#pageNumber").val());
+                    console.log(location);
+                }
+            });
+        </script>
+    </body>
+</html>
