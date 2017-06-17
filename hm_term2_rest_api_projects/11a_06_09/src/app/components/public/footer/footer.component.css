@@ -1,0 +1,23 @@
+footer {
+    background-color: #222222;
+    height: 100
+}
+
+.ul-footer {
+    margin-left: -40px;
+    padding-top: 1%;
+}
+
+.footer-link {
+    display: inline-block;
+    margin-right: 25px
+}
+
+span {
+    margin-left: 50px;
+    margin-right: 50px
+}
+
+.copyright {
+    color: lightgrey
+}

@@ -1,0 +1,31 @@
+.form-actions {
+    margin: 0;
+    background-color: transparent;
+    text-align: center;
+}
+
+.container {
+    margin-top: 50px
+}
+
+img {
+    max-width: 250px;
+    max-height: 150px;
+    /*
+    max-width: 100%;
+    height: auto */
+}
+
+ul {
+    list-style-type: none;
+    display: block;
+}
+
+li {
+    display: inline-block;
+}
+
+.picture-list {
+    width: 250px;
+    height: 150px;
+}

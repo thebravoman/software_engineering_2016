@@ -1,0 +1,31 @@
+img {
+    margin-left: 20%;
+}
+
+.container {
+    margin-top: -15px;
+    margin-bottom: 30px;
+}
+
+#members {
+    margin-top: -10px;
+}
+
+.link {
+    color: white;
+    background-color: royalblue;
+    padding: 10px
+}
+
+.important {
+    border-radius: unset;
+}
+
+.container {
+    margin-top: 50px
+}
+
+img {
+    max-width: 200px;
+    height: auto
+}

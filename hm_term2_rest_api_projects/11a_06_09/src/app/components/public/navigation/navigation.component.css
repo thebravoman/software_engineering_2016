@@ -1,0 +1,13 @@
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.logo {
+    height: 150%;
+    margin-top: -5px;
+}

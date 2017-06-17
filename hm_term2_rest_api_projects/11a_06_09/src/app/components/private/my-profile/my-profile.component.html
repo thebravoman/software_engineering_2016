@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header"><small>You are logged successfully at</small> TEEN@home
+            </h2>
+        </div>
+    </div>
+
+    <div id="members" class="row">
+        <div class="col-lg-12">
+            <h3 class="page-header">Account Overview</h3>
+        </div>
+        <div class="col-lg-4 col-sm-6 text-center profile-left-panel">
+            <!--<img class="img-responsive img-circle img-center" src="{{this.user.profilePictureUrl}}" alt="profilePic">-->
+            <img class="img-responsive img-rounded img-center" src="{{this.user.profilePictureUrl}}" alt="profilePic">
+            <h3><strong>{{this.user.username | uppercase | removeSpaces}}</strong>
+                <br><small>Parent/Child</small><br>{{this.user.firstName}} {{this.user.lastName}}
+            </h3>
+        </div>
+        <div class="col-lg-4 col-sm-6 text-left">
+            <h4 class="link"><strong>PROFILE INFORMATION</strong></h4>
+            <p><strong>Name: </strong> {{this.user.firstName | capitalize}} {{this.user.lastName | capitalize}}</p>
+            <p><strong>Email: </strong> {{this.user.email}}</p>
+            <p><strong>Nickname: </strong> {{this.user.username | lowercase | removeSpaces}}</p>
+            <p><strong>Created At: </strong> {{this.user.createdAt | date}}</p>
+            <p><strong>Updated At: </strong> {{this.user.lastUpdated | date}}</p>
+        </div>
+        <div class="col-lg-4 col-sm-6 text-left">
+            <h4 class="link"><strong>OPTIONS</strong></h4>
+            <p><a class="btn btn-lg btn-info" routerLink="/update-info" role="button"> UPDATE INFORMATION</a></p>
+            <p><a class="btn btn-lg btn-success right-align" routerLink="/donate" role="button">DONATE NOW!</a></p>
+        </div>
+        <br><br>
+        <div class="row">
+            <div class="col-lg-12">
+                <br><br>
+                <p>Find more information about the app here: <a routerLink="/about-us" target="_blank">ABOUT THE APP</a></p>
+                <p>Video tuttorial: <a routerLink="/how-to-use" target="_blank">HOW TO USE IT</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+<br>

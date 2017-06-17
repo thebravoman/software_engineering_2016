@@ -1,0 +1,19 @@
+.container {
+    margin-top: 50px
+}
+
+h2 {
+    text-align: center
+}
+
+.important {
+    color: white;
+    background-color: royalblue;
+    padding: 10px;
+    text-align: center
+}
+
+img {
+    max-width: 720px;
+    max-height: 500px
+}

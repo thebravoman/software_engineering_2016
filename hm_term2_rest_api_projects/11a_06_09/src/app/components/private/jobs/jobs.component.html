@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="container-fluid bg-3 text-center">
+        <div class="row">
+            <div class="col-lg-12 center">
+                <h2 class="page-header">JOBS <small>at TEEN@home</small>
+                </h2>
+            </div>
+        </div>
+
+        <br>
+        <div class="col-lg-6">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for...">
+                <span class="input-group-btn">
+                <button class="btn btn-primary" type="button"><span class="glyphicon glyphicon-search" placeholder="Search..." onfocus="this.placeholder = ''" onblur="this.placeholder ='Search...'"></span></button>
+                </span>
+            </div>
+        </div>
+        <br> <br> <br> <br>
+        <div class="col-lg-12 center">
+            <ul>
+                <li>
+                    <div id="picture-container" *ngFor="let job of this.jobs;" class="col-sm-3">
+                        <a routerLink="/jobs/single-job/{{job.id}}"> {{job.title | uppercase}}
+                        <img src="{{job.pictureUrl}}" class="picture-list img-thumbnail" alt="Image">
+                    </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <br>
+    <div class="text-center">
+        <a *ngFor="let page of this.pages;" routerLink="/jobs" (click)="changePage(page)">{{page}} </a>    
+    </div>
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <p><a class="btn btn-lg btn-primary" routerLink="/add-job" role="button">ADD NEW JOB</a></p>
+        </div>
+    </div>
+</div>
+<br><br>
+<br>

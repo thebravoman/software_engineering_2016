@@ -1,0 +1,42 @@
+<div class="container">
+    <h2>ADD NEW JOB</h2>
+    <hr>
+    <form class="form-horizontal" #addJobForm="ngForm" (ngSubmit)="addJob();">
+        <div class="form-group">
+            <label class="control-label col-sm-2"><span class="glyphicon glyphicon-check"></span></label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" placeholder="Title" name="title" [(ngModel)]="model.title">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2"><span class="glyphicon glyphicon-edit"></span></label>
+            <div class="col-sm-10">
+                <textarea class="form-control" placeholder="Description" name="description" [(ngModel)]="model.description"></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2"><span class="glyphicon glyphicon-euro"></span></label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" placeholder="Salary" name="salary" [(ngModel)]="model.salary">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2"><span class="glyphicon glyphicon-hourglass"></span></label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" placeholder="Work hours" name="workHours" [(ngModel)]="model.workHours">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2"><span class="glyphicon glyphicon-picture"></span></label>
+            <div class="col-sm-10">
+                <input type="avatar" class="form-control" placeholder="Add photo URL" name="pictureUrl" [(ngModel)]="model.pictureUrl">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-primary">ADD JOB</button>
+            </div>
+        </div>
+    </form>
+</div>
+<br>

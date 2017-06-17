@@ -1,0 +1,25 @@
+.video-container {
+    position: relative;
+    padding-bottom: 45%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+    margin-left: 150px;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+h2 {
+    text-align: center;
+    margin: 30px;
+}
+
+.container {
+    margin-top: 50px
+}

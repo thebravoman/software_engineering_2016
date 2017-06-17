@@ -1,0 +1,54 @@
+.jumbotron {
+    height: 700px;
+    background-image: url('./../../../../Resources/positive.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 500px
+}
+
+.right-align {
+    float: right;
+    margin-top: -100px
+}
+
+.important {
+    color: black;
+    background-color: #FFE086;
+    padding: 10px
+}
+
+.important-box {
+    border: 2px solid darkslategrey
+}
+
+.helpguide {
+    text-decoration: underline;
+    margin-top: 20px
+}
+
+.link {
+    background-color: #8DB8F2;
+    padding: 10px
+}
+
+.link a {
+    color: white;
+}
+
+.drug-abuse {
+    text-decoration: underline;
+    color: #8DB8F2
+}
+
+.center {
+    border: none;
+    background-color: #FFE086;
+    font-weight: bold;
+    color: black;
+    margin-right: 100px;
+    margin-top: 20px
+}
+
+.container {
+    margin-top: 50px
+}

@@ -1,0 +1,26 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" routerLink="/home"><img class="logo" src="./../../../../Resources/logo.PNG"> </a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a routerLink="/how-to-use">HOW TO USE IT</a></li>
+                <li><a routerLink="/about-us">ABOUT THE APP</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+
+                <li *ngIf="isLoggedIn()"><a routerLink="/jobs"><span class="glyphicon glyphicon-equalizer"></span> JOBS</a></li>
+                <li *ngIf="isLoggedIn()"><a routerLink="/my-profile"><span class="glyphicon glyphicon-user"></span> MY PROFILE</a></li>
+                <li *ngIf="isLoggedIn()"><a (click)="logout()" routerLink="/home"><span class="glyphicon glyphicon-log-out"></span> LOGOUT</a></li>
+                <li *ngIf="!isLoggedIn()"><a routerLink="/login"><span class="glyphicon glyphicon-log-in" ></span> LOGIN</a></li>
+                <li *ngIf="!isLoggedIn()"><a routerLink="/register"><span class="glyphicon glyphicon-lock"></span> REGISTER</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,57 @@
+<div class="container">
+    <h2>UPDATE ACCOUNT INFORMATION</h2>
+    <hr>
+    <form class="form-horizontal" #updateForm="ngForm" (ngSubmit)="update();">
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="email"><span class="glyphicon glyphicon-send"></span></label>
+            <div class="col-sm-10">
+                <input type="name" class="form-control" id="firstName" placeholder="First Name" name="firstName" [(ngModel)]="model.firstName">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="email"><span class="glyphicon glyphicon-edit"></span></label>
+            <div class="col-sm-10">
+                <input type="name" class="form-control" id="lastName" placeholder="Last Name" name="lastName" [(ngModel)]="model.lastName">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="email"><span class="glyphicon glyphicon-user"></span></label>
+            <div class="col-sm-10">
+                <input type="name" class="form-control" id="userName" placeholder="User Name" name="username" [(ngModel)]="model.username">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="email"><span class="glyphicon glyphicon-transfer"></span></label>
+            <div class="col-sm-10">
+                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" [(ngModel)]="model.email">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd"><span class="glyphicon glyphicon-lock"></span></label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password" [(ngModel)]="model.password">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd"><span class="glyphicon glyphicon-check"></span></label>
+            <div class="col-sm-10">
+                <select id="category-register" name="category" required="true" onfocus="this.placeholder = ''" onblur="this.placeholder ='Category'" class="form-control">
+                    <option value="male">child</option>
+                    <option value="female">parent</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd"><span class="glyphicon glyphicon-picture"></span></label>
+            <div class="col-sm-10">
+                <input type="avatar" class="form-control" id="pwd" placeholder="Enter avatar URL (optional)">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-info">SUBMIT</button>
+            </div>
+        </div>
+    </form>
+</div>
+<br>
