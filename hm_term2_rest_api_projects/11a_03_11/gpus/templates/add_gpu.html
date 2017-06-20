@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add GPU</title>
+</head>
+<body>
+<form method="POST">
+    {% csrf_token %}
+    {% for field in form %}
+    <br>
+    {{ field.label}}
+    <br>
+    {{ field }}
+    <br>
+    {% endfor %}
+    <input type="submit" value="Add GPU!">
+    {% if object_added %}
+        <p>Your GPU has been added</p>
+    {% endif %}
+</form>
+</body>
+</html>

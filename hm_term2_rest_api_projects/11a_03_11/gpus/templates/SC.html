@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>One GPU</title>
+	<script src="https://fb.me/react-0.14.6.js"></script>
+	<script src="https://fb.me/react-dom-0.14.6.js"></script>
+	<script src="http://fb.me/JSXTransformer-0.12.1.js"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<script type="text/jsx">
+		
+		
+	var App = React.createClass({
+		getInitialState: function () {
+			return {
+				id : '',
+				title: '',
+				body: ''
+			};	
+		},
+		componentDidMount() {
+			var root = 'http://localhost:8000/gpu/?';
+			var postfix = "{{searched_val}}" + "=" + "{{details}}"
+			$.ajax({
+			  url: root + postfix,
+			  method: 'GET'
+			}).then(function(data) {
+				console.log(data.fields);
+			  	this.setState(data.fields);
+			}.bind(this));
+		},
+
+	    render: function(){
+	        return (
+	            <div>
+	                <RecievedInfo 
+	                    model={this.state.name}
+					    manufacturer={this.state.manufacturer}
+					    GPU_manufacturer={this.state.GPU_manufacturer}
+					    video_memory={this.state.video_memory}
+					    memory_clock={this.state.memory_clock}
+					    core_speed={this.state.core_speed}
+					    boost_speed={this.state.boost_speed}
+					    memory_type={this.state.memory_type}
+					    motherboard_connection={this.state.motherboard_connection}
+					    power_supply={this.state.power_supply}
+					    picture_url={this.state.picture}
+					    price={this.state.price}/>
+	            </div>
+	        );
+	    }
+	});
+
+	var RecievedInfo = React.createClass({
+	    render: function(){
+	        return (
+	            <div>   
+           		 	<h1>Model(Name): {this.props.model}</h1>
+				    <h2>Manufacturer: {this.props.manufacturer}</h2>
+				    <h2>GPU manufacturer: {this.props.GPU_manufacturer}</h2>
+				    <h2>Video Memory: {this.props.video_memory}</h2>
+				    <h2>Memory Clock Speed: {this.props.memory_clock}</h2>
+				    <h2>Core Speed: {this.props.core_speed}</h2>
+				    <h2>Boost Speed: {this.props.boost_speed}</h2>
+				    <h2>Memory type: {this.props.memory_type}</h2>
+				    <h2>Motherboard connection: {this.props.motherboard_connection}</h2>
+				    <h2>Power supply(W): {this.props.power_supply}</h2>
+				    <h2>Price: {this.props.price}</h2>           
+				    <img src={this.props.picture_url}/>
+                </div>
+	        );
+	    }
+	});
+
+
+	ReactDOM.render(<App/>, document.getElementById('details'));
+
+	</script>
+
+</head>
+<body>
+<h1>GPU</h1>
+<div id="details">
+</div>
+</body>
+</html>
