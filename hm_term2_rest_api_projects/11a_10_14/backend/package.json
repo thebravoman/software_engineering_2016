@@ -1,0 +1,31 @@
+{
+  "name": "doodle-project",
+  "version": "1.0.0",
+  "description": "Doodle TP project",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "~1.17.1",
+    "busboy": "^0.2.14",
+    "cookie-parser": "~1.4.3",
+    "cors": "^2.8.3",
+    "debug": "~2.6.3",
+    "express": "~4.15.2",
+    "mongoose": "^4.10.6",
+    "mongoose-paginate": "^5.0.3",
+    "morgan": "~1.8.1",
+    "serve-favicon": "~2.4.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node ./bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://IvoTod@bitbucket.org/IvoTod/doodle-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/IvoTod/doodle-project#readme"
+}
