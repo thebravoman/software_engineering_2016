@@ -1,0 +1,235 @@
+<!-- DOCTYPE HTML -->
+<html>
+<head>
+<title>Doodle TP Project</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://unpkg.com/react@15/dist/react.js"></script>
+<script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0-alpha1/JSXTransformer.js"></script>
+<script type="text/javascript" src="http://layout.jquery-dev.com/lib/js/jquery-latest.js"></script>
+
+<script type="text/jsx">
+
+var view;
+
+var page = 1;
+
+function addNew() {
+	view="add";
+	ReactDOM.unmountComponentAtNode(document.getElementById('app'));
+	ReactDOM.render(<App view={view} />, document.getElementById('app'));
+}
+
+function deleteDoodle(doodle) {
+	$.ajax({
+		type: 'DELETE',
+		async: false,
+		contentType : 'application/json',
+		url: 'http://localhost:3000/doodles/' + doodle.author + '/' + doodle.name,
+		success : function(data, status) {
+			if(status == 'success') {
+				getPage(1);
+			}
+		}
+	});
+};
+
+function getPage(page) {
+	$.ajax({
+		type: 'GET',
+		async: false,
+		contentType : 'application/json',
+		url: 'http://localhost:3000/doodles?page=' + page + '&limit=3',
+		success : function (data, status, xhr){
+			if (status === 'success') {
+				view="pagination";
+				ReactDOM.unmountComponentAtNode(document.getElementById('app'));
+				ReactDOM.render(<App view={view} docs={data.docs} pages={data.pages} />, document.getElementById('app'));
+			}
+		}
+	});
+};
+
+function detail(doodle) {
+	ReactDOM.unmountComponentAtNode(document.getElementById('app'));
+	view='detail';
+	ReactDOM.render(<App view={view} docs={doodle} />, document.getElementById('app'));
+};
+
+
+var List = React.createClass({
+	render: function(){
+		return (
+			<ul className="list-group">
+				{this.props.docs.map(function(value) {
+					return <Doodle doodle={value} key={value.author + '/' + value.name}/>
+				})}
+			</ul>
+		);
+	}
+});
+
+var Doodle = React.createClass({
+	render: function(){
+		return (
+			<li className="list-group-item" onClick={() => this.detailView()}>
+				<div className="text-center">
+					<div className="row">
+						<img className = 'img-responsive' src={"http://localhost:3000/doodles/" + this.props.doodle.author + "/" + this.props.doodle.name + "/image"}/>
+					</div>
+					<div className="row">
+						<h4>{this.props.doodle.name}</h4>
+						<h6>{this.props.doodle.author}</h6>
+					</div>
+				</div>
+			</li>
+		);
+	},
+	detailView: function() {
+		detail(this.props.doodle);
+	}
+
+});
+var PageElement = React.createClass({
+	render: function () {
+		return (<li onClick={(e) => getPage(this.props.number)}><a href="#">{this.props.number}</a></li>);
+	}
+});
+
+var Pagination = React.createClass({
+	render: function(){
+		var pageElements = [];
+		for(var i =0; i< this.props.pages; i++) {
+			pageElements.push(<PageElement key={i} number={i+1}/>);
+		}
+		return (
+			<ul className="pagination">
+				<li><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+				{pageElements}
+				<li><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+			</ul>
+		);
+	}
+});
+
+var Detail = React.createClass ({
+	render: function(){
+		var tags = this.props.doodle.tags.join(", ");
+		return (
+			<div className="doodle-container text-center">
+				<div className="row">
+					<h5>{this.props.name}</h5>
+					<h6>{this.props.author}</h6>
+				</div>
+				<div className="row">
+					<img src={"http://localhost:3000/doodles/" + this.props.doodle.author + "/" + this.props.doodle.name + "/image"} alt="doodle" className="img-thumbnail img-responsive" href="#"/>
+					<div className="row">
+						<p className="col-xs-3 col-xs-offset-3 text-success text-left">&uarr; this.props.votes</p>
+						<p className="col-xs-3 text-danger text-right">&darr; {this.props.downvotes}</p>
+					</div>
+				</div>
+				<div className="row panel panel-default">
+					<h4 className="panel-heading">Tags:</h4>
+					<p className="panel-content">{tags}</p>
+				</div>
+				<div className="row panel panel-default">
+			<button type="button" className="button btn-danger" onClick={() => deleteDoodle(this.props.doodle)}>Delete</button>
+				</div>
+			</div>
+			);
+	}
+});
+
+var UploadForm = React.createClass ({
+	handleSubmit(event) {
+		event.preventDefault();
+		var form = $(event.target)[0];
+		var formData = new FormData(form);
+		$.ajax({
+			url: 'http://localhost:3000/doodles/create',
+			type: 'POST',
+			data: formData,
+			contentType: false,
+			processData: false,
+			success: function (data, success) {
+				if(success) {
+					getPage(1);
+				}
+			}
+		});
+	},
+	render: function() {
+		return (
+			<form onSubmit={this.handleSubmit}>
+				<p>Doodle name:</p>
+				<input type="text" name="name"/>
+				<p>Author:</p>
+				<input type="text" name="author"/>
+				<p>Category:</p>
+				<input type="text" name="category"/>
+				<p>Tags:</p>
+				<input type="text" name="tags"/>
+				<input type="file" name="image" accept="image/*"/>
+				<input type="submit" value="Submit"/>
+			</form>
+		);
+	}
+});
+
+var App = React.createClass ({
+	render: function(){
+		if(this.props.view=='pagination') {
+			return(
+				<div>
+					<div id="list" className="container col-xs-6 col-xs-offset-3">
+						<List docs={this.props.docs} />
+					</div>
+					<div id="pagination" className="col-xs-12 text-center">
+						<ul className="pagination">
+							<Pagination pages={this.props.pages} />
+						</ul>
+					</div>
+				</div>
+			);
+		}
+		else if(this.props.view=='detail') {
+			return (
+				<div id="detail" className="container col-xs-6 col-xs-offset-3">
+					<Detail doodle={this.props.docs} />
+				</div>
+			);
+		}
+		else if(this.props.view=='add') {
+			return (
+				<div id="create" className="container col-xs-6 col-xs-offset-3">
+					<UploadForm />
+				</div>
+			);
+		}
+	}
+	
+});
+
+getPage(1);
+
+</script>
+</head>
+<body>
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">Dudler</a>
+			</div>
+			<ul class="nav navbar-nav">
+				<li><a href="#" onclick="getPage(1)">Doodle list</a></li>
+			</ul>
+			<ul class="nav navbar-nav">
+				<li><a href="#" onclick="addNew()">Add new doodle</a></li>
+			</ul>
+		</div>
+	</nav>
+	<div id="app">
+	</div>
+</body>
+</html>
