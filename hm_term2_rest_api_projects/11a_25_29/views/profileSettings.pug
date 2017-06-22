@@ -1,0 +1,51 @@
+extends layout
+
+block content
+  .row
+    .panel-body
+      form(method='POST' action='/profile/settings' enctype='multipart/form-data')
+        .row
+          .col-md-12.lead
+            | Profile Settings
+            hr
+        .row
+          .col-md-4.text-center
+            img.avatar.avatar-original.img-thumbnail#img-preview-block(style='-webkit-user-select:none; \
+            display:block; margin:auto;' src=`${user.ProfilePic}`)
+            br
+            span.btn.btn-link.btn-file
+              input#upload-img(type='file' name='profilePic')
+          .col-md-8
+            .form-group
+              label Password
+              input.form-control(type='password' name='password')
+            .form-group
+              label First name
+              input.form-control(type='text' placeholder=`${user.FirstName}` name='firstName')
+            .form-group
+              label Last name
+              input.form-control(type='text' placeholder=`${user.LastName}` name='lastName')
+            .form-group
+              label Date of birth
+              input.form-control(type='text' placeholder=`${user.DateOfBirth}` name='dateOfBirth' id='datepicker')
+            button.btn.btn-danger(type='button' data-toggle='modal' data-target='#delete-user-modal')
+              i.glyphicon.glyphicon-remove
+              | Delete user
+        .row
+          .col-md-12
+            hr
+            button.btn.btn-primary.pull-right(type='submit')
+              i.glyphicon.glyphicon-floppy-disk
+              |  Save
+  #delete-user-modal.modal.fade
+    .modal-dialog
+        .modal-body
+          p Are you sure you want to delete account?
+        .modal-footer
+          button.btn.btn-default(type='button' data-dismiss='modal') Cancel
+          button.btn.btn-danger(type='button' onclick='deleteProfile()') Delete
+
+  script(type='text/javascript').
+    function deleteProfile() {
+      $(location).attr('href', '/profile/delete');
+    };

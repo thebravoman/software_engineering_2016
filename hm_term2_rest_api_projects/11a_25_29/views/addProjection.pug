@@ -1,0 +1,46 @@
+extends layout
+
+block content
+  .row
+    .panel-body
+      .col-md-12
+        form(method='POST' action=`/movies/${movie.Id}/addProjection` enctype='multipart/form-data')
+          .row
+            .col-md-12.lead
+              | Add projection
+              hr
+          .row
+            .col-md-3.text-center
+              a(href=`/movies/${movie.Id}`)
+                img.avatar.avatar-original.img-thumbnail(style='-webkit-user-select:none; \
+                display:block; margin:auto;', src=`${movie.Image}`)
+            .col-md-3
+              .row
+                .col-md-12
+                  h1.only-bottom-margin #{movie.Title}
+              .row
+                .col-md-12
+                  span.text-muted Premiere:
+                  |  #{movie.Premiere}
+                  br
+                  span.text-muted Length:
+                  |  #{movie.Length}
+                  br
+                  span.text-muted Age Restriction:
+                  |  #{movie.AgeRestriction}
+                  br
+                  span.text-muted Description:
+                  |  #{movie.Description}
+            .col-md-6
+              .form-group
+                label(for='hallId') HallId
+                input.form-control(type='number' placeholder='Hall Id' name='hallId' required)
+              .form-group
+                label(for='startTime') Start Time
+                input.form-control(type='text' placeholder='Start Time' name='startTime' id='datetimepicker' required)
+          .row
+            .col-md-12
+              hr
+              button.btn.btn-primary.pull-right(type='submit')
+                i.glyphicon.glyphicon-floppy-disk
+                |  Save

@@ -1,0 +1,12 @@
+extends layout
+
+block content
+	script(type='text/javascript').
+		function getMovieData(id) {
+			$(location).attr('href',`/movies/${id}`);
+		};
+	p Movies
+		ul
+			each m in movies
+				li(onclick=`getMovieData(${m.Id})`) #{m.Title}
+				li 

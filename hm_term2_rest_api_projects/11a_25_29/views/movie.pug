@@ -1,0 +1,121 @@
+extends layout
+
+block content
+  .row
+    .panel-body
+      .row
+        .col-md-12.lead
+          | Movie Info
+          hr
+      .row
+        .col-md-4.text-center
+          img.avatar.avatar-original.img-thumbnail(style='-webkit-user-select:none; \
+          display:block; margin:auto;', src=`${movie.Image}`)
+        .col-md-8
+          .row
+            .col-md-12
+              h1.only-bottom-margin #{movie.Title}
+          .row
+            .col-md-6
+              span.text-muted Length:
+              |  #{movie.Length}
+              br
+              span.text-muted Age Restriction:
+              |  #{movie.AgeRestriction}
+              br
+              span.text-muted Description:
+              |  #{movie.Description}
+      if user && user.Role == 'admin'
+        button.btn.btn-danger.pull-right(type='button' data-toggle='modal' data-target='#delete-movie-modal' data-movieId=`${movie.Id}`)
+          i.glyphicon.glyphicon-remove
+          | Delete movie
+        button.btn.btn-default.pull-right(onClick=`editMovie(${movie.MovieId})`)
+          i.glyphicon.glyphicon-pencil
+          |  Edit movie
+      .row
+        .col-md-12
+          hr
+  .row
+    .panel-body
+      .row
+        .col-md-12.lead
+          | Available Projections
+          if user && user.Role == 'admin'
+            button.btn.btn-default.pull-right(onClick=`addProjection(${movie.MovieId})`)
+              i.glyphicon.glyphicon-plus
+              | Add projection
+          hr
+      .row
+        .col-md-12
+          if projections.length > 0
+            .table-responsive
+              table.table
+                thead
+                  tr.row-name
+                    th Starts At
+                    th Length
+                    th Hall
+                    th Settings
+                tbody
+                  each projection in projections
+                    tr.row-content 
+                      td #{projection.StartTime}
+                      td #{projection.Length}
+                      td #{projection.HallId}
+                      td
+                        button.btn.btn-default(type='button' data-toggle='modal' data-target='#buy-ticket-modal' data-projectionId=`${projection.Id}`)
+                          i.glyphicon.glyphicon-share-alt
+                          | Buy Ticket
+                        if user && user.Role == 'admin'
+                          button.btn.btn-danger(type='button' data-toggle='modal' data-target='#remove-projection-modal' data-projectionId=`${projection.Id}`)
+                            i.glyphicon.glyphicon-remove
+                            | Remove projection
+          else
+            | Sorry, no upcoming projections
+
+  #buy-ticket-modal.modal.fade
+    .modal-dialog
+      .modal-body
+        p Do you confirm buying ticket for this movie?
+      .modal-footer
+        button.btn.btn-default(type='button' data-dismiss='modal') Cancel
+
+  #delete-movie-modal.modal.fade
+    .modal-dialog
+      .modal-body
+        p Are you sure you want to delete a movie?
+      .modal-footer
+        button.btn.btn-default(type='button' data-dismiss='modal') Cancel
+        button.btn.btn-danger(onClick=`deleteMovie(${movie.MovieId})`) Yes
+
+  #remove-projection-modal.modal.fade
+    .modal-dialog
+      .modal-body
+        p Are you sure you want to delete a projection?
+      .modal-footer
+        button.btn.btn-default(type='button' data-dismiss='modal') Cancel
+
+  script(type='text/javascript').
+    function buyTicket(id) {
+      $(location).attr('href', `/projections/${id}/buyTicket`);
+    };
+
+    function editMovie(id) {
+      $(location).attr('href', `/movies/${id}/edit`);
+    };
+
+    function deleteMovie(id) {
+      $(location).attr('href', `/movies/${id}/remove`);
+    };
+
+    function addProjection(id) {
+      $(location).attr('href', `/movies/${id}/addProjection`);
+    }
+
+    function editProjection(id) {
+      $(location).attr('href', `/projections/${id}/edit`);
+    }
+
+    function removeProjection(id) {
+      $(location).attr('href', `/projections/${id}/remove`);
+    }

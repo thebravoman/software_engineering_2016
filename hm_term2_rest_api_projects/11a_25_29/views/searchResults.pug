@@ -1,0 +1,44 @@
+extends layout
+
+block content
+  .row
+    .panel-body
+      .col-md-12
+        .row
+          .col-md-12.lead
+            | #{pageTitle}
+            hr
+        each movie in movies
+          .row
+            .col-md-12
+              .media.col-md-3
+                figure
+                  img.avatar.avatar-original.img-thumbnail#img-preview-block(style='-webkit-user-select:none; \
+                  display:block; margin:auto;' src=`${movie.Image}`)
+              .col-md-6
+                h4.list-group-item-heading #{movie.Title}
+                p.list-group-item-text
+                  | #{movie.Description}
+              .col-md-3.text-center
+                if pageTitle == 'Hottest Movies'
+                    h2
+                    | #{movie.Views}
+                    small  views
+                button.btn.btn-primary.btn-lg.btn-block(type='button' onClick=`openMovie(${movie.Id})`) 
+                  i.glyphicon.glyphicon-eye-open
+                  | See more
+                .stars
+                  span.glyphicon.glyphicon-star
+                  span.glyphicon.glyphicon-star
+                  span.glyphicon.glyphicon-star
+                  span.glyphicon.glyphicon-star
+                  span.glyphicon.glyphicon-star-empty
+                p
+                  | Average 3.9 
+                  small  / 
+                  |  5
+          hr
+  script(type='text/javascript').
+    function openMovie(id) {
+      $(location).attr('href', `/movies/${id}`);
+    }

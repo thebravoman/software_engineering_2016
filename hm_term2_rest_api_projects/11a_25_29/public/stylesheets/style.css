@@ -1,0 +1,43 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url("../images/128-197.jpg");
+}
+
+a {
+  color: #00B7FF;
+}
+
+.container {
+  background: rgba(0,0,0,0.5);
+  color: #FFFFFF;
+}
+
+a.list-group-item {
+    height:auto;
+    min-height:220px;
+    color: #FFFFFF;
+}
+a.list-group-item.active small {
+    color:#fff;
+}
+.stars {
+    margin:20px auto 1px;    
+}
+
+figure {
+  text-align: center;
+}
+
+.carousel .item img{
+    height: 500px !important;
+}
+
+#carousel-example-generic {
+  text-align: center;
+  height: 500px;
+  overflow: hidden;
+}
+
+.carousel-caption {
+  background-color: rgba(0,0,0,0.5);
+}

@@ -1,0 +1,45 @@
+extends layout
+
+block content
+  .row
+    .panel-body
+      .col-md-12
+        .row
+          .lead
+            | Featured Movies
+            hr
+        .row
+          #carousel-example-generic.carousel.slide(data-ride="carousel")
+            ol.carousel-indicators
+              each index in Array.from(new Array(10), (x,i) => i)
+                li.active(data-target="#carousel-example-generic", data-slide-to=`${index}`)
+                |
+            .carousel-inner(role="listbox")
+              .item.active
+                .img-thumbnail
+                  a(href=`/movies/${movies[0].Id}`)
+                    img.img-responsive(src=`${movies[0].Image}`)
+                    |       
+                    .carousel-caption
+                      h2
+                        | #{movies[0].Title}
+                    |
+              each movie in movies
+                .item
+                  .img-thumbnail
+                    a(href=`/movies/${movie.Id}`)
+                      img.img-responsive(src=`${movie.Image}`)
+                      |
+                      .carousel-caption
+                        h2
+                          | #{movie.Title}
+                      |
+            a.left.carousel-control(data-target="#carousel-example-generic", role="button", data-slide="prev")
+              span.glyphicon.glyphicon-chevron-left(aria-hidden="true")
+              |     
+              span.sr-only Previous
+            |   
+            a.right.carousel-control(data-target="#carousel-example-generic", role="button", data-slide="next")
+              span.glyphicon.glyphicon-chevron-right(aria-hidden="true")
+              |     
+              span.sr-only Next

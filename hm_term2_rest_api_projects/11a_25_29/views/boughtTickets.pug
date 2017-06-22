@@ -1,0 +1,51 @@
+extends layout
+
+block content
+  .row
+    .panel-body
+      .row
+        .col-md-12.lead
+          | Bought Tickets
+          hr
+      .row
+        .col-md-12
+          .table-responsive
+            table.table
+              thead
+                tr.row-name
+                  th Starts At
+                  th Title
+                  th Length
+                  th Hall
+                  th Settings
+              tbody
+                each projection in projections
+                  tr.row-content 
+                    td #{projection.StartTime}
+                    td #{projection.Title}
+                    td #{projection.Length}
+                    td #{projection.HallId}
+                    td
+                      button.btn.btn-default(type='button' onclick=`getMovieInfo(${projection.MovieId})`)
+                        i.glyphicon.glyphicon-eye-open
+                        | Movie info
+                      button.btn.btn-danger(type='button' data-toggle='modal' data-target='#return-ticket-modal' data-projectionId=`${projection.Id}`)
+                        i.glyphicon.glyphicon-remove
+                        | Return ticket
+  
+  #return-ticket-modal.modal.fade
+    .modal-dialog
+      .modal-body
+        p Are you sure you want to return your ticket?
+      .modal-footer
+        button.btn.btn-default(type='button' data-dismiss='modal') Cancel
+
+
+  script(type='text/javascript').
+    function returnTicket(id) {
+      $(location).attr('href', `/projections/${id}/returnTicket`);
+    };
+
+    function getMovieInfo(movieId) {
+      $(location).attr('href', `/movies/${movieId}`);
+    }

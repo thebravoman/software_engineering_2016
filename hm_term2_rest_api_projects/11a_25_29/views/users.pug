@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+  p Here is #{title}
+  ul
+   each user in users
+    li #{user.Username}
+    li #{user.Password}
+    li #{user.FirstName}
+    li #{user.LastName}
+    li #{user.DateOfBirth}
+    li #{user.Role}
+    li ------

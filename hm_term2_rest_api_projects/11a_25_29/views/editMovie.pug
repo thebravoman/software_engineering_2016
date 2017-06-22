@@ -1,0 +1,40 @@
+extends layout
+
+block content
+  .row
+    .panel-body
+      .col-md-12
+        form(method='POST' action=`/movies/${movie.Id}/edit` enctype='multipart/form-data')
+          .row
+            .col-md-12.lead
+              | #{movie.Title} Settings
+              hr
+          .row
+            .col-md-4.text-center
+              img.avatar.avatar-original.img-thumbnail#img-preview-block(style='-webkit-user-select:none; \
+              display:block; margin:auto;' src=`${movie.Image}`)
+              br
+              span.btn.btn-link.btn-file
+                input#upload-img(type='file' name='image')
+            .col-md-8
+              .form-group
+                label Title
+                input.form-control(type='text' placeholder=`${movie.Title}` name='title')
+              .form-group
+                label Age Restriction
+                input.form-control(type='number' placeholder=`${movie.AgeRestriction}` name='ageRes')
+              .form-group
+                label First Projection
+                input.form-control(type='text' placeholder=`${movie.Premiere}` name='premiere' id='datepicker')
+              .form-group
+                label Length
+                input.form-control(type='number' placeholder=`${movie.Length}` name='length')
+              .form-group
+                label(for='length') Description
+                textarea.form-control(rows='3' placeholder=`${movie.Description}` name='description')
+          .row
+            .col-md-12
+              hr
+              button.btn.btn-primary.pull-right(type='submit')
+                i.glyphicon.glyphicon-floppy-disk
+                |  Save

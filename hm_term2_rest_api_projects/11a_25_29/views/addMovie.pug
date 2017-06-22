@@ -1,0 +1,40 @@
+extends layout
+
+block content
+  .row
+    .panel-body
+      .col-md-12
+        form(method='POST' action='/movies/add' enctype='multipart/form-data')
+          .row
+            .col-md-12.lead
+              | Add movie
+              hr
+          .row
+            .col-md-4
+              img.avatar.avatar-original.img-thumbnail#img-preview-block(style='-webkit-user-select:none; \
+              display:block; margin:auto;' src='/images/519539-085_Movie-512.png')
+              br
+              span.btn.btn-link.btn-file
+                input#upload-img(type='file' name='profilePic' required)
+            .col-md-8
+              .form-group
+                label(for='title') Title
+                input.form-control(type='text' placeholder='Title' name='title' required)
+              .form-group
+                label(for='ageRestriction') Age Restriction
+                input.form-control(type='number' placeholder='Age Restriction' name='ageRes' required)
+              .form-group
+                label(for='premiere') Premiere
+                input.form-control(type='text' placeholder='Premiere' name='premiere' id='datepicker' required)
+              .form-group
+                label(for='length') Length
+                input.form-control(type='number' placeholder='Length' name='length' required)
+              .form-group
+                label(for='length') Description
+                textarea.form-control(rows='3' placeholder='Description' name='description' required)
+          .row
+            .col-md-12
+              hr
+              button.btn.btn-primary.pull-right(type='submit')
+                i.glyphicon.glyphicon-floppy-disk
+                |  Save

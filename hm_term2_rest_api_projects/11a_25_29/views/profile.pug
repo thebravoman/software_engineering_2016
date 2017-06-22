@@ -1,0 +1,41 @@
+extends layout
+
+block content
+  .row
+    .panel-body
+      .row
+        .col-md-12.lead
+          | User profile
+          hr
+      .row
+        .col-md-4.text-center
+          img.avatar.avatar-original.img-thumbnail(style='-webkit-user-select:none; \
+          display:block; margin:auto;', src=`${user.ProfilePic}`)
+        .col-md-8
+          .row
+            .col-md-12
+              h1.only-bottom-margin #{user.Username}
+          .row
+            .col-md-6
+              span.text-muted First Name:
+              |  #{user.FirstName}
+              br
+              span.text-muted Last Name:
+              |  #{user.LastName}
+              br
+              span.text-muted Age:
+              |  #{userAge}
+              br
+              br
+              if user && user.Role == 'admin'
+                small.text-muted ADMINISTRATOR
+      .row
+        .col-md-12
+          hr
+          button.btn.btn-default.pull-right(onclick='editProfile()')
+            i.glyphicon.glyphicon-pencil
+            |  Edit
+  script(type='text/javascript').
+    function editProfile() {
+      $(location).attr('href', '/profile/settings');
+    };

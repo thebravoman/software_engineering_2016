@@ -1,0 +1,48 @@
+extends layout
+
+block content
+  .row
+    .panel-body
+      .col-md-12
+        form(method='POST' action=`/projections/${projection.Id}/edit` enctype='multipart/form-data')
+          .row
+            .col-md-12.lead
+              | Projection #{projection.Id} Settings
+              hr
+          .row
+            .col-md-4.text-center
+              img.avatar.avatar-original.img-thumbnail(style='-webkit-user-select:none; \
+              display:block; margin:auto;', src=`${movie.Image}`)
+            .col-md-4
+              .row
+                .col-md-12
+                  h1.only-bottom-margin #{movie.Title}
+              .row
+                .col-md-12
+                  span.text-muted Premiere:
+                  |  #{movie.Premiere}
+                  br
+                  span.text-muted Length:
+                  |  #{movie.Length}
+                  br
+                  span.text-muted Age Restriction:
+                  |  #{movie.AgeRestriction}
+                  br
+                  span.text-muted Description:
+                  |  #{movie.Description}
+            .col-md-4
+              .form-group
+                label Movie Id
+                input.form-control(type='number' placeholder=`${projection.MovieId}` name='movieId')
+              .form-group
+                label Hall Id
+                input.form-control(type='number' placeholder=`${projection.HallId}` name='hallId')
+              .form-group
+                label Start Time
+                input.form-control(type='text' placeholder=`${projection.StartTime}` name='startTime' id='datetimepicker')
+          .row
+            .col-md-12
+              hr
+              button.btn.btn-primary.pull-right(type='submit')
+                i.glyphicon.glyphicon-floppy-disk
+                |  Save
