@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- <link rel="icon" href="../../favicon.ico"> -->
+    <title>Pet</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+    <link href="/styles/details.css" rel="stylesheet">
+
+    <script src="https://fb.me/react-0.14.6.js"></script>
+    <script src="https://fb.me/react-dom-0.14.6.js"></script>
+    <script src="http://fb.me/JSXTransformer-0.12.1.js"></script>
+    <script type="text/javascript" src="http://layout.jquery-dev.com/lib/js/jquery-latest.js"></script>
+    <script type="text/jsx">
+
+    // -- example for pet structure --
+    // var pet = {
+    //   name: 'simona',
+    //   typeAnimal: 'kitten',
+    //   breed: 'persian',
+    //   imageUrl: 'http://www.lovethispic.com/uploaded_images/64352-Cute-Kitten-With-Red-Bow.jpg',
+    //   description: 'she is cute',
+    //   age: 3,
+    //   owner: 'kimi'
+    // };
+
+    var pet = {};
+
+    $.ajax({
+      type: 'GET',
+      contentType: 'application/json',
+      url: 'http://localhost:3000/all',
+
+      success: function (data, status, xhr) {
+        if (status === 'success') {
+          pet.name = data[0].name;
+          pet.typeAnimal = data[0].typeAnimal;
+          pet.breed = data[0].breed;
+          pet.imageUrl = data[0].imageUrl;
+          pet.description = data[0].description;
+          pet.age = data[0].age;
+          pet.owner = data[0].owner;
+
+          ReactDOM.render(<App petData={pet}/>, document.getElementById('pet-details'));
+        }
+      }
+    });
+
+
+    var App = React.createClass({
+        render:function() {
+          return (
+            <div>
+              <Profile
+                name={this.props.petData.name}
+                typeAnimal={this.props.petData.typeAnimal}
+                breed={this.props.petData.breed}
+                imageUrl={this.props.petData.imageUrl}
+                description={this.props.petData.description}
+                age={this.props.petData.age}
+                owner={this.props.petData.owner}
+                />
+            </div>
+          );
+        }
+      });
+
+      var Profile = React.createClass({
+        render:function() {
+          return (
+            <div>
+              <img src={this.props.imageUrl} alt="Card image cap"/>
+              <h5>Profile</h5>
+              <ul className="card-list">
+                <li>{this.props.typeAnimal}</li>
+                <li>{this.props.age}</li>
+                <br/>
+                <li>Name: {this.props.name}</li>
+                <li>Breed: {this.props.breed}</li>
+                <br/>
+                <li>Owner: {this.props.owner}</li>
+                <li>Description: {this.props.description}</li>
+              </ul>
+            </div>
+          );
+        }
+      });
+
+
+
+    </script>
+
+  </head>
+
+  <body>
+    <div class="navbar navbar-inverse bg-inverse">
+      <div class="container d-flex justify-content-between">
+        <a href="#" class="navbar-brand">Pets</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+    <div class="album">
+      <div class="container">
+        <div id="pet-details" class="card"></div>
+      </div>
+    </div>
+    <footer class="text-muted">
+      <div class="container">
+        <p class="float-right">
+          <a href="#">Back to top</a>
+        </p>
+        <p>footer.</p>
+      </div>
+    </footer>
+  </body>
+</html>

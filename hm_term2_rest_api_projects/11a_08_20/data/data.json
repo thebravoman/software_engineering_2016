@@ -1,0 +1,17 @@
+{
+	"pets": [
+		{
+			"typeAnimal": "kitten",
+			"breed": "persian",
+			"name":"Kimi",
+			"description":"This is my pet. I got her when...",
+			"age": 3,
+			"traits":[
+				"cute",
+				"black & white fur"
+			],
+			"owner":"Annie",
+			"rate": 10
+		}
+	]
+}

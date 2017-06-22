@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Pets</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link href="/styles/list.css" rel="stylesheet">
+
+    <script src="https://fb.me/react-0.14.6.js"></script>
+    <script src="https://fb.me/react-dom-0.14.6.js"></script>
+    <script src="http://fb.me/JSXTransformer-0.12.1.js"></script>
+    <script type="text/javascript" src="http://layout.jquery-dev.com/lib/js/jquery-latest.js"></script>
+  </head>
+
+  <body>
+
+
+    <div class="navbar navbar-inverse bg-inverse">
+      <div class="container d-flex justify-content-between">
+        <a href="#" class="navbar-brand">Pets</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- <section class="jumbotron text-center">
+      <div class="container">
+        <h1 class="jumbotron-heading">Pets Display</h1>
+        <p class="lead text-muted">Project for nodeJS<br>A website for showing different pets</p>
+        <p>
+          <a href="#" class="btn btn-primary">Main call to action</a>
+          <a href="#" class="btn btn-secondary">Secondary action</a>
+        </p>
+      </div>
+    </section> -->
+
+    <div class="album text-muted">
+      <div class="container">
+
+        <div id="pet-card" class="row">
+        </div>
+
+      </div>
+    </div>
+
+    <nav id="pages">
+      <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+      </ul>
+    </nav>
+
+    <footer class="text-muted">
+      <div class="container">
+        <p class="float-right">
+          <a href="#">Back to top</a>
+        </p>
+        <p>footer.</p>
+      </div>
+    </footer>
+
+
+    <script type="text/jsx">
+
+    var pets = [{
+      name: 'simona the dog who ventured around the whole wide world to find hidden treasures and other things',
+      typeAnimal: 'kitten',
+      breed: 'persian',
+      imageUrl: 'http://www.cats.org.uk/uploads/images/featurebox_sidebar_kids/grief-and-loss.jpg',
+      description: 'she is cute',
+      age: 3,
+      owner: 'kimi'
+    },
+    {
+      name: 'kirk',
+      typeAnimal: 'doggo',
+      breed: 'terrier',
+      imageUrl: 'https://debonairng.com/wp-content/uploads/2017/05/cat-500x300.jpg',
+      description: 'he jumps a lot',
+      age: 3,
+      owner: 'kimi'
+    }];
+
+
+    // $.ajax({
+    //   type: 'GET',
+    //   contentType: 'application/json',
+    //   url: 'http://localhost:3000/1',
+    //
+    //   success: function (data, status, xhr) {
+    //     if (status === 'success') {
+    //       var pets = [];
+    //
+    //       for (var i = 0; i < data.length; i++ ) {
+    //         var pet = {};
+    //         pet.name = data[i].name;
+    //         pet.typeAnimal = data[i].typeAnimal;
+    //         pet.breed = data[i].breed;
+    //         pet.imageUrl = data[i].imageUrl;
+    //         pet.description = data[i].description;
+    //         pet.age = data[i].age;
+    //         pet.owner = data[i].owner;
+    //
+    //         pets.push(pet);
+    //       }
+    //
+    //       ReactDOM.render(<FilteredList petsData={pets}/>, document.getElementById('pet-card'));
+    //     }
+    //   }
+    // });
+
+        var FilteredList = React.createClass({
+          render: function(){
+            return (
+              <List petsData={this.props.petsData}/>
+            );
+          }
+        });
+
+
+        var List = React.createClass({
+          render: function(){
+            return (
+              <div>
+              {
+                this.props.petsData.map(function(pet) {
+                  return (
+                    <div key = {pet.name} className = "card">
+                      <img src={pet.imageUrl} alt="Card image cap"/>
+                      <ul className="card-text">
+                        <li>{pet.name}</li>
+                        <li>{pet.typeAnimal}</li>
+                        <li>{pet.breed}</li>
+                      </ul>
+                    </div>
+                  );
+                })
+               }
+              </div>
+            )
+          }
+        });
+
+        ReactDOM.render(<FilteredList petsData={pets}/>, document.getElementById('pet-card'));
+    </script>
+
+  </body>
+</html>

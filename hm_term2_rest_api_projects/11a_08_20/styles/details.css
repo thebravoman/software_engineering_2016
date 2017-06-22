@@ -1,0 +1,44 @@
+body {
+  /*min-height: 75rem;*/
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+
+.album {
+  min-height: 50rem; /* Can be removed; just added for demo purposes */
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-color: #f7f7f7;
+}
+
+.card {
+  margin: auto;
+  width: 50%;
+  padding: .75rem;
+  margin-bottom: 2rem;
+  border: 0;
+}
+div .card {
+
+}
+
+.card > img {
+  margin-bottom: .75rem;
+}
+
+.card-list {
+  list-style-type: none;
+  font-size: 100%;
+  text-align: center;
+}
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+footer p {
+  margin-bottom: .25rem;
+}
