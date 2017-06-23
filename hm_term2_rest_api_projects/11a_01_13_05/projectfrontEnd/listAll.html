@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="script.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://fb.me/react-0.14.6.js"></script>
+  <script src="https://fb.me/react-dom-0.14.6.js"></script>
+  <script src="http://fb.me/JSXTransformer-0.12.1.js"></script>
+
+  <script type="text/jsx">
+  $(document).ready(function() {
+      $.ajax({
+          url: "http://localhost:8080/explo/explosives",
+          method: 'GET',
+          success: function(data) {
+              console.log(data)
+              createList(data)
+          }
+        })
+      });
+
+    function createList(data) {
+      console.log(data[0])
+      listItems = data.map(obj =>
+          <li><br/>{obj.type}<br/>{obj.material}<br/>{obj.radius}</li>
+      )
+      ReactDOM.render(<ol>{listItems}</ol>, document.getElementById('explosives-details'));
+    }
+  </script>
+</head>
+<body>
+
+<ul>
+  <li><a class="active" href="html.html">Home</a></li>
+  <li><a href="listAll.html">So what exactly is an explosive?</a></li>
+  <li><a href="search.html">I wanna see them all</a></li>
+  <li><a href="input.html">Let me add a new one</a></li>
+  <li><a href="aboutUs.html">About</a></li>
+</ul>
+
+<h1>
+List of all explosives in the database
+</h1>
+	<div class="style1">
+				<form onsubmit="input(); return false;">
+					<p id="output" class="two">Nom nom<br></p>
+
+
+				</form>
+			</div>
+
+      <div id="explosives-details"></div>
+
+
+
+</body>
+</html>

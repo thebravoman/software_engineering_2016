@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="script.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    $('form').onsubmit(function(){
+        window.location = 'html.html';
+    });
+  });
+</script>
+</head>
+<body>
+
+<ul>
+  <li><a class="active" href="html.html">Home</a></li>
+  <li><a href="listAll.html">So what exactly is an explosive?</a></li>
+  <li><a href="search.html">I wanna see them all</a></li>
+  <li><a href="input.html">Let me add a new one</a></li>
+  <li><a href="aboutUs.html">About</a></li>
+</ul>
+
+<form method="POST" action="http://localhost:8080/explo/explosives">
+  <input type="text" placeholder="Name" name="name"><br>
+  <input type="text" placeholder="Type" name="type"><br>
+  <input type="text" placeholder="Material" name="material"><br>
+  <input type="text" placeholder="Radius" name="radius"><br>
+  <input type="submit" value="Submit" >
+</form>
+
+</div>
+
+
+
+
+</body>
+</html>
