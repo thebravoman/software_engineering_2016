@@ -4,4 +4,6 @@ Features:
 1. Inspects Item Level
 2. Mythic Timer
 
+Repo: https://github.com/Horsemaybe/addon-for-wow
+
 Team: Даниел Райков номер 12, Мариян Захариев номер 18
