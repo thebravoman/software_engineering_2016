@@ -9,7 +9,7 @@ GEM
     chronic_duration (0.10.6)
       numerizer (~> 0.1.1)
     numerizer (0.1.1)
-    rake (10.5.0)
+    rake (13.0.1)
 
 PLATFORMS
   ruby
@@ -17,7 +17,7 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 1.13)
   chronic_duration (= 0.10.6)
-  rake (~> 10.0)
+  rake (~> 13.0)
   srtparser_library!
 
 BUNDLED WITH
