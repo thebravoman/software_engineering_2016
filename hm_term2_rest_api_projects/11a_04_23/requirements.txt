@@ -2,7 +2,7 @@ appdirs==1.4.3
 cloudinary==1.7.0
 decorator==4.0.11
 dj-database-url==0.4.2
-Django==1.8.4
+Django==1.11.29
 django-cors-headers==2.0.2
 django-pipeline==1.6.12
 django-webpack-loader==0.2.4
