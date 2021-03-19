@@ -6,7 +6,7 @@ Django==1.8.4
 django-cors-headers==2.0.2
 django-pipeline==1.6.12
 django-webpack-loader==0.2.4
-djangorestframework==3.3.2
+djangorestframework==3.11.2
 environ==1.0
 gunicorn==19.7.1
 ipdb==0.10.2
